@@ -1,0 +1,44 @@
+[05-Sep-2020 01:54:06 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php on line 9
+[08-Sep-2020 04:27:07 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php on line 9
+[23-Sep-2020 21:58:50 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php on line 9
+[23-Sep-2020 23:57:13 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php on line 9
+[26-Sep-2020 22:29:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php on line 9
+[08-Oct-2020 19:19:03 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php on line 9
+[08-Oct-2020 20:46:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php on line 9
+[23-Oct-2020 04:44:15 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php on line 9
+[25-Oct-2020 23:04:23 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php on line 9
+[09-Nov-2020 19:03:59 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php on line 9
+[12-Nov-2020 21:36:48 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/User.php on line 9

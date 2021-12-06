@@ -1,0 +1,104 @@
+[31-Jul-2020 22:39:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[31-Jul-2020 22:39:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[31-Jul-2020 22:39:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[31-Jul-2020 22:39:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[31-Jul-2020 22:40:02 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[31-Jul-2020 22:40:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[31-Jul-2020 22:40:11 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[04-Aug-2020 23:52:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[04-Aug-2020 23:52:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[04-Aug-2020 23:52:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[04-Aug-2020 23:52:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[04-Aug-2020 23:52:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[04-Aug-2020 23:52:23 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[04-Aug-2020 23:52:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[09-Oct-2020 05:00:27 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[10-Oct-2020 02:15:27 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/patient_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/patient_confirm_password.php on line 7
+[10-Oct-2020 09:49:41 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreRay.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreRay.php on line 7
+[12-Oct-2020 02:45:11 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[12-Oct-2020 06:24:51 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreAnalzes.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreAnalzes.php on line 7
+[12-Oct-2020 23:07:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/patient_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/patient_confirm_password.php on line 7
+[13-Oct-2020 07:42:39 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreRay.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreRay.php on line 7
+[26-Oct-2020 09:07:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/hosptail_confirm_password.php on line 7
+[27-Oct-2020 07:15:26 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/patient_confirm_password.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/patient_confirm_password.php on line 7
+[29-Oct-2020 11:17:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreAnalzes.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreAnalzes.php on line 7
+[30-Oct-2020 12:52:12 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreRay.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreRay.php on line 7
+[10-Nov-2020 06:15:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreAnalzes.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/stogreAnalzes.php on line 7

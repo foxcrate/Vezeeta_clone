@@ -1,0 +1,212 @@
+[31-Jul-2020 22:41:23 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[31-Jul-2020 22:41:23 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[31-Jul-2020 22:41:28 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[31-Jul-2020 22:41:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[31-Jul-2020 22:41:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[31-Jul-2020 22:41:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[31-Jul-2020 22:41:30 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[31-Jul-2020 22:41:32 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[31-Jul-2020 22:41:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[31-Jul-2020 22:41:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[31-Jul-2020 22:41:50 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[31-Jul-2020 22:41:51 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRaoucata.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRaoucata.php on line 7
+[31-Jul-2020 22:41:51 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRaoucata.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRaoucata.php on line 7
+[31-Jul-2020 22:41:53 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[31-Jul-2020 22:41:53 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[31-Jul-2020 22:41:57 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[31-Jul-2020 22:41:57 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[31-Jul-2020 22:41:57 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[31-Jul-2020 22:42:02 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[31-Jul-2020 22:42:09 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[31-Jul-2020 22:42:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[31-Jul-2020 22:42:23 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[31-Jul-2020 22:43:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRaoucata.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRaoucata.php on line 7
+[04-Aug-2020 23:52:00 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[04-Aug-2020 23:52:00 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[04-Aug-2020 23:52:00 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[04-Aug-2020 23:52:01 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[04-Aug-2020 23:52:01 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[04-Aug-2020 23:52:03 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[04-Aug-2020 23:52:03 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[04-Aug-2020 23:52:03 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[04-Aug-2020 23:52:03 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[04-Aug-2020 23:52:04 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[04-Aug-2020 23:52:04 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[04-Aug-2020 23:52:04 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[04-Aug-2020 23:52:04 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[04-Aug-2020 23:52:06 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[04-Aug-2020 23:52:07 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[04-Aug-2020 23:52:07 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[04-Aug-2020 23:52:07 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[04-Aug-2020 23:52:07 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[04-Aug-2020 23:52:07 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[04-Aug-2020 23:52:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[04-Aug-2020 23:52:09 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[04-Aug-2020 23:52:09 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[04-Aug-2020 23:52:09 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[04-Aug-2020 23:52:12 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[04-Aug-2020 23:52:14 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[04-Aug-2020 23:52:14 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreAnalaz.php on line 7
+[04-Aug-2020 23:52:51 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[04-Aug-2020 23:52:52 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/StoreRays.php on line 7
+[04-Aug-2020 23:52:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7
+[04-Aug-2020 23:52:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/clinic/Store.php on line 7

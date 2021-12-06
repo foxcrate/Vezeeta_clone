@@ -1,0 +1,114 @@
+/* Base setup */
+/* Base setup */
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+/* Ratings widget */
+.rate {
+    display: inline-block;
+    border: 0;
+    font-size: 15pt;
+}
+/* Hide radio */
+.rate > input {
+    display: none;
+}
+/* Order correctly by floating highest to the right */
+.rate > label {
+    float: right;
+    color:#e0e0e0;
+}
+/* The star of the show */
+.rate > label:before {
+    display: inline-block;
+    font-size: 2.5rem;
+    padding: .3rem .2rem;
+    margin: 0;
+    cursor: pointer;
+    font-family: FontAwesome;
+    content: "\f005 "; /* full star */
+}
+/* Half star trick */
+.rate .half:before {
+    content: "\f089 "; /* half star no outline */
+    position: absolute;
+    padding-right: 0;
+}
+/* Click + hover color */
+input:checked ~ label, /* color current and previous stars on checked */
+label:hover, label:hover ~ label { color: #ffd21e;  } /* color previous stars on hover */
+
+/* Hover highlights */
+input:checked + label:hover, input:checked ~ label:hover, /* highlight current and previous stars */
+input:checked ~ label:hover ~ label, /* highlight previous selected stars for new rating */
+label:hover ~ input:checked ~ label /* highlight previous selected stars */ { color: #ffd21e;  }
+
+
+.btnx {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(0, 155, 52);
+    border: none;
+    color: white;
+    display: inline-block;
+    font-family: Lato, sans-serif;
+    font-size: .5rem;
+    cursor: pointer;
+    padding: 2rem 2rem;
+    margin-right: 2rem;
+
+}
+.btn--no {
+    background-color: rgb(194, 19, 10);
+    color: #ffffff;
+
+}
+.btn--yes, .btn--no {
+    border-radius: 60%;
+    padding: 1.3rem;
+    font-size: 17pt;
+
+}
+.btn--right {
+    margin-right: 0;
+}
+.btnx:hover, .btnx:focus {
+    opacity: 1;
+    outline: none;
+    color: #ffffff;
+}
+
+label.btnx {
+    opacity: 0.3;
+    color: #ffffff !important;
+}
+
+label.btnx:hover,
+input:focus + label.btnx {
+    opacity: 0.7;
+    color: #ffffff;
+}
+
+input:focus + label.btnx {
+    outline: thin dotted;
+    color: #ffffff;
+}
+input:checked + label.btnx {
+    opacity: 1;
+    color: #ffffff;
+}
+
+.is-hidden {
+    opacity: 0;
+    position: absolute;
+}
+i.icons{
+    position: relative;
+    line-height: 1;
+    top: -18px;
+    left: -12px;
+}
+/* .icons {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+} */
+

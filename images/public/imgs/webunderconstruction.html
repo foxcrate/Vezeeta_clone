@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Patient History</title>
+  <link rel="icon" href="imgs/Favicon.svg" type="image/png">
+  <link rel="stylesheet" href="css/semantic.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/nucleo/css/nucleo.css" type="text/css">
+  <link rel="stylesheet" href="css/simple-sidebar.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="d-flex bg-page" id="wrapper">
+        <!-- Sidebar -->
+        <div class="left-menu bg-white border-right" id="sidebar-wrapper">
+          <a id="menuin-toggle"><i class="fas fa-times h3 text-blue cursor float-right mt-2 mr-3 d-xl-none"></i></a>
+          <div class="sidebar-heading mt-3 text-center"><img src="imgs/logo4.png" width="120" height=""></div>
+          <div class="list-group list-group-flush mt-5">
+            <a href="PatientProfile.html" class="list-group-item list-group-item-action h5"><i class="fa fa-home mr-2" aria-hidden="true"></i> Home</a>
+            <a href="examples/EditProfile.html" class="list-group-item list-group-item-action h5"><i class="fas fa-user-edit mr-2"></i> Edit Profile</a>
+            <div class="dropdown">
+                <a href="#" class="list-group-item list-group-item-action h5 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users mr-2"></i> Future <i class="fas fa-asterisk size-f float-right text-red"></i></a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a href="#" class="list-group-item list-group-item-action h5"><i class="fas fa-users mr-2"></i> Club <i class="fas fa-asterisk size-f float-right text-red"></i></a>
+                <a href="#" class="list-group-item list-group-item-action h5"><i class="fas fa-user-shield mr-2"></i> Insurance <i class="fas fa-asterisk float-right size-f text-red"></i></a>
+                <a href="#" class="list-group-item list-group-item-action h5"><i class="fas fa-comments mr-2"></i> Online <i class="fas fa-asterisk float-right size-f text-red"></i></a>
+              </div>
+            </div>
+            <a href="index.html" class="list-group-item list-group-item-action h5 mb-5"><i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
+            <a href="About.html" class="list-group-item list-group-item-action h5 mt-3">About</a>
+            <a href="ContactUs.html" class="list-group-item list-group-item-action h5">Contact Us</a>
+          </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+    
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbarp navbar-top navbar-expand navbar-dark border-bottom">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Navbar links -->
+                    <button class="btn btn-primary d-lg-none ml-2" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                    <!-- Search form -->
+                    <ul class="float-lg-right pr-5">
+                      <div class="toggle toggle__wrapper">
+                        <div id="toggle-example-1" role="switch" aria-checked="false" class="toggle__button">
+                          <div class="toggle__switch"></div>
+                        </div>
+                      </div>
+                    </ul>
+                    <ul class="navbar-nav align-items-center ml-md-auto">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="ni ni-bell-55 mr-lg-3 mt-lg-1" style="font-size: 15pt;"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
+                          <!-- Dropdown header -->
+                          <div class="px-3 py-3">
+                            <p class="text-muted m-0">You have <strong class="text-primary">13</strong> notifications.</p>
+                          </div>
+                          <!-- List group -->
+                          <div class="list-group-noti list-group-flush">
+                            <a href="#!" class="list-group-item list-group-item-action">
+                              <div class="row align-items-center">
+                                <div class="col-auto mb-3">
+                                  <!-- Avatar -->
+                                  <img alt="Image placeholder" src="imgs/team-1.jpg" class="avatar rounded-circle">
+                                </div>
+                                <div class="col ml--2">
+                                  <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                      <h6 class="text-gray-d">John Snow</h6>
+                                    </div>
+                                    <div class="text-right text-muted">
+                                      <small class="text-primary">2 hrs ago</small>
+                                    </div>
+                                  </div>
+                                  <p class="">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                                </div>
+                              </div>
+                            </a>
+                            <a href="#!" class="list-group-item list-group-item-action">
+                              <div class="row align-items-center">
+                                <div class="col-auto mb-3">
+                                  <!-- Avatar -->
+                                  <img alt="Image placeholder" src="imgs/team-1.jpg" class="avatar rounded-circle">
+                                </div>
+                                <div class="col ml--2">
+                                  <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                      <h6 class="text-gray-d">John Snow</h6>
+                                    </div>
+                                    <div class="text-right text-muted">
+                                      <small class="text-primary">3 hrs ago</small>
+                                    </div>
+                                  </div>
+                                  <p class="">A new issue has been reported for Argon.</p>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <!-- View all -->
+                          <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="navbar-nav align-items-center ml-auto ml-md-0 ">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <div class="media align-items-center">
+                            <span class="avatar avatar-sm rounded-circle">
+                              <img alt="Image placeholder" src="imgs/team-1.jpg">
+                            </span>
+                            <div class="media-body ml-3 mr-3 d-lg-block">
+                              <h6 class="mb-0 font-weight-bold text-white">Mohamed Ahmed</h6>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
+            <!-- informationContent -->
+            <div class="container-fluid">
+                <div class="header mt-5 mb-4">
+                    <div class="container-fluid card col-11 p-4">
+                      <div class="header-body row ml-auto mr-auto">
+                        <div class="col-md-6 p-3">
+                          <img class="" src="imgs/underconstruction.svg" width="800" alt="Responsive image">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <!--Start-Footer-->
+            <footer class="mt-5">
+                <div class="container-fluid">
+                    <div class="row copy-right">
+                        <div class="col-md-6 text-center">
+                        <h6 class="p-3">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | by <a href="index.html" target="">PHistory</a></h6>
+                        </div>
+                        <div class="social-icon p-3 col-md-6 text-center">
+                            <a href="https://m.facebook.com/Patient-history-102419981434494/" target="_blank"><i class="m-2 hvr-grow fab fa-facebook-f fa-1x"></i></a>
+                            <a href="https://twitter.com/phistory3" target="_blank"><i class="m-2 hvr-grow fab fa-twitter fa-1x"></i></a>
+                            <a href="https://www.instagram.com/patient_history_/" target="_blank"><i class="m-2 hvr-grow fab fa-instagram fa-1x"></i></a>
+                            <a href="patienthistory1@gmail.com" target="_blank" ><i class="m-2 hvr-grow fab fa-google-plus-g fa-1x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+          <!--End-Footer-->
+        </div>
+      </div>
+  <!--JavaScript -->
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/js-cookie/js.cookie.js"></script>
+  <script src="js/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="js/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <script src="js/semantic.min.js"></script>
+  <script src="js/main.js"></script>
+
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+    $("#menuin-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>

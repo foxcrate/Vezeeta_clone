@@ -1,0 +1,32 @@
+[19-Sep-2020 05:19:45 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php on line 5
+[19-Sep-2020 18:32:13 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php on line 5
+[22-Sep-2020 07:31:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php on line 5
+[22-Sep-2020 19:10:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php on line 5
+[07-Oct-2020 04:07:11 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php on line 5
+[07-Oct-2020 16:41:01 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php on line 5
+[10-Oct-2020 03:28:39 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php on line 5
+[10-Oct-2020 14:52:02 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/routes/admin/admin.php on line 5

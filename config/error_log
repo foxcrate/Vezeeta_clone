@@ -1,0 +1,848 @@
+[31-Jul-2020 22:06:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[31-Jul-2020 22:06:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[31-Jul-2020 22:06:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[31-Jul-2020 22:06:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[31-Jul-2020 22:06:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[31-Jul-2020 22:06:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[31-Jul-2020 22:06:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[31-Jul-2020 22:06:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[31-Jul-2020 22:06:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[31-Jul-2020 22:07:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[31-Jul-2020 22:07:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[31-Jul-2020 22:07:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[31-Jul-2020 22:07:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[31-Jul-2020 22:07:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:07:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:07:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:07:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[31-Jul-2020 22:07:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[31-Jul-2020 22:07:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[31-Jul-2020 22:07:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[31-Jul-2020 22:07:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[31-Jul-2020 22:07:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[31-Jul-2020 22:07:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[31-Jul-2020 22:07:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[31-Jul-2020 22:07:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:08:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:08:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:08:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:08:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:08:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:08:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:08:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:08:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:10:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:10:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:10:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:10:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Jul-2020 22:10:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[04-Aug-2020 23:54:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[04-Aug-2020 23:54:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[04-Aug-2020 23:54:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[04-Aug-2020 23:54:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[04-Aug-2020 23:54:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[04-Aug-2020 23:54:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[04-Aug-2020 23:54:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[04-Aug-2020 23:54:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[04-Aug-2020 23:54:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[04-Aug-2020 23:54:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[04-Aug-2020 23:54:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[04-Aug-2020 23:55:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[03-Sep-2020 12:53:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[04-Sep-2020 10:39:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[04-Sep-2020 12:35:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[04-Sep-2020 14:30:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[05-Sep-2020 14:13:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[06-Sep-2020 11:10:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php on line 18
+[06-Sep-2020 21:05:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[06-Sep-2020 23:35:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[07-Sep-2020 14:44:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[07-Sep-2020 15:52:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[07-Sep-2020 17:25:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[07-Sep-2020 18:36:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[07-Sep-2020 21:02:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[07-Sep-2020 23:03:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[08-Sep-2020 07:53:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[08-Sep-2020 08:55:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php on line 21
+[08-Sep-2020 17:04:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[08-Sep-2020 19:43:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[08-Sep-2020 20:33:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php on line 32
+[08-Sep-2020 22:38:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php on line 32
+[09-Sep-2020 13:16:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[09-Sep-2020 23:33:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[10-Sep-2020 01:43:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[10-Sep-2020 02:10:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[10-Sep-2020 10:32:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[10-Sep-2020 15:42:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[10-Sep-2020 15:48:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[10-Sep-2020 20:30:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[10-Sep-2020 21:15:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[10-Sep-2020 22:32:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[11-Sep-2020 00:52:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[11-Sep-2020 04:55:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[11-Sep-2020 10:40:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[11-Sep-2020 16:05:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php on line 18
+[11-Sep-2020 20:09:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[11-Sep-2020 21:32:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[11-Sep-2020 23:04:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[12-Sep-2020 08:43:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[12-Sep-2020 13:29:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php on line 21
+[12-Sep-2020 16:22:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[13-Sep-2020 05:55:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[14-Sep-2020 16:52:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[14-Sep-2020 22:39:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php on line 18
+[15-Sep-2020 01:25:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[15-Sep-2020 03:18:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[15-Sep-2020 04:50:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[15-Sep-2020 07:40:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[15-Sep-2020 16:17:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[15-Sep-2020 20:06:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php on line 21
+[15-Sep-2020 23:59:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[17-Sep-2020 04:43:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[17-Sep-2020 10:11:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[17-Sep-2020 10:20:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[17-Sep-2020 11:08:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[17-Sep-2020 18:07:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[19-Sep-2020 06:07:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php on line 18
+[20-Sep-2020 12:27:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[20-Sep-2020 14:38:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[21-Sep-2020 05:05:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php on line 21
+[21-Sep-2020 13:48:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[22-Sep-2020 07:56:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php on line 18
+[22-Sep-2020 18:17:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[22-Sep-2020 19:12:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[23-Sep-2020 13:09:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[24-Sep-2020 04:51:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php on line 21
+[24-Sep-2020 17:42:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php on line 32
+[25-Sep-2020 19:10:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[27-Sep-2020 02:10:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[27-Sep-2020 07:29:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php on line 18
+[27-Sep-2020 10:59:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[27-Sep-2020 11:01:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[27-Sep-2020 14:33:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php on line 32
+[27-Sep-2020 15:30:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[27-Sep-2020 16:29:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php on line 32
+[27-Sep-2020 23:13:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[28-Sep-2020 02:17:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php on line 21
+[28-Sep-2020 05:25:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[29-Sep-2020 01:07:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[29-Sep-2020 13:41:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[29-Sep-2020 15:27:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[29-Sep-2020 23:54:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[30-Sep-2020 05:47:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php on line 18
+[30-Sep-2020 08:54:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[30-Sep-2020 09:47:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[30-Sep-2020 11:45:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[30-Sep-2020 13:13:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[30-Sep-2020 22:06:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[01-Oct-2020 00:40:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php on line 21
+[01-Oct-2020 15:38:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[02-Oct-2020 04:35:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[02-Oct-2020 05:31:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[02-Oct-2020 10:07:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[02-Oct-2020 11:01:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[02-Oct-2020 12:32:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[02-Oct-2020 15:17:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[02-Oct-2020 17:14:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[03-Oct-2020 09:09:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[03-Oct-2020 10:38:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[04-Oct-2020 15:37:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[05-Oct-2020 04:50:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[05-Oct-2020 05:24:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[05-Oct-2020 08:19:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[05-Oct-2020 10:06:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[05-Oct-2020 10:23:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[05-Oct-2020 10:46:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[05-Oct-2020 12:47:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[05-Oct-2020 14:42:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[05-Oct-2020 17:06:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[06-Oct-2020 10:57:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[07-Oct-2020 15:09:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[09-Oct-2020 01:43:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php on line 21
+[09-Oct-2020 13:22:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php on line 32
+[09-Oct-2020 15:07:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/hashing.php on line 32
+[10-Oct-2020 04:29:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[10-Oct-2020 15:33:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[10-Oct-2020 17:45:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[10-Oct-2020 23:58:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[11-Oct-2020 05:58:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[11-Oct-2020 08:10:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[11-Oct-2020 08:50:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[11-Oct-2020 10:58:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[11-Oct-2020 11:00:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[11-Oct-2020 13:04:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[11-Oct-2020 14:41:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[11-Oct-2020 21:59:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[12-Oct-2020 00:06:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php on line 21
+[12-Oct-2020 07:06:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[12-Oct-2020 10:47:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[12-Oct-2020 13:17:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[13-Oct-2020 02:23:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[13-Oct-2020 02:58:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php on line 18
+[13-Oct-2020 13:18:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[14-Oct-2020 06:01:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[14-Oct-2020 07:23:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[14-Oct-2020 08:30:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[15-Oct-2020 01:30:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php on line 18
+[15-Oct-2020 04:44:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[17-Oct-2020 23:23:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[25-Oct-2020 05:34:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[25-Oct-2020 14:35:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[25-Oct-2020 20:22:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[26-Oct-2020 03:56:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[26-Oct-2020 05:42:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/session.php on line 21
+[26-Oct-2020 16:11:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[27-Oct-2020 09:39:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php:341
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/laravellocalization.php on line 341
+[27-Oct-2020 10:03:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php on line 18
+[27-Oct-2020 21:26:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[28-Oct-2020 05:01:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[28-Oct-2020 13:29:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[28-Oct-2020 13:58:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/services.php on line 18
+[28-Oct-2020 14:45:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/app.php on line 16
+[28-Oct-2020 15:51:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/jwt.php on line 28
+[28-Oct-2020 17:44:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[30-Oct-2020 20:25:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/filesystems.php on line 16
+[31-Oct-2020 08:55:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18
+[31-Oct-2020 14:07:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/mail.php on line 19
+[31-Oct-2020 16:09:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/cache.php on line 21
+[09-Nov-2020 22:00:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/queue.php on line 16
+[10-Nov-2020 10:27:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/logging.php on line 19
+[11-Nov-2020 03:44:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/database.php on line 18
+[12-Nov-2020 16:06:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/view.php on line 17
+[15-Nov-2020 08:05:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/config/broadcasting.php on line 18

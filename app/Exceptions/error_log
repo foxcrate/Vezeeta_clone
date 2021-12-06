@@ -1,0 +1,68 @@
+[31-Jul-2020 22:24:36 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[31-Jul-2020 22:24:36 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[31-Jul-2020 22:24:36 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[31-Jul-2020 22:25:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[31-Jul-2020 22:25:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[04-Aug-2020 23:53:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[04-Aug-2020 23:53:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[04-Aug-2020 23:53:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[04-Aug-2020 23:53:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[04-Aug-2020 23:53:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[04-Aug-2020 23:53:46 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[04-Aug-2020 23:53:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[16-Sep-2020 23:57:45 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[20-Sep-2020 03:10:45 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[29-Sep-2020 01:33:13 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[13-Oct-2020 22:02:41 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8
+[16-Oct-2020 18:16:35 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Exceptions/Handler.php on line 8

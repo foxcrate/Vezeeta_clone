@@ -1,0 +1,136 @@
+[31-Jul-2020 22:39:26 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php on line 10
+[31-Jul-2020 22:39:27 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php on line 10
+[31-Jul-2020 22:39:27 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php on line 10
+[31-Jul-2020 22:39:27 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php on line 10
+[31-Jul-2020 22:39:30 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[31-Jul-2020 22:39:31 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[31-Jul-2020 22:39:31 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[31-Jul-2020 22:39:32 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[31-Jul-2020 22:39:32 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[31-Jul-2020 22:39:32 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[31-Jul-2020 22:39:34 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php on line 10
+[31-Jul-2020 22:39:35 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[31-Jul-2020 22:39:39 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[31-Jul-2020 22:39:39 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php on line 10
+[31-Jul-2020 22:39:40 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php on line 10
+[31-Jul-2020 22:40:05 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[31-Jul-2020 22:40:05 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[04-Aug-2020 23:52:35 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[04-Aug-2020 23:52:35 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[04-Aug-2020 23:52:37 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[04-Aug-2020 23:52:37 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[04-Aug-2020 23:52:37 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[04-Aug-2020 23:52:38 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[04-Aug-2020 23:52:38 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[04-Aug-2020 23:52:39 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[04-Aug-2020 23:53:25 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[04-Aug-2020 23:53:26 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[23-Sep-2020 21:13:32 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php on line 10
+[24-Sep-2020 03:51:03 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[08-Oct-2020 18:08:13 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php on line 10
+[09-Oct-2020 00:59:32 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[11-Oct-2020 23:42:05 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12
+[23-Oct-2020 01:42:31 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/apiController.php on line 10
+[26-Oct-2020 05:34:12 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/API/userController.php on line 12

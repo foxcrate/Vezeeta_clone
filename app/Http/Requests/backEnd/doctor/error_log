@@ -1,0 +1,24 @@
+[31-Jul-2020 22:41:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php on line 7
+[31-Jul-2020 22:41:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php on line 7
+[31-Jul-2020 22:41:28 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php on line 7
+[31-Jul-2020 22:41:28 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php on line 7
+[31-Jul-2020 22:42:00 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php on line 7
+[31-Jul-2020 22:42:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\FormRequest' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Requests/backEnd/doctor/StoreDoctor.php on line 7

@@ -1,0 +1,16 @@
+[20-Sep-2020 21:08:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Notifications\Notification' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Notifications/PatientResetPasswordNotification.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Notifications/PatientResetPasswordNotification.php on line 10
+[23-Sep-2020 20:13:26 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Notifications\Notification' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Notifications/PatientResetPasswordNotification.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Notifications/PatientResetPasswordNotification.php on line 10
+[08-Oct-2020 17:28:28 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Notifications\Notification' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Notifications/PatientResetPasswordNotification.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Notifications/PatientResetPasswordNotification.php on line 10
+[11-Oct-2020 16:39:26 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Notifications\Notification' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Notifications/PatientResetPasswordNotification.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Notifications/PatientResetPasswordNotification.php on line 10

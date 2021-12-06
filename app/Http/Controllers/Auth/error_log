@@ -1,0 +1,260 @@
+[31-Jul-2020 22:39:28 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[31-Jul-2020 22:39:28 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[31-Jul-2020 22:39:28 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[31-Jul-2020 22:39:28 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[31-Jul-2020 22:39:29 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[31-Jul-2020 22:39:36 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[31-Jul-2020 22:39:36 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[31-Jul-2020 22:39:36 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[31-Jul-2020 22:39:37 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[31-Jul-2020 22:39:42 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[31-Jul-2020 22:39:42 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[31-Jul-2020 22:39:43 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[31-Jul-2020 22:39:47 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[31-Jul-2020 22:39:47 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[31-Jul-2020 22:39:48 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[31-Jul-2020 22:39:50 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[31-Jul-2020 22:39:50 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[31-Jul-2020 22:39:55 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[31-Jul-2020 22:39:56 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[31-Jul-2020 22:40:04 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[31-Jul-2020 22:40:11 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[31-Jul-2020 22:40:15 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[31-Jul-2020 22:40:23 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[04-Aug-2020 23:52:37 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[04-Aug-2020 23:52:37 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[04-Aug-2020 23:52:37 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[04-Aug-2020 23:52:38 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[04-Aug-2020 23:52:38 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[04-Aug-2020 23:52:38 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[04-Aug-2020 23:52:38 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[04-Aug-2020 23:52:38 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[04-Aug-2020 23:52:39 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[04-Aug-2020 23:52:39 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[04-Aug-2020 23:52:39 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[04-Aug-2020 23:52:39 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[04-Aug-2020 23:52:41 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[04-Aug-2020 23:52:41 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[04-Aug-2020 23:52:42 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[04-Aug-2020 23:52:42 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[04-Aug-2020 23:52:43 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[04-Aug-2020 23:52:43 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[04-Aug-2020 23:52:54 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[04-Aug-2020 23:52:55 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[04-Aug-2020 23:52:55 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[21-Sep-2020 16:05:31 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[23-Sep-2020 12:25:34 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[23-Sep-2020 20:52:33 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/VerificationController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/VerificationController.php on line 8
+[24-Sep-2020 04:04:16 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[24-Sep-2020 07:33:10 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[24-Sep-2020 16:18:04 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[26-Sep-2020 11:56:36 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[26-Sep-2020 20:47:34 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/VerificationController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/VerificationController.php on line 8
+[09-Oct-2020 04:19:24 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[09-Oct-2020 12:37:15 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[11-Oct-2020 08:08:06 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[11-Oct-2020 16:34:48 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/VerificationController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/VerificationController.php on line 8
+[11-Oct-2020 22:32:35 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[12-Oct-2020 02:14:25 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[12-Oct-2020 10:56:56 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[14-Oct-2020 05:24:14 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[14-Oct-2020 14:13:09 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/VerificationController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/VerificationController.php on line 8
+[23-Oct-2020 11:25:59 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/RegisterController.php on line 11
+[23-Oct-2020 20:05:43 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/LoginController.php on line 8
+[29-Oct-2020 03:40:46 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[01-Nov-2020 01:37:27 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Http/Controllers/Auth/ResetPasswordController.php on line 8

@@ -1,0 +1,68 @@
+[31-Jul-2020 22:24:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[31-Jul-2020 22:24:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[31-Jul-2020 22:24:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[31-Jul-2020 22:24:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[31-Jul-2020 22:25:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[31-Jul-2020 22:25:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[04-Aug-2020 23:53:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[04-Aug-2020 23:53:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[04-Aug-2020 23:53:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[04-Aug-2020 23:53:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[04-Aug-2020 23:53:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[04-Aug-2020 23:53:25 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[04-Aug-2020 23:53:27 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[18-Sep-2020 14:55:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[09-Oct-2020 15:16:07 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[12-Oct-2020 13:16:14 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8
+[29-Oct-2020 18:17:32 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Console/Kernel.php on line 8

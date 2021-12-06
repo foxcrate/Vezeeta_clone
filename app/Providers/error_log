@@ -1,0 +1,140 @@
+[16-Sep-2020 16:38:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php on line 8
+[17-Sep-2020 21:27:53 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php on line 8
+[18-Sep-2020 15:42:58 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\EventServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php on line 10
+[18-Sep-2020 22:04:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\RouteServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php on line 8
+[19-Sep-2020 21:30:50 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php on line 8
+[20-Sep-2020 09:16:52 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\AuthServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php on line 8
+[21-Sep-2020 00:14:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php on line 8
+[22-Sep-2020 01:28:23 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\RouteServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php on line 8
+[27-Sep-2020 10:48:27 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php on line 8
+[27-Sep-2020 23:39:03 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\EventServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php on line 10
+[28-Sep-2020 20:09:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php on line 8
+[29-Sep-2020 16:37:31 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\RouteServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php on line 8
+[30-Sep-2020 06:35:39 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\AuthServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php on line 8
+[30-Sep-2020 08:47:17 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php on line 8
+[30-Sep-2020 11:32:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php on line 8
+[30-Sep-2020 14:58:48 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\EventServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php on line 10
+[02-Oct-2020 15:36:32 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\RouteServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php on line 8
+[03-Oct-2020 05:38:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\AuthServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php on line 8
+[03-Oct-2020 10:03:53 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php on line 8
+[03-Oct-2020 14:49:49 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\EventServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php on line 10
+[05-Oct-2020 06:13:57 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\AuthServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php on line 8
+[06-Oct-2020 20:07:04 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\RouteServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php on line 8
+[08-Oct-2020 22:09:25 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php on line 8
+[09-Oct-2020 21:16:57 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\RouteServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php on line 8
+[15-Oct-2020 04:37:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php on line 8
+[16-Oct-2020 12:42:05 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php on line 8
+[18-Oct-2020 00:01:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/BroadcastServiceProvider.php on line 8
+[19-Oct-2020 19:45:30 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\AuthServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php on line 8
+[20-Oct-2020 18:19:48 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\AuthServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AuthServiceProvider.php on line 8
+[20-Oct-2020 22:14:45 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/AppServiceProvider.php on line 8
+[21-Oct-2020 02:14:52 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\EventServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php on line 10
+[23-Oct-2020 23:10:01 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\EventServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php on line 10
+[01-Nov-2020 23:22:09 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\EventServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php on line 10
+[03-Nov-2020 16:53:30 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\RouteServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/RouteServiceProvider.php on line 8
+[04-Nov-2020 21:43:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\EventServiceProvider' not found in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/pnvhv76gh2fj/public_html/Phistory/app/Providers/EventServiceProvider.php on line 10
