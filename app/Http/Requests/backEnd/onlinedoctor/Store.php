@@ -24,7 +24,7 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'max:3072|required',
+            'image' => 'image|max:3072|required',
             'name'  => 'required',
             'phoneNumber' => 'required|unique:online_doctors|numeric',
             'countryCode'       => 'required',
@@ -33,11 +33,11 @@ class Store extends FormRequest
             'password_confirmation'=>'required|sometimes|required_with:password',
             'speciality_id'    => 'required',
             'degree'    => 'required',
-            'degree_image'    => 'max:2048|required',
-            'license_image'    => 'max:2048|required',
+            'degree_image'    => 'image|max:2048|required',
+            'license_image'    => 'image|max:2048|required',
             'information'   => 'required',
-            'national_id_front_side'    => 'max:2048|required',
-            'national_id_back_side'     => 'max:2048|required',
+            'national_id_front_side'    => 'image|max:2048|required',
+            'national_id_back_side'     => 'image|max:2048|required',
             'license_number'               => 'required|numeric',
             'branch'                    => '',
             'Nationality'               => 'required',

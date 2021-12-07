@@ -41,7 +41,7 @@ class onlineDoctorController extends Controller
         }
     }
     /* function register */
-    public function postRegister(Request $request){
+    public function postRegister(Store $request){
         //return "Alo";
         try{
             // return $request;
