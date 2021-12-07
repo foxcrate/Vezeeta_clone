@@ -320,7 +320,7 @@
                         @php
                         $allergis =$patient->patinets_data->allergi_data;
                         @endphp
-                        @if($allergis === null)
+                        @if( !$allergis == null)
                             <p></p>
                             @else
                             @foreach( $allergis as $array)
