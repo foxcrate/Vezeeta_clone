@@ -1,45 +1,57 @@
 @extends('backEnd.layoutes.mastar')
 @section('title','Show Doctor Result')
 @section('content')
-<div class="d-flex bg-page" id="wrapper">
-    <!-- Sidebar -->
-    @include('backEnd.clinic.slidenav')
-    <div id="page-content-wrapper">
-        <nav class="navbarp navbar-top navbar-expand navbar-dark border-bottom">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Navbar links -->
-                    <button class="btn btn-primary d-lg-none ml-2" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
-                    <ul class="navbar-nav align-items-center ml-md-auto">
+    <div class="d-flex bg-page" id="wrapper">
+        <!-- Sidebar -->
+        @include('backEnd.clinic.slidenav')
+        <div id="page-content-wrapper">
+            <nav class="navbarp navbar-top navbar-expand navbar-dark border-bottom">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Navbar links -->
+                        <button class="btn btn-primary d-lg-none ml-2" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                        <ul class="navbar-nav align-items-center ml-md-auto">
 
-                    </ul>
-                    <ul class="navbar-nav align-items-center ml-auto ml-md-0 ">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="media align-items-center">
-                                    <span class="avatar avatar-sm rounded-circle">
-                                        @if(!$clinic->image)
-                                        <img alt="Image placeholder" src="{{ asset('uploads/default.png') }}">
-                                        @else
-                                        <img alt="Image placeholder" src="{{ $clinic->image }}">
-                                        @endif
+                        </ul>
+                        <ul class="navbar-nav align-items-center ml-auto ml-md-0 ">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="media align-items-center">
+                                        <span class="avatar avatar-sm rounded-circle">
+                                            @if(!$clinic->image)
+                                            <img alt="Image placeholder" src="{{ asset('uploads/default.png') }}">
+                                            @else
+                                            <img alt="Image placeholder" src="{{ $clinic->image }}">
+                                            @endif
 
-                                    </span>
-                                    <div class="media-body ml-3 mr-3 d-lg-block">
-                                        <h6 class="mb-0 font-weight-bold text-white">{{$clinic->clinicName}}</h6>
+                                        </span>
+                                        <div class="media-body ml-3 mr-3 d-lg-block">
+                                            <h6 class="mb-0 font-weight-bold text-white">{{$clinic->clinicName}}</h6>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
+        {{-- <h1>Alo</h1> --}}
+
     </div>
-</div>
-@if($doctors)
-    @foreach($doctors as $doctor)
-        <div class="col-md-6 ml-auto mr-auto mb-4 pharmacy_item" data-lat="{{$doctor->latitude}}" data-lng="{{$doctor->longitude}}" data-distance=".distance_{{$doctor->id}}">
+    {{-- <h1>alo</h1> --}}
+    @if(Session::has('error'))
+        <div class="container mt-2 alert alert-danger" role="alert">
+            {{ Session::get('error') }}
+          </div>
+        @endif
+
+    @if($doctors)
+
+        @foreach($doctors as $doctor)
+           {{-- <h1>alo</h1> --}}
+           {{-- <div class="col-md-6 ml-auto mr-auto mb-4 pharmacy_item" data-lat="{{$doctor->latitude}}" data-lng="{{$doctor->longitude}}" data-distance=".distance_{{$doctor->id}}"> --}}
+            <div class="col-md-6 ml-auto mr-auto mb-4 pharmacy_item">
             <div class="card-finder mt-3 mb-3">
                 <div class="row mr-auto ml-auto">
                     <div class="col-lg-10">
@@ -67,20 +79,21 @@
                             <input type="hidden" name="doctor_lan" value="{{ $doctor->longitude }}">
                             <input type="hidden" name="doctor_image" value="{{ $doctor->image }}">
                             <input type="hidden" name="clinic_id" value="{{ $clinic->id }}">
-                            @php
-                                $doc  = \App\models\hospitalAppointment::where('clinic_id ',$clinic->id)->first();
-                            @endphp
+
                             @if(!$doc)
                                 <button class="btn btn-primary"type="submit">Add Doctor</button>
                             @endif
+
+
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    @endforeach
+        @endforeach
 
-@endif
+    @endif
 
-
+    {{-- <h2>alo</h2> --}}
 @stop
+

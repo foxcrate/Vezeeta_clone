@@ -25,6 +25,7 @@ Route::get('/', function () {
     return redirect()->route('indexRoute');
     // return redirect()->route('indexRoute');
 });
+Route::get('/test','TestController@test');
 
 Auth::routes(['verify'=>true]);
 

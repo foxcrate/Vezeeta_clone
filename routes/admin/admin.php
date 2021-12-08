@@ -231,7 +231,12 @@ Route::group(
             Route::post("clinic/{id}/add/result/child/rays",'clinicController@clinic_child_add_Result_rays')->name('clinic_child_add_Result_rays');
             Route::post("clinic/{id}/add/result/child/test",'clinicController@clinic_child_addResult_analzes')->name('clinic_child_add_Result_test');
 //            Route::DELETE('/clinic/{id}/delete/doctor/{doctor_id}','clinicController@clinic_delete_doctor')->name('clinic_delete_doctor');
+
             Route::get('/clinic/{id}/login/doctor','clinicController@loginDoctor')->name('clinic_login_doctor');
+            // Route::get('/clinic/{id}/login/doctor', function () {
+            //     return "Alo";
+            // })->name('clinic_login_doctor');
+
             Route::post('/clinic/{id}/login/doctor','clinicController@postDoctor')->name('clinic_post_doctor');
             Route::post('clinic/add/patient','clinicController@clinic_add_patien')->name('clinic_add_patien');
             Route::post('/clinic/{id}/add/branch','branchController@clinic_add_branch')->name('clinic_add_branch');
@@ -373,7 +378,7 @@ Route::group(
             Route::get('/labs/{id}/branch','labsController@labs_branch')->name('labs_branch');
             Route::post('labs/{id}/login/branch','labsController@labs_login_branch')->name('labs_login_branch');
             Route::get('labs/{id}/branch/{branch_id}','labsController@labs_getAsBranch')->name('labs_getAsBranch');
-            // bracnh routes // 
+            // bracnh routes //
             /* labs routes */
             /* pharmacy routes */
             Route::get('/pharmacy/register','pharmacyController@register')->name('pharmacyRegister');
