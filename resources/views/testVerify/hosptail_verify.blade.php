@@ -95,7 +95,7 @@ function phoneAuth(){
                         var code = document.getElementById('verify-code').value;
                         confirmationResult.confirm(code).then(function(result){
                             console.log('success register');
-                            window.location = $("#config_app").text()+"Phistory/public/verficationCode/hosptail/" + $("#hos_id").text();
+                            window.location = {!! json_encode( config('app.url') ) !!}+"/public/verficationCode/hosptail/" + $("#hos_id").text();
                             //window.location = "https://phistory.life/Phistory/public/verficationCode/hosptail/" + $("#hos_id").text();
 
                             var user = result.user;
