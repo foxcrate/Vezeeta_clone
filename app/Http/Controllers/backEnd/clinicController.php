@@ -497,6 +497,7 @@ class clinicController extends Controller
     }
     /* clinic add test access [xray] */
     public function loginDoctor($id){
+        //return "Alo";
         $clinic = Clinic::with('doctors')->findOrFail($id);
         return view('backEnd.clinic.doctor.login',compact('clinic'));
     }
@@ -641,28 +642,52 @@ class clinicController extends Controller
         // function homepage
 
         public function clinicFindDoctor($id,Request $request){
+            //return $request ;
             try{
                 $clinic = Clinic::findOrFail($id);
-                $doctors = OnlineDoctor::where('name',$request->doctorName)
-                ->orwhere('speciality',$request->doctorName)
+                $doctors = OnlineDoctor::where('name','like','%'.$request->doctorName.'%')
+                ->orwhere('speciality','like','%'.$request->doctorName.'%')
                 ->count();
+
                 if(!$doctors){
                     Alert::error('Error Message','Doctor Not Found');
                     return redirect()->back();
                 }
-                $doctors = OnlineDoctor::where('name',$request->doctorName)
-                ->orwhere('speciality',$request->doctorName)
+                $doctors = OnlineDoctor::where('name','like','%'.$request->doctorName.'%')
+                ->orwhere('speciality','like','%'.$request->doctorName.'%')
                 ->get();
-                return view('backEnd.clinic.doctor.showResultDoctor',compact('clinic','doctors'));
+                //return $doctors;
+                //$doctors = OnlineDoctor::all();
+                $doc  = HospitalAppointment::where('clinic_id',$id)->first();
+
+                return view('backEnd.clinic.doctor.showResultDoctor',compact('clinic','doctors','doc'));
+
             }catch(\Exception $ex){
-                return redirect()->back()->with(['error' => 'problem']);
+                //return $ex->getMessage() ;
+                return redirect()->back()->with(['error' => 'Serve Problem']);
+
             }
 
         }
-
-        public function appointmentsDoctor(clinicAppointmentsDoctor $request){
+        //clinicAppointmentsDoctor
+        public function appointmentsDoctor(Request $request){
+            //return $request;
             try{
-                Alert::success('success Message','Doctor Added Successfuly');
+
+                $this->validate($request, [
+                    'doctor_id'     => 'integer|required|exists:online_doctors,id',
+                    'doctor_name'   => 'required|string',
+                    //'doctor_address'    => 'required',
+                    'doctor_idCode'     => 'required|exists:online_doctors,idCode',
+                    'doctor_phoneNumber'=> 'required|exists:online_doctors,phoneNumber',
+                    'doctor_special'    => 'required|string|exists:doctor_specailties,name',
+                    //'doctor_lat'        => 'required',
+                    //'doctor_lan'        => 'required',
+                    'doctor_image'      => 'required',
+                    'clinic_id'         =>'required|exists:clinics,id'
+                ]);
+
+                //Alert::success('success Message','Doctor Added Successfuly');
                 $appoientHosptailDoctor = hospitalAppointment::create([
                     'doctor_name'   => $request->doctor_name,
                     'address'       => $request->doctor_address,
@@ -675,9 +700,12 @@ class clinicController extends Controller
                     'doctor_id'     => $request->doctor_id,
                     'clinic_id'   => $request->clinic_id
                 ]);
+                //return $appoientHosptailDoctor;
                 return redirect()->back()->with(['success' => 'Doctor Added Successfuly']);
             }catch(\Exception $ex){
-                return redirect()->back()->with(['error' => 'Problem']);
+                //return "Alo";
+                //return $ex->getMessage() ;
+                return redirect()->back()->with(['error' => 'Not Enough Data']);
             }
         }
 

@@ -59,6 +59,11 @@ class clinicController extends Controller
             ]);
         }
     }
+
+    // public function loginDoctor(){
+    //     return "Alo";
+    // }
+
     public function uploadImage(Request $request) {
         $hospitalRequest = $request -> image;
         $image = $request -> file('image');
