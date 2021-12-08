@@ -18,7 +18,7 @@
                 <div id="recaptcha-container" class="mt-3 mb-3"></div>
                 <button class="btn btn-success mb-3 mt-3 text-center text-weight-bold" onclick="phoneAuth();">Send Mobile</button>
             </div>
-            
+
             <p style="display:none" class="mt-3 alert alert-success suc-Reg">Success Reigster <a  id="doctor_id" href="{{route('doctor_hosptail_verifcationCode',[$doctor->id,$hosptail->id])}}">{{$doctor['id']}}</a></p>
             <p id = "hosptail_id" style="display:none">{{$hosptail->id}}</p>
             <div class="row">
@@ -84,7 +84,8 @@ function phoneAuth(){
                         var code = document.getElementById('verify-code').value;
                         confirmationResult.confirm(code).then(function(result){
                             console.log('success register');
-                            window.location = "https://localhost/paientHistory/public/verficationCode/doctor/" + $("#doctor_id").text() + '/' +'hosptail/' + $("#hosptail_id").text();
+                            //window.location = "https://localhost/paientHistory/public/verficationCode/doctor/" + $("#doctor_id").text() + '/' +'hosptail/' + $("#hosptail_id").text();
+                            window.location = {!! json_encode( config('app.url') ) !!} + "/public/verficationCode/doctor/" + $("#doctor_id").text() + '/' +'hosptail/' + $("#hosptail_id").text();
                             //window.location = "https://localhost/paientHistory/public/verficationCode/online_doctor/" + $("#online_doctor_id").text();
                             var user = result.user;
                             console.log(user);

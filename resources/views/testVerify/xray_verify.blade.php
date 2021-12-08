@@ -87,7 +87,7 @@ function phoneAuth(){
                         var code = document.getElementById('verify-code').value;
                         confirmationResult.confirm(code).then(function(result){
                             console.log('success register');
-                             window.location = $("#config_app").text()+"Phistory/public/verficationCode/xray/" + $("#xray_id").text();
+                             window.location = $("#config_app").text()+"/public/verficationCode/xray/" + $("#xray_id").text();
                             var user = result.user;
                             console.log(user);
                         }).catch(function(error){

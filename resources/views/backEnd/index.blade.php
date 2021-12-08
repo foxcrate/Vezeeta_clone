@@ -5,6 +5,7 @@
     @include('backEnd.layoutes.navbar')
     <!-- navbarfile -->
     <!--Start-Content-->
+
       <div id="carouselExampleControls" class="carousel mt-5" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -76,6 +77,7 @@
         </div>
       <!--End-content-->
       <!--Start-Login-->
+      {{-- <h1>{{ config('app.url') }}</h1> --}}
     <section class="bg-login text-center col-md-10" Style="margin-bottom:50px;">
          <!-- form login -->
          @if(session('msg'))
@@ -91,7 +93,10 @@
                 <div class="col-lg-12 patein-radio">
                     <label class="m-2" onclick="displaySong()">
                     <input id = "patien" type="radio" name="guard" value="patien"/><div class="box patein-radio" checked >
-                            <script>function displaySong() {
+                            <script>
+                                //alert("Alo");
+                                //alert( {!! json_encode( config('app.url') ) !!} );
+                            function displaySong() {
                                     var textField = $('#name');
                                     textField.val('P')
                                 }

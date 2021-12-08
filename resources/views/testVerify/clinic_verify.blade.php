@@ -3,6 +3,7 @@
 @section('content')
 @include('backEnd.layoutes.navbar')
 <!-- container -->
+
 <div class="back-ground" style="padding-top:50px;">
     <div class="container row no-gutters bg-message card ml-auto mr-auto" style="flex-direction: row; margin-top:120px; margin-bottom:110px;">
         <div class="col-lg-5 order-lg-1 mt-5 text-center">
@@ -97,7 +98,7 @@ function phoneAuth(){
                         confirmationResult.confirm(code).then(function(result){
                             console.log('success register');
                             //window.location = "https://phistory.life/Phistory/public/verficationCode/clinic/" + $("#clin_id").text();
-                             window.location = $("#config_app").text()+"Phistory/public/verficationCode/clinic/" + $("#clin_id").text();
+                             window.location = $("#config_app").text()+"/public/verficationCode/clinic/" + $("#clin_id").text();
                             // window.location = "https://phistory.life/Phistory/public/verficationCode/clinic/" + $("#lab_id").text();
                             var user = result.user;
                             console.log(user);

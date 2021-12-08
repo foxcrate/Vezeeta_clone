@@ -91,7 +91,7 @@ function phoneAuth(){
                         confirmationResult.confirm(code).then(function(result){
                             console.log('success register');
                             //window.location = "https://phistory.life/Phistory/public/verficationCode/labs/" + $("#lab_id").text();
-                             window.location = $("#config_app").text()+"Phistory/public/verficationCode/labs/" + $("#lab_id").text();
+                             window.location = $("#config_app").text()+"/public/verficationCode/labs/" + $("#lab_id").text();
                             var user = result.user;
                             console.log(user);
                         }).catch(function(error){

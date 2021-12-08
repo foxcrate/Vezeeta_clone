@@ -89,7 +89,7 @@ function phoneAuth(){
             var code = document.getElementById('verify-code').value;
             confirmationResult.confirm(code).then(function(result){
                 console.log('success register');
-                    window.location = $("#config_app").text()+"Phistory/public/edit/verficationCode/" + $(".p_id").text();
+                    window.location = $("#config_app").text()+"/public/edit/verficationCode/" + $(".p_id").text();
                 //window.location = "https://phistory.life/Phistory/public/verficationCode/" + $(".suc-Reg").text();
                 var user = result.user;
                 console.log(user);
