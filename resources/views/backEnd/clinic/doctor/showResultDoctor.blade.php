@@ -50,8 +50,8 @@
 
         @foreach($doctors as $doctor)
            {{-- <h1>alo</h1> --}}
-           {{-- <div class="col-md-6 ml-auto mr-auto mb-4 pharmacy_item" data-lat="{{$doctor->latitude}}" data-lng="{{$doctor->longitude}}" data-distance=".distance_{{$doctor->id}}"> --}}
-            <div class="col-md-6 ml-auto mr-auto mb-4 pharmacy_item">
+           <div class="col-md-6 ml-auto mr-auto mb-4 pharmacy_item" data-lat="{{$doctor->latitude}}" data-lng="{{$doctor->longitude}}" data-distance=".distance_{{$doctor->id}}">
+            <!--<div class="col-md-6 ml-auto mr-auto mb-4 pharmacy_item">-->
             <div class="card-finder mt-3 mb-3">
                 <div class="row mr-auto ml-auto">
                     <div class="col-lg-10">
