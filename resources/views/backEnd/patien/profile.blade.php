@@ -318,9 +318,10 @@
                     <div class="tab-pane animated bounce slow py-0" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
                         <h5 class="col-12 mb-4 mt-3 ml-5">Allergies</h5>
                         @php
-                        $allergis =$patient->patinets_data->allergi_data;
+                            $allergis =$patient->patinets_data->allergi_data;
                         @endphp
-                        @if( !$allergis == null)
+
+                        @if( $allergis == null)
                             <p></p>
                             @else
                             @foreach( $allergis as $array)
