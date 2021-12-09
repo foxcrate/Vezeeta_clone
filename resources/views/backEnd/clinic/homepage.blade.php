@@ -1,5 +1,5 @@
 @extends('backEnd.layoutes.mastar')
-@section('title','patient homepage')
+@section('title','Clinic Homepage')
 @section('content')
 <!--start-Navbar-->
 @include('backEnd.layoutes.navbar')

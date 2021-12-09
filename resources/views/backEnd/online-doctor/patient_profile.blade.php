@@ -520,7 +520,8 @@
                                             <input required list="brow" class="select_custom1 form-control" name="medication[0][name]">
                                             <datalist id="brow">
                                                 <option hidden>Choose</option>
-                                                @foreach(\App\models\Medication2::get() as $m)
+                                                {{-- @foreach(\App\models\Medication2::get() as $m) --}}
+                                                @foreach($meds as $m)
                                                     <option value="{{ $m->name }}">{{ $m->name }}</option>
                                                 @endforeach
                                             </datalist>

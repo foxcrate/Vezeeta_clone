@@ -45,6 +45,7 @@ class clinicController extends Controller
         return view('backEnd.clinic.register',compact('clinic'));
     }
     public function postRegister(Store $request){
+        //return $request;
         // try{
             $request_data = $request->all();
         /* upload img */
@@ -89,7 +90,7 @@ class clinicController extends Controller
         if(!$clinicPhone){
             return redirect()->route('clinic_verify');
         }
-        return redirect()->back()->withInput($request->input())->with(['phoneMsg'=> 'phoneNumber is Exists!']);
+        return redirect()->back()->withInput($request->input())->with(['error'=> 'Phone Number is Exists!']);
 
         // return redirct //
         // }

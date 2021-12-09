@@ -53,7 +53,7 @@ class onlineDoctorController extends Controller
             //     })->save(public_path('uploads/' . $request->image->hashName()));
             //     $onlineDoctorRequest['image'] = asset('uploads/' . $request->image->hashName());
             // }
-            
+
             if($request->image){
                 $hospitalRequest = $request->image;
                 $image = $request->file('image');
@@ -61,9 +61,9 @@ class onlineDoctorController extends Controller
                 $destinationPath = public_path('uploads/');
                 $image->move($destinationPath, $input);
                 $onlineDoctorRequest['image'] = asset('uploads/' . $input);
-                
+
             }
-            
+
             // national id front image
             // if($request->national_id_front_side){
             //     $national_id_front = Image::make($request->national_id_front_side)
@@ -72,7 +72,7 @@ class onlineDoctorController extends Controller
             //         })->save(public_path('uploads/' . $request->national_id_front_side->hashName()));
             //     $onlineDoctorRequest['national_id_front_side'] = asset('uploads/' . $request->national_id_front_side->hashName());
             // }
-            
+
              if($request->national_id_front_side){
                 $hospitalRequest = $request->national_id_front_side;
                 $image = $request->file('national_id_front_side');
@@ -80,9 +80,9 @@ class onlineDoctorController extends Controller
                 $destinationPath = public_path('uploads/');
                 $image->move($destinationPath, $input);
                 $onlineDoctorRequest['national_id_front_side'] = asset('uploads/' . $input);
-                
+
             }
-            
+
             // national id back image
             // if($request->national_id_back_side){
             //     $national_id_back_side = Image::make($request->national_id_back_side)
@@ -91,7 +91,7 @@ class onlineDoctorController extends Controller
             //         })->save(public_path('uploads/' . $request->national_id_back_side->hashName()));
             //     $onlineDoctorRequest['national_id_back_side'] = asset('uploads/' . $request->national_id_back_side->hashName());
             // }
-            
+
             if($request->national_id_back_side){
                 $hospitalRequest = $request->national_id_back_side;
                 $image = $request->file('national_id_back_side');
@@ -99,9 +99,9 @@ class onlineDoctorController extends Controller
                 $destinationPath = public_path('uploads/');
                 $image->move($destinationPath, $input);
                 $onlineDoctorRequest['national_id_back_side'] = asset('uploads/' . $input);
-                
+
             }
-            
+
             // degree image
             // if($request->degree_image){
             //     $degree_image = Image::make($request->degree_image)
@@ -110,7 +110,7 @@ class onlineDoctorController extends Controller
             //         })->save(public_path('uploads/' . $request->degree_image->hashName()));
             //     $onlineDoctorRequest['degree_image'] = $request->degree_image->hashName();
             // }
-            
+
               if($request->degree_image){
                 $hospitalRequest = $request->degree_image;
                 $image = $request->file('degree_image');
@@ -118,9 +118,9 @@ class onlineDoctorController extends Controller
                 $destinationPath = public_path('uploads/');
                 $image->move($destinationPath, $input);
                 $onlineDoctorRequest['degree_image'] = asset('uploads/' . $input);
-                
+
             }
-            
+
             // license_image
             // if($request->license_image){
             //     $license_image = Image::make($request->license_image)
@@ -129,7 +129,7 @@ class onlineDoctorController extends Controller
             //         })->save(public_path('uploads/' . $request->license_image->hashName()));
             //     $onlineDoctorRequest['license_image'] = $request->license_image->hashName();
             // }
-            
+
             if($request->license_image){
                 $hospitalRequest = $request->license_image;
                 $image = $request->file('license_image');
@@ -137,8 +137,8 @@ class onlineDoctorController extends Controller
                 $destinationPath = public_path('uploads/');
                 $image->move($destinationPath, $input);
                 $onlineDoctorRequest['license_image'] = asset('uploads/' . $input);
-            }          
-            
+            }
+
             $onlineDoctorRequest['password'] = bcrypt($request->password);
             if($request->phoneNumber[0] == '0'){
                 $onlineDoctorRequest['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
@@ -486,6 +486,7 @@ class onlineDoctorController extends Controller
 
     }
     public function post_searchPatient($id,Request $request){
+        //return $request;
         try{
             $online_doctor = OnlineDoctor::findOrFail($id);
             $analyzes = analyzes::get();

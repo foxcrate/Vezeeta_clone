@@ -697,7 +697,10 @@ class medicationSeeder extends Seeder
         }
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d2da8ddf7da7bca1551eeda1511f11339d03fd0b
 
 
 
@@ -15000,6 +15003,10 @@ class medicationSeeder extends Seeder
 // SYCOCETAM 100MG/ML ORAL SOLN. 120 ML
 // SYCOCETAM 500 MG 20 F.C. TABS.
 // SYCOSAPINE 10 MG 10 SUBLINGUAL TABS.
+<<<<<<< HEAD
+=======
+
+>>>>>>> d2da8ddf7da7bca1551eeda1511f11339d03fd0b
 // 'SYLE 5 GM 10 SACHETS'
 // 'SYLE 5 GM 30 SACHETS'
 // 'SYLOVINA 20 SACHETS'

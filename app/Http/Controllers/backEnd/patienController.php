@@ -54,7 +54,7 @@ class patienController extends Controller
                 $destinationPath = public_path('uploads/');
                 $image->move($destinationPath, $input);
                 $request_data['image'] = asset('uploads/' . $input);
-                
+
             }
             /* secure password */
             $request_data['password'] = bcrypt($request->password);
