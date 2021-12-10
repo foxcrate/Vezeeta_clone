@@ -8,9 +8,22 @@
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-10">
-                        {{--@foreach($errors->all() as $error)--}}
-                        {{--<div class="aler alert-danger">{{$error}}</div>--}}
-                        {{--@endforeach--}}
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if(session()->has('error'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('error') }}
+                            </div>
+                        @endif
+
                         <form enctype="multipart/form-data" role="form" action="{{route('clinic_post_Register')}}" method="POST" class="login-box">
                             {{ csrf_field() }}
                             <input type="hidden" name="idCode">

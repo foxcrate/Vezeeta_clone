@@ -95,6 +95,7 @@ class backEndController extends Controller
     /* end of function */
     /* function post forgot password */
     public function post_forgot_password(Request $request){
+        //return $request;
         $patient = DB::table('patiens')->where('IdCode','LIKE','%' . $request->code. '%')->first();
         $hosptail = DB::table('hosptails')->where('IdCode','LIKE','%' . $request->code. '%')->first();
         $clinic = DB::table('clinics')->where('IdCode', 'LIKE','%' . $request->code. '%')->first();

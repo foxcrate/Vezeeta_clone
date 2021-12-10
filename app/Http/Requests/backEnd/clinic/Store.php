@@ -16,6 +16,11 @@ class Store extends FormRequest
         return true;
     }
 
+    public function __construct()
+    {
+        return "Alo";
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -23,13 +28,23 @@ class Store extends FormRequest
      */
     public function rules()
     {
+        // $this->set( 'phoneNumber' , "Alo" )  ;
+        // dd( $this->get('phoneNumber') );
+        //$x = $this->countryCode.$this->phoneNumber;
+        // if($this->phoneNumber[0] == '0'){
+        //     $x =  $this->countryCode . substr($this->phoneNumber,1);
+        // }else{
+        //      $x = $this->countryCode . $this->phoneNumber;
+        // }
+        // dd( $x);
+
         return [
             'image' => 'image|max:20000',
             'clinicName' => 'required',
             'Primary_Speciality'=> 'required',
             'Medical_License_Number'  => 'required|numeric',
             'Clinic_License' => 'required|image|max:1024',
-            'phoneNumber'   => 'required|unique:clinics|numeric',
+            'phoneNumber'   => 'required|unique:clinics',
             'idCode'        => 'unique:clinics',
             'countryCode'       => 'required',
             'telephone'     => 'numeric',

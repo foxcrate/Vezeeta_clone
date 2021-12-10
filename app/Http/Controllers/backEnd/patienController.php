@@ -54,7 +54,7 @@ class patienController extends Controller
                 $destinationPath = public_path('uploads/');
                 $image->move($destinationPath, $input);
                 $request_data['image'] = asset('uploads/' . $input);
-                
+
             }
             /* secure password */
             $request_data['password'] = bcrypt($request->password);
@@ -221,7 +221,7 @@ class patienController extends Controller
 
         // $data2['online'] = 1;
         $patienData->update($data2);
-        alert::image('','','https://phistory.life/Phistory/public/imgs/alert/done.png');
+        alert::image('','','https://phistory.life/public/imgs/alert/done.png');
         return redirect()->route("patien-profile",$data2['patient_id']);
 
         // catch(\Exception $ex){
