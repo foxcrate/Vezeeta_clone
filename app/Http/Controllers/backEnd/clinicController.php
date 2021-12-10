@@ -44,7 +44,8 @@ class clinicController extends Controller
         $clinic = $request->session()->get('clinic');
         return view('backEnd.clinic.register',compact('clinic'));
     }
-    public function postRegister(Store $request){
+    public function postRegister1(Request $request){
+        //return "Alo";
         // try{
             $request_data = $request->all();
         /* upload img */

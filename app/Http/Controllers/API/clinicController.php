@@ -13,7 +13,8 @@ use Intervention\Image\Facades\Image;
 use Auth;
 class clinicController extends Controller
 {
-    public function register(Request $request) {
+    public function register1(Request $request) {
+        //return "Alo";
         $hospitalRequest = $request -> all();
         $validator = Validator::make($hospitalRequest, [
             'image' => 'max:20000',
