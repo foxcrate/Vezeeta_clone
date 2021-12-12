@@ -5,7 +5,6 @@
     @include('backEnd.layoutes.navbar')
     <!-- navbarfile -->
     <!--Start-Content-->
-
       <div id="carouselExampleControls" class="carousel mt-5" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -77,7 +76,6 @@
         </div>
       <!--End-content-->
       <!--Start-Login-->
-      {{-- <h1>{{ config('app.url') }}</h1> --}}
     <section class="bg-login text-center col-md-10" Style="margin-bottom:50px;">
          <!-- form login -->
          @if(session('msg'))
@@ -93,10 +91,7 @@
                 <div class="col-lg-12 patein-radio">
                     <label class="m-2" onclick="displaySong()">
                     <input id = "patien" type="radio" name="guard" value="patien"/><div class="box patein-radio" checked >
-                            <script>
-                                //alert("Alo");
-                                //alert( {!! json_encode( config('app.url') ) !!} );
-                            function displaySong() {
+                            <script>function displaySong() {
                                     var textField = $('#name');
                                     textField.val('P')
                                 }
@@ -195,11 +190,11 @@
             <p id="config_app" class="d-none">{{ config('app.url') }}</p>
             <div class="col-md-6 form">
                 <p class="group">
-                <input  id="name" type="text" required name="IdCode" class="idCode" style="text-transform:capitalize">
+                    <input  id="name" type="text" required name="IdCode" class="idCode" style="text-transform:capitalize" placeholder="ID" />
                 <label for="name">ID</label>
                 </p>
                 <p class="group" id="show_hide_password">
-                <input id="Password" type="password" required name="password">
+                <input id="Password" type="password" required name="password" placeholder="Password">
                 <a id="show_hide_password" href=""class="field-icon"><i class="fa fa-eye-slash field-icon" aria-hidden="true"></i></a>
                 <label for="name">Password</label>
                 </p><br/>

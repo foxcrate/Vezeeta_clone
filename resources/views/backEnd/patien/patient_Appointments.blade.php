@@ -21,10 +21,10 @@
                                     <div class="row col mr-auto ml-auto pt-3 pl-3 pr-3">
                                         <div class="row alert alert-secondary col-lg-12 ml-auto mr-auto" role="alert">
                                             <h4 class="col-10 mt-auto mb-auto">{{$scudule->is_accept == '1' ? 'Booking is  Accepted !'  : 'Pending ..'}} </h4>
-                                            <div class="col-2">
-                                                <a href="#" data-toggle="modal" data-target="#exampleModal">
-                                                    <img class="col-8" src="{{ asset('imgs/rate.svg') }}" width="140" alt="">
-                                                <a>
+                                            <div class="col-2 rating-img">
+                                                {{--  <a href="#" data-toggle="modal" data-target="#exampleModal">  --}}
+                                                    <img data-toggle="modal" data-target="#exampleModal" class="col-8" src="{{ asset('imgs/rate.svg') }}" width="140" alt="">
+                                                {{--  <a>  --}}
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog modal-lg">
@@ -140,6 +140,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="col-lg-2 mr-auto ml-auto p-3">
                                             @if(!$scudule->appoiment->doctor->image)
                                                 <img width="140" height="140" class="rounded-circle" alt="Image placeholder" src="{{asset('uploads/default.png')}}">
@@ -178,6 +179,7 @@
                                                 <img src="{{url('imgs/phone.svg')}}" width="25" class="col-1" >
                                                 <div class="col-8 mr-3">{{$scudule->appoiment->phoneNumber}}</div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
