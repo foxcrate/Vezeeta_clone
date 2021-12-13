@@ -136,7 +136,10 @@
                   $("#add_request").hide().delay(1000);
                   location.reload();
 
-                  window.location = "https://localhost/paientHistory/public/en/dashbord/patient/" + $("#patient_id").val() +"/doctor/"+ $("#doctor_id").val();
+                //   window.location = "https://localhost/paientHistory/public/en/dashbord/patient/" + $("#patient_id").val() +"/doctor/"+ $("#doctor_id").val();
+                window.location = {!! json_encode( config('app.url') ) !!} + "/public/en/dashbord/patient/" + $("#patient_id").val() +"/doctor/"+ $("#doctor_id").val();
+
+
               }
           },
 
