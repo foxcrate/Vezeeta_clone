@@ -28,6 +28,8 @@ Route::group(
             Route::get('/finder/patient/{id}','backEndController@finder')->name('finder.page');
             /* 3 pages */
 
+            //test
+
             /* finder routes */
             Route::group(['prefix' => 'finder'],function(){
                 Route::get('pharmacy/patient/{id}','finderController@getPharmacy')->name('finder.pharmacy');
