@@ -29,6 +29,7 @@ Route::group(
             /* 3 pages */
 
             //test
+            //test
 
             /* finder routes */
             Route::group(['prefix' => 'finder'],function(){
