@@ -22,27 +22,26 @@ use Illuminate\Support\Facades\Validator;
 class DoctorController extends Controller
 {
 public function register(Request $request) {
-$doctorRequest = $request->all();
-$validator = Validator::make($doctorRequest, [
-'image' => 'max:3072',
-'name' => 'required',
-'phoneNumber' => 'unique:online_doctors',
-'countryCode' => '',
-'idCode' => 'unique:online_doctors',
-'password' => 'required|confirmed',
-'license_number' => 'required',
-'email' => 'email',
-'password' => 'required',
-'speciality' => 'required',
-'degree' => 'required',
-'information' => '',
-'national_id_front_side' => 'max:2048',
-'national_id_back_side' => 'max:2048',
-'degree_image' => 'max:2048',
-'license_image' => 'max:2048',
-'branch' => '',
-'Nationality' => '',
-'address' => '',
+            $doctorRequest = $request->all();
+            $validator = Validator::make($doctorRequest, [
+            'image' => 'max:3072',
+            'name' => 'required',
+            'phoneNumber' => 'required|unique:online_doctors',
+            'countryCode' => 'required',
+            'password' => 'required|confirmed',
+            'license_number' => 'required',
+            'email' => 'email',
+            'password' => 'required',
+            'speciality' => 'required',
+            'degree' => 'required',
+            'information' => '',
+            'national_id_front_side' => 'max:2048',
+            'national_id_back_side' => 'max:2048',
+            'degree_image' => 'max:2048',
+            'license_image' => 'max:2048',
+            'branch' => '',
+            'Nationality' => '',
+            'address' => '',
             'latitude' => '',
             'longitude' => ''
         ]);
@@ -50,10 +49,15 @@ $validator = Validator::make($doctorRequest, [
             return response([
                 'error' => $validator -> errors(),
                 'Validation Error'
-            ]);
+            ],400);
         }
         $doctorRequest['password'] = bcrypt($request -> password);
-        $doctorRequest['phoneNumber'] = str_replace('D', '+', $doctorRequest['idCode']);
+        if($request->phoneNumber[0] == '0'){
+            $doctorRequest['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
+        }else{
+            $doctorRequest['phoneNumber'] = $request->countryCode . $request->phoneNumber;
+        }
+        $doctorRequest['idCode'] = str_replace('+', 'D', $doctorRequest['phoneNumber']);
         $doctorRequest['is_active'] = true;
         if ($doctorRequest['speciality'] == 'General') {
             $doctorRequest['speciality_id'] = 1;

@@ -268,6 +268,95 @@ class userController extends Controller
             }
         }
     }
+    
+    // check phone Number
+    public function checkPhoneNumber(Request $request){
+        try{
+            if($request->phoneNumber[0] == '0'){
+                $publicRequest['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
+            }else{
+                $publicRequest['phoneNumber'] = $request->countryCode . $request->phoneNumber;
+            }
+            if($request->type == 'patient'){
+                $patient = Patien::where('phoneNumber',$publicRequest['phoneNumber'])->first();
+                if($patient){
+                    return response()->json([
+                        'message' => 'phoneNumber exists',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'phoneNumber not found',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'doctor'){
+                $doctor = OnlineDoctor::where('phoneNumber',$publicRequest['phoneNumber'])->first();
+                if($doctor){
+                    return response()->json([
+                        'message' => 'phoneNumber exists',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'phoneNumber not found',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'xray'){
+                $xray = Xray::where('phoneNumber',$publicRequest['phoneNumber'])->first();
+                if($xray){
+                    return response()->json([
+                        'message' => 'phoneNumber exists',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'phoneNumber not found',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'lab'){
+                $lab = Lab::where('phoneNumber',$publicRequest['phoneNumber'])->first();
+                if($lab){
+                    return response()->json([
+                        'message' => 'phoneNumber exists',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'phoneNumber not found',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'pharmacy'){
+                $pharmacy = Pharmacy::where('phoneNumber',$publicRequest['phoneNumber'])->first();
+                if($pharmacy){
+                    return response()->json([
+                        'message' => 'phoneNumber exists',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'phoneNumber not found',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'nurse'){
+                $nurse = Nurse::where('phoneNumber',$publicRequest['phoneNumber'])->first();
+                if($nurse){
+                    return response()->json([
+                        'message' => 'phoneNumber exists',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'phoneNumber not found',
+                    'status' => false
+                ],400);
+            }
+        }catch(\Exception $ex){
+            return response()->json([
+                'message' => $ex->getMessage(),
+                'status' => false
+            ],500);
+        }
+    }
 
     // public forgot password function
     public function forgotpassword(Request $request){

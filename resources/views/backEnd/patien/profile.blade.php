@@ -22,20 +22,39 @@
                     <form id="patient_update_online" action="{{route('patient_update_online',$patient->id)}}" method="POST">
                         {{ csrf_field() }}
                         <div class="col-lg-6">
-                            <div class="onoffswitch">
-                            <input type="checkbox" name="online" class="onoffswitch-checkbox" id="myonoffswitchH" value="{{$patient->online == 1 ? 1 : 0}}" {{$patient->online == 1 ? 'checked' : ''}}>
-                            <label class="onoffswitch-label" for="myonoffswitchH">
-                                <script>
-                                    $('#myonoffswitchH').on('change', function() {
-                                        this.value =
-                                        this.checked ? 1 : 0;
-                                        $("#patient_update_online").submit();
-                                    });
-                                </script>
-                                <div class="onoffswitch-inner"></div>
-                                <div class="onoffswitch-switch"></div>
-                            </label>
+                            
+                            <div class="switch-button">
+                                <div class="button" id="button-1">
+                                    <input type="checkbox" class="privacy-box" name="online" class="onoffswitch-checkbox" id="myonoffswitchH" value="{{$patient->online == 1 ? 1 : 0}}" {{$patient->online == 1 ? 'checked' : ''}}>
+                                    <div class="knobs">
+                                      <span>Private</span>
+                                    </div>
+                                    <div class="layer"></div>
+                                    <script>
+                                        $('#myonoffswitchH').on('change', function() {
+                                            this.value =
+                                            this.checked ? 1 : 0;
+                                            $("#patient_update_online").submit();
+                                        });
+                                    </script>
+                                </div>
                             </div>
+                            
+                            <!--<div class="onoffswitch">-->
+                            <!--<input type="checkbox" name="online" class="onoffswitch-checkbox" id="myonoffswitchH" value="{{$patient->online == 1 ? 1 : 0}}" {{$patient->online == 1 ? 'checked' : ''}}>-->
+                            <!--<label class="onoffswitch-label" for="myonoffswitchH">-->
+                            <!--    <script>-->
+                            <!--        $('#myonoffswitchH').on('change', function() {-->
+                            <!--            this.value =-->
+                            <!--            this.checked ? 1 : 0;-->
+                            <!--            $("#patient_update_online").submit();-->
+                            <!--        });-->
+                            <!--    </script>-->
+                            <!--    <div class="onoffswitch-inner"></div>-->
+                            <!--    <div class="onoffswitch-switch"></div>-->
+                            <!--</label>-->
+                            <!--</div>-->
+                            
                         </div>
                     </form>
                     <ul class="navbar-nav align-items-center ml-md-auto">

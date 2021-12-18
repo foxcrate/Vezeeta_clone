@@ -62,16 +62,37 @@ class hospitalController extends Controller
       }
   }
   public function uploadImage(Request $request) {
-    $hospitalRequest = $request -> file;
-    $image = $request -> file('image');
-    $input = $hospitalRequest = $image -> getClientOriginalName();
-    $destinationPath = public_path('uploads/');
-    $image -> move($destinationPath, $input);
-    return response() -> json([
-        'data' => asset('uploads/'.$input),
-        'status' => true,
-        'message' => 'success Message'
-    ]);
+      
+    //return "Alo";
+    //$hospitalRequest = $request -> fileName;
+    $image = $request -> file('fileName');
+
+    if($image){
+        $input = $image -> getClientOriginalName();
+        //return $input;
+        $destinationPath = public_path('uploads/');
+        $image -> move($destinationPath, $input);
+
+        // return response() -> json([
+        //     'data' => asset('uploads/'.$input),
+        //     'status' => 200,
+        //     'message' => 'success Message'
+        // ]);
+        return response() -> json([
+            'data' => asset('uploads/'.$input),
+            'message' => 'success Message'
+        ], 200);
+    }
+    else{
+        // return response() -> json([
+        //     'status' => 400,
+        //     'message' => 'Something wrong, Please try to upload youpr image again'
+        // ]);
+        return response() -> json([
+            'message' => 'Something wrong, Please try to upload your image again'
+        ], 400);
+    }
+    
   }
   public function getAll() {
       $hosptails = Hosptail::count();

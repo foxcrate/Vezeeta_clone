@@ -131,7 +131,7 @@
                                             </div>
                                         </div>
                                         <hr class="my-4" />
-                                        <!-- Patient History -->
+                                         <!-- Patient History -->
                                         <h3 class="title-sub text-uppercase text-muted mb-4">Patient History</h3>
                                         <div class="pl-lg-4">
                                             <div class="row">
@@ -144,12 +144,14 @@
                                                                 @php
                                                                     $agrees = $patient->patinets_data->agree_name;
                                                                 @endphp
-                                                                <!-- col -->
+
+                                                                 <!-- col -->
                                                                 <div class="col-sm-3">
                                                                     <div class="field">
+                                                                        <!--checkbox-->
                                                                         <div class="ui checkbox">
                                                                             <input name="agree_name[]" type="checkbox" tabindex="0" class="hidden" value="Heart disease" {{is_array($agrees) && in_array('Heart disease',$agrees) ? 'checked' : ''}}>
-                                                                            <label class="h4">Heart disease</label>
+                                                                            <label class="label-input">Heart disease</label>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -334,6 +336,7 @@
                                                                     <input class="" type="text" name="name" placeholder="Other Diseases">
                                                                     </div> --}}
                                                                 </div>
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -840,8 +843,8 @@
                                     var current =  $(".field_group").length;
                                     //last.append(new_button.clone(true));
                                     last.find('select').val([]);
-                                    last.find('select.item_typee').attr("name", "allergi_data[" + current + "][allergi_name]").val('');
-                                    last.find('select.seleect_custom').attr("name", "allergi_data[" + current + "][severity]").val('');
+                                    last.find('select.item_typee').attr("name", "allergi_data[" + current + "][allergi_name]");
+                                    last.find('select.seleect_custom').attr("name", "allergi_data[" + current + "][severity]");
                                     last.find('input.seelect_custom').attr("name", "allergi_data[" + current + "][reaction]").val('');
                                     current1++;
                                     return false;
@@ -868,7 +871,7 @@
                             var current =  $(".field_group1").length - 1;
                             //last.append(new_button.clone(true));
                             last.find('select').val([]);
-                            last.find('select.item_surgeries').attr("name", "surgery_data[" + current + "][surgery_name]").val('');
+                            last.find('select.item_surgeries').attr("name", "surgery_data[" + current + "][surgery_name]");
                             last.find('input.seleect_surgeries').attr("name", "surgery_data[" + current + "][surgery_date]").val('');
                             current1++;
                             return false;
@@ -890,8 +893,8 @@
                             //last.append(new_button.clone(true));
                             last.find('select').val([]);
                             last.find('input.item_medication').attr("name", "medication_name[" + current + "][name]").val('');
-                            last.find('select.seleect_medication').attr("name", "medication_name[" + current + "][times_day]").val('');
-                            last.find('select.select_medication').attr("name", "medication_name[" + current + "][time]").val('');
+                            last.find('select.seleect_medication').attr("name", "medication_name[" + current + "][times_day]");
+                            last.find('select.select_medication').attr("name", "medication_name[" + current + "][time]");
                             current1++;
                             return false;
                         } });
@@ -912,8 +915,8 @@
                                 var current =  $(".field_groupUn").length - 1;
                                 //last.append(new_button.clone(true));
                                 last.find('select').val([]);
-                                last.find('select.item_smoking').attr("name", "smoking[" + current + "][name]").val('');
-                                last.find('select.item_smoking_severity').attr("name", "smoking[" + current + "][severity]").val('');
+                                last.find('select.item_smoking').attr("name", "smoking[" + current + "][name]");
+                                last.find('select.item_smoking_severity').attr("name", "smoking[" + current + "][severity]");
                                 current1++;
                                 return false;
                             }  });

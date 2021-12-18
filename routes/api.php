@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\models\DoctorSpecailty;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::group(['namespace'=>'API'],function(){
     Route::post('/users/register','userController@register')->name('register');
     Route::post('user/login','userController@login')->name('user.login');
     Route::get('user/basicDate','userController@getBasicDate');
+    Route::get('check/phoneNumber','userController@checkPhoneNumber');
     /* analyzes routes */
     Route::get('/analyzes/index','apiController@analyzesIndex');
     Route::post('/analyzes/store','apiController@analyzesStore')->name('analyzes.store');
@@ -156,8 +158,31 @@ Route::group(['namespace'=>'API'],function(){
     Route::post('/linkPatientTest','DoctorController@rayTestUpdate');
     Route::get('/getOnlineDoctor','DoctorController@getOnlineDoctor');
     Route::post('doctorForgotPassword/{idCode?}','DoctorController@confirm_password');
-    Route::post('doctorRegister','DoctorController@register');
+    Route::post('doctor/register','DoctorController@register');
     Route::post('doctorLogin','DoctorController@login');
+    Route::get('doctor/sp',function(){
+        try{
+            $sp = DoctorSpecailty::select('id','name')
+            ->get();
+            if($sp->count() > 0){
+                return response()->json([
+                    'data' => $sp,
+                    'message' => 'success message',
+                    'status' => true,
+                ]);
+            }else{
+                return response()->json([
+                    'message' => 'faild message',
+                    'status' => false
+                ],400);
+            }
+        }catch(\Exception $ex){
+            return response()->json([
+                'message' => $ex->getMessage(),
+                'status' => false,
+            ],500);
+        }
+    });
     Route::get('doctor/searchPatient','DoctorController@searchPatient');
     Route::put('/doctor/switchon/{idCode}','DoctorController@switchOn');
     Route::put('/doctor/switchof/{idCode}','DoctorController@switchOf');
