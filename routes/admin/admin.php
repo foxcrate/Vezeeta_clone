@@ -6,6 +6,7 @@ use App\models\product;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Database\Eloquent\Collection;
 use Yajra\DataTables\Facades\DataTables;
+use App\Http\Middleware\SessionAuth;
 
 /* admin routes */
 Route::group(
@@ -46,14 +47,9 @@ Route::group(
                 Route::get('patient/{id}/doctor/clinic','finderController@searchDoctorInClinic')->name('searchDoctorInClinic');
                 Route::get('patient/{id}/doctor/hosptail','finderController@searchDoctorInHosptail')->name('searchDoctorInHosptail');
             });
-            Route::group(['prefix' => 'club'], function () {
-                Route::get('patient/{id}','clubController@patientClub')->name('patient.club');
-                Route::get('doctor/{id}','clubController@doctorClub')->name('doctor.club');
-                Route::get('xray/{id}','clubController@xrayClub')->name('xray.club');
-                Route::get('lab/{id}','clubController@labClub')->name('lab.club');
-                Route::get('pharmacy/{id}','clubController@pharmacyClub')->name('pharmacy.club');
-                Route::get('nurse/{id}','clubController@nurseClub')->name('nurse.club');
-            });
+
+
+
             Route::get('patien_id={id}/efelate',function($id){
                 $efelatePatien = Patien::findOrFail($id);
                 return view('backEnd.efelateRegister',compact('efelatePatien'));
@@ -73,7 +69,103 @@ Route::group(
             /* patient routes */
             Route::get('/patien/register','patienController@register')->name('patienRegister');
             Route::post('/patien/register','patienController@postRegister')->name('patien_post_Register');
-            Route::get('patien/homepage/{id}','patienController@homepage')->name('patien.homepage');
+
+            Route::middleware([SessionAuth::class])->group(function ($id) {
+
+                Route::get('patien/homepage/{id}','patienController@homepage')->name('patien.homepage');
+
+                Route::group(['prefix' => 'finder'],function(){
+                    Route::get('pharmacy/patient/{id}','finderController@getPharmacy')->name('finder.pharmacy');
+                    Route::get('xray/patient/{id}','finderController@getXray')->name('finder.xray');
+                    Route::get('lab/patient/{id}','finderController@getLab')->name('finder.lab');
+                    Route::get('doctor/patient/{id}','finderController@getDoctor')->name('finder.doctor');
+                    Route::get('nurse/patient/{id}','finderController@getNurse')->name('finder.nurse');
+                    Route::get('patient/{id}/get_appointments/doctor/{doctor_id}','finderController@get_appointments')->name('finder.get_appointments');
+                    Route::get('patient/{id}/search/doctor','finderController@search_doctor')->name('finder_search_doctor');
+                    Route::post('patient/{patient_id}/doctor/appoiments/book/{id}','finderController@book')->name('doctor.book');
+                    Route::get('patient/{patient_id}/doctor/show/appoiments/book/{id}/doctor_scudule/{sucdule_id}','finderController@show_book')->name('finder.show.book');
+                    Route::post('patient/{patient_id}/doctor/update/appoiments/book/{id}/doctor_scudule/{sucdule_id}','finderController@update_book')->name('finder.update.book');
+                    Route::get('patient/{id}/doctor/clinic','finderController@searchDoctorInClinic')->name('searchDoctorInClinic');
+                    Route::get('patient/{id}/doctor/hosptail','finderController@searchDoctorInHosptail')->name('searchDoctorInHosptail');
+                });
+
+                /* qr */
+                Route::group(['prefix' => 'Qr'],function(){
+                    Route::get('/{id}','qrController@index')->name('patient.qr.index');
+                    Route::get('xray/{id}','qrController@xrayQr')->name('xray.qr.index');
+                    Route::get('lab/{id}','qrController@labQr')->name('lab.qr.index');
+                    Route::get('pharmacy/{id}','qrController@pharmacyQr')->name('pharmacy.qr.index');
+                    Route::get('doctor/{id}','qrController@doctorQr')->name('doctor.qr.index');
+                    Route::get('nurse/{id}','qrController@nurseQr')->name('nurse.qr.index');
+                });
+                /* qr */
+
+                Route::group(['prefix' => 'club'], function () {
+                    Route::get('patient/{id}','clubController@patientClub')->name('patient.club');
+                    Route::get('doctor/{id}','clubController@doctorClub')->name('doctor.club');
+                    Route::get('xray/{id}','clubController@xrayClub')->name('xray.club');
+                    Route::get('lab/{id}','clubController@labClub')->name('lab.club');
+                    Route::get('pharmacy/{id}','clubController@pharmacyClub')->name('pharmacy.club');
+                    Route::get('nurse/{id}','clubController@nurseClub')->name('nurse.club');
+                });
+
+                // donate routes //
+                Route::group(['prefix' => 'donate'], function () {
+                    Route::get('/{id}','donateController@index')->name('donate.index');
+                    Route::post('/{id}/addMedication','donateController@addMediction')->name('donate.addMedication');
+                    Route::post('/{id}/addMedicalDevices','donateController@addMedicalDevices')->name('donate.addMedicalDevices');
+                    Route::post('store','donateController@donateStore')->name('donate.store');
+                    Route::get('donor/search/{id}','donateController@donor_search_blood')->name('donor_search_blood');
+                    Route::post('addRequestDonor','donateController@addRequestDonor')->name('addRequestDonor');
+                    Route::post('acceptRequestDonor','donateController@acceptRequestDonor')->name('acceptRequestDonor');
+                    Route::post('declineRequestDonor','donateController@declineRequestDonor')->name('declineRequestDonor');
+                    Route::get('search/Device','donateController@searchDevice')->name('searchDevice');
+                    Route::get('get/Device/{id}','donateController@getDevice')->name('getDevice');
+                    Route::post('AddRequestDevice','donateController@AddRequestDevice')->name('AddRequestDevice');
+                    Route::get('search/Medication','donateController@searchMedication')->name('searchMedication');
+                    Route::get('get/Medication/{id}','donateController@getMedication')->name('getMedication');
+                    Route::post('AddRequestMedication','donateController@AddRequestMedication')->name('AddRequestMedication');
+                    Route::post('AcceptRequestMedication','donateController@AcceptRequestMedication')->name('AcceptRequestMedication');
+                    Route::post('DeclineRequestMedication','donateController@DeclineRequestMedication')->name('DeclineRequestMedication');
+                    Route::post('AddRequestDevice','donateController@AddRequestDevice')->name('AddRequestDevice');
+                    Route::post('AcceptRequestDevice','donateController@AcceptRequestDevice')->name('AcceptRequestDevice');
+                    Route::post('DeclineRequestDevice','donateController@DeclineRequestDevice')->name('DeclineRequestDevice');
+                });
+                // donate routes //
+
+                /* homecare routes */
+                Route::group(['prefix'=> 'homecare'],function(){
+                    Route::get('/{id}','patienController@index')->name('homecare.index');
+                    Route::get('patientCars/{id}','patienController@patientCars')->name('homecare.patientCars');
+                    Route::post('patientCars/{id}','patienController@postPatientCars')->name('homecare.post.patientCars');
+                    Route::get('patient/{id}','patienController@getHomecare')->name('patient.homecare');
+                    Route::get("patient/{id}/primary_special/{special_id}/doctors",'patienController@showDoctorsHomecare')->name("homecare.showDoctors");
+                    Route::get("patient/{id}/homecare/show_profile_doctor/{doctor_id}/",'patienController@homecare_show_profile_doctor')->name("homecare_show_profile_doctor");
+                    Route::post('patient/add_request','homecareController@addRequest')->name('patient.homecare.addRequest');
+                    Route::post('patient/accept_request','homecareController@acceptRequest')->name('patient.homecare.acceptRequest');
+                    Route::post('patient/decline_request','homecareController@declineRequest')->name('patient.homecare.declineRequest');
+                    Route::get('patient/{id}/patientSearchNurse','homecareController@patientSearchNurse')->name('homecare.patientSearchNurse');
+                    Route::post('nurse/{id}/search-nurse','homecareController@searchNurse')->name('searchNurse');
+                });
+                /* homecare routes */
+
+                 /* child routes */
+                Route::get('/patien/{id}/child','childController@getKids')->name('patients.kids');
+                Route::post('/patient/{id}/create_child','childController@create_child')->name('patient.child.create');
+                Route::get('/patient/{id}/profile/child/{child_id}','childController@profile')->name('patient.child.profile');
+                Route::get('/patient/{id}/edit/profile/child/{child_id}','childController@editProfile')->name('patient.child.editProfile');
+                Route::get('/patient/{id}/getAllChild','childController@getAllChild')->name('getAllChild');
+                Route::post('/patient/{id}/update/child/profile/{child_id}','childController@updaeProfile')->name('patient.child.updaeProfile');
+                Route::get('patient/{id}/child/{child_id}/Vaccinations','childController@getVaccinations')->name('child.Vaccinations');
+                Route::post('patient/{id}/child/{child_id}/Vaccinations/store','VaccinationController@StoreVaccination')->name('Vaccination.store');
+                Route::get('patient/{id}/child/{child_id}/edit/Vaccinations/{Vaccination_id}','VaccinationController@EditVaccinations')->name('child.edit.Vaccinations');
+                Route::post('patient/{id}/child/{child_id}/update/Vaccinations/{Vaccination_id}','VaccinationController@UpdateVaccination')->name('Vaccination.update');
+                /* child routes */
+
+            });
+
+
+
             Route::get('/welcome/patient/{id}','patienController@welcome')->name('patient.welcome');
             Route::get('/patien/profile/{id}','patienController@profile')->name('patien-profile')->middleware('is_patient');
             Route::get('/patien/edit/profile/{id}','patienController@editProfile')->name('edit.profile')->middleware('is_patient');
@@ -103,26 +195,15 @@ Route::group(
             Route::get('/patien/old_pescription/{id}','patienController@getOldpescription')->name('get_old_pescription');
             Route::get('/patien/{type}/{id}/download/pdf','patienController@download_pdf')->name('download_pdf');
             Route::get('/patien/{type}/{id}/delete/files','patienController@deleteFiles')->name('deleteFiles');
-            /* child routes */
-            Route::get('/patien/{id}/child','childController@getKids')->name('patients.kids');
-            Route::post('/patient/{id}/create_child','childController@create_child')->name('patient.child.create');
-            Route::get('/patient/{id}/profile/child/{child_id}','childController@profile')->name('patient.child.profile');
-            Route::get('/patient/{id}/edit/profile/child/{child_id}','childController@editProfile')->name('patient.child.editProfile');
-            Route::get('/patient/{id}/getAllChild','childController@getAllChild')->name('getAllChild');
-            Route::post('/patient/{id}/update/child/profile/{child_id}','childController@updaeProfile')->name('patient.child.updaeProfile');
-            Route::get('patient/{id}/child/{child_id}/Vaccinations','childController@getVaccinations')->name('child.Vaccinations');
-            Route::post('patient/{id}/child/{child_id}/Vaccinations/store','VaccinationController@StoreVaccination')->name('Vaccination.store');
-            Route::get('patient/{id}/child/{child_id}/edit/Vaccinations/{Vaccination_id}','VaccinationController@EditVaccinations')->name('child.edit.Vaccinations');
-            Route::post('patient/{id}/child/{child_id}/update/Vaccinations/{Vaccination_id}','VaccinationController@UpdateVaccination')->name('Vaccination.update');
-            /* child routes */
+
             /* get and search wife */
-            Route::get('patient/{id}/searchWife','patienController@searchWife')->name('patient.searchWife');
-            Route::get('patient/searchWife','patienController@getWife')->name('getWife');
+            Route::get('patient/{id}/searchWife','patienController@searchWife')->name('patient.searchWife')->middleware([SessionAuth::class]);
+            Route::get('patient/searchWife','patienController@getWife')->name('getWife')->middleware([SessionAuth::class]);
             Route::post('patient/{id}/addRequestWife','patienController@addRequestWife')->name('addRequestWife');
             Route::post('patient/acceptRequestWife','patienController@acceptRequestWife')->name('acceptRequestWife');
             Route::post('patient/declineRequestWife','patienController@declineRequestWife')->name('declineRequestWife');
             // show report wife or husband //
-            Route::get('accept/report/patient/{id}','patienController@showReportAccept')->name('showReportAccept');
+            Route::get('accept/report/patient/{id}','patienController@showReportAccept')->name('showReportAccept')->middleware([SessionAuth::class]);
             // add wife or husband
             Route::post('addNew/wifeOrHusband','patienController@addNew_wifeOrHusband')->name('addNew_wifeOrHusband');
             /* doctor family */
@@ -135,16 +216,7 @@ Route::group(
                 Route::post('declinePatientRequest','doctorFamilyControlle@declinePatientRequest')->name('declinePatientRequest');
             });
             /* doctor family */
-            /* qr */
-            Route::group(['prefix' => 'Qr'],function(){
-                Route::get('/{id}','qrController@index')->name('patient.qr.index');
-                Route::get('xray/{id}','qrController@xrayQr')->name('xray.qr.index');
-                Route::get('lab/{id}','qrController@labQr')->name('lab.qr.index');
-                Route::get('pharmacy/{id}','qrController@pharmacyQr')->name('pharmacy.qr.index');
-                Route::get('doctor/{id}','qrController@doctorQr')->name('doctor.qr.index');
-                Route::get('nurse/{id}','qrController@nurseQr')->name('nurse.qr.index');
-            });
-            /* qr */
+
             /* covied */
             Route::group(['prefix' => 'covied'], function () {
                 Route::get('/{id}','coviedController@index')->name('covied.index');
@@ -164,44 +236,8 @@ Route::group(
                 Route::get('patient/{id}/get','patienController@getCheckup')->name('patient.getCheckup');
             });
             /* checkup routes */
-            /* homecare routes */
-            Route::group(['prefix'=> 'homecare'],function(){
-                Route::get('/{id}','patienController@index')->name('homecare.index');
-                Route::get('patientCars/{id}','patienController@patientCars')->name('homecare.patientCars');
-                Route::post('patientCars/{id}','patienController@postPatientCars')->name('homecare.post.patientCars');
-                Route::get('patient/{id}','patienController@getHomecare')->name('patient.homecare');
-                Route::get("patient/{id}/primary_special/{special_id}/doctors",'patienController@showDoctorsHomecare')->name("homecare.showDoctors");
-                Route::get("patient/{id}/homecare/show_profile_doctor/{doctor_id}/",'patienController@homecare_show_profile_doctor')->name("homecare_show_profile_doctor");
-                Route::post('patient/add_request','homecareController@addRequest')->name('patient.homecare.addRequest');
-                Route::post('patient/accept_request','homecareController@acceptRequest')->name('patient.homecare.acceptRequest');
-                Route::post('patient/decline_request','homecareController@declineRequest')->name('patient.homecare.declineRequest');
-                Route::get('patient/{id}/patientSearchNurse','homecareController@patientSearchNurse')->name('homecare.patientSearchNurse');
-                Route::post('nurse/{id}/search-nurse','homecareController@searchNurse')->name('searchNurse');
-            });
-            /* homecare routes */
-            // donate routes //
-            Route::group(['prefix' => 'donate'], function () {
-                Route::get('/{id}','donateController@index')->name('donate.index');
-                Route::post('/{id}/addMedication','donateController@addMediction')->name('donate.addMedication');
-                Route::post('/{id}/addMedicalDevices','donateController@addMedicalDevices')->name('donate.addMedicalDevices');
-                Route::post('store','donateController@donateStore')->name('donate.store');
-                Route::get('donor/search/{id}','donateController@donor_search_blood')->name('donor_search_blood');
-                Route::post('addRequestDonor','donateController@addRequestDonor')->name('addRequestDonor');
-                Route::post('acceptRequestDonor','donateController@acceptRequestDonor')->name('acceptRequestDonor');
-                Route::post('declineRequestDonor','donateController@declineRequestDonor')->name('declineRequestDonor');
-                Route::get('search/Device','donateController@searchDevice')->name('searchDevice');
-                Route::get('get/Device/{id}','donateController@getDevice')->name('getDevice');
-                Route::post('AddRequestDevice','donateController@AddRequestDevice')->name('AddRequestDevice');
-                Route::get('search/Medication','donateController@searchMedication')->name('searchMedication');
-                Route::get('get/Medication/{id}','donateController@getMedication')->name('getMedication');
-                Route::post('AddRequestMedication','donateController@AddRequestMedication')->name('AddRequestMedication');
-                Route::post('AcceptRequestMedication','donateController@AcceptRequestMedication')->name('AcceptRequestMedication');
-                Route::post('DeclineRequestMedication','donateController@DeclineRequestMedication')->name('DeclineRequestMedication');
-                Route::post('AddRequestDevice','donateController@AddRequestDevice')->name('AddRequestDevice');
-                Route::post('AcceptRequestDevice','donateController@AcceptRequestDevice')->name('AcceptRequestDevice');
-                Route::post('DeclineRequestDevice','donateController@DeclineRequestDevice')->name('DeclineRequestDevice');
-            });
-            // donate routes //
+
+
             Route::post('patient/{id}/update_online','patienController@patient_update_online')->name('patient_update_online');
             Route::post('patient/{id}/update_is_donor','donateController@patient_update_is_donor')->name('patient_update_is_donor');
             /* patient routes */

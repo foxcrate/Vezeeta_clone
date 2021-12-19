@@ -1,3 +1,4 @@
+
 @extends('backEnd.layoutes.mastar')
 @section('title','Edit profile ')
 @section('content')
@@ -6,12 +7,13 @@
         @include('backEnd.patien.slidenav')
         <div id="page-content-wrapper">
             <!-- main content -->
+            @include('includes.patientNav')
             <div class="main-content" id="panel">
                 <form action="{{route('updata_data_profile',[$patient->id,$patient->patinets_data->id])}}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="patient_id" value="{{$patient->id}}">
                     <!-- Topnav -->
-                    @include('includes.patientNav')
+
                     <!-- Header -->
                     <div class="col-11 ml-auto mr-auto mt-5 mb-5 align-items-center coveredit">
                         <!-- Mask -->

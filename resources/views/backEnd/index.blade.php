@@ -5,6 +5,7 @@
     @include('backEnd.layoutes.navbar')
     <!-- navbarfile -->
     <!--Start-Content-->
+
       <div id="carouselExampleControls" class="carousel mt-5" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -77,6 +78,9 @@
       <!--End-content-->
       <!--Start-Login-->
     <section class="bg-login text-center col-md-10" Style="margin-bottom:50px;">
+        @if(session('error'))
+            <div class="alert alert-danger m-2">{{session('error')}}</div>
+        @endif
          <!-- form login -->
          @if(session('msg'))
             <div class="alert alert-danger">{{session('msg')}}</div>

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Middleware\SessionAuth;
 
 use function GuzzleHttp\json_decode;
 
@@ -175,7 +176,7 @@ Route::get('/callback/{provider}', 'socialController@callback');
 /* 5 pages */
 Route::get('/clup/{account}/{id}','welcomeController@getClup')->name('getClup');
 Route::get('/insurance/{account}/{id}','welcomeController@getInsurance')->name('getInsurance');
-Route::get('/online/{account}/{id}','welcomeController@getOnline')->name('getOnline');
+Route::get('/online/{account}/{id}','welcomeController@getOnline')->name('getOnline')->middleware([SessionAuth::class]);
 Route::get('/qr/{account}/{id}','welcomeController@getQr')->name('getOr');
 Route::get('/share/{account}/{id}','welcomeController@getShare')->name('getShare');
 /* 5 pages */

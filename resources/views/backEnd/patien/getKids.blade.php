@@ -34,7 +34,7 @@
                                     <div class="upload-button">
                                         <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
                                     </div>
-                                    <input id="compress_image" name = "image" class="file-upload @error('image') is-invalid @enderror" type="file" accept="image/*">
+                                    <input id="compress_image" required name = "image" class="file-upload @error('image') is-invalid @enderror" type="file" accept="image/*">
                                 </div>
                                 <label class="col-12 text-center text-dark" style="margin-top:-50px"><i class="fa fa-camera mr-2"></i>Add Child pictrue</label>
                                 @error('image')
@@ -46,7 +46,7 @@
                             <div class="col-lg-6">
                                 <label  class="h5 font-weight-bold mt-3 text-primary font-weight-bolder">Child Name</label>
                                 <div class="input-group mb-3">
-                                    <input onkeypress="return /[a-z ]/i.test(event.key)" type="text" class="form-control select_custom @error('child_name') is-invalid @enderror"  placeholder="Child Name" name="child_name" value="{{old('child_name')}}">
+                                    <input required onkeypress="return /[a-z ]/i.test(event.key)" type="text" class="form-control select_custom @error('child_name') is-invalid @enderror"  placeholder="Child Name" name="child_name" value="{{old('child_name')}}">
                                     @error('child_name')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -55,7 +55,7 @@
                             <div class="col-lg-6">
                                 <label for="birth" class="h5 font-weight-bold mt-3 text-primary">Birth Date</label>
                                 <div class="input-group mb-3">
-                                    <input type="date" class="form-control item_type @error('birthDay') is-invalid @enderror" name="birthDay" value="{{old('birthDay')}}">
+                                    <input type="date" required class="form-control item_type @error('birthDay') is-invalid @enderror" name="birthDay" value="{{old('birthDay')}}">
                                     @error('birthDay')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -68,7 +68,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="cc-selector gender">
-                                    <input id="boy" type="radio" name="gender" value="boy"/>
+                                    <input id="boy" type="radio" required name="gender" value="boy"/>
                                     <label class="drinkcard-cc boy" for="boy"></label>
                                     <input id="girl" type="radio" name="gender" value="girl" />
                                     <label class="drinkcard-cc girl" for="girl"></label>
@@ -85,14 +85,14 @@
                                         <div class="form-group">
                                             <img src="{{url('imgs/height.png')}}" class="mr-3 mb-3" width="50">
                                             <label class="title-label ml-lg-3">Height</label>
-                                            <input  value="{{old('height')}}" minlength="2" maxlength="3" class="form-control" type="number" name="height" placeholder="Height">
+                                            <input  value="{{old('height')}}" minlength="2" maxlength="3" required class="form-control" type="number" name="height" placeholder="Height">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <img src="{{url('imgs/Wight.png')}}" class="mr-3 mb-3" width="50">
                                             <label class="title-label">Weight</label>
-                                            <input minlength="2" maxlength="3" name="weight" type="number" class="form-control" placeholder="Weigth" />
+                                            <input minlength="2" maxlength="3" required name="weight" type="number" class="form-control" placeholder="Weigth" />
                                                 <select style="position:relative; bottom:38px; width:30%; left:170px;" name="weight_type" id="" class="form-control">
                                                     <optgroup>
                                                         <option value="Kg">KG</option>
@@ -105,10 +105,10 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <img src="{{url('imgs/blood.png')}}" class="mr-3 mb-3" width="50">
-                                            <label class="title-label">Blood</label>
-                                            <div>
-                                                <select class="form-control" name="blood">
-                                                    <option hidden >Blood</option>
+                                            <label for="blood" class="title-label">Blood</label>
+                                            {{-- <div> --}}
+                                                <select class="form-control" id="blood" name="blood" required>
+                                                    <option value="">Blood</option>
                                                     <option value="A+">A+</option>
                                                     <option value="A-">A-</option>
                                                     <option value="B+">B+</option>
@@ -118,7 +118,8 @@
                                                     <option value="AB+">AB+</option>
                                                     <option value="AB-">AB-</option>
                                                 </select>
-                                            </div>
+
+                                            {{-- </div> --}}
                                         </div>
                                     </div>
                                 </div>

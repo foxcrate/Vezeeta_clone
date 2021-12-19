@@ -7,12 +7,13 @@
         @include('backEnd.patien.slidenav')
         <div id="page-content-wrapper">
             <!-- main content -->
+            @include('includes.patientNav')
             <div class="main-content" id="panel">
                 <!-- Topnav -->
                 <form action="{{route('update.profile',$patient->id)}}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="patient_id" value="{{$patient->id}}">
-                    @include('includes.patientNav')
+
                     <!-- Header -->
                     <div class="col-11 ml-auto mr-auto mt-5 mb-5 align-items-center coveredit">
                         <!-- Mask -->
@@ -429,6 +430,7 @@
                                                                     <div class="col-md-4">
                                                                         <label class="title-label">Date</label>
                                                                         <input class="form-control seleect_surgeries" type="date" name="surgery_data[0][surgery_date]" placeholder="">
+
                                                                     </div>
                                                                     <div class="col-md-2">
                                                                         <label class="title-label ml-xl-3"></label>
@@ -790,7 +792,7 @@
                                                         </div>
                                                 </div>
                                                 <div class="col-12 text-center mb-3 mt-5">
-                                                    <input type="submit" value="submit" class="col-8 btn btn-success">
+                                                    <input type="submit" value="submite" class="col-8 btn btn-success">
                                                 </div>
                                             </div>
                                         </div>
@@ -800,6 +802,7 @@
                         </div>
                     </div>
                 </form>
+
                 <!-- footer -->
                 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
                 <script>

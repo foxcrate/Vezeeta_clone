@@ -30,6 +30,8 @@ use App\models\rateLab;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Session;
+
 class patienController extends Controller
 {
     public function register(Request $request){
@@ -466,6 +468,10 @@ class patienController extends Controller
     /* function logout patient */
     public function logout(){
         Auth::guard('patien')->logout();
+
+        Session::forget('loggedID');
+        Session::forget('loggedType');
+
         return redirect()->route('indexRoute');
     }
     /* end of function */
@@ -520,6 +526,7 @@ class patienController extends Controller
     }
     public function homepage($id){
         try{
+            //return
             $patient = Patien::findOrFail($id);
             return view('backEnd.patien.homepage',compact('patient'));
         }

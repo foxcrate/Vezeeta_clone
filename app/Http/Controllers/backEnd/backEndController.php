@@ -21,6 +21,7 @@ use App\Mail\clinic_reset_password;
 use App\Mail\xrays_reset_password;
 use App\Mail\labs_reset_password;
 use App\Mail\pharmacy_reset_password;
+use Illuminate\Support\Facades\Session;
 
 class backEndController extends Controller
 {
@@ -33,12 +34,25 @@ class backEndController extends Controller
         }
     /* function index */
     public function index(){
+
+        // if(Session::has('loggedID')){
+        //     return 'true';
+        // }
+        // else{
+        //     return "false";
+        // }
+        //  $loggedID = Session::get('loggedID');
+        //  $loggedType = Session::get('loggedType');
+
+        //  return $loggedID . " , " . $loggedType;
+
         return view('backEnd.index');
     }
 
     /* end of function */
     /* function index register */
     public function indexRegister(){
+
         return view('backEnd.indexRegister');
     }
     /* end of function */
@@ -61,6 +75,12 @@ class backEndController extends Controller
         if(! Auth::guard($request->get('guard'))->attempt($attmp)) {
             return redirect()->back()->with('msg','ID  or password incorrect');
         }
+
+        // session(['loggedID' => auth()->guard($request->get('guard'))->user()->id]);
+        // session(['loggedType' => $request->get('guard')]);
+
+        Session::put('loggedID', auth()->guard($request->get('guard'))->user()->id );
+        Session::put('loggedType', $request->get('guard') );
 
         // return dd(auth()->guard('patien')->user());
         return redirect('en/dashbord/' . $request->get('guard') . '/homepage' . '/' . auth()->guard($request->get('guard'))->user()->id);
