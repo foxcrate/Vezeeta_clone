@@ -18,25 +18,72 @@ use App\models\TestChild;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\models\Medication2;
+
+
 class childController extends Controller
 {
     public function getKids($id){
         try{
+            //return "Alo";
             $patient = Patien::findOrFail($id);
-            return view('backEnd.patien.getKids',compact('patient'));
+            $medications = Medication2::all();
+            //return $patient;
+            return view('backEnd.patien.getKids',compact('patient','medications'));
         }catch(\Exception $ex){
             return redirect()->back()->with(['error' => 'problem']);
         }
 
     }
-    public function create_child(Store $request,$id){
-        // return $request;
+
+    //Store
+    public function create_child(Request $request,$id){
+
+
+        $this->validate($request, [
+            'image' => 'required|image|max:3072',
+            'child_name'    => 'required|string',
+            'birthDay'      => 'required',
+            'gender'        => 'required',
+            'weight'        => '',
+            'height'        => '',
+            'weight_type'   => 'string',
+            'blood'         => '',
+            'disease'       => 'array',
+            'Surgeries'     => 'array',
+            'allergy'       => 'array',
+            'medication'    => 'array',
+            'fatherdisease' => 'array',
+            'motherdisease' => 'array',
+            'patient_id'    => 'required|exists:patiens,id'
+        ]);
+        $request->flash();
+        //return redirect()->back()->withInput()->withErrors('Add atleast one image in the post.');
+
+        //return $request->image;
         // try{
-            Alert::success('Sucess','Child Added Sucess');
+            //Alert::success('Sucess','Child Added Sucess');
             /* patient find by id */
         $patient = Patien::findOrFail($id);
+
+        $child_name = $request->child_name ;
+
+        $patient_child = $patient->childern;
+        //return $patient_child;
+
+        foreach( $patient_child as $child ){
+            if( strtolower( $child->child_name ) == strtolower( $child_name ) ){
+                return redirect()->back()->with(['error' => 'Repeated Child']);
+            }
+        }
+
         /* insert all request */
         $childData = $request->all();
+
+        $child_name = $request->child_name ;
+
+
+
         /* check allergi name of count > 0 */
         // if(isset($childData['allergy']) && count($childData['allergy']) > 0){
             /* foreach data and insert request */
@@ -87,6 +134,7 @@ class childController extends Controller
         try{
             $patient = Patien::findOrFail($id);
             $child = Child::findOrFail($child_id);
+            //return $child->allergy;
             return view('backEnd.patien.child.profile',compact('patient','child'));
         }
         catch(\Exception $ex){
@@ -103,6 +151,7 @@ class childController extends Controller
     // get all child
     public function getAllChild($id){
         $patient = Patien::with('childern')->findOrFail($id);
+        //return $patient->childern;
         return view('backEnd.patien.child.getAllChild',compact('patient'));
     }
 

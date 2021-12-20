@@ -8,9 +8,10 @@
         <!-- Topnav -->
         @include('includes.patientNav')
         <div  class="container-fluid">
+            {{-- <h1>Alo {{ old('height') }} Alo</h1> --}}
             <div class="col-lg-10 ml-auto mr-auto">
                 @if(session('error'))
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger m-2">
                         {{session('error')}}
                     </div>
                 @endif
@@ -34,7 +35,7 @@
                                     <div class="upload-button">
                                         <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
                                     </div>
-                                    <input id="compress_image" required name = "image" class="file-upload @error('image') is-invalid @enderror" type="file" accept="image/*">
+                                    <input id="compress_image" required name = "image" value="{{ old('image') }}" class="file-upload @error('image') is-invalid @enderror" type="file"  accept="image/*">
                                 </div>
                                 <label class="col-12 text-center text-dark" style="margin-top:-50px"><i class="fa fa-camera mr-2"></i>Add Child pictrue</label>
                                 @error('image')
@@ -67,12 +68,26 @@
                                 <label for="gender" class="h5 font-weight-bold text-primary">Gender</label>
                             </div>
                             <div class="col-lg-6">
+
                                 <div class="cc-selector gender">
-                                    <input id="boy" type="radio" required name="gender" value="boy"/>
-                                    <label class="drinkcard-cc boy" for="boy"></label>
-                                    <input id="girl" type="radio" name="gender" value="girl" />
-                                    <label class="drinkcard-cc girl" for="girl"></label>
+                                    <input onclick="hidden_input()" id="boy" type="radio" name="gender" value="boy"/>
+                                    <label class="drinkcard-cc boy" for="boy">Boy</label>
+
+                                    <input  type="text" id="uploadFile" required name="tt">
+                                    <input onclick="hidden_input()" id="girl" type="radio" name="gender" value="girl" />
+                                    <label class="drinkcard-cc girl" for="girl">Girl</label>
                                 </div>
+
+                                <script>
+
+                                    function hidden_input(){
+                                        console.log("Clicked");
+                                        var element = document.getElementById('uploadFile');
+                                        element.value = "Alo";
+                                    }
+
+                                </script>
+
                                 @error('gender')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -85,14 +100,14 @@
                                         <div class="form-group">
                                             <img src="{{url('imgs/height.png')}}" class="mr-3 mb-3" width="50">
                                             <label class="title-label ml-lg-3">Height</label>
-                                            <input  value="{{old('height')}}" minlength="2" maxlength="3" required class="form-control" type="number" name="height" placeholder="Height">
+                                            <input  value="{{old('height')}}" minlength="2" maxlength="3" required  value="{{old('height')}}" class="form-control" type="number" name="height" placeholder="Height">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <img src="{{url('imgs/Wight.png')}}" class="mr-3 mb-3" width="50">
                                             <label class="title-label">Weight</label>
-                                            <input minlength="2" maxlength="3" required name="weight" type="number" class="form-control" placeholder="Weigth" />
+                                            <input minlength="2" maxlength="3" required name="weight" type="number" value="{{old('weight')}}"  class="form-control" placeholder="Weigth" />
                                                 <select style="position:relative; bottom:38px; width:30%; left:170px;" name="weight_type" id="" class="form-control">
                                                     <optgroup>
                                                         <option value="Kg">KG</option>
@@ -335,7 +350,7 @@
                                         <div class="row mb-3">
                                             <div class="col-md-3">
                                                 <label class="title-label ml-xl-3">Allergy</label>
-                                                <select name="allergi_data[0][allergi_name]" class=" @error('allergi_data') is-invalid @enderror form-control item_typee">
+                                                <select  name="allergi_data[0][allergi_name]" class=" @error('allergi_data') is-invalid @enderror form-control item_typee">
                                                     <option value="" hidden>Allergy</option>
                                                     <option value="Drug">Drug allergy</option>
                                                     <option value="Food">Food allergy</option>
@@ -355,7 +370,7 @@
                                                 <label class="title-label d-block">Severity</label>
                                                 <select name="allergi_data[0][severity]" class="form-control seleect_custom">
 
-                                                    <option  hidden>Severity</option>
+                                                    <option value="" hidden>Severity</option>
                                                     <option value="Mild">Mild</option>
                                                     <option value="Moderate">Moderate</option>
                                                     <option value="Severe">Severe</option>
@@ -536,8 +551,8 @@
                                 var current =  $(".field_group").length;
                                 //last.append(new_button.clone(true));
                                 last.find('select').val([]);
-                                last.find('select.item_typee').attr("name", "allergi_data[" + current + "][allergi_name]");
-                                last.find('select.seleect_custom').attr("name", "allergi_data[" + current + "][severity]");
+                                last.find('select.item_typee').attr("name", "allergi_data[" + current + "][allergi_name]").val('');
+                                last.find('select.seleect_custom').attr("name", "allergi_data[" + current + "][severity]").val('');
                                 last.find('input.seelect_custom').attr("name", "allergi_data[" + current + "][reaction]").val('');
                                 current1++;
                                 return false;
@@ -565,7 +580,7 @@
                         var current =  $(".field_group1").length - 1;
                         //last.append(new_button.clone(true));
                         last.find('select').val([]);
-                        last.find('select.item_surgeries').attr("name", "surgery_data[" + current + "][surgery_name]");
+                        last.find('select.item_surgeries').attr("name", "surgery_data[" + current + "][surgery_name]").val('');
                         last.find('input.seleect_surgeries').attr("name", "surgery_data[" + current + "][surgery_date]").val('');
                         current1++;
                         return false;
@@ -587,8 +602,8 @@
                         //last.append(new_button.clone(true));
                         last.find('select').val([]);
                         last.find('input.item_medication').attr("name", "medication_name[" + current + "][name]").val('');
-                        last.find('select.seleect_medication').attr("name", "medication_name[" + current + "][times_day]");
-                        last.find('select.select_medication').attr("name", "medication_name[" + current + "][time]");
+                        last.find('select.seleect_medication').attr("name", "medication_name[" + current + "][times_day]").val('');
+                        last.find('select.select_medication').attr("name", "medication_name[" + current + "][time]").val('');
                         current1++;
                         return false;
                     } });

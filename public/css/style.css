@@ -26,6 +26,12 @@ text-transform:capitalize
     color: #0fAAc9 !important;
 }
 
+#uploadFile {
+    opacity: 0;
+    width: 0;
+    float: left; /* Reposition so the validation message shows over the label */
+  }
+
 .pl-7 {
     padding-left: 72px;
 }

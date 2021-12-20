@@ -460,7 +460,7 @@
                                                                         <input list="brow" class="form-control item_medication" name="medication_name[{{$key}}][name]" placeholder="Medication" value="{{$med['name']}}">
                                                                         <datalist id="brow">
                                                                             <option hidden>Choose</option>
-                                                                            @foreach(\App\models\Medication2::get() as $m)
+                                                                            @foreach($medications as $m)
                                                                                 <option value="{{ $m->name }}">{{ $m->name }}</option>
                                                                             @endforeach
                                                                         </datalist>

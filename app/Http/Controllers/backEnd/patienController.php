@@ -18,6 +18,7 @@ use App\Mail\verify_patien;
 use App\models\Checkup;
 use App\models\clupTransaction;
 use App\models\Faviorate;
+use App\models\Medication2;
 use Illuminate\Support\Facades\Auth;
 use App\models\Raoucheh;
 use App\models\patient_analzes;
@@ -107,8 +108,10 @@ class patienController extends Controller
     public function edit_data_profile($id){
         try{
             $patient = Patien::with('patinets_data')->findOrFail($id);
+            $medications = Medication2::all();
+            //return $medications;
             if($patient){
-                return view('backEnd.patien.edit_data_profile',compact('patient'));
+                return view('backEnd.patien.edit_data_profile',compact('patient','medications'));
                 // return $patient->patinets_data->agree_name;
             }
             return redirect()->back();

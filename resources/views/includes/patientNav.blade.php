@@ -3,13 +3,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Navbar links -->
             <button class=" d-lg-none ml-2" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
-            
+
             <!-- Online Form -->
-            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
            <form id="patient_update_online" action="{{route('patient_update_online',$patient->id)}}" method="POST">
                 {{ csrf_field() }}
                 <div class="col-lg-6">
-                    
+
                     <div class="switch-button">
                         <div class="button" id="button-1">
                             <input type="checkbox" class="privacy-box" name="online" class="onoffswitch-checkbox" id="myonoffswitchH" value="{{$patient->online == 1 ? 1 : 0}}" {{$patient->online == 1 ? 'checked' : ''}}>
@@ -19,14 +20,16 @@
                             <div class="layer"></div>
                             <script>
                                 $('#myonoffswitchH').on('change', function() {
+                                    console.log("Sumbit Start");
                                     this.value =
                                     this.checked ? 1 : 0;
                                     $("#patient_update_online").submit();
+                                    console.log("Sumbit Done");
                                 });
                             </script>
                         </div>
                     </div>
-                    
+
                     <!--<div class="onoffswitch">-->
                     <!--<input type="checkbox" name="online" class="onoffswitch-checkbox" id="myonoffswitchH" value="{{$patient->online == 1 ? 1 : 0}}" {{$patient->online == 1 ? 'checked' : ''}}>-->
                     <!--<label class="onoffswitch-label" for="myonoffswitchH">-->
@@ -41,12 +44,12 @@
                     <!--    <div class="onoffswitch-switch"></div>-->
                     <!--</label>-->
                     <!--</div>-->
-                    
+
                 </div>
             </form>
-            
+
             <!-- Online Form -->
-            
+
             <!-- Search form -->
             {{-- <h6 class="h5 text-white"> @if($patient->online == 1)<img class="ml-5" src="{{url('imgs/online.png')}}" width="30">@else <img class="ml-5" src="{{url('imgs/offline.svg')}}" width="30"> @endif</h6> --}}
             <ul class="navbar-nav align-items-center ml-md-auto">
