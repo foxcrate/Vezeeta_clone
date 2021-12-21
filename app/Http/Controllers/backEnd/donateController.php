@@ -23,6 +23,7 @@ class donateController extends Controller
 {
     public function index($id){
         try{
+            //return "Alo";
             $bloods = Blood::get(['name']);
             $patient = Patien::findOrFail($id);
             $donors= Donor::get();
@@ -35,6 +36,7 @@ class donateController extends Controller
     }
     public function patient_update_is_donor(Request $request,$id){
         try{
+            //return "Alo";
             DB::beginTransaction();
             Alert::success('Success Message','Updated Success');
             $patient = Patien::findOrFail($id);
@@ -112,7 +114,7 @@ class donateController extends Controller
 
     public function donateStore(donateStore $request){
         try{
-            Alert::success('Success Message','Need Donor Added Successfuly');
+            //return "Alo";
             $needDonor = needDonor::create([
                 'patient_id'    => $request->patient_id,
                 'latitude'      => $request->latitude,
@@ -123,11 +125,15 @@ class donateController extends Controller
                 'patientName'   => $request->patientName,
                 'fileName'      => $request->fileNumber
             ]);
+
+            // return $needDonor;
+
+            Alert::success('Success Message','Blood Request Added Successfuly');
             $searchDonor = Donor::where('blood',$needDonor['blood'])->get();
             return redirect()->route('donor_search_blood',auth()->guard('patien')->user()->id)->with(['searchDonor' => $searchDonor]);
             // return redirect()->back();
         }catch(\Exception $ex){
-            return redirect()->back()->with(['error' => 'problem']);
+            return redirect()->back()->with(['error' => $ex->getMessage() ]);
         }
     }
     public function donor_search_blood($id){

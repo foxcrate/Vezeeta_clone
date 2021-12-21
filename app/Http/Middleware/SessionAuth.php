@@ -20,13 +20,12 @@ class SessionAuth
     public function handle($request, Closure $next)
     {
 
+        //return $next($request);
+
         if(Session::has('loggedID')){
 
-            // if($request->has('id')){
-            //     return redirect()->route('indexRoute')->with('error',"You Are Not Logged In");
-            // }
-
-            // if($request->has(route('id'))){
+            if( $request->route('id') ){
+                // return redirect()->route('indexRoute')->with('error',"There Is A Route ID");
                 if( Session::get('loggedID') == $request->route('id') ){
                     return $next($request);
                 }else{
@@ -34,7 +33,12 @@ class SessionAuth
                     Session::forget('loggedType');
                     return redirect()->route('indexRoute')->with('error',"You Are Not Logged In");
                 }
-            // }
+
+            }else{
+                // return redirect()->route('indexRoute')->with('error',"There Isn't A Route ID");
+                return $next($request);
+
+            }
 
         }
         else{

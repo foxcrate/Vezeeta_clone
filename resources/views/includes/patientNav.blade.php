@@ -13,13 +13,13 @@
 
                     <div class="switch-button">
                         <div class="button" id="button-1">
-                            <input type="checkbox" class="privacy-box" name="online" class="onoffswitch-checkbox" id="myonoffswitchH" value="{{$patient->online == 1 ? 1 : 0}}" {{$patient->online == 1 ? 'checked' : ''}}>
+                            <input type="checkbox" class="privacy-box" name="online" class="onoffswitch-checkbox" id="myonoffswitchH1" value="{{$patient->online == 1 ? 1 : 0}}" {{$patient->online == 1 ? 'checked' : ''}}>
                             <div class="knobs">
                               <span>Private</span>
                             </div>
                             <div class="layer"></div>
                             <script>
-                                $('#myonoffswitchH').on('change', function() {
+                                $('#myonoffswitchH1').on('change', function() {
                                     console.log("Sumbit Start");
                                     this.value =
                                     this.checked ? 1 : 0;
