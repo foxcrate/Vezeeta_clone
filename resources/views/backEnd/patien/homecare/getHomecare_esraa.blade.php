@@ -7,7 +7,7 @@
             @include('includes.patientNav')
             <div class="container-fluid pb-5">
                 <div class="row mt-5 mb-5">
-                <img src="{{url('imgs/homecare.png')}}" class="ml-auto mr-auto" width="500" style="margin-bottom: 50px;" />
+                <img src="{{url('imgs/homecare.svg')}}" class="ml-auto mr-auto" width="500" style="margin-bottom: 50px;" />
                 </div>
                 <div class="online-layouts">
                     @foreach($doctorSp as $sp)

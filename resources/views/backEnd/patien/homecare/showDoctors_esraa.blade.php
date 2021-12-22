@@ -7,7 +7,7 @@
     <div id="page-content-wrapper">
         <div class="container">
             <div class="row col-12 ml-auto mr-auto">
-                <div id="tab-content" class="col-lg-12 tab-content bg-doctor mb-5">
+                <div id="tab-content" class="col-lg-12 tab-content bg-doctor mt-5 mb-5">
                     <div id="tab-01" class="tab-pane fade show active" role="tabpanel" aria-labelledby="pill-01">
 
                         @php
@@ -39,7 +39,7 @@
 
 
                         @if( $found == 'false' )
-                            <img class="no-data-img animate__animated animate__flash" src="{{url('imgs/no-doctors.png')}}" alt="" style="background-color: transparent">
+                            <img class="no-data-img animate__animated animate__flash" src="{{url('imgs/dProfilePic.png')}}" alt="">
                         @endif
 
 

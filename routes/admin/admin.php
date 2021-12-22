@@ -33,20 +33,20 @@ Route::group(
             //test
 
             /* finder routes */
-            Route::group(['prefix' => 'finder'],function(){
-                Route::get('pharmacy/patient/{id}','finderController@getPharmacy')->name('finder.pharmacy');
-                Route::get('xray/patient/{id}','finderController@getXray')->name('finder.xray');
-                Route::get('lab/patient/{id}','finderController@getLab')->name('finder.lab');
-                Route::get('doctor/patient/{id}','finderController@getDoctor')->name('finder.doctor');
-                Route::get('nurse/patient/{id}','finderController@getNurse')->name('finder.nurse');
-                Route::get('patient/{id}/get_appointments/doctor/{doctor_id}','finderController@get_appointments')->name('finder.get_appointments');
-                Route::get('patient/{id}/search/doctor','finderController@search_doctor')->name('finder_search_doctor');
-                Route::post('patient/{patient_id}/doctor/appoiments/book/{id}','finderController@book')->name('doctor.book');
-                Route::get('patient/{patient_id}/doctor/show/appoiments/book/{id}/doctor_scudule/{sucdule_id}','finderController@show_book')->name('finder.show.book');
-                Route::post('patient/{patient_id}/doctor/update/appoiments/book/{id}/doctor_scudule/{sucdule_id}','finderController@update_book')->name('finder.update.book');
-                Route::get('patient/{id}/doctor/clinic','finderController@searchDoctorInClinic')->name('searchDoctorInClinic');
-                Route::get('patient/{id}/doctor/hosptail','finderController@searchDoctorInHosptail')->name('searchDoctorInHosptail');
-            });
+            // Route::group(['prefix' => 'finder'],function(){
+            //     Route::get('pharmacy/patient/{id}','finderController@getPharmacy')->name('finder.pharmacy');
+            //     Route::get('xray/patient/{id}','finderController@getXray')->name('finder.xray');
+            //     Route::get('lab/patient/{id}','finderController@getLab')->name('finder.lab');
+            //     Route::get('doctor/patient/{id}','finderController@getDoctor')->name('finder.doctor');
+            //     Route::get('nurse/patient/{id}','finderController@getNurse')->name('finder.nurse');
+            //     Route::get('patient/{id}/get_appointments/doctor/{doctor_id}','finderController@get_appointments')->name('finder.get_appointments');
+            //     Route::get('patient/{id}/search/doctor','finderController@search_doctor')->name('finder_search_doctor');
+            //     Route::post('patient/{patient_id}/doctor/appoiments/book/{id}','finderController@book')->name('doctor.book');
+            //     Route::get('patient/{patient_id}/doctor/show/appoiments/book/{id}/doctor_scudule/{sucdule_id}','finderController@show_book')->name('finder.show.book');
+            //     Route::post('patient/{patient_id}/doctor/update/appoiments/book/{id}/doctor_scudule/{sucdule_id}','finderController@update_book')->name('finder.update.book');
+            //     Route::get('patient/{id}/doctor/clinic','finderController@searchDoctorInClinic')->name('searchDoctorInClinic');
+            //     Route::get('patient/{id}/doctor/hosptail','finderController@searchDoctorInHosptail')->name('searchDoctorInHosptail');
+            // });
 
 
 
@@ -488,7 +488,7 @@ Route::group(
             /* doctor online routes */
             /* patien add request */
             Route::post('patient/online_doctor/chat','patientRequest@patient_add_request')->name("patient_add_request");
-            Route::get('patient/{id}/doctor/{doctor_id}','patientRequest@patient_chat_doctor')->name('patient_chat_doctor');
+            Route::get('patient/{id}/doctor/{doctor_id}','patientRequest@patient_chat_doctor')->name('patient_chat_doctor')->middleware([SessionAuth::class]);
             Route::post("doctor/decline_request",'patientRequest@doctor_decline_request')->name("doctor_decline_request");
             Route::post("doctor/accept_request","patientRequest@doctor_accept_request")->name("doctor_accept_request");
             Route::get("doctor/{id}/profile_patient/{patient_id}/request/{request_id}/chat/{chat_id}","patientRequest@show_patient_profile")->name("show_patient_profile");

@@ -6,9 +6,9 @@
 <div class="d-flex bg-as" id="wrapper">
     <div id="page-content-wrapper">
         @include('includes.patientNav')
-        <div class="container mt-5 mb-5">
+        <div class="container mb-5">
             <div class="row justify-content-start">
-                @if($labs)
+                @if(count($labs) >= 1)
                 <input type="hidden" name="longitude" class="longitude" value="">
                 <input type="hidden" name="latitude" class="latitude" value="">
                     @foreach($labs as $lab)
@@ -50,6 +50,8 @@
                             </div>
                         </div>
                     @endforeach
+                @else
+                    <img class="no-data-img animate__animated animate__flash" src="{{url('imgs/no-labs.png')}}" alt="">
                 @endif
             </div>
 

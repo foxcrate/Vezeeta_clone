@@ -38,7 +38,7 @@ class donateController extends Controller
         try{
             //return "Alo";
             DB::beginTransaction();
-            Alert::success('Success Message','Updated Success');
+
             $patient = Patien::findOrFail($id);
             if($request->has('is_donor')){
                 if($patient->age >= 18){
@@ -51,7 +51,12 @@ class donateController extends Controller
                         'latitude'  => $request->latitude,
                         'longitude' => $request->longitude
                     ]);
+                    Alert::success('Success Message','Updated Success');
                 }
+                else{
+                    Alert::error('Error','You Are Below 18 Years Old');
+                }
+
             }else{
                 $request->request->add(['is_donor' => 0]);
                 $patient->is_donor = false;

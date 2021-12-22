@@ -22,7 +22,6 @@
                 </ul>
             </div>
         @endif
-        {{-- <h1>Alo</h1> --}}
         <div class="container mt-5">
             <ul class="nav mb-5" id="myTab" role="tablist">
                 <li class="nav-item col-lg-3 m-1 ml-auto mr-auto pill-donate text-center li-active" role="presentation">
@@ -46,81 +45,218 @@
                 </li>
             </ul>
             <div class="tab-content mb-5" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                @foreach ($patient->donorSender as  $donorS)
+                    @if($donorS->accept == false)
+                        <p id="alertDonor" style="display:none">Requested Added</p>
+                        <div class="tab-content-request col-lg-8 row ml-auto mr-auto mb-auto mt-4">
+                            <div class="col-lg-2 mr-2 ml-5 mb-auto mt-auto">
+                                <img src="{{url('imgs/request.svg')}}" class=" mb-3" height="40">
+                            </div>
+                            <div class="col-lg-5 mb-auto mt-auto">
+                                <h5 class="font-weight-bold text-capitalize" height="40">{{ $donorS->patientRequest->name }}</h5>
+                                <h6 class="font-weight-bold text-capitalize" height="40">{{ $donorS->patientRequest->idCode }}</h6>
+                                {{--  <h5>{{ $donorS->patientRequest->name }} | <span class="font-weight-bold" style="color:#cf0a0a">Quantity: {{ $medicalS->quantity }}</span></h5>  --}}
+                            </div>
+                            <div class="col-lg-1 mb-auto mt-auto">
+                                <form id="acceptDonorRequest" action="" method="">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="donorReqId" value="{{ $donorS->id }}">
+                                    {{--  <input type="hidden" name="deviceId" value="{{ $medicalS->donorForm->id }}">  --}}
+                                    <input type="submit" class="btn btn-success h3" value="Accept">
+                                </form>
 
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    @foreach ($patient->donorSender as  $donorS)
-                        @if($donorS->accept == false)
-                            <p id="alertDonor" style="display:none">Requested Added</p>
-                            <div class="tab-content-request col-lg-8 row ml-auto mr-auto mb-auto mt-4">
+                            </div>
+                            <div class="col-lg-1 ml-4 mb-auto mt-auto">
+                                <form id="declineDonorRequest" action="" method="">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="donorReqId" value="{{ $donorS->id }}">
+                                    <input type="submit"class="btn btn-danger h3" value="Decline">
+                                </form>
+                            </div>
+                        </div>
+
+                    @endif
+                @endforeach
+                <div class="tab-content-sub mt-4 mb-5 col-lg-8 ml-auto mr-auto" style="" >
+                    <form class="row col-lg-12 ml-auto mr-auto" id="patient_update_is_donor" action="{{route('patient_update_is_donor',$patient->id)}}" method="POST">
+                      {{ csrf_field() }}
+                      <label class="col-lg-5 h5 font-weight-bold ml-5 mt-auto mb-auto" for="">Are you a blood donor?</label>
+                      <div class="col-lg-6 ml-auto mr-auto">
+                        <div class="onoffswitch">
+                          <input type="hidden" name="latitude" value="{{ $patient->latitude }}">
+                          <input type="hidden" name="longitude" value="{{ $patient->longitude }}">
+                          <input type="checkbox" name="is_donor" class="onoffswitch-checkbox" id="myonoffswitchH" value="{{$patient->is_donor == 1 ? 1 : 0}}" {{$patient->is_donor == 1 ? 'checked' : ''}}>
+                          <label class="onoffswitch-label" for="myonoffswitchH">
+                            <script
+                            src="https://code.jquery.com/jquery-3.5.1.min.js"
+                            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+                            crossorigin="anonymous"></script>
+                            <script>
+                                  $('#myonoffswitchH').on('change', function() {
+                                    console.log('aaa');
+                                      // this.value =
+                                      this.checked ? 1 : 0;
+                                      $("#patient_update_is_donor").submit();
+                                  });
+                              </script>
+                              <div class="onoffswitch-inner"></div>
+                              <div class="onoffswitch-switch"></div>
+                          </label>
+                        </div>
+                      </div>
+                    </form>
+
+                </div>
+                <!-- Button trigger Blood modal -->
+                @foreach ($patient->medicalSender as  $medicalS)
+                        @if($medicalS->accept == false)
+                            <div class="tab-content-request col-lg-10 row ml-auto mr-auto mb-auto mt-4">
                                 <div class="col-lg-2 mr-2 ml-5 mb-auto mt-auto">
                                     <img src="{{url('imgs/request.svg')}}" class=" mb-3" height="40">
                                 </div>
                                 <div class="col-lg-5 mb-auto mt-auto">
-                                    <h5 class="font-weight-bold text-capitalize" height="40">{{ $donorS->patientRequest->name }}</h5>
-                                    <h6 class="font-weight-bold text-capitalize" height="40">{{ $donorS->patientRequest->idCode }}</h6>
-                                    {{--  <h5>{{ $donorS->patientRequest->name }} | <span class="font-weight-bold" style="color:#cf0a0a">Quantity: {{ $medicalS->quantity }}</span></h5>  --}}
+                                    <h5 class="font-weight-bold text-capitalize" height="40">{{ $medicalS->patientRequest->name }}</h5>
+                                    <h5>{{ $medicalS->donorForm->medicalDevicesName }} | <span class="font-weight-bold" style="color:#cf0a0a">Quantity: {{ $medicalS->quantity }}</span></h5>
                                 </div>
                                 <div class="col-lg-1 mb-auto mt-auto">
-                                    <form id="acceptDonorRequest" action="" method="">
+                                    <form id="acceptDeviceRequest" action="" method="">
                                         {{ csrf_field() }}
-                                        <input type="hidden" name="donorReqId" value="{{ $donorS->id }}">
-                                        {{--  <input type="hidden" name="deviceId" value="{{ $medicalS->donorForm->id }}">  --}}
+                                        <input type="hidden" name="deviceReqId" value="{{ $medicalS->id }}">
+                                        <input type="hidden" name="deviceId" value="{{ $medicalS->donorForm->id }}">
                                         <input type="submit" class="btn btn-success h3" value="Accept">
                                     </form>
 
                                 </div>
-                                <div class="col-lg-1 ml-4 mb-auto mt-auto">
-                                    <form id="declineDonorRequest" action="" method="">
+                                <div class="col-lg-1 mb-auto mt-auto">
+                                    <form id="declineDeviceRequest" action="" method="">
                                         {{ csrf_field() }}
-                                        <input type="hidden" name="donorReqId" value="{{ $donorS->id }}">
+                                        <input type="hidden" name="medSId" value="{{ $medicalS->id }}">
                                         <input type="submit"class="btn btn-danger h3" value="Decline">
                                     </form>
                                 </div>
-                            </div>
 
                         @endif
                     @endforeach
+                <div class="tab-content-sub col-lg-10 ml-auto mr-auto">
+                    <div class="col-lg-6 ml-auto mr-auto" style="margin-top:40px; margin-bottom:40px;">
+                        <h3 class="col-lg-12 font-weight-bold text-center mb-3"><img src="{{url('imgs/request.svg')}}" class="mr-3" height="40">Request</h3>
+                        <button type="button" class="col-lg-12 btn btn-danger h5 mt-3" data-toggle="modal" data-target="#exampleModal1">
+                            Request Blood
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content-sub col-lg-10 ml-auto mr-auto mt-3">
+                    <div class="col-lg-8 ml-auto mr-auto" style="margin-top:40px; margin-bottom:40px;">
+                        <h3 class="col-lg-12 font-weight-bold text-center mb-3"><img src="{{url('imgs/search.svg')}}" class="mr-3" height="40">Donate</h3>
+                        <form action="{{route('searchDevice')}}" method="GET">
+                                <div class="col-10 ml-auto mr-auto">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="font-weight-bold" for="">Blood Types</label>
+                                            <select name="blood" id="" class="form-control">
+                                                <option hidden>Choose ..</option>
+                                                @foreach($bloods as $blood)
+                                                <option value="{{$blood->name}}">{{$blood->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10 ml-auto mr-auto">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="font-weight-bold" for="">Address</label>
+                                            <input id="pac-input" name = "address" type="text" class="form-control">
+                                            <div id="map" style="height: 550px;width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10 ml-auto mr-auto">
+                                    <div class="form-group">
+                                        <input type="submit" value="Submit" class="form-control btn btn-danger">
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
 
-                    <div class="tab-content-sub mt-4 mb-5 col-lg-8 ml-auto mr-auto" style="" >
-                        <form class="row col-lg-12 ml-auto mr-auto" id="patient_update_is_donor" action="{{route('patient_update_is_donor',$patient->id)}}" method="POST">
-                            {{ csrf_field() }}
-                            <label class="col-lg-5 h5 font-weight-bold ml-5 mt-auto mb-auto" for="">Are you a blood donor?</label>
-                            <div class="col-lg-6 ml-auto mr-auto">
-                                <div class="onoffswitch">
-                                <input type="hidden" name="latitude" value="{{ $patient->latitude }}">
-                                <input type="hidden" name="longitude" value="{{ $patient->longitude }}">
-                                <input type="checkbox" name="is_donor" class="onoffswitch-checkbox" id="myonoffswitchH" value="{{$patient->is_donor == 1 ? 1 : 0}}" {{$patient->is_donor == 1 ? 'checked' : ''}}>
-                                <label class="onoffswitch-label" for="myonoffswitchH">
-                                    <script
-                                    src="https://code.jquery.com/jquery-3.5.1.min.js"
-                                    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-                                    crossorigin="anonymous"></script>
-                                    <script>
-                                        $('#myonoffswitchH').on('change', function() {
-                                            console.log('aaa');
-                                            // this.value =
-                                            this.checked ? 1 : 0;
-                                            $("#patient_update_is_donor").submit();
-                                        });
-                                    </script>
-                                    <div class="onoffswitch-inner"></div>
-                                    <div class="onoffswitch-switch"></div>
-                                </label>
+                <!--Blood Modal -->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel1">Request Blood</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row col-lg-12 mb-5 mt-3">
+                            <div class="col-md-12">
+                                <label class="font-weight-bold" for="">Blood Types</label>
+                                <select name="blood" id="" class="form-control">
+                                    <option hidden>Choose ..</option>
+                                    @foreach($bloods as $blood)
+                                    <option value="{{$blood->name}}">{{$blood->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <label class="font-weight-bold" for="">Address</label>
+                                <input id="pac-input" name = "address" type="text" class="form-control">
+                                <div id="map" style="height: 550px;width: 100%;"></div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <label class="font-weight-bold" for="">More Details</label>
+                                <textarea name = "details" type="text" class="form-control" id="More-Detils" aria-describedby="emailHelp"></textarea>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <label class="font-weight-bold" for="">Patient Name</label>
+                                <input name = "patientName" type="text" class="form-control" id="Patient-Name" aria-describedby="emailHelp">
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <label class="font-weight-bold" for="">File Number</label>
+                                <input name = "fileNumber" type="text" class="form-control" id="Address" aria-describedby="emailHelp">
+                            </div>
+                            <div class="col-md-12 mt-5 text-center">
+                                <input type="submit" value="Request" class="col-md-6 btn btn-danger">
+                            </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                @if($medicalDevices)
+                  @foreach ($medicalDevices as $medicalDevice )
+                    @if($medicalDevice->patient_id != auth()->guard('patien')->user()->id)
+                        <div class="row col-lg-10 ml-auto mr-auto p-4 label-donate m-4">
+                            <div class="col-lg-12 text-center">
+                                <img src="{{$medicalDevice->medicalDevicesImage}}" class="col-lg-5 ml-auto mr-auto mt-2 mb-2" alt="...">
+                                <h4 class="col-lg-12 ml-auto mr-auto mt-2 mb-2 font-weight-bold">{{$medicalDevice->medicalDevicesName}}</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 pb-3">
+                                    @if(!$medicalDevice->patient->image)
+                                        <img class="rounded-circle" src="{{ asset('uploads/default.png') }}" width="90" height="90" />
+                                    @else
+                                        <img class="rounded-circle" src="{{$medicalDevice->patient->image}}" width="90" height="90" />
+                                    @endif
+                                </div>
+                                <div class="col-lg-8 mt-2">
+                                    <h5 class="col-lg-12 font-weight-bold">{{$medicalDevice->patient->name}}</h5>
+                                    <h5 class="col-lg-12 font-weight-bold">{{$medicalDevice->patient->idCode}}</h5>
+                                    <h6 class="col-lg-12">{{$medicalDevice->medicalDevicesInformation}}</h6>
+                                    <h6 class="col-lg-12 mb-3">{{$medicalDevice->medicalCategory}}</h6>
                                 </div>
                             </div>
-                        </form>
-
-                    </div>
-
-                    <div class="tab-content-sub col-lg-10 ml-auto mr-auto">
-                        <div class="col-lg-6 ml-auto mr-auto" style="margin-top:40px; margin-bottom:40px;">
-                            <h3 class="col-lg-12 font-weight-bold text-center mb-3"><img src="{{url('imgs/request.svg')}}" class="mr-3" height="40">Request</h3>
-                            <button type="button" class="col-lg-12 btn btn-danger h5 mt-3" data-toggle="modal" data-target="#exampleModal1">
-                                Request Blood
-                            </button>
                         </div>
-                    </div>
+                    @endif
 
+                  @endforeach
+                @endif
+              </div>
                     {{-- @if($bloods)
                         <form action="{{route('donate.store')}}" method="POST" style="margin-top:20px;">
                             {{ csrf_field() }}
@@ -129,9 +265,9 @@
                             <input type="hidden" id="longitude" name="longitude" value="markerCurrent.position.lng()">
                             <div class="row col-lg-8 ml-auto mr-auto mb-5 mt-3">
                                 <div class="col-md-10 ml-auto mr-auto">
-                                    <label class="font-weight-bold" for="">Type Blood</label>
-                                    <select required name="blood" id="blood" class="form-control">
-                                        <option value="">Blood</option>
+                                    <label class="font-weight-bold" for="">Blood Types</label>
+                                    <select name="blood" id="" class="form-control">
+                                        <option hidden>Choose ..</option>
                                         @foreach($bloods as $blood)
                                         <option value="{{$blood->name}}">{{$blood->name}}</option>
                                         @endforeach
@@ -139,87 +275,27 @@
                                 </div>
                                 <div class="col-md-10 mt-3 ml-auto mr-auto">
                                     <label class="font-weight-bold" for="">Address</label>
-                                    <input id="pac-input" required name = "address" type="text" class="form-control">
+                                    <input id="pac-input" name = "address" type="text" class="form-control">
                                     <div id="map" style="height: 550px;width: 550px;"></div>
-
                                 </div>
                                 <div class="col-md-10 mt-3 ml-auto mr-auto">
                                     <label class="font-weight-bold" for="">More Detils</label>
-                                    <textarea name = "details" required type="text" class="form-control" id="More-Detils" aria-describedby="emailHelp"></textarea>
-
+                                    <textarea name = "details" type="text" class="form-control" id="More-Detils" aria-describedby="emailHelp"></textarea>
                                 </div>
                                 <div class="col-md-10 mt-3 ml-auto mr-auto">
                                     <label class="font-weight-bold" for="">Patient Name</label>
-                                    <input name = "patientName" required type="text" class="form-control" id="Patient-Name" aria-describedby="emailHelp">
+                                    <input name = "patientName" type="text" class="form-control" id="Patient-Name" aria-describedby="emailHelp">
                                 </div>
                                 <div class="col-md-10 mt-3 ml-auto mr-auto">
                                     <label class="font-weight-bold" for="">File Number</label>
-                                    <input required name = "fileNumber" type="text" class="form-control" id="Address" aria-describedby="emailHelp">
+                                    <input name = "fileNumber" type="text" class="form-control" id="Address" aria-describedby="emailHelp">
                                 </div>
                                 <div class="col-md-12 mt-5 text-center">
                                     <input type="submit" value="Filter" class="col-md-6 btn btn-danger">
                                 </div>
                             </div>
                         </form>
-                    @endif --}}
-
-                    {{-- Blood Modal --}}
-                    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel1">Request Blood</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="{{route('donate.store')}}" method="POST">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="patient_id" value="{{$patient->id}}">
-                                    <input type="hidden" id="latitude" name="latitude" value="markerCurrent.position.lat()">
-                                    <input type="hidden" id="longitude" name="longitude" value="markerCurrent.position.lng()">
-                                    <div class="row col-lg-12">
-                                        <div class="col-md-12">
-                                            <label class="font-weight-bold" for="">Type Blood</label>
-                                            <select required name="blood" id="blood" class="form-control">
-                                                <option value="">Blood</option>
-                                                @foreach($bloods as $blood)
-                                                <option value="{{$blood->name}}">{{$blood->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-md-12 mt-3">
-                                            <label class="font-weight-bold" for="">Address</label>
-                                            <input id="pac-input" required name = "address" type="text" class="form-control">
-                                            <div id="map" style="height: 550px;width: 100%;"></div>
-
-                                        </div>
-                                        <div class="col-md-12 mt-3">
-                                            <label class="font-weight-bold" for="">More Detils</label>
-                                            <textarea name = "details" required type="text" class="form-control" id="More-Detils" aria-describedby="emailHelp"></textarea>
-
-                                        </div>
-                                        <div class="col-md-12 mt-3">
-                                            <label class="font-weight-bold" for="">Patient Name</label>
-                                            <input name = "patientName" required type="text" class="form-control" id="Patient-Name" aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="col-md-12 mt-3">
-                                            <label class="font-weight-bold" for="">File Number</label>
-                                            <input required name = "fileNumber" type="number" class="form-control" id="Address" aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="col-md-12 mt-5 text-center">
-                                            <input type="submit" value="Filter" class="col-md-6 btn btn-danger">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
-                        </div>
-                    </div>
-                    {{-- End Blood Modal --}}
-
+                    @endif
                     @if($donors)
                         @foreach ($donors as $donor)
                             @if($donor->patient->is_donor == true && $donor->patient_id != auth()->guard('patien')->user()->id)
@@ -237,11 +313,11 @@
                             @endif
                         @endforeach
                     @endif
-                </div>
+              </div> --}}
 
               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <!-- Button trigger Medical Devices modal -->
-                    @foreach ($patient->medicalSender as  $medicalS)
+                @foreach ($patient->medicalSender as  $medicalS)
                         @if($medicalS->accept == false)
                             <div class="tab-content-request col-lg-10 row ml-auto mr-auto mb-auto mt-4">
                                 <div class="col-lg-2 mr-2 ml-5 mb-auto mt-auto">
@@ -273,7 +349,7 @@
                 <div class="tab-content-sub col-lg-10 ml-auto mr-auto">
                     <div class="col-lg-6 ml-auto mr-auto" style="margin-top:40px; margin-bottom:40px;">
                         <h3 class="col-lg-12 font-weight-bold text-center mb-3"><img src="{{url('imgs/request.svg')}}" class="mr-3" height="40"> Request</h3>
-                        <button type="button" class="col-lg-12 btn btn-danger h5 mt-3" data-toggle="modal" data-target="#exampleModal2">
+                        <button type="button" class="col-lg-12 btn btn-danger h5 mt-3" data-toggle="modal" data-target="#exampleModal1">
                             Add Medical Devices
                         </button>
                     </div>
@@ -295,8 +371,8 @@
                         </form>
                     </div>
                 </div>
-                 <!--Medical Devices Modal -->
-                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                <!--Medical Devices Modal -->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -397,7 +473,7 @@
                 @endif
               </div>
               <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                 <!-- Button trigger Medication modal -->
+                <!-- Button trigger Medication modal -->
                     @foreach ($patient->medactionSender as  $medS)
                         @if($medS->accept == false)
                             <div class="tab-content-request col-lg-10 row ml-auto mr-auto mb-auto mt-4">
@@ -454,7 +530,7 @@
                             </form>
                         </div>
                     </div>
-               <!-- Medication Modal -->
+                <!-- Medication Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -702,17 +778,16 @@
             });
         });
 
-
-    //Active Buttons
-    var header = document.getElementById("myTab");
-    var btns = header.getElementsByClassName("pill-donate");
-    for (var i = 0; i < btns.length; i++) {
+        //Active Buttons
+        var header = document.getElementById("myTab");
+        var btns = header.getElementsByClassName("pill-donate");
+        for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function() {
-            var current = document.getElementsByClassName("li-active");
-            current[0].className = current[0].className.replace(" li-active", "");
-            this.className += " li-active";
+        var current = document.getElementsByClassName("li-active");
+        current[0].className = current[0].className.replace(" li-active", "");
+        this.className += " li-active";
         });
-    }
+        }
 
     </script>
 </div>

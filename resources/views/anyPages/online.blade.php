@@ -114,15 +114,22 @@
         <div class="row mt-5 mb-2">
           <img src="{{url('imgs/online-d.svg')}}" class="ml-auto mr-auto" width="500" style="margin-bottom: 50px;" />
         </div>
-        <div class="row container ml-auto mr-auto mb-5">
-          <div id="tab-sidebar" class="row col-lg-12 mr-auto ml-auto" role="tablist" aria-orientation="vertical">
+        <div class="online-layouts">
             @foreach($doctorSp as $sp)
-              <div class="item-spcailty col-lg-3 m-1 font-weight-bold h6 mr-auto ml-auto text-center">
-                  <a class="text-spcailty font-weight-bold text-decoration " href="{{route("showDoctors",[$patient->id,$sp->id])}}">{{$sp->name}}</a>
-              </div>
+                <a href="{{route("showDoctors",[$patient->id,$sp->id])}}" class="text-spcailty font-weight-bold text-decoration online-layout col-lg-3">
+                    {{$sp->name}}
+                </a>
             @endforeach
-          </div>
         </div>
+        {{-- <div class="row container ml-auto mr-auto mb-5"> --}}
+          {{-- <div id="tab-sidebar" class="row col-lg-12 mr-auto ml-auto" role="tablist" aria-orientation="vertical"> --}}
+            {{-- @foreach($doctorSp as $sp) --}}
+              {{-- <div class="item-spcailty col-lg-3 m-1 font-weight-bold h6 mr-auto ml-auto text-center">
+                  <a class="text-spcailty font-weight-bold text-decoration " href="{{route("showDoctors",[$patient->id,$sp->id])}}">{{$sp->name}}</a>
+              </div> --}}
+            {{-- @endforeach --}}
+          {{-- </div> --}}
+        {{-- </div> --}}
       </div>
       @include('backEnd.layoutes.footer')
     </div>

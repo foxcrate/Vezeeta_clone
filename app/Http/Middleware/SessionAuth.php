@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class SessionAuth
 {
@@ -29,6 +30,7 @@ class SessionAuth
                 if( Session::get('loggedID') == $request->route('id') ){
                     return $next($request);
                 }else{
+                    Auth::guard( Session::get('loggedType') )->logout();
                     Session::forget('loggedID');
                     Session::forget('loggedType');
                     return redirect()->route('indexRoute')->with('error',"You Are Not Logged In");

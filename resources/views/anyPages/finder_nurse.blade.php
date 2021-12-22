@@ -6,8 +6,8 @@
     <div id="page-content-wrapper">
         <div class="main-content " id="panel">
             @include('includes.patientNav')
-            <div class="container mt-5">
-                @if($nurses)
+            <div class="container">
+                @if(count($nurses) >= 1)
                     <input type="hidden" name="longitude" class="longitude" value="">
                     <input type="hidden" name="latitude" class="latitude" value="">
                     <div class="row">
@@ -45,6 +45,8 @@
                             </div>
                         @endforeach
                     </div>
+                @else
+                    <img class="no-data-img animate__animated animate__flash" src="{{url('imgs/no-nurses.png')}}" alt="">
                 @endif
             </div>
         </div>

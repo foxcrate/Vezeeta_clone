@@ -6,6 +6,9 @@
         <div id="page-content-wrapper">
             <!-- Topnav -->
             @include('includes.patientNav')
+            @php
+                $x='false';
+            @endphp
             <div class="tab-content mb-5" id="myTabContent">
                 @if(session('searchDonor'))
                     @foreach(session()->get('searchDonor') as $donor)
@@ -33,6 +36,9 @@
                                 </div>
                                 </div>
                             </div>
+                            @php
+                                $x='true';
+                            @endphp
                         @else
                         <div class="container">
                             <p class="alert alert-danger">Patient Not Found</p>
@@ -40,6 +46,13 @@
                         @endif
                     @endforeach
                 @endif
+                @if ($x==='false')
+                    <div class="no-data-img">
+                        <img class="no-data-img animate__animated animate__flash" src="{{url('imgs/no-blood.png')}}" alt="" style="margin-left: 25%;">
+                    </div>
+                @endif
+
+
             </div>
             <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
             <!-- footer -->
