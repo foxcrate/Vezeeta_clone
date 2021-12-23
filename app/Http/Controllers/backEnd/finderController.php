@@ -207,6 +207,9 @@ class finderController extends Controller
         try{
             $patient = Patien::findOrFail($id);
             $doctor = Appointment::findOrFail($docotr_id);
+            // $doctor = Appointment::where('doctor_id',$docotr_id);
+            // return $doctor;
+            //return $doctor->appointments;
             return view('backEnd.online-doctor.get_appointments',compact('patient','doctor'));
         }
         catch(\Exception $ex){
@@ -216,12 +219,14 @@ class finderController extends Controller
 
     public function search_doctor($id,Request $request){
         try{
+            //return $request;
             $patient = Patien::findOrFail($id);
-            $doctors = Appointment::where('doctor_name','LIKE', $request->search . '%')
-            ->orWhere('special','LIKE', $request->search . '%')->count();
+            $doctors = Appointment::where('doctor_name','LIKE', '%' . $request->search . '%')
+            ->orWhere('special','LIKE','%' . $request->search . '%')->count();
+            //return $doctors;
             if($doctors){
-                $doctors = Appointment::where('doctor_name','LIKE', $request->search . '%')
-                ->orWhere('special','LIKE', $request->search . '%')->get();
+                $doctors = Appointment::where('doctor_name','LIKE','%' . $request->search . '%')
+                ->orWhere('special','LIKE','%' . $request->search . '%')->get();
                 return view('anyPages.get_doctors',compact('patient','doctors'));
             }
             Alert::error('Error','Not Found');
@@ -234,11 +239,11 @@ class finderController extends Controller
 
     }
 
-    public function book(DoctorSucduleRequest $request,$patient_id,$id){
+    public function book(DoctorSucduleRequest $request,$id,$doctor_id){
         try{
             Alert::success('Success','Sucess Message');
-            $patient = Patien::findOrFail($patient_id);
-            $doctor = Appointment::findOrFail($id);
+            $patient = Patien::findOrFail($id);
+            $doctor = Appointment::findOrFail($doctor_id);
             $bookRequest = $request->all();
             $doc_sucdule = testScudule::create([
                 'patient_id'    => $request->patient_id,
@@ -251,7 +256,7 @@ class finderController extends Controller
                 'appoiment_id'  => $request->appoiment_id
             ]);
             if($doc_sucdule){
-                return redirect()->route('finder.show.book',['patient_id'=>$patient_id,'doctor_id'=>$id,'scudle_id'=>$doc_sucdule['id']]);
+                return redirect()->route('finder.show.book',['id'=>$patient->id,'doctor_id'=>$doctor_id,'scudle_id'=>$doc_sucdule['id']]);
             }
 
         }
@@ -261,10 +266,10 @@ class finderController extends Controller
         }
     }
 
-    public function show_book($patient_id,$id,$doc_sucdule_id){
+    public function show_book($id,$doctor_id,$doc_sucdule_id){
         try{
-            $patient = Patien::findOrFail($patient_id);
-            $doctor = Appointment::findOrFail($id);
+            $patient = Patien::findOrFail($id);
+            $doctor = Appointment::findOrFail($doctor_id);
             $doc_sucdule = testScudule::findOrFail($doc_sucdule_id);
             return view('anyPages.ShowBook',compact('patient','doctor','doc_sucdule'));
         }
@@ -274,16 +279,16 @@ class finderController extends Controller
         }
     }
 
-    public function update_book(Request $request,$patient_id,$id,$doc_sucdule_id){
+    public function update_book(Request $request,$id,$doctor_id,$doc_sucdule_id){
         try{
             Alert::success('Success','Sucess Confirmed');
-            $patient = Patien::findOrFail($patient_id);
-            $doctor = Appointment::findOrFail($id);
+            $patient = Patien::findOrFail($id);
+            $doctor = Appointment::findOrFail($doctor_id);
             $doc_sucdulee = testScudule::findOrFail($doc_sucdule_id);
             // $doc_sucdule->update($request->except(['Hpatient_name','Hpatient_phone']));
             $bookRequest = $request->all();
             $doc_sucdule = DoctorScudule::create([
-                'patient_id'    => $request->patient_id,
+                'patient_id'    => $request->id,
                 'patient_name' => $request->patient_name,
                 'patient_phone' => $request->patient_phone,
                 'day_name'      => $doc_sucdulee->day_name,

@@ -81,11 +81,11 @@
                         @endif
                     @endforeach
 
-                    <div class="tab-content-sub mt-4 mb-5 col-lg-8 ml-auto mr-auto" style="" >
+                    <div class="tab-content-sub mt-4 mb-5 col-lg-10 ml-auto mr-auto" style="" >
                         <form class="row col-lg-12 ml-auto mr-auto" id="patient_update_is_donor" action="{{route('patient_update_is_donor',$patient->id)}}" method="POST">
                             {{ csrf_field() }}
-                            <label class="col-lg-5 h5 font-weight-bold ml-5 mt-auto mb-auto" for="">Are you a blood donor?</label>
-                            <div class="col-lg-6 ml-auto mr-auto">
+                            <label class="col-lg-5 h5 font-weight-bold ml-5 mt-auto mb-auto" for="">If You Ready To Donate Your Blood, Check The Button?</label>
+                            <div class="col-lg-2 ml-auto mr-auto">
                                 <div class="onoffswitch">
                                 <input type="hidden" name="latitude" value="{{ $patient->latitude }}">
                                 <input type="hidden" name="longitude" value="{{ $patient->longitude }}">

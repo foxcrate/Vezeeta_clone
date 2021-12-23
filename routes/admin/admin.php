@@ -82,31 +82,11 @@ Route::group(
                     Route::get('nurse/patient/{id}','finderController@getNurse')->name('finder.nurse');
                     Route::get('patient/{id}/get_appointments/doctor/{doctor_id}','finderController@get_appointments')->name('finder.get_appointments');
                     Route::get('patient/{id}/search/doctor','finderController@search_doctor')->name('finder_search_doctor');
-                    Route::post('patient/{patient_id}/doctor/appoiments/book/{id}','finderController@book')->name('doctor.book');
-                    Route::get('patient/{patient_id}/doctor/show/appoiments/book/{id}/doctor_scudule/{sucdule_id}','finderController@show_book')->name('finder.show.book');
-                    Route::post('patient/{patient_id}/doctor/update/appoiments/book/{id}/doctor_scudule/{sucdule_id}','finderController@update_book')->name('finder.update.book');
+                    Route::post('patient/{id}/doctor/appoiments/book/{doctor_id}','finderController@book')->name('doctor.book');
+                    Route::get('patient/{id}/doctor/show/appoiments/book/{doctor_id}/doctor_scudule/{sucdule_id}','finderController@show_book')->name('finder.show.book');
+                    Route::post('patient/{id}/doctor/update/appoiments/book/{doctor_id}/doctor_scudule/{sucdule_id}','finderController@update_book')->name('finder.update.book');
                     Route::get('patient/{id}/doctor/clinic','finderController@searchDoctorInClinic')->name('searchDoctorInClinic');
                     Route::get('patient/{id}/doctor/hosptail','finderController@searchDoctorInHosptail')->name('searchDoctorInHosptail');
-                });
-
-                /* qr */
-                Route::group(['prefix' => 'Qr'],function(){
-                    Route::get('/{id}','qrController@index')->name('patient.qr.index');
-                    Route::get('xray/{id}','qrController@xrayQr')->name('xray.qr.index');
-                    Route::get('lab/{id}','qrController@labQr')->name('lab.qr.index');
-                    Route::get('pharmacy/{id}','qrController@pharmacyQr')->name('pharmacy.qr.index');
-                    Route::get('doctor/{id}','qrController@doctorQr')->name('doctor.qr.index');
-                    Route::get('nurse/{id}','qrController@nurseQr')->name('nurse.qr.index');
-                });
-                /* qr */
-
-                Route::group(['prefix' => 'club'], function () {
-                    Route::get('patient/{id}','clubController@patientClub')->name('patient.club');
-                    Route::get('doctor/{id}','clubController@doctorClub')->name('doctor.club');
-                    Route::get('xray/{id}','clubController@xrayClub')->name('xray.club');
-                    Route::get('lab/{id}','clubController@labClub')->name('lab.club');
-                    Route::get('pharmacy/{id}','clubController@pharmacyClub')->name('pharmacy.club');
-                    Route::get('nurse/{id}','clubController@nurseClub')->name('nurse.club');
                 });
 
                 // donate routes //
@@ -197,7 +177,25 @@ Route::group(
 
             });
 
+            Route::group(['prefix' => 'club'], function () {
+                Route::get('patient/{id}','clubController@patientClub')->name('patient.club')->middleware([SessionAuthPatient::class]);
+                Route::get('doctor/{id}','clubController@doctorClub')->name('doctor.club');
+                Route::get('xray/{id}','clubController@xrayClub')->name('xray.club');
+                Route::get('lab/{id}','clubController@labClub')->name('lab.club');
+                Route::get('pharmacy/{id}','clubController@pharmacyClub')->name('pharmacy.club');
+                Route::get('nurse/{id}','clubController@nurseClub')->name('nurse.club');
+            });
 
+            /* qr */
+            Route::group(['prefix' => 'Qr'],function(){
+                Route::get('/{id}','qrController@index')->name('patient.qr.index')->middleware([SessionAuthPatient::class]);
+                Route::get('xray/{id}','qrController@xrayQr')->name('xray.qr.index');
+                Route::get('lab/{id}','qrController@labQr')->name('lab.qr.index');
+                Route::get('pharmacy/{id}','qrController@pharmacyQr')->name('pharmacy.qr.index');
+                Route::get('doctor/{id}','qrController@doctorQr')->name('doctor.qr.index');
+                Route::get('nurse/{id}','qrController@nurseQr')->name('nurse.qr.index');
+            });
+            /* qr */
 
             Route::get('/welcome/patient/{id}','patienController@welcome')->name('patient.welcome')->middleware([SessionAuthPatient::class]);
             Route::get('/patien/profile/{id}','patienController@profile')->name('patien-profile')->middleware('is_patient')->middleware([SessionAuthPatient::class]);

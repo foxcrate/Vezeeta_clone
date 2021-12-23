@@ -22,12 +22,18 @@
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link search-doc" id="pills-clinic-tab" data-toggle="pill" href="#pills-clinic" role="tab" aria-controls="pills-profile" aria-selected="false">Clinic</a>
-                  </li>
+                </li>
             </ul>
+
+            {{-- <input type="hidden" name="patient_id" value="{{$patient->id}}"> --}}
+            {{-- <input type="hidden" name="patient_id" value="{{$patient->id}}"> --}}
+            {{-- <input type="hidden" name="patient_id" value="{{$patient->id}}"> --}}
+            {{-- <input type="hidden" name="patient_id" value="{{$patient->id}}"> --}}
+
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                     <form class="col-8 ml-auto mr-auto" action="{{route('finder_search_doctor',$patient->id)}}" method="GET">
-                        {{-- <input type="hidden" name="patient_id" value="{{$patient->id}}"> --}}
+
                         <div class="row col-lg-12 ml-auto mr-auto" style="margin-bottom:100px; margin-top:88px;">
                             <div class="col-12">
                                 <span class="text-white font-weight-bold text-decoration" style="font-size:25pt;">Search By Doctor Name</span>
@@ -46,7 +52,7 @@
 
                 <div class="tab-pane fade" id="pills-special" role="tabpanel" aria-labelledby="pills-special-tab">
                     <form class="col-8 ml-auto mr-auto" action="{{route('finder_search_doctor',$patient->id)}}" method="GET">
-                        {{-- <input type="hidden" name="patient_id" value="{{$patient->id}}"> --}}
+
                         <div class="row col-lg-12 ml-auto mr-auto" style="margin-bottom:100px; margin-top:88px;">
                             <div class="col-12">
                                 <span class="text-white font-weight-bold text-decoration" style="font-size:25pt;">Search By Doctor Speciality</span>
@@ -65,7 +71,7 @@
 
                 <div class="tab-pane fade" id="pills-Hospital" role="tabpanel" aria-labelledby="pills-Hospital-tab">
                     <form class="col-8 ml-auto mr-auto" action="{{route('searchDoctorInHosptail',$patient->id)}}" method="GET">
-                        {{-- <input type="hidden" name="patient_id" value="{{$patient->id}}"> --}}
+
                         <div class="row col-lg-12 ml-auto mr-auto" style="margin-bottom:100px; margin-top:88px;">
                             <div class="col-12">
                                 <span class="text-white font-weight-bold text-decoration" style="font-size:25pt;">Search By Hospital</span>
@@ -83,7 +89,7 @@
                 </div>
                 <div class="tab-pane fade" id="pills-clinic" role="tabpanel" aria-labelledby="pills-clinic-tab">
                     <form class="col-8 ml-auto mr-auto" action="{{route('searchDoctorInClinic',$patient->id)}}" method="GET">
-                        {{-- <input type="hidden" name="patient_id" value="{{$patient->id}}"> --}}
+
                         <div class="row col-lg-12 ml-auto mr-auto" style="margin-bottom:100px; margin-top:88px;">
                             <div class="col-12">
                                 <span class="text-white font-weight-bold text-decoration" style="font-size:25pt;">Search By Clinic</span>
