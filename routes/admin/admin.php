@@ -6,7 +6,7 @@ use App\models\product;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Database\Eloquent\Collection;
 use Yajra\DataTables\Facades\DataTables;
-use App\Http\Middleware\SessionAuth;
+use App\Http\Middleware\SessionAuthPatient;
 
 /* admin routes */
 Route::group(
@@ -70,7 +70,7 @@ Route::group(
             Route::get('/patien/register','patienController@register')->name('patienRegister');
             Route::post('/patien/register','patienController@postRegister')->name('patien_post_Register');
 
-            Route::middleware([SessionAuth::class])->group(function ($id) {
+            Route::middleware([SessionAuthPatient::class])->group(function ($id) {
 
                 Route::get('patien/homepage/{id}','patienController@homepage')->name('patien.homepage');
 
@@ -199,20 +199,20 @@ Route::group(
 
 
 
-            Route::get('/welcome/patient/{id}','patienController@welcome')->name('patient.welcome')->middleware([SessionAuth::class]);
-            Route::get('/patien/profile/{id}','patienController@profile')->name('patien-profile')->middleware('is_patient')->middleware([SessionAuth::class]);
-            Route::get('/patien/edit/profile/{id}','patienController@editProfile')->name('edit.profile')->middleware('is_patient')->middleware([SessionAuth::class]);
+            Route::get('/welcome/patient/{id}','patienController@welcome')->name('patient.welcome')->middleware([SessionAuthPatient::class]);
+            Route::get('/patien/profile/{id}','patienController@profile')->name('patien-profile')->middleware('is_patient')->middleware([SessionAuthPatient::class]);
+            Route::get('/patien/edit/profile/{id}','patienController@editProfile')->name('edit.profile')->middleware('is_patient')->middleware([SessionAuthPatient::class]);
             Route::post('patien/update/profile/{id}','patienController@updateProfile')->name('update.profile');
-            Route::get('patien/Getreport/{id}','patienController@getReport')->name('getReport')->middleware([SessionAuth::class]);
+            Route::get('patien/Getreport/{id}','patienController@getReport')->name('getReport')->middleware([SessionAuthPatient::class]);
             // new edit data profile //
-            Route::get('patien/edit/data/profile/{id}','patienController@edit_data_profile')->name('edit_data_profile')->middleware([SessionAuth::class]);
+            Route::get('patien/edit/data/profile/{id}','patienController@edit_data_profile')->name('edit_data_profile')->middleware([SessionAuthPatient::class]);
             Route::post('patien/update/data/profile/{id}/{profile_id}','patienController@update_data_profile')->name('updata_data_profile');
             // new edit data profile //
             Route::get('/patien/logout','patienController@logout')->name('patien.logout');
-            Route::get('/patien/edit/data/{id}','patienController@editData')->name('edit.data.profile')->middleware([SessionAuth::class]);
+            Route::get('/patien/edit/data/{id}','patienController@editData')->name('edit.data.profile')->middleware([SessionAuthPatient::class]);
             Route::put('/patien/update/data/{id}','patienController@updateData')->name('update.data.profile');
-            Route::get('/patien/sendEmail/{id}','patienController@sendEmail')->name('patient_send_email')->middleware([SessionAuth::class]);
-            Route::get('/patien/verify/{id}','patienController@verifyPatient')->name('verifyPatient')->middleware([SessionAuth::class]);
+            Route::get('/patien/sendEmail/{id}','patienController@sendEmail')->name('patient_send_email')->middleware([SessionAuthPatient::class]);
+            Route::get('/patien/verify/{id}','patienController@verifyPatient')->name('verifyPatient')->middleware([SessionAuthPatient::class]);
             Route::get('/verifyCode','backEndController@verify');
             Route::post('/verifyCode','backEndController@postVerify')->name('postVerify');
             Route::get('/ver','patienController@verfi');
@@ -220,23 +220,23 @@ Route::group(
             Route::get('/notifacation/patient/{id}/test/{test_id?}','patienController@notifyTest')->name('notifyTest');
             Route::get('/notifacation/patient/{id}/ray/{ray_id?}','patienController@notifyRay')->name('notifyRay');
             Route::get('notification/read','patienController@readNotify')->name('patient.readNotify');
-            Route::get('patient/appointments/{id}','patienController@patient_Appointments')->name('patient_Appointments')->middleware([SessionAuth::class]);
+            Route::get('patient/appointments/{id}','patienController@patient_Appointments')->name('patient_Appointments')->middleware([SessionAuthPatient::class]);
             Route::post('patient/addRate/doctor','patienController@addRateDoctor')->name('addRateDoctor');
             Route::post('patient/addRate/xray','patienController@addRateXray')->name('addRateXray');
             Route::post('patient/addRate/lab','patienController@addRateLab')->name('addRateLab');
             /* old pescription route */
-            Route::get('/patien/old_pescription/{id}','patienController@getOldpescription')->name('get_old_pescription')->middleware([SessionAuth::class]);
-            Route::get('/patien/{type}/{id}/download/pdf','patienController@download_pdf')->name('download_pdf')->middleware([SessionAuth::class]);
-            Route::get('/patien/{type}/{id}/delete/files','patienController@deleteFiles')->name('deleteFiles')->middleware([SessionAuth::class]);
+            Route::get('/patien/old_pescription/{id}','patienController@getOldpescription')->name('get_old_pescription')->middleware([SessionAuthPatient::class]);
+            Route::get('/patien/{type}/{id}/download/pdf','patienController@download_pdf')->name('download_pdf')->middleware([SessionAuthPatient::class]);
+            Route::get('/patien/{type}/{id}/delete/files','patienController@deleteFiles')->name('deleteFiles')->middleware([SessionAuthPatient::class]);
 
             /* get and search wife */
-            Route::get('patient/{id}/searchWife','patienController@searchWife')->name('patient.searchWife')->middleware([SessionAuth::class]);
-            Route::get('patient/searchWife','patienController@getWife')->name('getWife')->middleware([SessionAuth::class]);
+            Route::get('patient/{id}/searchWife','patienController@searchWife')->name('patient.searchWife')->middleware([SessionAuthPatient::class]);
+            Route::get('patient/searchWife','patienController@getWife')->name('getWife')->middleware([SessionAuthPatient::class]);
             Route::post('patient/{id}/addRequestWife','patienController@addRequestWife')->name('addRequestWife');
             Route::post('patient/acceptRequestWife','patienController@acceptRequestWife')->name('acceptRequestWife');
             Route::post('patient/declineRequestWife','patienController@declineRequestWife')->name('declineRequestWife');
             // show report wife or husband //
-            Route::get('accept/report/patient/{id}','patienController@showReportAccept')->name('showReportAccept')->middleware([SessionAuth::class]);
+            Route::get('accept/report/patient/{id}','patienController@showReportAccept')->name('showReportAccept')->middleware([SessionAuthPatient::class]);
             // add wife or husband
             Route::post('addNew/wifeOrHusband','patienController@addNew_wifeOrHusband')->name('addNew_wifeOrHusband');
 
@@ -488,7 +488,7 @@ Route::group(
             /* doctor online routes */
             /* patien add request */
             Route::post('patient/online_doctor/chat','patientRequest@patient_add_request')->name("patient_add_request");
-            Route::get('patient/{id}/doctor/{doctor_id}','patientRequest@patient_chat_doctor')->name('patient_chat_doctor')->middleware([SessionAuth::class]);
+            Route::get('patient/{id}/doctor/{doctor_id}','patientRequest@patient_chat_doctor')->name('patient_chat_doctor')->middleware([SessionAuthPatient::class]);
             Route::post("doctor/decline_request",'patientRequest@doctor_decline_request')->name("doctor_decline_request");
             Route::post("doctor/accept_request","patientRequest@doctor_accept_request")->name("doctor_accept_request");
             Route::get("doctor/{id}/profile_patient/{patient_id}/request/{request_id}/chat/{chat_id}","patientRequest@show_patient_profile")->name("show_patient_profile");

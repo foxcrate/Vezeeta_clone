@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
-class SessionAuth
+class SessionAuthPatient
 {
     /**
      * Handle an incoming request.
@@ -31,6 +31,8 @@ class SessionAuth
                     return $next($request);
                 }else{
                     Auth::guard( Session::get('loggedType') )->logout();
+                    //Auth::guard('patien')->logout();
+
                     Session::forget('loggedID');
                     Session::forget('loggedType');
                     return redirect()->route('indexRoute')->with('error',"You Are Not Logged In");
