@@ -49,7 +49,7 @@
             </div>
         </div>
         <!-- footer -->
-        <footer class="footer" style="position: fixed; bottom:0; width:100%">
+        <footer class="footer">
             <div class="container-fluid text-center">
                 <div class="row copy-right p-2">
                   <div class="col-md-6">
