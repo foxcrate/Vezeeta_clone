@@ -1,10 +1,23 @@
 <!--start-Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top justify-content-between">
   <div class= "container">
+    {{-- <h1> {{ url()->current() }} </h1> --}}
+    <h1>
+        @php
+            $type = '';
+            if (str_contains( url()->current() , '/dashbord/patien/')) {
+                echo 'Patient';
+            }
+            elseif(str_contains( url()->current() , '/dashbord/online_doctor/')) {
+                echo 'Doctor';
+            }
+        @endphp
+    </h1>
     <a href="{{route("indexRoute")}}" class="row" style="text-decoration:none">
       <img class="ml-2" src="{{url('imgs/logo.svg')}}" width="60" alt="Responsive image">
       <h3 class="h3 ml-lg-3 mt-2 font-weight-bold text-uppercase " >Patient Medical History</h3>
     </a>
+
     {{-- </a> --}}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

@@ -472,8 +472,8 @@ class patienController extends Controller
     public function logout(){
         Auth::guard('patien')->logout();
 
-        Session::forget('loggedID');
-        Session::forget('loggedType');
+        Session::forget('PatientLoggedID');
+        Session::forget('PatientLogged');
 
         return redirect()->route('indexRoute');
     }

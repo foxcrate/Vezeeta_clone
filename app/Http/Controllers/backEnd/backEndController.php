@@ -57,7 +57,8 @@ class backEndController extends Controller
     }
     /* end of function */
     public function login(Request $request){
-        //dd($request->all());
+        //return $request->all() ;
+        //return "Alo";
         $arr = [
             'IdCode' => 'required',
             'password'  => 'required',
@@ -68,21 +69,47 @@ class backEndController extends Controller
         ];
 
         $vaild = Validator::make($request->all(),$arr,$message);
+
         if($vaild->fails()){
-            return redirect()->back();
+            //return "Alo";
+            return redirect()->back()->with($vaild->errors());
+
         }
+
         $attmp = $request->only('IdCode','password');
+        //return "Alo";
         if(! Auth::guard($request->get('guard'))->attempt($attmp)) {
+            //return "Alo";
             return redirect()->back()->with('msg','ID  or password incorrect');
         }
+        //return "Alo";
 
         // session(['loggedID' => auth()->guard($request->get('guard'))->user()->id]);
         // session(['loggedType' => $request->get('guard')]);
 
-        Session::put('loggedID', auth()->guard($request->get('guard'))->user()->id );
-        Session::put('loggedType', $request->get('guard') );
+        //Session::put('loggedID', auth()->guard($request->get('guard'))->user()->id );
+        //Session::put('loggedType', $request->get('guard') );
+
+        if( $request->get('guard') == 'patien' ){
+            if( Session::has('PatientLogged') ){
+                Session::forget('PatientLoggedID');
+                Session::forget('PatientLogged');
+            }
+
+            Session::put('PatientLogged', 1 );
+            Session::put('PatientLoggedID', auth()->guard($request->get('guard'))->user()->id );
+        }elseif( $request->get('guard') == 'online_doctor' ){
+            if( Session::has('OnlineDoctorLogged') ){
+                Session::forget('OnlineDoctorLoggedID');
+                Session::forget('OnlineDoctorLogged');
+            }
+
+            Session::put('OnlineDoctorLogged', 1 );
+            Session::put('OnlineDoctorLoggedID', auth()->guard($request->get('guard'))->user()->id );
+        }
 
         // return dd(auth()->guard('patien')->user());
+        //return "Alo";
         return redirect('en/dashbord/' . $request->get('guard') . '/homepage' . '/' . auth()->guard($request->get('guard'))->user()->id);
 
 

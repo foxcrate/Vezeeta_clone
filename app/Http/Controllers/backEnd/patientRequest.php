@@ -137,9 +137,9 @@ class patientRequest extends Controller
     /* nurse show patient profile */
 
     /* end and delete request */
-    public function end_delete_request($doctor_id,$id){
-        $online_doctor = OnlineDoctor::findOrFail($doctor_id);
-        $patien_request = PatienRequest::findOrFail($id);
+    public function end_delete_request($id,$request_id){
+        $online_doctor = OnlineDoctor::findOrFail($id);
+        $patien_request = PatienRequest::findOrFail($request_id);
         $patien_request->delete();
         return redirect()->route('online_doctor.profile',[$online_doctor->id,$patien_request->id]);
     }
