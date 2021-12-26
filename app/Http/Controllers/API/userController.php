@@ -112,7 +112,7 @@ class userController extends Controller
             } else {
                 return response() -> json(['error' => 'Unauthorised'], 401);
             }
-        }elseif($request->type == 'online_doctor'){
+        }elseif($request->type == 'doctor'){
             if (auth()->guard('online_doctor') -> attempt([
                 'idCode' => request('idCode'),
                 'password' => request('password')
@@ -238,7 +238,7 @@ class userController extends Controller
                     'status' => false,
                 ],404);
             }
-        }elseif($request->type == 'online_doctor'){
+        }elseif($request->type == 'doctor'){
             $online_doctor = OnlineDoctor::where('idCode',$request->idCode)->first();
             if($online_doctor){
                 return response()->json([
@@ -281,72 +281,72 @@ class userController extends Controller
                 $patient = Patien::where('phoneNumber',$publicRequest['phoneNumber'])->first();
                 if($patient){
                     return response()->json([
-                        'message' => 'phoneNumber exists',
+                        'message' => 'Your Number is exist in our record, please try again with another number.                        ',
                         'status' => true
                     ]);
                 }
                 return response()->json([
-                    'message' => 'phoneNumber not found',
+                    'message' => 'Your Number is not Exist in Our records, please go and register                    ',
                     'status' => false
                 ],400);
             }elseif($request->type == 'doctor'){
                 $doctor = OnlineDoctor::where('phoneNumber',$publicRequest['phoneNumber'])->first();
                 if($doctor){
                     return response()->json([
-                        'message' => 'phoneNumber exists',
+                        'message' => 'Your Number is exist in our record, please try again with another number.',
                         'status' => true
                     ]);
                 }
                 return response()->json([
-                    'message' => 'phoneNumber not found',
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
                     'status' => false
                 ],400);
             }elseif($request->type == 'xray'){
                 $xray = Xray::where('phoneNumber',$publicRequest['phoneNumber'])->first();
                 if($xray){
                     return response()->json([
-                        'message' => 'phoneNumber exists',
+                        'message' => 'Your Number is exist in our record, please try again with another number.',
                         'status' => true
                     ]);
                 }
                 return response()->json([
-                    'message' => 'phoneNumber not found',
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
                     'status' => false
                 ],400);
             }elseif($request->type == 'lab'){
                 $lab = Lab::where('phoneNumber',$publicRequest['phoneNumber'])->first();
                 if($lab){
                     return response()->json([
-                        'message' => 'phoneNumber exists',
+                        'message' => 'Your Number is exist in our record, please try again with another number.',
                         'status' => true
                     ]);
                 }
                 return response()->json([
-                    'message' => 'phoneNumber not found',
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
                     'status' => false
                 ],400);
             }elseif($request->type == 'pharmacy'){
                 $pharmacy = Pharmacy::where('phoneNumber',$publicRequest['phoneNumber'])->first();
                 if($pharmacy){
                     return response()->json([
-                        'message' => 'phoneNumber exists',
+                        'message' => 'Your Number is exist in our record, please try again with another number.',
                         'status' => true
                     ]);
                 }
                 return response()->json([
-                    'message' => 'phoneNumber not found',
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
                     'status' => false
                 ],400);
             }elseif($request->type == 'nurse'){
                 $nurse = Nurse::where('phoneNumber',$publicRequest['phoneNumber'])->first();
                 if($nurse){
                     return response()->json([
-                        'message' => 'phoneNumber exists',
+                        'message' => 'Your Number is exist in our record, please try again with another number.',
                         'status' => true
                     ]);
                 }
                 return response()->json([
-                    'message' => 'phoneNumber not found',
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
                     'status' => false
                 ],400);
             }
@@ -359,7 +359,196 @@ class userController extends Controller
     }
 
     // public forgot password function
-    public function forgotpassword(Request $request){
-        return $request;
+   public function userForgotPassword(Request $request){
+        try{
+            // if($request->phoneNumber[0] == '0'){
+            //     $publicRequest['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
+            // }else{
+            //     $publicRequest['phoneNumber'] = $request->countryCode . $request->phoneNumber;
+            // }
+            if($request->type == 'patient'){
+                $patient = Patien::where('idCode',$request->idCode)->first();
+                if($patient){
+                    return response()->json([
+                        'data' => $patient->phoneNumber,
+                        'message' => 'Your Number is exist in our record, please try again with another number.                        ',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register                    ',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'doctor'){
+                $doctor = OnlineDoctor::where('idCode',$request->idCode)->first();
+                if($doctor){
+                    return response()->json([
+                        'data' => $doctor->phoneNumber,
+                        'message' => 'Your Number is exist in our record, please try again with another number.',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'xray'){
+                $xray = Xray::where('idCode',$request->idCode)->first();
+                if($xray){
+                    return response()->json([
+                        'data' => $xray->phoneNumber,
+                        'message' => 'Your Number is exist in our record, please try again with another number.',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'lab'){
+                $lab = Lab::where('idCode',$request->idCode)->first();
+                if($lab){
+                    return response()->json([
+                        'data' => $lab->phoneNumber,
+                        'message' => 'Your Number is exist in our record, please try again with another number.',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'pharmacy'){
+                $pharmacy = Pharmacy::where('idCode',$request->idCode)->first();
+                if($pharmacy){
+                    return response()->json([
+                        'data' => $pharmacy->phoneNumber,
+                        'message' => 'Your Number is exist in our record, please try again with another number.',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'nurse'){
+                $nurse = Nurse::where('idCode',$request->idCode)->first();
+                if($nurse){
+                    return response()->json([
+                        'data' => $nurse->phoneNumber,
+                        'message' => 'Your Number is exist in our record, please try again with another number.',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
+                    'status' => false
+                ],400);
+            }
+        }catch(\Exception $ex){
+            return response()->json([
+                'message' => $ex->getMessage(),
+                'status' => false
+            ],500);
+        }
+    }
+    
+    public function userConfirmPassword(Request $request){
+        try{
+            // if($request->phoneNumber[0] == '0'){
+            //     $publicRequest['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
+            // }else{
+            //     $publicRequest['phoneNumber'] = $request->countryCode . $request->phoneNumber;
+            // }
+            if($request->type == 'patient'){
+                $patient = Patien::where('idCode',$request->idCode)->first();
+                if($patient){
+                    $patient->password = bcrypt($request->password);
+                    $patient->save();
+                    return response()->json([
+                        'message' => 'password updated',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register                    ',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'doctor'){
+                $doctor = OnlineDoctor::where('idCode',$request->idCode)->first();
+                if($doctor){
+                    $doctor->password = bcrypt($request->password);
+                    $doctor->save();
+                    return response()->json([
+                        'message' => 'password updated',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'xray'){
+                $xray = Xray::where('idCode',$request->idCode)->first();
+                if($xray){
+                    $xray->password = bcrypt($request->password);
+                    $xray->save();
+                    return response()->json([
+                        'message' => 'password updated',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'lab'){
+                $lab = Lab::where('idCode',$request->idCode)->first();
+                if($lab){
+                    $lab->password = bcrypt($request->password);
+                    $lab->save();
+                    return response()->json([
+                        'message' => 'password updated',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'pharmacy'){
+                $pharmacy = Pharmacy::where('idCode',$request->idCode)->first();
+                if($pharmacy){
+                    $pharmacy->password = bcrypt($request->password);
+                    $pharmacy->save();
+                    return response()->json([
+                        'message' => 'password updated',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
+                    'status' => false
+                ],400);
+            }elseif($request->type == 'nurse'){
+                $nurse = Nurse::where('idCode',$request->idCode)->first();
+                if($nurse){
+                    $nurse->password = bcrypt($request->password);
+                    return response()->json([
+                        'message' => 'password updated.',
+                        'status' => true
+                    ]);
+                }
+                return response()->json([
+                    'message' => 'Your Number is not Exist in Our records, please go and register',
+                    'status' => false
+                ],400);
+            }
+        }catch(\Exception $ex){
+            return response()->json([
+                'message' => $ex->getMessage(),
+                'status' => false
+            ],500);
+        }
     }
 }

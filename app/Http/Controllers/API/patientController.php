@@ -27,6 +27,29 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 class patientController extends Controller
 {
+    public function patientReport(Request $request){
+        try{
+            $patientReport = Patien::where('idCode',$request->idCode)
+                            ->with('patinets_data','childern')
+                            ->first();
+            if($patientReport){
+                return response()->json([
+                   'data' => $patientReport,
+                   'message' => 'success',
+                   'status' => true
+                ]);
+            }
+            return response()->json([
+                'message' => 'patient not found',
+                'status' => false
+            ],400);
+        }catch (\Exception $ex){
+            return response()->json([
+               'message' => $ex->getMessage(),
+               'status' => false
+            ],500);
+        }
+    }
     public function register(Request $request) {
         $hospitalRequest = $request -> all();
         $validator = Validator::make($hospitalRequest, [
@@ -632,9 +655,9 @@ class patientController extends Controller
         ]);
     }
     public function rocata_file(Request $request) {
-        $patient = Patien::where('idCode', $request -> idCode) -> first();
+        $patient = Patien::where('idCode', $request->idCode)->first();
         if ($patient) {
-            $medicationGet = patientData::where('patient_id', $patient -> id) -> update(
+            $medicationGet = patientData::where('patient_id',$patient->id)->update(
                 ['rocata_file' => json_encode($request -> rocata_file)]
             );
             return response() -> json([

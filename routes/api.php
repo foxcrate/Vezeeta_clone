@@ -24,6 +24,9 @@ Route::group(['namespace'=>'API'],function(){
     Route::post('user/login','userController@login')->name('user.login');
     Route::get('user/basicDate','userController@getBasicDate');
     Route::get('check/phoneNumber','userController@checkPhoneNumber');
+    Route::get('user/forgot/password','userController@userForgotPassword');
+    Route::post('user/confirm/password','userController@userConfirmPassword');
+    Route::get('patient/report','patientController@patientReport');
     /* analyzes routes */
     Route::get('/analyzes/index','apiController@analyzesIndex');
     Route::post('/analyzes/store','apiController@analyzesStore')->name('analyzes.store');
@@ -78,8 +81,8 @@ Route::group(['namespace'=>'API'],function(){
     // patient female mother
     Route::post('/patientPeriod/{idCode}','patientController@periodSwitch');
     Route::get('/patientPeriod/{idCode}','patientController@periodSwitchGet');
-    Route::put('/patient/switchon/{idCode}','patientController@switchOn');
-    Route::put('/patient/switchof/{idCode}','patientController@switchOf');
+    Route::post('/doctor/switchOnline','DoctorController@switchOn');
+    // Route::put('/patient/switchof/{idCode}','patientController@switchOf');
     Route::get('/patientSmoking/idCode','patientController@smokingGet');
     Route::post('/patientSmoking/idCode','patientController@smoking');
     Route::post('/patientCheckup/idCode','patientController@checkup');
@@ -88,11 +91,11 @@ Route::group(['namespace'=>'API'],function(){
     Route::delete('checkup','patientController@deleteCheckup');
     Route::post('/uploadFile','patientController@uploadFile');
     Route::post('/rocataFile','patientController@rocata_file');
-    Route::get('/rocataFile','patientController@rocata_fileGet');
+    Route::get('/rocataFileGet','patientController@rocata_fileGet');
     Route::post('/raysFile','patientController@rays_file');
-    Route::get('/raysFile','patientController@rays_fileGet');
+    Route::get('/raysFileGet','patientController@rays_fileGet');
     Route::post('/analzesFile','patientController@analzes_file');
-    Route::get('/analzesFile','patientController@analzes_fileGet');
+    Route::get('/analzesFileGet','patientController@analzes_fileGet');
     Route::get('/patientPrescription/{idCode?}','patientController@raouchehsGet');
     Route::get('patient/forgot/password','patientController@forgotPassword');
     Route::post('patientForgotPassword','patientController@confirm_password');

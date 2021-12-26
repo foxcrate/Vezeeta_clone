@@ -27,6 +27,8 @@ class Child extends Model
         'allergy'   => 'array',
         'Surgeries' => 'array',
         'medication'    => 'array',
+        'fatherdisease' => 'array',
+        'disease' => 'array',
     ];
     protected $hidden = ['created_at','updated_at'];
 

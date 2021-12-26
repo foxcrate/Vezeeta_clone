@@ -22,11 +22,12 @@ use Illuminate\Support\Facades\Validator;
 class DoctorController extends Controller
 {
 public function register(Request $request) {
-            $doctorRequest = $request->all();
-            $validator = Validator::make($doctorRequest, [
+    try{
+        $doctorRequest = $request->all();
+        $validator = Validator::make($doctorRequest, [
             'image' => 'max:3072',
             'name' => 'required',
-            'phoneNumber' => 'required|unique:online_doctors',
+            'phoneNumber' => 'required|unique:online_doctors,phoneNumber',
             'countryCode' => 'required',
             'password' => 'required|confirmed',
             'license_number' => 'required',
@@ -45,13 +46,14 @@ public function register(Request $request) {
             'latitude' => '',
             'longitude' => ''
         ]);
-        if($validator -> fails()) {
+        if($validator->fails()) {
             return response([
-                'error' => $validator -> errors(),
-                'Validation Error'
+                'message' => $validator->errors()->all(),
+                'status' => false,
             ],400);
         }
         $doctorRequest['password'] = bcrypt($request -> password);
+        $doctorRequest['image'] = $request->image;
         if($request->phoneNumber[0] == '0'){
             $doctorRequest['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
         }else{
@@ -62,7 +64,7 @@ public function register(Request $request) {
         if ($doctorRequest['speciality'] == 'General') {
             $doctorRequest['speciality_id'] = 1;
         }
-        if ($doctorRequest['speciality'] == 'Audiologist') {
+        elseif ($doctorRequest['speciality'] == 'Audiologist') {
             $doctorRequest['speciality_id'] = 2;
         }
         elseif($doctorRequest['speciality'] == 'Anesthesiologist') {
@@ -143,7 +145,7 @@ public function register(Request $request) {
         elseif($doctorRequest['speciality'] == 'Oncologist') {
             $doctorRequest['speciality_id'] = 28;
         }
-        elseif($doctorRequest['speciality'] == 'Gastroenterology and Endoscopy') {
+        else{
             $doctorRequest['speciality_id'] = 29;
         }
         $doctorCreate = OnlineDoctor::create($doctorRequest);
@@ -155,7 +157,13 @@ public function register(Request $request) {
                 'token' => $success['token']
             ]);
         }
+    }catch(\Exception $ex){
+        return response()->json([
+            'message' => $ex->getMessage(),
+            'status' => false
+        ],500);
     }
+}
     public function login(Request $request) {
         if (Auth::guard('online_doctor')->attempt([
             'idCode' => $request->idCode,
@@ -200,14 +208,28 @@ public function register(Request $request) {
             return response() -> json(['message' => 'faild'],400);
     }
     public function searchPatient(Request $request) {
-        $patient = Patien::where('idCode', $request -> idCode) -> where('online', 1) -> first();
-        if ($patient) {
-            return response() -> json([
-                'data' => $patient,
-                'message' => 'success'
-            ]);
+        try{
+            $patient = Patien::where('idCode',$request->idCode)
+            ->where('online', 1)
+            ->with(['childern'])
+            ->first();
+            if($patient){
+                return response() -> json([
+                    'data' => $patient,
+                    'message' => 'success message',
+                    'status' => true
+                ]);
+            }
+            return response()->json([
+                'message' => 'patient not found',
+                'status' => false,
+            ],400);
+        }catch(\Exception $ex){
+            return response()->json([
+                'message' => $ex->getMessage(),
+                'status' => false,
+            ],500);
         }
-        return response() -> json(['message' => 'faild'],400);
     }
     public function raouchehsGet(Request $request) {
         $patient = Patien::where('idCode', $request -> idCode) -> first();
@@ -226,18 +248,34 @@ public function register(Request $request) {
         }
         return response() -> json(['message' => 'faild'],400);
     }
-    public function switchOn(Request $request, $idCode) {
-        $reqdata = $request -> all();
-        $reqdata['online'] = 1;
-        $lesson = OnlineDoctor::where('idCode', $request ->idCode) -> update($reqdata);
-        return response() -> json(['success' => $lesson]);
+    public function switchOn(Request $request) {
+        try{
+            $online_doctor = OnlineDoctor::where('idCode',$request->idCode)->first();
+            if($online_doctor){
+                $online_doctor->online = $request->online;
+                $online_doctor->save();
+                return response()->json([
+                    'message' => 'online updated',
+                    'status' => true,
+                ]);
+            }
+            return response()->json([
+                'message' => 'Doctor Not found',
+                'status' => false,
+            ],400);
+        }catch(\Exception $ex){
+            return response()->json([
+                'message' => $ex->getMessage(),
+                'status' => false
+            ],500);
+        }
     }
-    public function switchOf(Request $request, $idCode) {
-        $reqdata = $request -> all();
-        $reqdata['online'] = 0;
-        $lesson = OnlineDoctor::where('idCode', $request->idCode) -> update($reqdata);
-        return response() -> json(['success' => $lesson]);
-    }
+    // public function switchOf(Request $request, $idCode) {
+    //     $reqdata = $request -> all();
+    //     $reqdata['online'] = 0;
+    //     $lesson = OnlineDoctor::where('idCode', $request->idCode) -> update($reqdata);
+    //     return response() -> json(['success' => $lesson]);
+    // }
     public function searchDoctor(Request $request) {
         $patient = OnlineDoctor::where('idCode', $request->idCode) -> first();
         if ($patient) {
@@ -544,18 +582,28 @@ public function register(Request $request) {
         return response(['message' => 'faild']);
     }
     public function switchIsHomecara(Request $request) {
-        $lesson = OnlineDoctor::where('idCode', $request->idCode);
-        if($lesson){
-        $lesson = OnlineDoctor::where('idCode', $request->idCode) -> update(
-            ['homecare' => $request->homecare]
-        );
-        return response() -> json([
-            'data' => $lesson,
-            'message' => 'success'
-        ]);
+        try{
+            $homecare = OnlineDoctor::where('idCode',$request->idCode)->first();
+            if($homecare){
+                $homecare = OnlineDoctor::where('idCode',$request->idCode)-> update(
+                ['homecare' => $request->homecare]
+                );
+                return response() -> json([
+                    'message' => 'homecare updated',
+                    'status' => true,
+                ]);
+            }
+            return response([
+                'message' => 'doctor not found',
+                'status' => false,
+            ],400);
+        }catch(\Exception $ex){
+            return response()->json([
+                'message' => $ex->getMessage(),
+                'status' => false,
+            ],500);
+        }
     }
-    return response(['message' => 'faild']);
-}
     public function switchIsHomecareGet(Request $request) {
         $lesson = OnlineDoctor::where('idCode', $request->idCode) -> count();
         if ($lesson) {
