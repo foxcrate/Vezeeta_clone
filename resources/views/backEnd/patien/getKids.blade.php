@@ -121,7 +121,7 @@
                                         <div class="form-group">
                                             <img src="{{url('imgs/blood.png')}}" class="mr-3 mb-3" width="50">
                                             <label for="blood" class="title-label">Blood</label>
-                                            {{-- <div> --}}
+
                                                 <select class="form-control" id="blood" name="blood" required>
                                                     <option value="">Blood</option>
                                                     <option value="A+">A+</option>
@@ -134,7 +134,6 @@
                                                     <option value="AB-">AB-</option>
                                                 </select>
 
-                                            {{-- </div> --}}
                                         </div>
                                     </div>
                                 </div>

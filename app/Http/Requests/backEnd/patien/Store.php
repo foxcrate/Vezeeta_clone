@@ -31,21 +31,21 @@ class Store extends FormRequest
             'name'      => '',
             'BirthDate' => 'required',
             'gender'   => 'required',
-            'email'     => 'nullable|email|unique:patiens',
+            //'email'     => 'nullable|email|unique:patiens',
             'phoneNumber'   => 'required|numeric|unique:patiens,phoneNumber',
             'idCode'        => 'unique:patiens',
             'password'          => 'required|confirmed',
             'password_confirmation'=>'required|sometimes|required_with:password',
-            'state'             => 'required',
-            'job'               => '',
-            'race'              => '',
-            'address'           => 'required|string',
+            //'state'             => 'required',
+            // 'job'               => '',
+            // 'race'              => '',
+            //'address'           => 'required|string',
             'role'              => '',
             'is_active'         => '',
             'countryCode'       => 'required',
             'online'            => '',
-            'latitude'          => '',
-            'longitude'         => ''
+            // 'latitude'          => '',
+            // 'longitude'         => ''
         ];
     }
     public function messages()

@@ -225,65 +225,65 @@
     @include('backEnd.layoutes.footer')
     <script>
         var newAccount = document.getElementById('new_account'),
-                patientRadio = document.getElementById('patien'),
-                clinicRadio = document.getElementById('clinic'),
-                hosptailRadio = document.getElementById('hosptail'),
-                xrayRadio = document.getElementById('xray'),
-                labsRadio = document.getElementById('labs'),
-                pharmacyRadio = document.getElementById('pharmacy'),
-                online_doctorRadio = document.getElementById('online_doctor'),
-                nurceRadio = document.getElementById('nurse');
-                patientRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/patien/register');
-                };
-                hosptailRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/hosptail/register');
-                };
-                clinicRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/clinic/register');
-                };
-                xrayRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/xray/register');
-                };
-                labsRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/labs/register');
-                };
-                pharmacyRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/pharmacy/register');
-                };
-                online_doctorRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/online_doctor/register');
-                };
-                nurceRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/nurse/register');
-                };
-                var idCodee = document.getElementById('name'),
-                     myGuard = document.getElementById("guard");
-                        idCodee.onkeyup = function(){
-                            if(idCodee.value.includes("P")){
-                                document.getElementById("patien").setAttribute("checked","checked");
-                            }if(idCodee.value.includes("C")){
-                                document.getElementById("clinic").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("H")){
-                                document.getElementById("hosptail").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("L")){
-                                document.getElementById("labs").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("Y")){
-                                document.getElementById("pharmacy").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("X")){
-                                document.getElementById("xray").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("D")){
-                                document.getElementById("online_doctor").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("N")){
-                                document.getElementById("nurse").setAttribute("checked","checked");
-                            }
+            patientRadio = document.getElementById('patien'),
+            clinicRadio = document.getElementById('clinic'),
+            hosptailRadio = document.getElementById('hosptail'),
+            xrayRadio = document.getElementById('xray'),
+            labsRadio = document.getElementById('labs'),
+            pharmacyRadio = document.getElementById('pharmacy'),
+            online_doctorRadio = document.getElementById('online_doctor'),
+            nurceRadio = document.getElementById('nurse');
+            patientRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/patien/register');
+            };
+            hosptailRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/hosptail/register');
+            };
+            clinicRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/clinic/register');
+            };
+            xrayRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/xray/register');
+            };
+            labsRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/labs/register');
+            };
+            pharmacyRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/pharmacy/register');
+            };
+            online_doctorRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/online_doctor/register');
+            };
+            nurceRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/nurse/register');
+            };
+            var idCodee = document.getElementById('name'),
+                    myGuard = document.getElementById("guard");
+                    idCodee.onkeyup = function(){
+                        if(idCodee.value.includes("P")){
+                            document.getElementById("patien").setAttribute("checked","checked");
+                        }if(idCodee.value.includes("C")){
+                            document.getElementById("clinic").setAttribute("checked","checked");
                         }
+                        if(idCodee.value.includes("H")){
+                            document.getElementById("hosptail").setAttribute("checked","checked");
+                        }
+                        if(idCodee.value.includes("L")){
+                            document.getElementById("labs").setAttribute("checked","checked");
+                        }
+                        if(idCodee.value.includes("Y")){
+                            document.getElementById("pharmacy").setAttribute("checked","checked");
+                        }
+                        if(idCodee.value.includes("X")){
+                            document.getElementById("xray").setAttribute("checked","checked");
+                        }
+                        if(idCodee.value.includes("D")){
+                            document.getElementById("online_doctor").setAttribute("checked","checked");
+                        }
+                        if(idCodee.value.includes("N")){
+                            document.getElementById("nurse").setAttribute("checked","checked");
+                        }
+                    }
 
     </script>
 @stop

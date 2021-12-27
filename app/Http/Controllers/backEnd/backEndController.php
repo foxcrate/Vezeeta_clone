@@ -35,16 +35,11 @@ class backEndController extends Controller
     /* function index */
     public function index(){
 
-        // if(Session::has('loggedID')){
-        //     return 'true';
-        // }
-        // else{
-        //     return "false";
-        // }
-        //  $loggedID = Session::get('loggedID');
-        //  $loggedType = Session::get('loggedType');
+        // if( Session::has('PatientLogged') || Session::has('OnlineDoctorLogged') ){
 
-        //  return $loggedID . " , " . $loggedType;
+        //     return redirect()->back();
+
+        // }
 
         return view('backEnd.index');
     }

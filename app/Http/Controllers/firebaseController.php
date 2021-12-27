@@ -18,6 +18,7 @@ use App\models\Nurse;
 use App\models\OnlineDoctor;
 use Carbon\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Session;
 
 class firebaseController extends Controller
 {
@@ -269,14 +270,23 @@ class firebaseController extends Controller
                 'is_active'     => true,
                 'idCode'        => str_replace('+','P',session()->get('patient')->idCode),
             ]);
-             auth()->guard('patien')->login($patientCreate);
-             $clupTransctionCreate = clupTransaction::create([
-                 'transaction'  => 'Registeration',
-                 'point'        => 50,
-                 'balance'      => 50,
-                 'patient_id'   => auth('patien')->user()->id,
-             ]);
-             return redirect()->route('patient.welcome',$patientCreate['id'])->with(['activeMsg'=> 'Your Account is active']);
+
+            if( Session::has('PatientLogged') ){
+                Session::forget('PatientLoggedID');
+                Session::forget('PatientLogged');
+            }
+
+            Session::put('PatientLogged', 1 );
+            Session::put('PatientLoggedID', $patientCreate->id );
+
+            auth()->guard('patien')->login($patientCreate);
+            $clupTransctionCreate = clupTransaction::create([
+                'transaction'  => 'Registeration',
+                'point'        => 50,
+                'balance'      => 50,
+                'patient_id'   => auth('patien')->user()->id,
+            ]);
+            return redirect()->route('patient.welcome',$patientCreate['id'])->with(['activeMsg'=> 'Your Account is active']);
         }catch(\Exception $ex){
             return redirect()->back()->with(['error' => 'problem']);
         }
@@ -536,12 +546,21 @@ class firebaseController extends Controller
                 'longitude'     => session()->get('doctor')->longitude,
                 'is_active'     => true,
             ]);
-             auth()->guard('online_doctor')->login($doctorCreate);
-             $clupTransctionCreate = clupTransaction::create([
-                'transaction'  => 'Registeration',
-                'point'        => 50,
-                'balance'      => 50,
-                'doctor_id'   => auth('online_doctor')->user()->id
+
+            if( Session::has('OnlineDoctorLogged') ){
+                Session::forget('OnlineDoctorLoggedID');
+                Session::forget('OnlineDoctorLogged');
+            }
+
+            Session::put('OnlineDoctorLogged', 1 );
+            Session::put('OnlineDoctorLoggedID', $doctorCreate->id );
+
+            auth()->guard('online_doctor')->login($doctorCreate);
+            $clupTransctionCreate = clupTransaction::create([
+            'transaction'  => 'Registeration',
+            'point'        => 50,
+            'balance'      => 50,
+            'doctor_id'   => auth('online_doctor')->user()->id
             ]);
              return redirect()->route('online_doctor.welcome',$doctorCreate['id'])->with(['activeMsg'=> 'Your Account is active']);
         }catch(\Exception $ex){
