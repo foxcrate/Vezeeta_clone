@@ -28,16 +28,20 @@ Route::group(['namespace'=>'API'],function(){
     Route::post('user/confirm/password','userController@userConfirmPassword');
     Route::get('patient/report','patientController@patientReport');
     /* analyzes routes */
-    Route::get('/analyzes/index','apiController@analyzesIndex');
+    //Route::get('/analyzes/index','apiController@analyzesIndex');
+    Route::get('/analyzes','apiController@analyzesIndex');
     Route::post('/analyzes/store','apiController@analyzesStore')->name('analyzes.store');
     Route::get('/analyzes/search','apiController@analyzesSearch');
     /* analyzes routes */
     /* rays routes */
-    Route::get('/rays/index','apiController@raysIndex');
+    //Route::get('/rays/index','apiController@raysIndex');
+    Route::get('/rays','apiController@raysIndex');
     Route::post('/rays/store','apiController@raysStore')->name('rays.store');
     Route::get('/rays/search','apiController@raysSearch');
     /* rays routes */
 
+    // get all medication
+    Route::get('medications','apiController@getAllMedication');
 
     /* routes app */
     Route::group(['prefix' => 'patientRegister'],function(){

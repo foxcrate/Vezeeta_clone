@@ -33,7 +33,7 @@ class userController extends Controller
                     'token' => $success['token']
                 ]);
             } else {
-                return response() -> json(['error' => 'Unauthorised'], 401);
+                return response() -> json(['message' => 'Your idCode or your password are inCorrect, please try again'], 401);
             }
 
         }elseif($request->type == 'clinic'){
@@ -268,7 +268,7 @@ class userController extends Controller
             }
         }
     }
-    
+
     // check phone Number
     public function checkPhoneNumber(Request $request){
         try{
@@ -452,7 +452,7 @@ class userController extends Controller
             ],500);
         }
     }
-    
+
     public function userConfirmPassword(Request $request){
         try{
             // if($request->phoneNumber[0] == '0'){

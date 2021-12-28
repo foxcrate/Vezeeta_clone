@@ -30,11 +30,13 @@ class patientController extends Controller
     public function patientReport(Request $request){
         try{
             $patientReport = Patien::where('idCode',$request->idCode)
-                            ->with('patinets_data','childern')
+                            ->with(['patinets_data','childern'])
                             ->first();
+            $lastCheckup = Checkup::where('patient_id',$patientReport->id)->latest()->first();
             if($patientReport){
                 return response()->json([
                    'data' => $patientReport,
+                   'lastCheckup' => $lastCheckup,
                    'message' => 'success',
                    'status' => true
                 ]);
