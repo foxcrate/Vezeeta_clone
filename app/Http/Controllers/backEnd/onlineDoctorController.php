@@ -29,6 +29,8 @@ use App\models\QrDoctor;
 use Carbon\Carbon;
 use Illuminate\Notifications\Notification;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Session;
+
 class onlineDoctorController extends Controller
 {
     public function register(Request $request){
@@ -183,7 +185,12 @@ class onlineDoctorController extends Controller
 
     /* onlinedoctor logout */
     public function logout(){
+
         Auth::guard('online_doctor')->logout();
+
+        Session::forget('OnlineDoctorLoggedID');
+        Session::forget('OnlineDoctorLogged');
+
         return redirect()->route("indexRoute");
     }
     /* onlinedoctor logout */
@@ -569,9 +576,9 @@ class onlineDoctorController extends Controller
             return redirect()->back();
         }
     }
-    public function doctor_all_children ($doctor_id,$patient_id){
+    public function doctor_all_children ($id,$patient_id){
         try{
-            $online_doctor = OnlineDoctor::findOrFail($doctor_id);
+            $online_doctor = OnlineDoctor::findOrFail($id);
             $patient = Patien::findOrFail($patient_id);
             return view('backEnd.online-doctor.doctor_all_children',compact('online_doctor','patient'));
         }
@@ -580,9 +587,9 @@ class onlineDoctorController extends Controller
             return redirect()->back();
         }
     }
-    public function doctor_show_profile_child($doctor_id,$patient_id,$child_id){
+    public function doctor_show_profile_child($id,$patient_id,$child_id){
         try{
-            $online_doctor = OnlineDoctor::findOrFail($doctor_id);
+            $online_doctor = OnlineDoctor::findOrFail($id);
             $patient = Patien::findOrFail($patient_id);
             $child = Child::findOrFail($child_id);
             return view('backEnd.online-doctor.doctor_show_profile_child',compact('online_doctor','patient','child'));
@@ -593,9 +600,9 @@ class onlineDoctorController extends Controller
         }
 
     }
-    public function doctor_add_prescrption_child($doctor_id,$patient_id,$child_id){
+    public function doctor_add_prescrption_child($id,$patient_id,$child_id){
         try{
-            $online_doctor = OnlineDoctor::findOrFail($doctor_id);
+            $online_doctor = OnlineDoctor::findOrFail($id);
             $patient = Patien::findOrFail($patient_id);
             $child = Child::findOrFail($child_id);
             $rays = Rays::get();
@@ -729,14 +736,14 @@ class onlineDoctorController extends Controller
         return redirect()->back();
     }
 
-    public function getAnalzes($doctor_id,$id,$patient_id){
+    public function getAnalzes($id,$x_id,$patient_id){
         try{
-            $online_doctor = OnlineDoctor::findOrFail($doctor_id);
+            $online_doctor = OnlineDoctor::findOrFail($id);
             $patient = Patien::findOrFail($patient_id);
             $rocata = Raoucheh::with(['patient_analzes'])
             ->whereHas('patient_analzes')
             ->where('patient_id',$patient->id)
-            ->findOrFail($id);
+            ->findOrFail($x_id);
             return view('backEnd.online-doctor.getAnalzes',compact('online_doctor','patient','rocata'));
         }catch(\Exception $ex){
             return redirect()->back();
@@ -744,14 +751,14 @@ class onlineDoctorController extends Controller
 
     }
 
-    public function getRays($doctor_id,$id,$patient_id){
+    public function getRays($id,$rocata_id,$patient_id){
         try{
-            $online_doctor = OnlineDoctor::findOrFail($doctor_id);
+            $online_doctor = OnlineDoctor::findOrFail($id);
             $patient = Patien::findOrFail($patient_id);
             $rocata = Raoucheh::with(['patient_rays'])
             ->whereHas('patient_analzes')
             ->where('patient_id',$patient->id)
-            ->findOrFail($id);
+            ->findOrFail($rocata_id);
             return view('backEnd.online-doctor.getRays',compact('online_doctor','patient','rocata'));
         }catch(\Exception $ex){
             return redirect()->back();

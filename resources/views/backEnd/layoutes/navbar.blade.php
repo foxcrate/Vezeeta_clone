@@ -1,10 +1,36 @@
 <!--start-Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top justify-content-between">
   <div class= "container">
-    <a href="{{route("indexRoute")}}" class="row" style="text-decoration:none">
+    {{-- <h1> {{ url()->current() }} </h1> --}}
+    <h1>
+        {{-- href="{{route('patien.homepage',$patient->id)}}" --}}
+        @php
+            $href= route( 'indexRoute' );
+            // if(){
+                $id = 0;
+                if (str_contains( url()->current() , '/dashbord/patien/')) {
+                    if(Session::has('PatientLogged')){
+                        $id = Session::get('PatientLoggedID');
+                    }
+                    $href= route('patien.homepage', $id );
+                }
+                elseif(str_contains( url()->current() , '/dashbord/online_doctor/')) {
+                    if(Session::has('OnlineDoctorLoggedID')){
+                        $id = Session::get('OnlineDoctorLoggedID');
+                    }
+                    $href= route('online_doctor.homepage', $id );
+
+                }
+            // }
+        @endphp
+    </h1>
+    {{-- <h1>{{ $route }}</h1> --}}
+    <a href= {{ $href }} class="row" style="text-decoration:none">
       <img class="ml-2" src="{{url('imgs/logo.svg')}}" width="60" alt="Responsive image">
       <h3 class="h3 ml-lg-3 mt-2 font-weight-bold text-uppercase " >Patient Medical History</h3>
     </a>
+
+
     {{-- </a> --}}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

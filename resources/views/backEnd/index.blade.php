@@ -87,124 +87,124 @@
         @elseif(session('activeMsg'))
             <div class="alert alert-success">{{session('activeMsg')}}</div>
          @endif
-         <form action="{{route('loginRoute')}}" method="POST">
-        {{ csrf_field() }}
-        <!-- radio button -->
-        <section class="radio-toolbar">
-            <div class="row middle">
-                <div class="col-lg-12 patein-radio">
-                    <label class="m-2" onclick="displaySong()">
-                    <input id = "patien" type="radio" name="guard" value="patien"/><div class="box patein-radio" checked >
-                            <script>function displaySong() {
-                                    var textField = $('#name');
-                                    textField.val('P')
-                                }
-                            </script>
-                        <img class="mt-2" src="{{url('imgs/icon_png/patient.svg')}}" height="60" alt="...">
-                        <span class="">Patient</span>
-                    </div>
-                    </label>
-                    <label class="m-2" onclick="displaySong1()">
-                    <input id="clinic" type="radio" name="guard" value="clinic"/><div class="box">
-                            <script>function displaySong1() {
-                                    var textField = $('#name');
-                                    textField.val('C')
-                                }
-                            </script>
-                        <img class="mt-2" src="{{url('imgs/icon_png/clinic.svg')}}" height="60" alt="...">
-                        <span>Clinic</span>
-                    </div>
-                    </label>
-                    <label class="m-2" onclick="displaySong2()">
-                    <input id="hosptail" type="radio" name="guard" value="hosptail"/><div class="box">
-                            <script>function displaySong2() {
-                                    var textField = $('#name');
-                                    textField.val('H')
-                                }
-                            </script>
-                        <img class="mt-2" src="{{url('imgs/Hospital.svg')}}" height="60" alt="...">
-                        <span>Hospital</span>
-                    </div>
-                    </label>
-                    <label class="m-2" onclick="displaySong3()">
-                    <input id="xray" type="radio" name="guard" value="xray"/><div class="box">
-                            <script>function displaySong3() {
-                                    var textField = $('#name');
-                                    textField.val('X')
-                                }
-
-                            </script>
-                        <img class="mt-2" src="{{url('imgs/x-ray.svg')}}" height="60" alt="...">
-                        <span>X-ray</span>
-                    </div>
-                    </label>
-                    <label class="m-2" onclick="displaySong4()">
-                    <input id="labs" type="radio" name="guard" value="labs"/><div class="box">
-                            <script>function displaySong4() {
-                                    var textField = $('#name');
-                                    textField.val('L')
-                                }
-
-                            </script>
-                        <img class="mt-2" src="{{url('imgs/labs.svg')}}" height="60" alt="...">
-                        <span>Labs</span>
-                    </div>
-                    </label>
-                    <label class="m-2" onclick="displaySong5()">
-                    <input id="pharmacy" type="radio" name="guard" value="pharmacy"/><div class="box">
-                            <script>function displaySong5() {
-                                    var textField = $('#name');
-                                    textField.val('Y')
-                                }
-
-                            </script>
-                        <img class="mt-2" src="{{url('imgs/pharmacy.svg')}}" height="60" alt="...">
-                        <span>Pharmacy</span>
-                    </div>
-                    </label>
-                    <label class="m-2" onclick="displaySong6()">
-                    <input id="online_doctor" type="radio" name="guard" value="online_doctor"/><div class="box">
-                            <script>function displaySong6() {
-                                    var textField = $('#name');
-                                    textField.val('D')
-                                }
-
-                            </script>
-                        <img class="mt-2" src="{{url('imgs/icon_png/onlineDoctor.svg')}}" height="60" alt="...">
-                        <span>Doctor</span>
-                    </div>
-                    </label>
-                    <label class="m-2" onclick="displaySong7()">
-                        <input id="nurse" type="radio" name="guard" value="nurse"/><div class="box">
-                                <script>function displaySong7() {
+        <form action="{{route('loginRoute')}}" method="POST">
+            {{ csrf_field() }}
+            <!-- radio button -->
+            <section class="radio-toolbar">
+                <div class="row middle">
+                    <div class="col-lg-12 patein-radio">
+                        <label class="m-2" onclick="displaySong()">
+                        <input id = "patien" type="radio" name="guard" value="patien"/><div class="box patein-radio" checked >
+                                <script>function displaySong() {
                                         var textField = $('#name');
-                                        textField.val('N')
+                                        textField.val('P')
+                                    }
+                                </script>
+                            <img class="mt-2" src="{{url('imgs/icon_png/patient.svg')}}" height="60" alt="...">
+                            <span class="">Patient</span>
+                        </div>
+                        </label>
+                        <label class="m-2" onclick="displaySong1()">
+                        <input id="clinic" type="radio" name="guard" value="clinic"/><div class="box">
+                                <script>function displaySong1() {
+                                        var textField = $('#name');
+                                        textField.val('C')
+                                    }
+                                </script>
+                            <img class="mt-2" src="{{url('imgs/icon_png/clinic.svg')}}" height="60" alt="...">
+                            <span>Clinic</span>
+                        </div>
+                        </label>
+                        <label class="m-2" onclick="displaySong2()">
+                        <input id="hosptail" type="radio" name="guard" value="hosptail"/><div class="box">
+                                <script>function displaySong2() {
+                                        var textField = $('#name');
+                                        textField.val('H')
+                                    }
+                                </script>
+                            <img class="mt-2" src="{{url('imgs/Hospital.svg')}}" height="60" alt="...">
+                            <span>Hospital</span>
+                        </div>
+                        </label>
+                        <label class="m-2" onclick="displaySong3()">
+                        <input id="xray" type="radio" name="guard" value="xray"/><div class="box">
+                                <script>function displaySong3() {
+                                        var textField = $('#name');
+                                        textField.val('X')
                                     }
 
                                 </script>
-                            <img class="mt-2" src="{{url('imgs/nurse.svg')}}" height="60" alt="...">
-                            <span>Nurse</span>
+                            <img class="mt-2" src="{{url('imgs/x-ray.svg')}}" height="60" alt="...">
+                            <span>X-ray</span>
                         </div>
-                    </label>
+                        </label>
+                        <label class="m-2" onclick="displaySong4()">
+                        <input id="labs" type="radio" name="guard" value="labs"/><div class="box">
+                                <script>function displaySong4() {
+                                        var textField = $('#name');
+                                        textField.val('L')
+                                    }
+
+                                </script>
+                            <img class="mt-2" src="{{url('imgs/labs.svg')}}" height="60" alt="...">
+                            <span>Labs</span>
+                        </div>
+                        </label>
+                        <label class="m-2" onclick="displaySong5()">
+                        <input id="pharmacy" type="radio" name="guard" value="pharmacy"/><div class="box">
+                                <script>function displaySong5() {
+                                        var textField = $('#name');
+                                        textField.val('Y')
+                                    }
+
+                                </script>
+                            <img class="mt-2" src="{{url('imgs/pharmacy.svg')}}" height="60" alt="...">
+                            <span>Pharmacy</span>
+                        </div>
+                        </label>
+                        <label class="m-2" onclick="displaySong6()">
+                        <input id="online_doctor" type="radio" name="guard" value="online_doctor"/><div class="box">
+                                <script>function displaySong6() {
+                                        var textField = $('#name');
+                                        textField.val('D')
+                                    }
+
+                                </script>
+                            <img class="mt-2" src="{{url('imgs/icon_png/onlineDoctor.svg')}}" height="60" alt="...">
+                            <span>Doctor</span>
+                        </div>
+                        </label>
+                        <label class="m-2" onclick="displaySong7()">
+                            <input id="nurse" type="radio" name="guard" value="nurse"/><div class="box">
+                                    <script>function displaySong7() {
+                                            var textField = $('#name');
+                                            textField.val('N')
+                                        }
+
+                                    </script>
+                                <img class="mt-2" src="{{url('imgs/nurse.svg')}}" height="60" alt="...">
+                                <span>Nurse</span>
+                            </div>
+                        </label>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <!-- radio button -->
-        <div class="container row ml-auto mr-auto mb-5">
-            <p id="config_app" class="d-none">{{ config('app.url') }}</p>
-            <div class="col-md-6 form">
-                <p class="group">
-                    <input  id="name" type="text" required name="IdCode" class="idCode" style="text-transform:capitalize" placeholder="ID" />
-                <label for="name">ID</label>
-                </p>
-                <p class="group" id="show_hide_password">
-                <input id="Password" type="password" required name="password" placeholder="Password">
-                <a id="show_hide_password" href=""class="field-icon"><i class="fa fa-eye-slash field-icon" aria-hidden="true"></i></a>
-                <label for="name">Password</label>
-                </p><br/>
-                <a class="text-forget" href="{{route('forgot_password')}}">Forget Password?</a>
-                <input type="submit" value="Submit">
-            </form>
+            </section>
+            <!-- radio button -->
+            <div class="container row ml-auto mr-auto mb-5">
+                <p id="config_app" class="d-none">{{ config('app.url') }}</p>
+                <div class="col-md-6 form">
+                    <p class="group">
+                        <input  id="name" type="text" required name="IdCode" class="idCode" style="text-transform:capitalize" placeholder="ID" />
+                    <label for="name">ID</label>
+                    </p>
+                    <p class="group" id="show_hide_password">
+                    <input id="Password" type="password" required name="password" placeholder="Password">
+                    <a id="show_hide_password" href=""class="field-icon"><i class="fa fa-eye-slash field-icon" aria-hidden="true"></i></a>
+                    <label for="name">Password</label>
+                    </p><br/>
+                    <a class="text-forget" href="{{route('forgot_password')}}">Forget Password?</a>
+                    <input type="submit" value="Sign In">
+        </form>
             <!-- form login -->
             {{-- @include('backEnd.formLogin') --}}
         </div>
@@ -225,65 +225,65 @@
     @include('backEnd.layoutes.footer')
     <script>
         var newAccount = document.getElementById('new_account'),
-                patientRadio = document.getElementById('patien'),
-                clinicRadio = document.getElementById('clinic'),
-                hosptailRadio = document.getElementById('hosptail'),
-                xrayRadio = document.getElementById('xray'),
-                labsRadio = document.getElementById('labs'),
-                pharmacyRadio = document.getElementById('pharmacy'),
-                online_doctorRadio = document.getElementById('online_doctor'),
-                nurceRadio = document.getElementById('nurse');
-                patientRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/patien/register');
-                };
-                hosptailRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/hosptail/register');
-                };
-                clinicRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/clinic/register');
-                };
-                xrayRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/xray/register');
-                };
-                labsRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/labs/register');
-                };
-                pharmacyRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/pharmacy/register');
-                };
-                online_doctorRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/online_doctor/register');
-                };
-                nurceRadio.onclick = function(){
-                    newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/nurse/register');
-                };
-                var idCodee = document.getElementById('name'),
-                     myGuard = document.getElementById("guard");
-                        idCodee.onkeyup = function(){
-                            if(idCodee.value.includes("P")){
-                                document.getElementById("patien").setAttribute("checked","checked");
-                            }if(idCodee.value.includes("C")){
-                                document.getElementById("clinic").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("H")){
-                                document.getElementById("hosptail").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("L")){
-                                document.getElementById("labs").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("Y")){
-                                document.getElementById("pharmacy").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("X")){
-                                document.getElementById("xray").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("D")){
-                                document.getElementById("online_doctor").setAttribute("checked","checked");
-                            }
-                            if(idCodee.value.includes("N")){
-                                document.getElementById("nurse").setAttribute("checked","checked");
-                            }
+            patientRadio = document.getElementById('patien'),
+            clinicRadio = document.getElementById('clinic'),
+            hosptailRadio = document.getElementById('hosptail'),
+            xrayRadio = document.getElementById('xray'),
+            labsRadio = document.getElementById('labs'),
+            pharmacyRadio = document.getElementById('pharmacy'),
+            online_doctorRadio = document.getElementById('online_doctor'),
+            nurceRadio = document.getElementById('nurse');
+            patientRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/patien/register');
+            };
+            hosptailRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/hosptail/register');
+            };
+            clinicRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/clinic/register');
+            };
+            xrayRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/xray/register');
+            };
+            labsRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/labs/register');
+            };
+            pharmacyRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/pharmacy/register');
+            };
+            online_doctorRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/online_doctor/register');
+            };
+            nurceRadio.onclick = function(){
+                newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/nurse/register');
+            };
+            var idCodee = document.getElementById('name'),
+                    myGuard = document.getElementById("guard");
+                    idCodee.onkeyup = function(){
+                        if(idCodee.value.includes("P")){
+                            document.getElementById("patien").setAttribute("checked","checked");
+                        }if(idCodee.value.includes("C")){
+                            document.getElementById("clinic").setAttribute("checked","checked");
                         }
+                        if(idCodee.value.includes("H")){
+                            document.getElementById("hosptail").setAttribute("checked","checked");
+                        }
+                        if(idCodee.value.includes("L")){
+                            document.getElementById("labs").setAttribute("checked","checked");
+                        }
+                        if(idCodee.value.includes("Y")){
+                            document.getElementById("pharmacy").setAttribute("checked","checked");
+                        }
+                        if(idCodee.value.includes("X")){
+                            document.getElementById("xray").setAttribute("checked","checked");
+                        }
+                        if(idCodee.value.includes("D")){
+                            document.getElementById("online_doctor").setAttribute("checked","checked");
+                        }
+                        if(idCodee.value.includes("N")){
+                            document.getElementById("nurse").setAttribute("checked","checked");
+                        }
+                    }
 
     </script>
 @stop

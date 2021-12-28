@@ -48,52 +48,53 @@
 
 <script>
     window.onload = function(){
-    render();
-}
-function render(){
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
-    recaptchaVerifier.render().then(function(widgetId) {
-        window.recaptchaWidgetId = widgetId;
-    });
-}
-function phoneAuth(){
-    var numberval = document.getElementById('mobile-number').textContent;
-    console.log(numberval);
-    var appVerifier  = window.recaptchaVerifier;
-    firebase.auth().signInWithPhoneNumber(numberval, appVerifier)
-    .then(function (confirmationResult) {
+        render();
+    }
+    function render(){
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+        recaptchaVerifier.render().then(function(widgetId) {
+            window.recaptchaWidgetId = widgetId;
+        });
+    }
+    function phoneAuth(){
+        var numberval = document.getElementById('mobile-number').textContent;
+        console.log(numberval);
+        var appVerifier  = window.recaptchaVerifier;
+        //console.log(appVerifier);
+        firebase.auth().signInWithPhoneNumber(numberval, appVerifier)
+        .then(function (confirmationResult) {
 
-    window.confirmationResult = confirmationResult;
+        window.confirmationResult = confirmationResult;
 
-    console.log(confirmationResult);
-    $('.show-verify').show();
-    $('.reca-div').hide();
-    $("#r-send").show();
+        console.log(confirmationResult);
+        $('.show-verify').show();
+        $('.reca-div').hide();
+        $("#r-send").show();
 
-    }).catch(function (error) {
-        console.log(error.message);
-    });
-}
+        }).catch(function (error) {
+            console.log('Error: ',error.message);
+        });
+    }
                 /* end of function phone auth */
     /* function codevervcation */
     function codevervcation(){
         console.log('login');
-            //e.preventDefault();
-            var code = document.getElementById('verify-code').value;
-            confirmationResult.confirm(code).then(function(result){
-                console.log('success register');
-                    window.location = $('#config_app').text()+"/public/verficationCode/" + $(".suc-Reg").text();
-                //window.location = "https://phistory.life/Phistory/public/verficationCode/" + $(".suc-Reg").text();
-                var user = result.user;
-                console.log(user);
-            }).catch(function(error){
-                $(".danger-Reg").show().text(error.message);
-                $("#r-send").show();
-                // console.log(error.message);
-            });
-            var credential = firebase.auth.PhoneAuthProvider.credential(confirmationResult.verificationId, code);
-            firebase.auth().signInWithCredential(credential);
-            }
+        //e.preventDefault();
+        var code = document.getElementById('verify-code').value;
+        confirmationResult.confirm(code).then(function(result){
+            console.log('success register');
+                window.location = $('#config_app').text()+"/public/verficationCode/" + $(".suc-Reg").text();
+            //window.location = "https://phistory.life/Phistory/public/verficationCode/" + $(".suc-Reg").text();
+            var user = result.user;
+            console.log(user);
+        }).catch(function(error){
+            $(".danger-Reg").show().text(error.message);
+            $("#r-send").show();
+            console.log('Error: ',error.message);
+        });
+        var credential = firebase.auth.PhoneAuthProvider.credential(confirmationResult.verificationId, code);
+        firebase.auth().signInWithCredential(credential);
+    }
             /* end of function */
 
             /* function r-send */

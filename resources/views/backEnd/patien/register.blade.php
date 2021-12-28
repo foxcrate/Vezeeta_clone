@@ -1,5 +1,5 @@
 @extends('backEnd.layoutes.mastar')
-@section('title','Patien Register')
+@section('title','Patient Register')
 @section('content')
     @include('backEnd.layoutes.navbar')
     <!-- start account patien -->
@@ -22,6 +22,7 @@
                             <input type="hidden" id="latitude" name="latitude" value="markerCurrent.position.lat()">
                             <input type="hidden" id="longitude" name="longitude" value="markerCurrent.position.lng()">
                             <div class="row">
+
                                 <div class="container col-md-12 mb-5">
 
                                     <div class="avatar-wrapper">
@@ -36,15 +37,17 @@
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-4 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">First Name <i class="fa fa-star-of-life star"></i></label>
-                                        <input  onkeypress="return /[a-z]/i.test(event.key)" style="text-transform: capitalize" value = "{{old('firstName')}}" class="form-control  @error('firstName') is-invalid @enderror" type="text" name="firstName" placeholder="First Name" >
+                                        <input  onkeypress="return /[a-z]/i.test(event.key)" style="text-transform: capitalize" required value = "{{old('firstName')}}" class="form-control  @error('firstName') is-invalid @enderror" type="text" name="firstName" placeholder="First Name" >
                                     @error('firstName')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                     </div>
                                 </div>
+
                                 <div class="col-md-4 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Middle Name</label>
@@ -54,24 +57,27 @@
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-4 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Last Name <i class="fa fa-star-of-life star"></i></label>
-                                        <input onkeypress="return /[a-z]/i.test(event.key)" style="text-transform: capitalize" value = "{{old('lastName')}}" class="form-control @error('lastName') is-invalid @enderror" type="text" name="lastName" placeholder="Last name">
+                                        <input onkeypress="return /[a-z]/i.test(event.key)" style="text-transform: capitalize" required value = "{{old('lastName')}}" class="form-control @error('lastName') is-invalid @enderror" type="text" name="lastName" placeholder="Last name">
                                         @error('lastName')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="col-md-6 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Birth date <i class="fa fa-star-of-life star"></i></label>
-                                        <input value = "{{old('BirthDate')}}" class="form-control @error('BirthDate') is-invalid @enderror"  type="date" placeholder="BIRTHDATE" name="BirthDate" >
+                                        <input value = "{{old('BirthDate')}}" class="form-control @error('BirthDate') is-invalid @enderror" required type="date" placeholder="BIRTHDATE" name="BirthDate" >
                                         @error('BirthDate')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="col-md-6 mb-xl-3">
                                     <label class="h6 font-weight-bold" for="gender">Gender <i class="fa fa-star-of-life star"></i></label>
                                     <div class="form-flex row">
@@ -88,7 +94,8 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-xl-3">
+
+                                {{-- <div class="col-md-6 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Email</label>
                                         <input id="txtEmailId" value = "{{old('email')}}" class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="username@example.com">
@@ -97,8 +104,9 @@
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                </div>
-                                <div class="col-md-6 mb-xl-3">
+                                </div> --}}
+
+                                {{-- <div class="col-md-6 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Nationality</label>
                                         <select value = "{{old('nationality')}}" class="form-control @error('nationality') is-invalid @enderror" name="nationality">
@@ -323,11 +331,12 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                </div>
+                                </div> --}}
+
                                 <div class="col-md-12 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Phone Number <i class="fa fa-star-of-life star"></i></label>
-                                        <input value = "{{old('phoneNumber')}}" name="phoneNumber" type="number" placeholder="Phone Number" class="@error('phoneNumber') is-invalid @enderror form-control" style="padding-left: 240px">
+                                        <input value = "{{old('phoneNumber')}}" name="phoneNumber" required type="number" placeholder="Phone Number" class="@error('phoneNumber') is-invalid @enderror form-control" style="padding-left: 240px">
                                         <select style="position:relative; bottom:38px; width: 30%;" name="countryCode" id="" class="form-control">
                                             <option data-countryCode="EG" value="+20">Egypt (+20)</option>
                                             <option data-countryCode="SA" value="+966">Saudi Arabia (+966)</option>
@@ -558,13 +567,14 @@
                                         @endif
                                     </div>
                                 </div>
+
                                 <div class="col-md-6 mb-xl-3">
                                     <div class="form-group"id="show_hide_password">
                                         <label class="h6 font-weight-bold">Password
                                             <div class="fa fa-star-of-life star"></div>
                                         </label>
-                                        <input id = "psw" class="form-control @error('password') is-invalid @enderror" type="password" name="password" placeholder="Password">
-                                        <a href=""class="field-icon"><i class="fa fa-eye-slash field-icon " aria-hidden="true"></i></a>
+                                        <input id = "psw" class="form-control @error('password') is-invalid @enderror" required type="password" name="password" placeholder="Password">
+                                        <a href="" class="field-icon"><i class="fa fa-eye-slash field-icon " aria-hidden="true"></i></a>
                                         <div id="message">
                                             <p id="letter" class="invalid"><span>A lowercase letter</span></p>
                                             <p id="capital" class="invalid"><span>A capital (uppercase) letter</span></p>
@@ -580,12 +590,12 @@
                                 <div class="col-md-6 mb-xl-3">
                                     <div class="form-group" id="show_hide_password1">
                                         <label class="h6 font-weight-bold">Confirm Password <i class="fa fa-star-of-life star"></i></label>
-                                        <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password">
+                                        <input class="form-control" type="password" name="password_confirmation" required placeholder="Confirm Password">
                                         <a href="" class="field-icon"><i class="fa fa-eye-slash field-icon " aria-hidden="true"></i></a>
                                     </div>
                                 </div>
-                                <!-- jop field -->
-                                <div class="col-md-6 mb-xl-3">
+
+                                {{-- <div class="col-md-6 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Job Title</label>
                                         <select name="job" class="form-control">
@@ -646,10 +656,9 @@
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                </div>
-                                <!-- jop field -->
-                                <!-- race field -->
-                                <div class="col-md-6 mb-xl-3">
+                                </div> --}}
+
+                                {{-- <div class="col-md-6 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Race</label>
                                         <select class="form-control" name = "race" @error('race') is-invalid @enderror>
@@ -667,10 +676,9 @@
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                </div>
-                                <!-- race field -->
-                                <!-- address field -->
-                                <div class="col-md-6 mb-xl-3">
+                                </div> --}}
+
+                                {{-- <div class="col-md-6 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Address</label>
                                         <input type="text" id="pac-input"class="form-control" name="address">
@@ -680,9 +688,9 @@
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                </div>
-                                <!-- address field -->
-                                <div class="col-md-12 mb-xl-3">
+                                </div> --}}
+
+                                {{-- <div class="col-md-12 mb-xl-3">
                                     <label class="h6 font-weight-bold" for="state">State
                                         <div class="fa fa-star-of-life star"></div>
                                     </label>
@@ -700,17 +708,20 @@
                                             <label for="divorce" class="ml-2">Divorced</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 mb-xl-3">
-                                        <hr class="my-4" />
-                                        <div class="">
-                                            <input type="checkbox" name="i_agree" id="i_agree">
-                                            <label class="h6 font-weight-bold" style="font-size: .98rem;">I have read and I understand the  <a target="_blank" class="text-primary" href="{{route('getPrivacyRegister')}}">pHistroy privacy policy statement</a>, I agree on all terms and conditions.</a></label>
-                                        </div>
+                                </div> --}}
+
+                                <div class="col-md-12 mb-xl-3">
+                                    <hr class="my-4" />
+                                    <div class="">
+                                        <input type="checkbox" name="i_agree" id="i_agree">
+                                        <label class="h6 font-weight-bold" style="font-size: .98rem;">I have read and I understand the  <a target="_blank" class="text-primary" href="{{route('getPrivacyRegister')}}">pHistroy privacy policy statement</a>, I agree on all terms and conditions.</a></label>
                                     </div>
                                 </div>
 
+
+
                                 <div class="col-12 text-center mb-5 mt-5">
-                                    <button  id = "sign-in-button" type="submit"  disabled class="h4 col-9 btn btn-primary font-weight-400 mr-auto ml-auto" >Submite</button>
+                                    <button  id = "sign-in-button" type="submit" disabled class="h4 col-9 btn btn-primary font-weight-400 mr-auto ml-auto" >Submit</button>
                                 </div>
                             </div>
                         </form>
