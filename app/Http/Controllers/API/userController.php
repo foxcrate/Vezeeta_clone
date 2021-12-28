@@ -33,7 +33,7 @@ class userController extends Controller
                     'token' => $success['token']
                 ]);
             } else {
-                return response() -> json(['error' => 'Unauthorised'], 401);
+                return response() -> json(['message' => 'Your idCode or your password are inCorrect, please try again'], 401);
             }
 
         }elseif($request->type == 'clinic'){

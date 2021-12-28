@@ -1,5 +1,5 @@
 @extends('backEnd.layoutes.mastar')
-@section('title','Compleate profile')
+@section('title','Complete profile')
 @section('content')
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -78,12 +78,378 @@
                                                 <div class="form-group">
                                                     <ul class="list-unstyled">
                                                         <li>
+
+
+                                                            <div class="row mb-3">
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group">
+                                                                        {{-- <img src="{{url('imgs/height.png')}}" class="mr-3 mb-3" width="50"> --}}
+                                                                        <label class="title-label ml-lg-3">Email</label>
+                                                                        <input required class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Enter Your Email">
+                                                                        @error('email')
+                                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label for="nationality" class="title-label ml-lg-3">Nationality</label>
+                                                                        <select value = "{{old('nationality')}}" class="form-control  @error('nationality') is-invalid @enderror"  id="nationality" name="nationality" required>
+                                                                            {{-- <optgroup label="Other countries"> --}}
+                                                                                {{-- <option hidden > Choose ..</option> --}}
+                                                                                <option value="">Nationality</option>
+                                                                                <option data-countryCode="DZ" value="Algeria">Algeria</option>
+                                                                                <option data-countryCode="AD" value="Andorra">Andorra</option>
+                                                                                <option data-countryCode="AO" value="Angola">Angola</option>
+                                                                                <option data-countryCode="AI" value="Anguilla">Anguilla</option>
+                                                                                <option data-countryCode="AG" value="Antigua">Antigua &amp; Barbuda </option>
+                                                                                <option data-countryCode="AR" value="Argentina">Argentina</option>
+                                                                                <option data-countryCode="AM" value="Armenia">Armenia</option>
+                                                                                <option data-countryCode="AW" value="Aruba">Aruba </option>
+                                                                                <option data-countryCode="AU" value="Australia">Australia</option>
+                                                                                <option data-countryCode="AT" value="Austria ">Austria </option>
+                                                                                <option data-countryCode="AZ" value="Azerbaijan">Azerbaijan</option>
+                                                                                <option data-countryCode="BS" value="Bahamas">Bahamas</option>
+                                                                                <option data-countryCode="BH" value="Bahrain">Bahrain </option>
+                                                                                <option data-countryCode="BD" value="Bangladesh">Bangladesh</option>
+                                                                                <option data-countryCode="BB" value="Barbados">Barbados</option>
+                                                                                <option data-countryCode="BY" value="Belarus">Belarus</option>
+                                                                                <option data-countryCode="BE" value="Belgium">Belgium</option>
+                                                                                <option data-countryCode="BZ" value="Belize">Belize</option>
+                                                                                <option data-countryCode="BJ" value="Benin">Benin</option>
+                                                                                <option data-countryCode="BM" value="Bermuda">Bermuda</option>
+                                                                                <option data-countryCode="BT" value="Bhutan">Bhutan</option>
+                                                                                <option data-countryCode="BO" value="Bolivia">Bolivia</option>
+                                                                                <option data-countryCode="BA" value="Bosnia Herzegovina">Bosnia Herzegovina</option>
+                                                                                <option data-countryCode="BW" value="267">Botswana </option>
+                                                                                <option data-countryCode="BR" value="55">Brazil </option>
+                                                                                <option data-countryCode="BN" value="673">Brunei </option>
+                                                                                <option data-countryCode="BG" value="359">Bulgaria </option>
+                                                                                <option data-countryCode="BF" value="226">Burkina Faso</option>
+                                                                                <option data-countryCode="BI" value="257">Burundi</option>
+                                                                                <option data-countryCode="KH" value="855">Cambodia </option>
+                                                                                <option data-countryCode="CM" value="237">Cameroon </option>
+                                                                                <option data-countryCode="CA" value="1">Canada </option>
+                                                                                <option data-countryCode="CV" value="238">Cape Verde Islands </option>
+                                                                                <option data-countryCode="KY" value="1345">Cayman Islands </option>
+                                                                                <option data-countryCode="CF" value="236">Central African Republic </option>
+                                                                                <option data-countryCode="CL" value="56">Chile </option>
+                                                                                <option data-countryCode="CN" value="86">China </option>
+                                                                                <option data-countryCode="CO" value="57">Colombia </option>
+                                                                                <option data-countryCode="KM" value="269">Comoros </option>
+                                                                                <option data-countryCode="CG" value="242">Congo </option>
+                                                                                <option data-countryCode="CK" value="682">Cook Islands </option>
+                                                                                <option data-countryCode="CR" value="506">Costa Rica </option>
+                                                                                <option data-countryCode="HR" value="385">Croatia </option>
+                                                                                <option data-countryCode="CU" value="53">Cuba </option>
+                                                                                <option data-countryCode="CY" value="90392">Cyprus North </option>
+                                                                                <option data-countryCode="CY" value="357">Cyprus South </option>
+                                                                                <option data-countryCode="CZ" value="42">Czech Republic </option>
+                                                                                <option data-countryCode="DK" value="45">Denmark </option>
+                                                                                <option data-countryCode="DJ" value="253">Djibouti </option>
+                                                                                <option data-countryCode="DM" value="1809">Dominica </option>
+                                                                                <option data-countryCode="DO" value="1809">Dominican Republic </option>
+                                                                                <option data-countryCode="EC" value="593">Ecuador </option>
+                                                                                <option data-countryCode="EG" value="+20">Egypt </option>
+                                                                                <option data-countryCode="SV" value="503">El Salvador </option>
+                                                                                <option data-countryCode="GQ" value="240">Equatorial Guinea </option>
+                                                                                <option data-countryCode="ER" value="291">Eritrea </option>
+                                                                                <option data-countryCode="EE" value="372">Estonia </option>
+                                                                                <option data-countryCode="ET" value="251">Ethiopia </option>
+                                                                                <option data-countryCode="FK" value="500">Falkland Islands </option>
+                                                                                <option data-countryCode="FO" value="298">Faroe Islands </option>
+                                                                                <option data-countryCode="FJ" value="679">Fiji </option>
+                                                                                <option data-countryCode="FI" value="358">Finland </option>
+                                                                                <option data-countryCode="FR" value="33">France </option>
+                                                                                <option data-countryCode="GF" value="594">French Guiana </option>
+                                                                                <option data-countryCode="PF" value="689">French Polynesia </option>
+                                                                                <option data-countryCode="GA" value="241">Gabon </option>
+                                                                                <option data-countryCode="GM" value="220">Gambia </option>
+                                                                                <option data-countryCode="GE" value="7880">Georgia </option>
+                                                                                <option data-countryCode="DE" value="49">Germany </option>
+                                                                                <option data-countryCode="GH" value="233">Ghana </option>
+                                                                                <option data-countryCode="GI" value="350">Gibraltar </option>
+                                                                                <option data-countryCode="GR" value="30">Greece</option>
+                                                                                <option data-countryCode="GL" value="299">Greenland</option>
+                                                                                <option data-countryCode="GD" value="1473">Grenada </option>
+                                                                                <option data-countryCode="GP" value="590">Guadeloupe </option>
+                                                                                <option data-countryCode="GU" value="671">Guam </option>
+                                                                                <option data-countryCode="GT" value="502">Guatemala </option>
+                                                                                <option data-countryCode="GN" value="224">Guinea </option>
+                                                                                <option data-countryCode="GW" value="245">Guinea - Bissau </option>
+                                                                                <option data-countryCode="GY" value="592">Guyana </option>
+                                                                                <option data-countryCode="HT" value="509">Haiti </option>
+                                                                                <option data-countryCode="HN" value="504">Honduras </option>
+                                                                                <option data-countryCode="HK" value="852">Hong Kong </option>
+                                                                                <option data-countryCode="HU" value="36">Hungary </option>
+                                                                                <option data-countryCode="IS" value="354">Iceland </option>
+                                                                                <option data-countryCode="IN" value="91">India</option>
+                                                                                <option data-countryCode="ID" value="62">Indonesia</option>
+                                                                                <option data-countryCode="IR" value="98">Iran</option>
+                                                                                <option data-countryCode="IQ" value="964">Iraq </option>
+                                                                                <option data-countryCode="IE" value="353">Ireland </option>
+                                                                                <option data-countryCode="IL" value="972">Israel </option>
+                                                                                <option data-countryCode="IT" value="39">Italy </option>
+                                                                                <option data-countryCode="JM" value="1876">Jamaica </option>
+                                                                                <option data-countryCode="JP" value="81">Japan </option>
+                                                                                <option data-countryCode="JO" value="962">Jordan </option>
+                                                                                <option data-countryCode="KZ" value="7">Kazakhstan</option>
+                                                                                <option data-countryCode="KE" value="254">Kenya </option>
+                                                                                <option data-countryCode="KI" value="686">Kiribati </option>
+                                                                                <option data-countryCode="KP" value="850">Korea North </option>
+                                                                                <option data-countryCode="KR" value="82">Korea South </option>
+                                                                                <option data-countryCode="KW" value="965">Kuwait </option>
+                                                                                <option data-countryCode="KG" value="996">Kyrgyzstan </option>
+                                                                                <option data-countryCode="LA" value="856">Laos </option>
+                                                                                <option data-countryCode="LV" value="371">Latvia </option>
+                                                                                <option data-countryCode="LB" value="961">Lebanon </option>
+                                                                                <option data-countryCode="LS" value="266">Lesotho </option>
+                                                                                <option data-countryCode="LR" value="231">Liberia </option>
+                                                                                <option data-countryCode="LY" value="218">Libya </option>
+                                                                                <option data-countryCode="LI" value="417">Liechtenstein </option>
+                                                                                <option data-countryCode="LT" value="370">Lithuania </option>
+                                                                                <option data-countryCode="LU" value="352">Luxembourg </option>
+                                                                                <option data-countryCode="MO" value="853">Macao </option>
+                                                                                <option data-countryCode="MK" value="389">Macedonia </option>
+                                                                                <option data-countryCode="MG" value="261">Madagascar </option>
+                                                                                <option data-countryCode="MW" value="265">Malawi </option>
+                                                                                <option data-countryCode="MY" value="60">Malaysia </option>
+                                                                                <option data-countryCode="MV" value="960">Maldives </option>
+                                                                                <option data-countryCode="ML" value="223">Mali </option>
+                                                                                <option data-countryCode="MT" value="356">Malta </option>
+                                                                                <option data-countryCode="MH" value="692">Marshall Islands </option>
+                                                                                <option data-countryCode="MQ" value="596">Martinique </option>
+                                                                                <option data-countryCode="MR" value="222">Mauritania </option>
+                                                                                <option data-countryCode="YT" value="269">Mayotte </option>
+                                                                                <option data-countryCode="MX" value="52">Mexico </option>
+                                                                                <option data-countryCode="FM" value="691">Micronesia </option>
+                                                                                <option data-countryCode="MD" value="373">Moldova </option>
+                                                                                <option data-countryCode="MC" value="377">Monaco </option>
+                                                                                <option data-countryCode="MN" value="976">Mongolia </option>
+                                                                                <option data-countryCode="MS" value="1664">Montserrat </option>
+                                                                                <option data-countryCode="MA" value="212">Morocco</option>
+                                                                                <option data-countryCode="MZ" value="258">Mozambique </option>
+                                                                                <option data-countryCode="MN" value="95">Myanmar </option>
+                                                                                <option data-countryCode="NA" value="264">Namibia </option>
+                                                                                <option data-countryCode="NR" value="674">Nauru </option>
+                                                                                <option data-countryCode="NP" value="977">Nepal </option>
+                                                                                <option data-countryCode="NL" value="31">Netherlands </option>
+                                                                                <option data-countryCode="NC" value="687">New Caledonia </option>
+                                                                                <option data-countryCode="NZ" value="64">New Zealand </option>
+                                                                                <option data-countryCode="NI" value="505">Nicaragua </option>
+                                                                                <option data-countryCode="NE" value="227">Niger </option>
+                                                                                <option data-countryCode="NG" value="234">Nigeria </option>
+                                                                                <option data-countryCode="NU" value="683">Niue</option>
+                                                                                <option data-countryCode="NF" value="672">Norfolk Islands</option>
+                                                                                <option data-countryCode="NP" value="670">Northern Marianas</option>
+                                                                                <option data-countryCode="NO" value="47">Norway</option>
+                                                                                <option data-countryCode="OM" value="968">Oman </option>
+                                                                                <option data-countryCode="PW" value="680">Palau</option>
+                                                                                <option data-countryCode="PA" value="507">Panama </option>
+                                                                                <option data-countryCode="PG" value="Papua New Guinea">Papua New Guinea</option>
+                                                                                <option data-countryCode="PY" value="Paraguay">Paraguay</option>
+                                                                                <option data-countryCode="PE" value="Peru">Peru</option>
+                                                                                <option data-countryCode="PH" value="Philippines">Philippines</option>
+                                                                                <option data-countryCode="PL" value="Poland">Poland</option>
+                                                                                <option data-countryCode="PT" value="Portugal">Portugal</option>
+                                                                                <option data-countryCode="PR" value="Puerto Rico">Puerto Rico</option>
+                                                                                <option data-countryCode="QA" value="Qatar">Qatar</option>
+                                                                                <option data-countryCode="RE" value="Reunion">Reunion</option>
+                                                                                <option data-countryCode="RO" value="Romania">Romania</option>
+                                                                                <option data-countryCode="RU" value="Russia">Russia</option>
+                                                                                <option data-countryCode="RW" value="Rwanda ">Rwanda </option>
+                                                                                <option data-countryCode="SM" value="San Marino">San Marino</option>
+                                                                                <option data-countryCode="ST" value="Sao Tome">Sao Tome &amp; Principe</option>
+                                                                                <option data-countryCode="SA" value="+Saudi Arabia">Saudi Arabia</option>
+                                                                                <option data-countryCode="SN" value="Senegal">Senegal</option>
+                                                                                <option data-countryCode="CS" value="Serbia">Serbia</option>
+                                                                                <option data-countryCode="SC" value="Seychelles">Seychelles</option>
+                                                                                <option data-countryCode="SL" value="Sierra Leone">Sierra Leone</option>
+                                                                                <option data-countryCode="SG" value="Singapore">Singapore</option>
+                                                                                <option data-countryCode="SK" value="Slovak Republic">Slovak Republic</option>
+                                                                                <option data-countryCode="SI" value="Slovenia">Slovenia</option>
+                                                                                <option data-countryCode="SB" value="Solomon Islands">Solomon Islands</option>
+                                                                                <option data-countryCode="SO" value="Somalia">Somalia</option>
+                                                                                <option data-countryCode="ZA" value="South Africa">South Africa</option>
+                                                                                <option data-countryCode="ES" value="Spain">Spain </option>
+                                                                                <option data-countryCode="LK" value="Sri Lanka">Sri Lanka</option>
+                                                                                <option data-countryCode="SH" value="St. Helena">St. Helena </option>
+                                                                                <option data-countryCode="KN" value="St. Kitts">St. Kitts </option>
+                                                                                <option data-countryCode="SC" value="St. Lucia">St. Lucia</option>
+                                                                                <option data-countryCode="SD" value="Sudan">Sudan</option>
+                                                                                <option data-countryCode="SR" value="Suriname">Suriname</option>
+                                                                                <option data-countryCode="SZ" value="Swaziland"></option>
+                                                                                <option data-countryCode="SE" value="46">Sweden</option>
+                                                                                <option data-countryCode="CH" value="Switzerland">Switzerland</option>
+                                                                                <option data-countryCode="SI" value="Syria">Syria</option>
+                                                                                <option data-countryCode="TW" value="Taiwan">Taiwan</option>
+                                                                                <option data-countryCode="TJ" value="Tajikstan">Tajikstan</option>
+                                                                                <option data-countryCode="TH" value="Thailand">Thailand</option>
+                                                                                <option data-countryCode="TG" value="Togo">Togo</option>
+                                                                                <option data-countryCode="TO" value="Tonga">Tonga</option>
+                                                                                <option data-countryCode="TT" value="Trinidad">Trinidad &amp; Tobago</option>
+                                                                                <option data-countryCode="TN" value="Tunisia">Tunisia</option>
+                                                                                <option data-countryCode="TR" value="Turkey">Turkey</option>
+                                                                                <option data-countryCode="TM" value="Turkmenistan">Turkmenistan</option>
+                                                                                <option data-countryCode="TM" value="Turkmenistan">Turkmenistan</option>
+                                                                                <option data-countryCode="TC" value="Turks">Turks &amp; Caicos Islands</option>
+                                                                                <option data-countryCode="TV" value="Tuvalu">Tuvalu</option>
+                                                                                <option data-countryCode="UG" value="Uganda">Uganda</option>
+                                                                                <option data-countryCode="GB" value="UK">UK</option>
+                                                                                <option data-countryCode="UA" value="Ukraine">Ukraine</option>
+                                                                                <option data-countryCode="AE" value="United Arab Emirates">United Arab Emirates </option>
+                                                                                <option data-countryCode="UY" value="Uruguay">Uruguay </option>
+                                                                                <option data-countryCode="US" value="USA">USA</option>
+                                                                                <option data-countryCode="UZ" value="Uzbekistan">Uzbekistan</option>
+                                                                                <option data-countryCode="VU" value="Vanuatu">Vanuatu</option>
+                                                                                <option data-countryCode="VA" value="Vatican City">Vatican City </option>
+                                                                                <option data-countryCode="VE" value="Venezuela">Venezuela</option>
+                                                                                <option data-countryCode="VN" value="Vietnam">Vietnam</option>
+                                                                                <option data-countryCode="VG" value="Virgin Islands - British">Virgin Islands - British </option>
+                                                                                <option data-countryCode="VI" value="Virgin Islands - US">Virgin Islands - US </option>
+                                                                                <option data-countryCode="WF" value="Wallis">Wallis &amp; Futuna </option>
+                                                                                <option data-countryCode="YE" value="Yemen (North)">Yemen (North)</option>
+                                                                                <option data-countryCode="YE" value="Yemen (South)">Yemen (South)</option>
+                                                                                <option data-countryCode="ZM" value="Zambia">Zambia</option>
+                                                                                <option data-countryCode="ZW" value="Zimbabwe">Zimbabwe</option>
+                                                                            {{-- </optgroup> --}}
+                                                                        </select>
+                                                                        @error('nationality')
+                                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label for="job" class="title-label ml-lg-3">Job Title</label>
+                                                                        <select required id="job" name="job" class="form-control">
+                                                                            {{-- <option hidden > Choose ..</option> --}}
+                                                                            <option value="">Job Title</option>
+                                                                            <option value="Unemployed">Unemployed</option>
+                                                                            <option value="Accountant">Accountant</option>
+                                                                            <option value="Teacher">Teacher</option>
+                                                                            <option value="Student">Student</option>
+                                                                            <option value="Attorney">Attorney</option>
+                                                                            <option value="Engineer">Engineer</option>
+                                                                            <option value="Industrial Engineer">Industrial Engineer</option>
+                                                                            <option value="software engineer">Software Engineer</option>
+                                                                            <option value="Structural Engineer">Structural Engineer</option>
+                                                                            <option value="Architect">Architect</option>
+                                                                            <option value="computer engineer">Computer Engineer</option>
+                                                                            <option value="Electrical Engineer">Electrical Engineer</option>
+                                                                            <option value="flight engineer">Flight Engineer</option>
+                                                                            <option value="Decoration designer">Decoration Designer</option>
+                                                                            <option value="Doctor">Doctor</option>
+                                                                            <option value="nurse">Nurse</option>
+                                                                            <option value="pharmacist">Pharmacist</option>
+                                                                            <option value="Marketing Specialist">Marketing Specialist</option>
+                                                                            <option value="Salesman">Salesman</option>
+                                                                            <option value="Secretary">Secretary</option>
+                                                                            <option value="Work man">Work Man</option>
+                                                                            <option value="Electrician">Electrician</option>
+                                                                            <option value="Smith">Smith</option>
+                                                                            <option value="Carpenter">Carpenter</option>
+                                                                            <option value="Barber">Barber</option>
+                                                                            <option value="Dressmaker">Dressmaker</option>
+                                                                            <option value="Painter">Painter</option>
+                                                                            <option value="Herdsman">Herdsman</option>
+                                                                            <option value="Driver">Driver</option>
+                                                                            <option value="Barber">Barber</option>
+                                                                            <option value="Office boy">Office Boy</option>
+                                                                            <option value="Postman">Postman</option>
+                                                                            <option value="plumber">Plumber</option>
+                                                                            <option value="broker">Broker</option>
+                                                                            <option value="Chef">Chef</option>
+                                                                            <option value="Fisher man">Fisher Man</option>
+                                                                            <option value="Clean Worker">Clean Worker</option>
+                                                                            <option value="Hairdresser">Hairdresser</option>
+                                                                            <option value="Stylist">Stylist</option>
+                                                                            <option value="Mechanical">Mechanical</option>
+                                                                            <option value="Waiter">Waiter</option>
+                                                                            <option value="Construction Worker">Construction Worker</option>
+                                                                            <option value="Builder">Builder</option>
+                                                                            <option value="porter">Porter</option>
+                                                                            <option value="Servant">Servant</option>
+                                                                            <option value="Baker">Baker</option>
+                                                                            <option value="Receptionist">Receptionist</option>
+                                                                            <option value="Customer service">Customer service</option>
+                                                                            <option value="businessman">Businessman</option>
+                                                                            <option value="Other">Other</option>
+
+
+                                                                        </select>
+                                                                        @error('job')
+                                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="row mb-3">
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label for = "race" class="title-label ml-lg-3">Race</label>
+                                                                        <select required class="form-control" id = "race" name = "race" @error('race') is-invalid @enderror>
+                                                                            {{-- <option hidden>Choose ..</option> --}}
+                                                                            <option value="">Race</option>
+                                                                            <option value="Arabian Gulf">Arabian Gulf</option>
+                                                                            <option value="African">African</option>
+                                                                            <option value="Middle East">Middle East</option>
+                                                                            <option value="Black American">Black American</option>
+                                                                            <option value="Asian">Asian</option>
+                                                                            <option value="White">White</option>
+                                                                            <option value="Hawalian Or other Pacific Islander">Hawalian Or other Pacific Islander</option>
+                                                                            <option value="American India/Alaska Native">American India/Alaska Native</option>
+                                                                        </select>
+                                                                        @error('race')
+                                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-8">
+                                                                    <label class="title-label ml-lg-3" for="state">State</label>
+                                                                    <div class="form-flex row">
+                                                                        <div class="col-3 mr-4">
+                                                                            <input type="radio" name="state" value="single" id="single" checked="checked" />
+                                                                            <label for="single" class="ml-2">Single</label>
+                                                                        </div>
+                                                                        <div class="col-3 mr-4">
+                                                                            <input type="radio" name="state" value="married" id="married" />
+                                                                            <label for="married" class="ml-2">Married</label>
+                                                                        </div>
+                                                                        <div class="col-3 mr-4">
+                                                                            <input type="radio" name="state" value="divorce" id="divorce" />
+                                                                            <label for="divorce" class="ml-2">Divorced</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="row mb-3">
+
+                                                                <div class="form-group">
+                                                                    <label class="h6 font-weight-bold">Address</label>
+                                                                    <input type="text" id="pac-input"class="form-control" name="address">
+                                                                    <div id="map" style="height: 300px; width: 700px;"></div>
+
+                                                                    @error('address')
+                                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                                    @enderror
+                                                                </div>
+
+                                                            </div>
+
+
                                                             <div class="row mb-3">
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <img src="{{url('imgs/height.png')}}" class="mr-3 mb-3" width="50">
                                                                         <label class="title-label ml-lg-3">Height</label>
-                                                                        <input  minlength="2" maxlength="3" class="form-control @error('height') is-invalid @enderror" type="number" name="height" placeholder="Height">
+                                                                        <input  minlength="2" maxlength="3" required class="form-control @error('height') is-invalid @enderror" type="number" name="height" placeholder="Height">
                                                                         @error('height')
                                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                                         @enderror
@@ -93,7 +459,7 @@
                                                                     <div class="form-group">
                                                                         <img src="{{url('imgs/Wight.png')}}" class="mr-3 mb-3" width="50">
                                                                         <label class="title-label">Weight</label>
-                                                                        <input minlength="2" maxlength="3" name="width" type="number" class="form-control @error('width') is-invalid @enderror" placeholder="Weigth" />
+                                                                        <input minlength="2" maxlength="3" name="width" required type="number" class="form-control @error('width') is-invalid @enderror" placeholder="Weigth" />
                                                                         @error('width')
                                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                                         @enderror
@@ -111,7 +477,7 @@
                                                                         <img src="{{url('imgs/blood.png')}}" class="mr-3 mb-3" width="50">
                                                                         <label class="title-label">Blood</label>
                                                                         <div>
-                                                                            <select class="form-control  @error('blood') is-invalid @enderror" name="blood">
+                                                                            <select required class="form-control  @error('blood') is-invalid @enderror" name="blood">
                                                                                 <option hidden value="">Blood</option>
                                                                                 <option value="A+">A+</option>
                                                                                 <option value="A-">A-</option>
@@ -129,6 +495,8 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -724,17 +1092,17 @@
                                                                         <div class="row mb-3 mt-3">
                                                                             <div class="col-lg-9 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Have you a Normal Period Cycle </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="wife_Period_Cycle" value="Yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="wife_Period_Cycle" value="No" /> <label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="Period_Cycle" value="Yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="Period_Cycle" value="No" /> <label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Abotion</label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="wife_Abotion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="wife_Abotion" value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="Abotion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="Abotion" value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto ">
                                                                                 <label class="title-label col-6">Contraceptive</label>
-                                                                                <select name="wife_Contraceptive" class="ui selection dropdown col-4">
+                                                                                <select name="Contraceptive" class="ui selection dropdown col-4">
                                                                                     <option hidden value="">Severity</option>
                                                                                     <option value="Pill">Pill</option>
                                                                                     <option value="Implant">Implant</option>
@@ -750,32 +1118,32 @@
                                                                         <div class="row mb-3 mt-3">
                                                                             <div class="col-lg-9 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Have you a Normal Period Cycle </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_Period_Cycle" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_Period_Cycle" value="no" /> <label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="Period_Cycle" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="Period_Cycle" value="no" /> <label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Pregnency</label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_pregnency" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_pregnency" value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="pregnency" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="pregnency" value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Abotion</label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_abotion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_abotion" value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="abotion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="abotion" value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Types of Deliveries </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_deliveries" value="normal" /><label class="font-weight-600">Normal</label>
-                                                                                <input class="ui radio checkbox col-1 ml-3" type="radio" name="mother_deliveries" value="c.s" /><label class="font-weight-600">C.S</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="deliveries" value="normal" /><label class="font-weight-600">Normal</label>
+                                                                                <input class="ui radio checkbox col-1 ml-3" type="radio" name="deliveries" value="c.s" /><label class="font-weight-600">C.S</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Complicetion in Deliveries </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_complicetion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_complicetion" value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="complicetion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="complicetion" value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto ">
                                                                                 <label class="title-label col-6">Contraceptive</label>
-                                                                                <select name="mother_Contraceptive" class="ui selection dropdown col-4">
+                                                                                <select name="Contraceptive" class="ui selection dropdown col-4">
                                                                                     <option hidden> Severity</option>
                                                                                     <option value="Pill">Pill</option>
                                                                                     <option value="Implant">Implant</option>
@@ -792,7 +1160,7 @@
                                                         </div>
                                                 </div>
                                                 <div class="col-12 text-center mb-3 mt-5">
-                                                    <input type="submit" value="submite" class="col-8 btn btn-success">
+                                                    <input type="submit" value="Submit" class="col-8 btn btn-success">
                                                 </div>
                                             </div>
                                         </div>
@@ -804,6 +1172,11 @@
                 </form>
 
                 <!-- footer -->
+                <script>
+                    @include("includes.GoogleMap")
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYG5g2aJ9TjMlbYk7E_VuFYKSvHC1Ee6Y&callback=initAutocomplete&libraries=places&v=weekly" defer ></script>
+
                 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
                 <script>
                     $(function(){

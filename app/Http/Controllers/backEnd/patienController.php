@@ -147,15 +147,12 @@ class patienController extends Controller
             'other_mother'      => $request->other_mother,
             'father'            => $request->father,
             'other_father'      => $request->other_father,
-            'wife_Period_Cycle' => $request->wife_Period_Cycle,
-            'wife_Abotion'      => $request->wife_Abotion,
-            'wife_Contraceptive'    => $request->wife_Contraceptive,
-            'mother_Period_Cycle'   => $request->mother_Period_Cycle,
-            'mother_pregnency'      => $request->mother_pregnency,
-            'mother_abotion'        => $request->mother_abotion,
-            'mother_deliveries'     => $request->mother_deliveries,
-            'mother_complicetion'   => $request->mother_complicetion,
-            'mother_Contraceptive'  => $request->mother_Contraceptive,
+            'Period_Cycle' => $request->Period_Cycle,
+            'Abotion'      => $request->Abotion,
+            'Contraceptive'    => $request->Contraceptive,
+            'pregnency'      => $request->pregnency,
+            'deliveries'     => $request->deliveries,
+            'complicetion'   => $request->complicetion,
             'patient_id'              =>$request->patient_id,
             'single_Period_Cycle'      => $request->single_Period_Cycle,
         ];
@@ -312,7 +309,7 @@ class patienController extends Controller
                 unset($test[$key]);
                 $patient->patinets_data->analzes_file = $test;
                 $patient->patinets_data->save();
-                alert::image('','','https://phistory.life/Phistory/public/imgs/alert/done.png');
+                alert::image('','','https://phistory.life/public/imgs/alert/done.png');
                 return redirect()->back();
             }
         }else{
@@ -320,19 +317,23 @@ class patienController extends Controller
                 unset($ray[$key]);
                 $patient->patinets_data->rays_file = $ray;
                 $patient->patinets_data->save();
-                alert::image('','','https://phistory.life/Phistory/public/imgs/alert/Don1e.png');
+                alert::image('','','https://phistory.life/public/imgs/alert/Don1e.png');
                 return redirect()->back();
             }
         }
     }
     /* compleate profile function */
     public function updateProfile($id,Request $request){
-        // return $request;
+        //return $request;
         Alert::success('Success', 'Updated Profile Successfuly');
         $patient = Patien::findOrFail($id);
         /* insert all request */
         $requestData = $request->all();
         $data2 = [
+            'email' => $request->email,
+            'nationality' => $request->nationality,
+            'job' => $request->job,
+            'race' => $request->race,
             'width'                 => $request->width,
             'height'                => $request->height,
             'width_type'            => $request->width_type,
@@ -352,18 +353,17 @@ class patienController extends Controller
             'other_mother'      => $request->other_mother,
             'father'            => $request->father,
             'other_father'      => $request->other_father,
-            'wife_Period_Cycle' => $request->wife_Period_Cycle,
-            'wife_Abotion'      => $request->wife_Abotion,
-            'wife_Contraceptive'    => $request->wife_Contraceptive,
-            'mother_Period_Cycle'   => $request->mother_Period_Cycle,
-            'mother_pregnency'      => $request->mother_pregnency,
-            'mother_abotion'        => $request->mother_abotion,
-            'mother_deliveries'     => $request->mother_deliveries,
-            'mother_complicetion'   => $request->mother_complicetion,
-            'mother_Contraceptive'  => $request->mother_Contraceptive,
+            'Period_Cycle' => $request->Period_Cycle,
+            'Abotion'      => $request->Abotion,
+            'Contraceptive'    => $request->Contraceptive,
+            'pregnency'      => $request->pregnency,
+            'deliveries'     => $request->deliveries,
+            'complicetion'   => $request->complicetion,
             'patient_id'              =>$request->patient_id,
             'single_Period_Cycle'      => $request->single_Period_Cycle,
         ];
+        //return "Alo";
+        //return $data2;
         if($rocata_file=$request->file('rocata_file')){
             foreach($rocata_file as $ro){
                 $rocata_name= str_replace(' ','',rand(100000,999999).$ro->getClientOriginalName());
@@ -394,6 +394,18 @@ class patienController extends Controller
         };
 
         $patienCreate = patientData::create($data2);
+
+        $patient = Patien::findOrFail($id);
+        $patient->email = $request->email;
+        $patient->country = $request->nationality;
+        $patient->job = $request->job;
+        $patient->race = $request->race;
+        $patient->state = $request->state;
+        $patient->address = $request->address;
+        $patient->save();
+
+        //return "Alo";
+        //return $patient;
         return redirect()->route('patien-profile',$data2['patient_id']);
 
 
@@ -472,8 +484,8 @@ class patienController extends Controller
     public function logout(){
         Auth::guard('patien')->logout();
 
-        Session::forget('loggedID');
-        Session::forget('loggedType');
+        Session::forget('PatientLoggedID');
+        Session::forget('PatientLogged');
 
         return redirect()->route('indexRoute');
     }
