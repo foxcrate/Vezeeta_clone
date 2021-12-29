@@ -14,11 +14,14 @@
                             $found = 'false' ;
                         @endphp
 
-
+                        {{-- <div class="col-12 text-center mt-5">
+                            <a href = "{{route('show_profile_doctor',[$patient->id,$doctor->id])}}" class="btn btn-primary col-8 ml-auto mr-auto h4">Show Profile</a>
+                        </div> --}}
 
                         @foreach($spdoctors->onlineDoctor as $doctor)
                             @if($doctor->online == 1)
-                                <a href="{{route('show_profile_doctor',[$patient->id,$doctor->id])}}" class="row col-lg-10 ml-auto mr-auto p-5 label-doctor m-4" style="text-decoration: none; color:#000;">
+
+                                {{-- <a href="{{route('show_profile_doctor',[$patient->id,$doctor->id])}}" class="row col-lg-10 ml-auto mr-auto p-5 label-doctor m-4" style="text-decoration: none; color:#000;">
                                     <div class="col-lg-3 pb-3">
                                         <img src="{{url('imgs/dProfilePic.png')}}" width="120" />
                                     </div>
@@ -27,10 +30,21 @@
                                         <h5 class="col-lg-8 mb-3">{{$doctor->special->name}}</h5>
                                         <h6 class="col-lg-12 text-muted">{{$doctor->information}}</h5>
                                     </div>
-                                    {{-- <div class="col-12 text-center mt-5">
-                                        <a href = "{{route('show_profile_doctor',[$patient->id,$doctor->id])}}" class="btn btn-primary col-8 ml-auto mr-auto h4">Show Profile</a>
-                                    </div> --}}
+
+                                </a> --}}
+
+                                <a href="{{route('homecare_show_profile_doctor',[$patient->id,$doctor->id])}}" class="row col-lg-10 ml-auto mr-auto p-5 label-doctor m-4" style="text-decoration: none; color:#000;">
+                                    <div class="col-lg-3 pb-3">
+                                        <img src="{{url('imgs/dProfilePic.png')}}" width="120" />
+                                    </div>
+                                    <div class="col-lg-8 mt-3">
+                                        <h4 class="col-lg-8 font-weight-bold">Dr {{$doctor->name}}</h4>
+                                        <h5 class="col-lg-8 mb-3">{{$doctor->special->name}}</h5>
+                                        <h6 class="col-lg-12 text-muted">{{$doctor->information}}</h5>
+                                    </div>
+
                                 </a>
+
                                 @php
                                     $found = 'true' ;
                                 @endphp

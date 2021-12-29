@@ -41,7 +41,7 @@ return [
     'facebook' => [
         'client_id' => '936502656872745',
         'client_secret' => 'd6aa0a1c358f7b97647c69c10e9aa007',
-        'redirect' => 'https://phistory.life/Phistory/public/callback/facebook'
+        'redirect' => 'https://phistory.life/public/callback/facebook'
     ],
 
     'google' => [

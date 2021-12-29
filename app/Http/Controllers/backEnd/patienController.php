@@ -303,7 +303,7 @@ class patienController extends Controller
                 unset($myar[$index]);
                 $patient->patinets_data->rocata_file = $myar;
                 $patient->patinets_data->save();
-                alert::image('','','https://phistory.life/Phistory/public/imgs/alert/done.png');
+                alert::image('','','https://phistory.life/public/imgs/alert/done.png');
 //                alert('success','Prescription deleted success');
                 return redirect()->back();
             }
@@ -403,7 +403,11 @@ class patienController extends Controller
 
         $patient = Patien::findOrFail($id);
         $patient->email = $request->email;
-        $patient->country = $request->nationality;
+        if($request->nationality == null){
+            $patient->country = "Egypt" ;
+        }else{
+            $patient->country = $request->nationality ;
+        }
         $patient->job = $request->job;
         $patient->race = $request->race;
         $patient->state = $request->state;
@@ -434,7 +438,7 @@ class patienController extends Controller
     /* function update basic data UpdatePatien */
     public function updateData($id,UpdatePatien $request){
         try{
-            // return $request;
+            //return $request;
             $requestData = $request->all();
             $patient = Patien::findOrFail($id);
             // return $request->phoneNumber;
@@ -474,14 +478,23 @@ class patienController extends Controller
             $requestData['address'] = $request->address;
             $requestData['latitude'] = $request->latitude;
             $requestData['longitude'] = $request->longitude;
+
+            // if($request->nationality == null){
+            //     $requestData['country'] = 'Egypt';
+            // }else{
+            //     $requestData['country'] = $request->nationality;
+            // }
+            $requestData['job'] = $request->job;
+            //$requestData['race'] = $request->race;
+
             // $requestData['BirthDate'] = (new Carbon($request->BirthDate))->timestamp;
             // return $requestData;
             $patient->update($requestData);
-            alert()->html("<img width=150 src='https://phistory.life/Phistory/public/imgs/alert/Don1e.png'>",false);
+            alert()->html("<img width=150 src='https://phistory.life/public/imgs/alert/Don1e.png'>",false);
             return redirect()->route('patien.homepage',$patient->id);
         }
         catch(\Exception $ex){
-            Alert::error('Error','Problem');
+            Alert::error('Error',$ex->getMessage());
             return redirect()->back();
         }
     }

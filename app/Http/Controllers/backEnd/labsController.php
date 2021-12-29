@@ -182,7 +182,7 @@ class labsController extends Controller
             }
             $request_data['Medical_License_Number'] = $request->Medical_License_Number;
             $labs->update($request_data);
-            alert()->html("<img width=150 src='https://phistory.life/Phistory/public/imgs/alert/Don1e.png'>",false);
+            alert()->html("<img width=150 src='https://phistory.life/imgs/alert/Don1e.png'>",false);
             return redirect()->back();
         }
         catch(\Exception $ex){

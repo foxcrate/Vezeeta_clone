@@ -11,11 +11,18 @@
                 </div>
                 <div class="online-layouts">
                     @foreach($doctorSp as $sp)
-                        <a href="{{route("showDoctors",[$patient->id,$sp->id])}}" class="text-spcailty font-weight-bold text-decoration online-layout col-lg-3">
+
+                        {{-- <a href="{{route("showDoctors",[$patient->id,$sp->id])}}" class="text-spcailty font-weight-bold text-decoration online-layout col-lg-3">
+                            {{$sp->name}}
+                        </a> --}}
+
+                        <a href="{{route("homecare.showDoctors",[$patient->id,$sp->id])}}" class="text-spcailty font-weight-bold text-decoration online-layout col-lg-3">
                             {{$sp->name}}
                         </a>
+
                     @endforeach
                 </div>
+
                 {{-- <div class="row containers col-10 ml-auto mr-auto">
                     @foreach($doctorSp as $sp)
                     <a class="nav-link doc-spicalite col-lg-3 font-weight-bold text-center m-2"  href="{{route("homecare.showDoctors",[$patient->id,$sp->id])}}">{{$sp->name}}</a>

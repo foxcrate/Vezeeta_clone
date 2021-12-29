@@ -351,9 +351,79 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="h5 font-weight-bold">Email</label>
-                                            <input value = "{{$patient->email}}" class="form-control" type="email" name="email" placeholder="Mohammed0012@gmail.com">
+                                            <input value = "{{$patient->email}}" class="form-control" required type="email" name="email" placeholder="Mohammed0012@gmail.com">
                                         </div>
                                     </div>
+
+
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="job" class="title-label ml-lg-3">Job Title</label>
+                                            <select  id="job" name="job" class="form-control">
+                                                {{-- <option hidden > Choose ..</option> --}}
+                                                <option value="">Job Title</option>
+                                                <option value="Unemployed">Unemployed</option>
+                                                <option value="Accountant">Accountant</option>
+                                                <option value="Teacher">Teacher</option>
+                                                <option value="Student">Student</option>
+                                                <option value="Attorney">Attorney</option>
+                                                <option value="Engineer">Engineer</option>
+                                                <option value="Industrial Engineer">Industrial Engineer</option>
+                                                <option value="software engineer">Software Engineer</option>
+                                                <option value="Structural Engineer">Structural Engineer</option>
+                                                <option value="Architect">Architect</option>
+                                                <option value="computer engineer">Computer Engineer</option>
+                                                <option value="Electrical Engineer">Electrical Engineer</option>
+                                                <option value="flight engineer">Flight Engineer</option>
+                                                <option value="Decoration designer">Decoration Designer</option>
+                                                <option value="Doctor">Doctor</option>
+                                                <option value="nurse">Nurse</option>
+                                                <option value="pharmacist">Pharmacist</option>
+                                                <option value="Marketing Specialist">Marketing Specialist</option>
+                                                <option value="Salesman">Salesman</option>
+                                                <option value="Secretary">Secretary</option>
+                                                <option value="Work man">Work Man</option>
+                                                <option value="Electrician">Electrician</option>
+                                                <option value="Smith">Smith</option>
+                                                <option value="Carpenter">Carpenter</option>
+                                                <option value="Barber">Barber</option>
+                                                <option value="Dressmaker">Dressmaker</option>
+                                                <option value="Painter">Painter</option>
+                                                <option value="Herdsman">Herdsman</option>
+                                                <option value="Driver">Driver</option>
+                                                <option value="Barber">Barber</option>
+                                                <option value="Office boy">Office Boy</option>
+                                                <option value="Postman">Postman</option>
+                                                <option value="plumber">Plumber</option>
+                                                <option value="broker">Broker</option>
+                                                <option value="Chef">Chef</option>
+                                                <option value="Fisher man">Fisher Man</option>
+                                                <option value="Clean Worker">Clean Worker</option>
+                                                <option value="Hairdresser">Hairdresser</option>
+                                                <option value="Stylist">Stylist</option>
+                                                <option value="Mechanical">Mechanical</option>
+                                                <option value="Waiter">Waiter</option>
+                                                <option value="Construction Worker">Construction Worker</option>
+                                                <option value="Builder">Builder</option>
+                                                <option value="porter">Porter</option>
+                                                <option value="Servant">Servant</option>
+                                                <option value="Baker">Baker</option>
+                                                <option value="Receptionist">Receptionist</option>
+                                                <option value="Customer service">Customer service</option>
+                                                <option value="businessman">Businessman</option>
+                                                <option value="Other">Other</option>
+
+
+                                            </select>
+                                            @error('job')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+
+
                                     {{-- <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Old Address</label>
@@ -392,8 +462,8 @@
                                     </div>
                                 </div>
                                 <div class="row col-md-12 text-center mb-5 mt-5">
-                                    <button type="submit"  class=" col-6 btn btn-primary font-weight-400">Submite</button>
-                                    <a href="{{ route('cancel',$patient->id) }}" class="col-6 btn btn-danger">Cancel</a>
+                                    <button type="submit"  class=" col-6 btn btn-primary font-weight-400">Submit</button>
+                                    <a href="{{ route('cancel',$patient->id) }}" class=" col-6 btn btn-danger">Cancel</a>
                                 </div>
                             </form>
                         </div>
@@ -406,10 +476,11 @@
         </div>
     </div>
     <script src="{{url('js/firebase.js')}}"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYG5g2aJ9TjMlbYk7E_VuFYKSvHC1Ee6Y&callback=initMap&libraries=places"
-        async
-    ></script>
+    <script>
+        @include("includes.GoogleMap")
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYG5g2aJ9TjMlbYk7E_VuFYKSvHC1Ee6Y&callback=initAutocomplete&libraries=places&v=weekly" defer ></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script>
 

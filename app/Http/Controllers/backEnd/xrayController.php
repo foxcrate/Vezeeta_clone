@@ -163,7 +163,7 @@ class xrayController extends Controller
             /* update image */
             $requestData['Medical_License_Number'] = $request->Medical_License_Number;
             $xray->update($request_data);
-            alert()->html("<img width=150 src='https://phistory.life/Phistory/public/imgs/alert/Don1e.png'>",false);
+            alert()->html("<img width=150 src='https://phistory.life/public/imgs/alert/Don1e.png'>",false);
             return redirect()->back();
         }
         catch(\Exception $ex){

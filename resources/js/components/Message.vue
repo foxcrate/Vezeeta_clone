@@ -12,7 +12,7 @@
               <div class="message">
                 <div class="messages-content"></div>
                 <div class="message message-personal">
-                  <div class=""> 
+                  <div class="">
                     {{doctor.id == m.user_id ? 'Dr ' + doctor.name : patient.firstName}}
                   </div>
                   {{m.body}}
@@ -20,11 +20,11 @@
               </div>
                 <img v-if="messages.messages.image" :src="`/uploads/${messages.image}`" class="img-thumbnail"/>
             </div>
-          
+
           </div>
         </div>
         <div class="messages-not-found" v-else>Messages not found</div>
-      
+
           <div class="message-box">
             <form @submit.prevent="sendMesaage()">
               <input id="chat_id" type="hidden" name="chat_id"  :value="chat_id">
@@ -48,13 +48,13 @@ export default {
   data() {
     return {
       messages: [],
-      message: "", 
+      message: "",
       messageInput:"",
       patient_id:this.patient.id,
       chat_id:this.chat.id
-      
+
     };
-    
+
   },
   props:['patient','doctor','userauth','chat'],
   sockets: {
@@ -74,15 +74,15 @@ export default {
       // form.append("chat_id", this.chat_id);
       form.append("patient_name", this.patient.firstName);
       form.append("doctor_name", this.doctor.name);
-      
+
 	   this.$refs.myFileInput.value = '';
       try {
-        await axios.post("https://phistory.life/Phistory/sendMessage", form);
+        await axios.post("https://phistory.life/sendMessage", form);
         event.target.reset();
       } catch (error) {console.log(error)}
     },
     getMessage() {
-      axios.get("https://phistory.life/Phistory/chat/" + this.chat_id+ "/messages").then((response) => {
+      axios.get("https://phistory.life/chat/" + this.chat_id+ "/messages").then((response) => {
         console.log(this.messages.id);
         this.messages = response.data;
       });
@@ -93,9 +93,9 @@ export default {
        else
        return this.patient.id;
      },
-   
-    
-     
+
+
+
   },
   mounted() {
     this.getMessage();

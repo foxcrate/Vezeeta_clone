@@ -55,9 +55,11 @@
           </div>
           <div class="col-8">
             <h4 class="text-dark mt-3 font-weight-bold text-capitalize">{{'Dr. ' . $online_doctor->name}}</h4>
+            {{-- <h1>{{env('APP_NAME')}}</h1> --}}
             <h5 class="text-dark">{{$online_doctor->idCode}}</h5>
               <div class="row">
                 <h5 class="col-lg-4 text-dark">Classic Level</h5>
+                {{-- <h1>{{$online_doctor->id}}</h1> --}}
                 <h5 class="col-lg-4 text-dark">{{ $online_doctor->poients }} Point</h5>
               </div>
           </div>
@@ -93,8 +95,8 @@
               </div>
             </form>
             <div class="col-lg-6">
-              <a type="button" class="" data-toggle="modal" data-target="#exampleModal1">
-                <i class="fa fa-bell fa-fw ml-lg-5 mt-lg-1 text-light" style="font-size: 20pt;"></i>
+              <a type="button" href="" class="doctor_show_request" style="text-decoration: none;" data-toggle="modal" data-target="#exampleModal1">
+                <i class="fa fa-bell fa-fw ml-lg-5 mt-lg-1 text-light" style="font-size: 20pt;"></i><span class="text-light" > Requests </span>
               </a>
               <!-- Modal -->
               <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
@@ -117,7 +119,7 @@
                             <div class="col-lg-6 mb-auto mt-auto text-right">
                               <form class="col-5" id="homecare_accept_request" action="" method="" style="display:inline-block">
                                 {{ csrf_field() }}
-                                <input type="hidden" name="doctor_id" value="{{$online_doctor->id}}">
+                                <input type="hidden" name="doctor_id" id="online_doctor_id" value="{{$online_doctor->id}}">
                                 <input type="hidden" name="homecare_request_id" value="{{$homecareRequest->id}}">
                                 <input id="homecare_btn_accept_request" type="submit" value="Accept" class="col-12 m-2 btn btn-success">
                               </form>
@@ -165,8 +167,8 @@
                 </div>
               </form>
               <div class="col-lg-6">
-                <a type="button" class="" data-toggle="modal" data-target="#exampleModal">
-                  <i class="fa fa-bell fa-fw ml-lg-5 mt-lg-1 text-light" style="font-size: 20pt;"></i>
+                <a type="button" class="doctor_show_request" style="text-decoration: none;" href="" data-toggle="modal" data-target="#exampleModal">
+                  <i class="fa fa-bell fa-fw ml-lg-5 mt-lg-1 text-light" style="font-size: 20pt;"></i> <span class="text-light" > Requests </span>
                 </a>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -180,7 +182,7 @@
                       </div>
                       @if($online_doctor->pRequests)
                         @foreach($online_doctor->pRequests as $Prequest)
-                        {{$Prequest}};
+                        {{-- {{$Prequest}}; --}}
                         <div class="col-lg-10 ml-auto mr-auto modal-body">
                           <div class="row request-label p-3">
                             <div class="col-lg-6 mb-auto mt-auto">
@@ -221,6 +223,7 @@
           <a href="{{route('get_doctor_search_patient',$online_doctor->id)}}"><img src="{{url('imgs/icon_png/patient.svg')}}" height="80" class="d-block w-100 mt-2" alt="..."></a>
         </div>
         <h5 class="text-dark font-weight-bold ml-auto mr-auto">Patient</h5>
+        {{-- <h1>{{ config('app.url') }}</h1> --}}
       </div>
       <div class="col-lg-3 ml-auto mr-auto">
         <div class="content-item ml-auto mr-auto">
@@ -308,7 +311,7 @@
                                                         <form id="acceptRequestDoctor" class="col-lg-2 mb-auto mt-auto" action="" method="POST">
                                                             {{ csrf_field() }}
                                                             <input type = "hidden" name="doctor_id" value="{{ $online_doctor->id }}">
-                                                            <input type="hidden" name="patient_id" value="{{ $doc->patient->id }}">
+                                                            <input type="hidden" name="patient_id" id="patient_id" value="{{ $doc->patient->id }}">
                                                             <input type="submit" value="Accept" class="btn btn-success">
                                                         </form>
                                                         <form id="declineRequestDoctor" class="col-lg-2 mb-auto mt-auto" action="" method="POST">
@@ -365,6 +368,7 @@
       });
 
       $("#btn_accept_request").on('click',function(e){
+        // alert( $("#online_doctor_id").val() );
         e.preventDefault();
         var formData = new FormData($("#form_accept_request")[0])
         $.ajax({
@@ -381,7 +385,8 @@
                         this.reset();
                     });
                     $("#btn_decline_request").attr("disabled","disabled");
-                    window.location = "https://localhost/paientHistory/public/en/dashbord/doctor/" + $("#online_doctor_id").val() + "/profile_patient/" + $("#patient_id").text();
+                    //window.location = "https://localhost/paientHistory/public/en/dashbord/doctor/" + $("#online_doctor_id").val() + "/profile_patient/" + $("#patient_id").text();
+                    window.location = '{{ config('app.url') }}' + "/public/en/dashbord/doctor/" + $("#online_doctor_id").val() +  document.getElementById("online_doctor_id").value + "/profile_patient/" + $("#patient_id").text();
                     $("#btn_accept_request").attr("disabled","disabled");
                 }
             },

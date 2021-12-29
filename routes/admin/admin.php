@@ -124,14 +124,18 @@ Route::group(
                 /* homecare routes */
                 Route::group(['prefix'=> 'homecare'],function(){
                     Route::get('/{id}','patienController@index')->name('homecare.index');
+
                     Route::get('patientCars/{id}','patienController@patientCars')->name('homecare.patientCars');
                     Route::post('patientCars/{id}','patienController@postPatientCars')->name('homecare.post.patientCars');
+
                     Route::get('patient/{id}','patienController@getHomecare')->name('patient.homecare');
                     Route::get("patient/{id}/primary_special/{special_id}/doctors",'patienController@showDoctorsHomecare')->name("homecare.showDoctors");
                     Route::get("patient/{id}/homecare/show_profile_doctor/{doctor_id}/",'patienController@homecare_show_profile_doctor')->name("homecare_show_profile_doctor");
+
                     Route::post('patient/add_request','homecareController@addRequest')->name('patient.homecare.addRequest');
                     Route::post('patient/accept_request','homecareController@acceptRequest')->name('patient.homecare.acceptRequest');
                     Route::post('patient/decline_request','homecareController@declineRequest')->name('patient.homecare.declineRequest');
+
                     Route::get('patient/{id}/patientSearchNurse','homecareController@patientSearchNurse')->name('homecare.patientSearchNurse');
                     Route::post('nurse/{id}/search-nurse','homecareController@searchNurse')->name('searchNurse');
                 });

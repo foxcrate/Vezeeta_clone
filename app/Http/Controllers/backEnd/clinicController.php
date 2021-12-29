@@ -216,7 +216,7 @@ class clinicController extends Controller
             $request_data['longitude'] = $request->longitude;
             $request_data['Medical_License_Number'] = $request->Medical_License_Number;
             $clinic->update($request_data);
-            alert()->html("<img width=150 src='https://phistory.life/Phistory/public/imgs/alert/Don1e.png'>",false);
+            alert()->html("<img width=150 src='https://phistory.life/public/imgs/alert/Don1e.png'>",false);
             return redirect()->route('clinic.homepage',$clinic->id);
             }
 
