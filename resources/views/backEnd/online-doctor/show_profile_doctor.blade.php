@@ -45,7 +45,7 @@
         <div class="container card-nurse mt-5 mb-5">
           <div class="row">
             <div class="col-3 ml-auto mr-auto text-center mt-5">
-              <img class = "rounded-circle" src="@if($online_doctor->image) {{url('uploads/doctor_online/' . $online_doctor->image)}} @else {{url('uploads/' . $online_doctor->image)}}@endif"  width="210" height="210"/>
+              <img class = "rounded-circle" src="@if($online_doctor->image) {{url($online_doctor->image)}} @else {{url('https://localhost/phistory/public/imgs/03.jpg')}}@endif"  width="210" height="210"/>
             </div>
             <div class="col-8 mt-5">
               <div class="col-12 mt-3">

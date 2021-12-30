@@ -97,6 +97,13 @@ class patienController extends Controller
     public  function welcome($id){
         try{
             $patient = Patien::findOrFail($id);
+
+            $data2 = [
+                'patient_id' => $id,
+            ];
+
+            $patienCreate = patientData::create($data2);
+
             return view('backEnd.patien.welcomePage',compact('patient'));
         }
         catch(\Exception $ex){
@@ -400,6 +407,7 @@ class patienController extends Controller
         };
 
         $patienCreate = patientData::create($data2);
+        // $patienCreate = patientData::where('patient_id',$id);
 
         $patient = Patien::findOrFail($id);
         $patient->email = $request->email;

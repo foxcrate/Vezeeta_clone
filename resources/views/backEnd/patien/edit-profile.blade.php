@@ -450,7 +450,7 @@
                                                                     <div class="form-group">
                                                                         <img src="{{url('imgs/height.png')}}" class="mr-3 mb-3" width="50">
                                                                         <label class="title-label ml-lg-3">Height</label>
-                                                                        <input  minlength="2" maxlength="3" required class="form-control @error('height') is-invalid @enderror" type="number" name="height" placeholder="Height">
+                                                                        <input  minlength="2" maxlength="3"  class="form-control @error('height') is-invalid @enderror" type="number" name="height" placeholder="Height">
                                                                         @error('height')
                                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                                         @enderror
@@ -460,7 +460,7 @@
                                                                     <div class="form-group">
                                                                         <img src="{{url('imgs/Wight.png')}}" class="mr-3 mb-3" width="50">
                                                                         <label class="title-label">Weight</label>
-                                                                        <input minlength="2" maxlength="3" name="width" required type="number" class="form-control @error('width') is-invalid @enderror" placeholder="Weigth" />
+                                                                        <input minlength="2" maxlength="3" name="width"  type="number" class="form-control @error('width') is-invalid @enderror" placeholder="Weigth" />
                                                                         @error('width')
                                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                                         @enderror
@@ -478,7 +478,7 @@
                                                                         <img src="{{url('imgs/blood.png')}}" class="mr-3 mb-3" width="50">
                                                                         <label class="title-label">Blood</label>
                                                                         <div>
-                                                                            <select required class="form-control  @error('blood') is-invalid @enderror" name="blood">
+                                                                            <select class="form-control  @error('blood') is-invalid @enderror" name="blood">
                                                                                 <option hidden value="">Blood</option>
                                                                                 <option value="A+">A+</option>
                                                                                 <option value="A-">A-</option>

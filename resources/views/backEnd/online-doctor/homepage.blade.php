@@ -96,6 +96,7 @@
             </form>
             <div class="col-lg-6">
               <a type="button" href="" class="doctor_show_request" style="text-decoration: none;" data-toggle="modal" data-target="#exampleModal1">
+                {{-- Home Care Request --}}
                 <i class="fa fa-bell fa-fw ml-lg-5 mt-lg-1 text-light" style="font-size: 20pt;"></i><span class="text-light" > Requests </span>
               </a>
               <!-- Modal -->
@@ -110,28 +111,32 @@
                     </div>
                     @if($online_doctor->homecare_Request)
                       @foreach($online_doctor->homecare_Request as $homecareRequest)
-                        <div class="col-lg-10 ml-auto mr-auto modal-body">
-                          <div class="row request-label p-3">
-                            <div class="col-lg-6 mb-auto mt-auto">
-                              <h1 class="h4 ml-auto">{{$homecareRequest->patient->name}}</h1>
-                              <h6 class="h5 ml-auto">{{$homecareRequest->patient->idCode}}</h6>
+                        @if( $homecareRequest->is_accept == false )
+                            <div class="col-lg-10 ml-auto mr-auto modal-body">
+                            <div class="row request-label p-3">
+                                <div class="col-lg-6 mb-auto mt-auto">
+                                <h1 class="h4 ml-auto">{{$homecareRequest->patient->name}}</h1>
+                                <h6 class="h5 ml-auto">{{$homecareRequest->patient->idCode}}</h6>
+                                </div>
+                                <div class="col-lg-6 mb-auto mt-auto text-right">
+                                <form class="col-5" id="homecare_accept_request" action="" method="" style="display:inline-block">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="doctor_id" id="online_doctor_id" value="{{$online_doctor->id}}">
+                                    <input type="hidden" name="homecare_request_id" value="{{$homecareRequest->id}}">
+
+
+                                    <input id="homecare_btn_accept_request" type="submit" value="Accept" class="col-12 m-2 btn btn-success">
+                                </form>
+                                <form class="col-5" id="homecare_decline_request" action="" method="" style="display:inline-block">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="doctor_id" value="{{$online_doctor->id}}">
+                                    <input type="hidden" name="homecare_request_id" value="{{$homecareRequest->id}}">
+                                    <input id="homecare_btn_decline_request" type="submit" {{$homecareRequest->is_accept == true ? 'disabled' : ''}} value="Decline" class="col-12 m-2 btn btn-danger">
+                                </form>
+                                </div>
                             </div>
-                            <div class="col-lg-6 mb-auto mt-auto text-right">
-                              <form class="col-5" id="homecare_accept_request" action="" method="" style="display:inline-block">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="doctor_id" id="online_doctor_id" value="{{$online_doctor->id}}">
-                                <input type="hidden" name="homecare_request_id" value="{{$homecareRequest->id}}">
-                                <input id="homecare_btn_accept_request" type="submit" value="Accept" class="col-12 m-2 btn btn-success">
-                              </form>
-                              <form class="col-5" id="homecare_decline_request" action="" method="" style="display:inline-block">
-                                  {{ csrf_field() }}
-                                  <input type="hidden" name="doctor_id" value="{{$online_doctor->id}}">
-                                  <input type="hidden" name="homecare_request_id" value="{{$homecareRequest->id}}">
-                                  <input id="homecare_btn_decline_request" type="submit" {{$homecareRequest->is_accept == true ? 'disabled' : ''}} value="Decline" class="col-12 m-2 btn btn-danger">
-                              </form>
                             </div>
-                          </div>
-                        </div>
+                        @endif
                       @endforeach
                     @endif
                   </div>
@@ -168,6 +173,7 @@
               </form>
               <div class="col-lg-6">
                 <a type="button" class="doctor_show_request" style="text-decoration: none;" href="" data-toggle="modal" data-target="#exampleModal">
+                    {{-- Online Request --}}
                   <i class="fa fa-bell fa-fw ml-lg-5 mt-lg-1 text-light" style="font-size: 20pt;"></i> <span class="text-light" > Requests </span>
                 </a>
                 <!-- Modal -->
@@ -182,29 +188,35 @@
                       </div>
                       @if($online_doctor->pRequests)
                         @foreach($online_doctor->pRequests as $Prequest)
-                        {{-- {{$Prequest}}; --}}
-                        <div class="col-lg-10 ml-auto mr-auto modal-body">
-                          <div class="row request-label p-3">
-                            <div class="col-lg-6 mb-auto mt-auto">
-                              <h1 class="h4 ml-auto">{{$Prequest->patient->firstName .' ' . $Prequest->patient->lastName}}</h1>
-                              <h6 class="h5 ml-auto">{{$Prequest->patient->idCode}}</h6>
-                            </div>
-                            <div class="col-lg-6 mb-auto mt-auto text-right">
-                              <form class="col-5" id="form_accept_request" action="" method="" style="display:inline-block">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="doctor_id" value="{{$online_doctor->id}}">
-                                <input type="hidden" name="request_id" value="{{$Prequest->id}}">
-                                <input id="btn_accept_request" type="submit" value="Accept" class="col-12 m-2 btn btn-success">
-                              </form>
-                              <form class="col-5" id="form_decline_request" action="" method="" style="display:inline-block">
-                                  {{ csrf_field() }}
-                                  <input type="hidden" name="doctor_id" value="{{$online_doctor->id}}">
-                                  <input type="hidden" name="request_id" value="{{$Prequest->id}}">
-                                  <input id="btn_decline_request" type="submit" {{$Prequest->is_accept == true ? 'disabled' : ''}} value="Decline" class="col-12 m-2 btn btn-danger">
-                              </form>
-                            </div>
-                          </div>
-                        </div>
+                            @if( $Prequest->is_accept == false )
+                                {{-- {{$Prequest}}; --}}
+                                <div class="col-lg-10 ml-auto mr-auto modal-body">
+                                <div class="row request-label p-3">
+                                    <div class="col-lg-6 mb-auto mt-auto">
+                                    <h1 class="h4 ml-auto">{{$Prequest->patient->firstName .' ' . $Prequest->patient->lastName}}</h1>
+                                    <h6 class="h5 ml-auto">{{$Prequest->patient->idCode}}</h6>
+                                    </div>
+                                    <div class="col-lg-6 mb-auto mt-auto text-right">
+                                    <form class="col-5" id="form_accept_request" action="" method="" style="display:inline-block">
+                                        {{ csrf_field() }}
+                                        {{-- <input type="hidden" name="doctor_id" value="{{$online_doctor->id}}"> --}}
+                                        <input type="hidden" name="doctor_id" id="chat_request_doctor_id" value="{{$online_doctor->id}}">
+                                        <input type="hidden" name="request_id" id="chat_request_request_id" value="{{$Prequest->id}}">
+                                        <input type="hidden" name="chat_id" id="chat_request_chat_id" value="{{$Prequest->chat->id}}">
+                                        <input type="hidden" name="patient_id" id="chat_request_patient_id" value="{{$Prequest->patient->id}}">
+                                        <input id="btn_accept_request" type="submit" value="Accept" class="col-12 m-2 btn btn-success">
+                                    </form>
+                                    <form class="col-5" id="form_decline_request" action="" method="" style="display:inline-block">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="doctor_id" value="{{$online_doctor->id}}">
+                                        <input type="hidden" name="request_id" value="{{$Prequest->id}}">
+                                        <input id="btn_decline_request" type="submit" {{$Prequest->is_accept == true ? 'disabled' : ''}} value="Decline" class="col-12 m-2 btn btn-danger">
+                                    </form>
+                                    </div>
+                                </div>
+                                </div>
+                            @endif
+
                         @endforeach
                       @endif
                     </div>
@@ -368,7 +380,8 @@
       });
 
       $("#btn_accept_request").on('click',function(e){
-        // alert( $("#online_doctor_id").val() );
+        //var x = document.getElementById("chat_request_doctor_id");
+        //alert( "Alo: " +  $("#chat_request_patient_id").val()  );
         e.preventDefault();
         var formData = new FormData($("#form_accept_request")[0])
         $.ajax({
@@ -384,9 +397,11 @@
                     $( '#form_accept_request' ).each(function(){
                         this.reset();
                     });
+
+
                     $("#btn_decline_request").attr("disabled","disabled");
                     //window.location = "https://localhost/paientHistory/public/en/dashbord/doctor/" + $("#online_doctor_id").val() + "/profile_patient/" + $("#patient_id").text();
-                    window.location = '{{ config('app.url') }}' + "/public/en/dashbord/doctor/" + $("#online_doctor_id").val() +  document.getElementById("online_doctor_id").value + "/profile_patient/" + $("#patient_id").text();
+                    window.location = '{{ config('app.url') }}' + "/public/en/dashbord/doctor/" +  $("#chat_request_doctor_id").val() + "/profile_patient/" + $("#chat_request_patient_id").val() + "/request/" + $("#chat_request_request_id").val() + '/chat/' + $("#chat_request_chat_id").val() ;
                     $("#btn_accept_request").attr("disabled","disabled");
                 }
             },
@@ -430,6 +445,7 @@
             contentType: false,
             cache: false,
             success:function(data){
+                //console.log(data);
                 if(data.status == true){
                     console.log("done");
                     $('#homecare_accept_request').each(function(){

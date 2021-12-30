@@ -83,16 +83,21 @@
           contentType: false,
           cache: false,
           success:function(data){
-              if(data.status == true){
-                  console.log("done");
-                  $( '#add_request_homecare' ).each(function(){
-                      this.reset();
-                  });
-                  $("#request_message").show(400).delay(500).hide(400);
-                  $("#add_request_homecare").hide().delay(1000);
-                  location.reload();
-              }
+            //console.log(data);
+            if(data.status == true){
+
+            console.log("done");
+            $( '#add_request_homecare' ).each(function(){
+                this.reset();
+            });
+            $("#request_message").show(400).delay(500).hide(400);
+            $("#add_request_homecare").hide().delay(1000);
+            location.reload();
+            }
           },
+          error: function(xhr, status, error) {
+                console.log(error);
+            },
 
       });
     });

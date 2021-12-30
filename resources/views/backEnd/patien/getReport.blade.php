@@ -3,6 +3,9 @@
 @section("content")
 @include("backEnd.patien.slidenav")
 <div class="d-flex bg-veiwdoctor" id="wrapper">
+    @php
+        $patientData = 0;
+    @endphp
     <div id="page-content-wrapper">
         @include('includes.patientNav')
         <div class="card col-lg-10 ml-auto mr-auto mt-4">
@@ -35,18 +38,24 @@
                         <div class="col-3">
                           <div class="row">
                               <h6 class="col-6 font-weight-bold text-primary pl-5"> Age :</h6>
-                              <div class="col-6 h6 text-dark font-weight-bold">@if($patient->Age) {{ $patient->Age }} @else Null @endif</div>
+                              <div class="col-6 h6 text-dark font-weight-bold">@if($patient->BirthDate) {{$patient->getAgeAttribute()}} @else Null @endif</div>
                           </div>
                           <div class="row">
                               <div class="col-6 h6 font-weight-bold text-primary pl-4">Gender :</div>
                               <div class="col-6 h6 text-dark font-weight-bold">@if($patient->gender) {{ $patient->gender }} @else Null @endif</div>
                           </div>
                         </div>
+
+
+                @if($patient->patinets_data)
+                    @php
+                        $patientData = 1;
+                    @endphp
                         <div class="col-2">
-                            <div class="row">
-                                <h6 class="col-6 font-weight-bold text-primary"> Blood :</h6>
-                                <div class="col-6 h6 text-dark font-weight-bold">@if($patient->patinets_data->blood) {{ $patient->patinets_data->blood }} @else Null @endif</div>
-                            </div>
+                                <div class="row">
+                                    <h6 class="col-6 font-weight-bold text-primary"> Blood :</h6>
+                                    <div class="col-6 h6 text-dark font-weight-bold">@if($patient->patinets_data->blood) {{ $patient->patinets_data->blood }} @else Null @endif</div>
+                                </div>
                             <div class="row">
                                 <div class="col-6 h6 font-weight-bold text-primary">States:</div>
                                 <div class="col-6 h6 text-dark font-weight-bold">@if($patient->state) {{ $patient->state }} @else Null @endif </div>
@@ -738,8 +747,30 @@
                     </div>
                 @endif
                 <!-- female -->
+
+                {{-- @else
+                <div class="row">
+                    <h1>Please Complete Your Profile</h1>
+                </div> --}}
+
+                @endif
             </div>
         </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+@if ( $patientData == 0 )
+<div class="card col-lg-10 ml-auto mr-auto mt-4">
+    <div class="card-body">
+        <h1 style="font-weight: bold;">Please Complete Your Profile Data</h1>
     </div>
 </div>
+@endif
+
 @stop
