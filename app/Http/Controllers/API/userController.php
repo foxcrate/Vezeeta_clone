@@ -268,7 +268,7 @@ class userController extends Controller
             }
         }
     }
-    
+
     // check phone Number
     public function checkPhoneNumber(Request $request){
         try{
@@ -452,7 +452,7 @@ class userController extends Controller
             ],500);
         }
     }
-    
+
     public function userConfirmPassword(Request $request){
         try{
             // if($request->phoneNumber[0] == '0'){

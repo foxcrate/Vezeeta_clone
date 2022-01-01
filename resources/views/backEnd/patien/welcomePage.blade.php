@@ -14,7 +14,7 @@
                                     <h6 class="h3 font-weight-bold mb-4">You Are Now A Member of <br/><br/> <span style="font-size:27pt;"><img class="mr-3" src="{{url('imgs/logo.svg')}}" width="60"><span style="color:#27a0d6;">p</span>History Club Family</span></span></h6>
                                     <h6 class="h1 mb-5" style="font-size:30pt; font-weight: bold; color: #0478bd; margin-bottom: 14px; ">Welcome Classic Level</h6>
                                     <h6 class="h3 mb-3 font-weight-bold">@if($patient->gender == 'male') MR./ {{$patient->lastName}}@else MRS./{{$patient->firstName . ' ' . $patient->lastName}} @endif  <span style="font-size:22pt; font-weight: bold; margin-bottom: 15px;" ></span></h6>
-                                    <h6 class="h3 mb-5 font-weight-bold">Patient ID <span style="font-size:22pt; font-weight: bold; margin-bottom:15px;" >{{str_replace('+','P',$patient->idCode)}}</span></h6>
+                                    <h6 class="h3 mb-5 font-weight-bold">Your Patient ID: <span style="font-size:22pt; font-weight: bold; margin-bottom:15px;" >{{str_replace('+','P',$patient->idCode)}}</span></h6>
                                     <a href="{{route('edit.profile',$patient->id)}}"><button class="btn btn-success h4 mt-3">Show Your Profile</button></a>
                             </div>
                             <div class="col-md-6 p-5 mb-auto mt-auto">

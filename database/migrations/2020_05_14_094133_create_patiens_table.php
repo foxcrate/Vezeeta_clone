@@ -15,7 +15,7 @@ class CreatePatiensTable extends Migration
     {
         Schema::create('patiens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('image')->default('https://phistory.life/Phistory/uploads/1618227112.png')->nullable();
+            $table->string('image')->default('https://phistory.life/uploads/1618227112.png')->nullable();
             $table->string('firstName')->nullable();
             $table->string('middleName')->nullable();
             $table->string('lastName')->nullable();

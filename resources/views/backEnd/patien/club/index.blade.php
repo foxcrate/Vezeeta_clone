@@ -102,7 +102,8 @@
                             </div>
                         </div>
                     </div>
-                  <button class="col-lg-5 ml-auto mr-auto btn btn-danger mb-3"><span style="font-size: 20px;">Back</span></button>
+                  {{-- <button class="col-lg-5 ml-auto mr-auto btn btn-danger mb-3"><span style="font-size: 20px;">Back</span></button> --}}
+                  <a href="{{route('patien.homepage',$patient->id)}}" class="col-lg-5 ml-auto mr-auto btn btn-danger mb-3"> <span style="font-size: 20px;">Back</span> </a>
             </div>
         </div>
     </div>

@@ -25,7 +25,7 @@
                             @if(!$online_doctor->image)
                                 <img alt="Image placeholder" src="{{ asset('uploads/defualt.jpg') }}" width="50" height="40">
                             @else
-                                <img alt="Image placeholder" src="{{ $online_doctor->image }}" width="50" height="40">
+                                <img alt="Image placeholder" src={{ asset($online_doctor->image) }} width="50" height="40">
                             @endif
                         </span>
                         <div class="media-body ml-3 mr-3 d-lg-block">
@@ -43,7 +43,11 @@
           <div class="row border-bottom mb-5">
             <h5 style="display:none" class="font-weight-bold" id="doctor_name">{{$online_doctor->name}}</h5>
             <div class="row col-3 ml-auto mr-auto text-center mt-3">
-              <img class="rounded-circle" src="@if($online_doctor->image) {{url('uploads/patien/' . $patient->image)}} @else {{url('uploads/' . $online_doctor->image)}}@endif"  width="90" height="90"/>
+                {{-- https://localhost/phistory/uploads/ --}}
+                {{-- <h1> {{ $patient->image }} </h1> --}}
+
+              {{-- <img class="rounded-circle" src= @if($online_doctor->image) {{url($patient->image)}} @else {{url('uploads/' . $online_doctor->image)}}@endif  width="90" height="90"/> --}}
+            <img class="rounded-circle" src= @if($online_doctor->image) {{url($patient->image)}} {{-- {{asset('/imgs/03.jpg')}} --}} @else {{url('https://localhost/phistory/public/imgs/03.jpg')}} @endif width="90" height="90"/>
               <h4 id ="patient_name" class="mt-5 col-lg-8 text-capitalize">{{$patient->firstName . ' ' . $patient->lastName}}</h4>
             </div>
             <a href="{{route("online_doctor_show_profile_patient",[$online_doctor->id,$patient->id])}}" class="col-lg-3 ml-auto mr-auto text-center mt-4 text-decoration">

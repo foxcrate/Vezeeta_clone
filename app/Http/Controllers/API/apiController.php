@@ -10,6 +10,7 @@ use App\models\OnlineDoctor;
 use App\models\Patien;
 use Illuminate\Support\Facades\Validator;
 use App\models\Medication2;
+
 class apiController extends Controller
 {
     /**
@@ -89,6 +90,15 @@ class apiController extends Controller
     }
     /* function analzes index*/
     public function analyzesIndex(){
+
+        // $analyzes = analyzes::get();
+        // return response()->json([
+        //     'data'  => $analyzes,
+        //     'msg'   => 'all data analyzes',
+        //     'status'    => true
+        // ]);
+
+
         try{
             $rays = analyzes::get(['id','name']);
             if($rays->count() > 0){
@@ -146,6 +156,15 @@ class apiController extends Controller
 
     /* function rays index */
     public function raysIndex(){
+
+        // $rays = Rays::get();
+        // return response()->json([
+        //     'data'  => $rays,
+        //     'msg'   => 'all data rays',
+        //     'status'=> true
+        // ]);
+
+        
         try{
             $rays = Rays::get(['id','name']);
             if($rays->count() > 0){
@@ -170,6 +189,28 @@ class apiController extends Controller
     }
     /* end of function rays index */
 
+    public function getAllMedication(){
+        try{
+            $medication = Medication2::get(['id','name']);
+            if($medication){
+                return response()->json([
+                    'data' => $medication,
+                    'message' => 'success message',
+                    'status' => true
+                ]);
+            }
+            return response()->json([
+
+                'message' => 'not found',
+                'status' => false
+            ],400);
+        }catch(\Exception $ex){
+            return response()->json([
+                'message' => $ex->getMessage(),
+                'status' => false
+            ],500);
+        }
+    }
 
     /* function rays store */
     function raysStore(Request $request){

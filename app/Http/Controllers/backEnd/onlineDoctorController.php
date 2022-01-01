@@ -283,7 +283,7 @@ class onlineDoctorController extends Controller
             $onlineDoctorRequest['longitude'] = $request->longitude;
             $onlineDoctorRequest['license_number'] = $request->license_number;
             $online_doctor->update($onlineDoctorRequest);
-            alert()->html("<img width=150 src='https://phistory.life/Phistory/public/imgs/alert/Don1e.png'>",false);
+            alert()->html("<img width=150 src='https://phistory.life/public/imgs/alert/Don1e.png'>",false);
         return redirect()->route('online_doctor.homepage',$online_doctor->id);
         // }
         // catch(\Exception $ex){
@@ -390,6 +390,7 @@ class onlineDoctorController extends Controller
     public function homepage($id){
         try{
             $online_doctor = OnlineDoctor::findOrFail($id);
+            // return $online_doctor->pRequests;
             return view('backEnd.online-doctor.homepage',compact('online_doctor'));
         }
         catch(\Exception $ex){
