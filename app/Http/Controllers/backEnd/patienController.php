@@ -102,7 +102,7 @@ class patienController extends Controller
                 'patient_id' => $id,
             ];
 
-            $patienCreate = patientData::create($data2);
+            //$patienCreate = patientData::create($data2);
 
             return view('backEnd.patien.welcomePage',compact('patient'));
         }
@@ -129,6 +129,7 @@ class patienController extends Controller
     }
     /* end of function */
     public function update_data_profile(Request $request , $id,$profile_id){
+        //return $request;
         $patient = Patien::findOrFail($id);
         $patienData = patientData::findOrFail($profile_id);
         /* insert all request */
@@ -154,15 +155,12 @@ class patienController extends Controller
             'other_mother'      => $request->other_mother,
             'father'            => $request->father,
             'other_father'      => $request->other_father,
-            'wife_Period_Cycle' => $request->wife_Period_Cycle,
-            'wife_Abotion'      => $request->wife_Abotion,
-            'wife_Contraceptive'    => $request->wife_Contraceptive,
-            'mother_Period_Cycle'   => $request->mother_Period_Cycle,
-            'mother_pregnency'      => $request->mother_pregnency,
-            'mother_abotion'        => $request->mother_abotion,
-            'mother_deliveries'     => $request->mother_deliveries,
-            'mother_complicetion'   => $request->mother_complicetion,
-            'mother_Contraceptive'  => $request->mother_Contraceptive,
+            'Period_Cycle' => $request->Period_Cycle,
+            'Abotion'      => $request->Abotion,
+            'Contraceptive'    => $request->Contraceptive,
+            'pregnency'      => $request->pregnency,
+            'deliveries'     => $request->deliveries,
+            'complicetion'   => $request->complicetion,
             'patient_id'              =>$request->patient_id,
             'single_Period_Cycle'      => $request->single_Period_Cycle,
         ];
@@ -233,6 +231,7 @@ class patienController extends Controller
 
         // $data2['online'] = 1;
         $patienData->update($data2);
+        //return $patienData;
         alert::image('','','https://phistory.life/public/imgs/alert/done.png');
         return redirect()->route("patien-profile",$data2['patient_id']);
 
@@ -363,15 +362,12 @@ class patienController extends Controller
             'other_mother'      => $request->other_mother,
             'father'            => $request->father,
             'other_father'      => $request->other_father,
-            'wife_Period_Cycle' => $request->wife_Period_Cycle,
-            'wife_Abotion'      => $request->wife_Abotion,
-            'wife_Contraceptive'    => $request->wife_Contraceptive,
-            'mother_Period_Cycle'   => $request->mother_Period_Cycle,
-            'mother_pregnency'      => $request->mother_pregnency,
-            'mother_abotion'        => $request->mother_abotion,
-            'mother_deliveries'     => $request->mother_deliveries,
-            'mother_complicetion'   => $request->mother_complicetion,
-            'mother_Contraceptive'  => $request->mother_Contraceptive,
+            'Period_Cycle' => $request->Period_Cycle,
+            'Abotion'      => $request->Abotion,
+            'Contraceptive'    => $request->Contraceptive,
+            'pregnency'      => $request->pregnency,
+            'deliveries'     => $request->deliveries,
+            'complicetion'   => $request->complicetion,
             'patient_id'              =>$request->patient_id,
             'single_Period_Cycle'      => $request->single_Period_Cycle,
         ];

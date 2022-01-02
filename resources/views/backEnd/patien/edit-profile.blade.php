@@ -450,7 +450,7 @@
                                                                     <div class="form-group">
                                                                         <img src="{{url('imgs/height.png')}}" class="mr-3 mb-3" width="50">
                                                                         <label class="title-label ml-lg-3">Height</label>
-                                                                        <input  minlength="2" maxlength="3"  class="form-control @error('height') is-invalid @enderror" type="number" name="height" placeholder="Height">
+                                                                        <input  minlength="2" maxlength="3" class="form-control @error('height') is-invalid @enderror" type="number" name="height" placeholder="Height">
                                                                         @error('height')
                                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                                         @enderror
@@ -460,7 +460,7 @@
                                                                     <div class="form-group">
                                                                         <img src="{{url('imgs/Wight.png')}}" class="mr-3 mb-3" width="50">
                                                                         <label class="title-label">Weight</label>
-                                                                        <input minlength="2" maxlength="3" name="width"  type="number" class="form-control @error('width') is-invalid @enderror" placeholder="Weigth" />
+                                                                        <input minlength="2" maxlength="3" name="width" type="number" class="form-control @error('width') is-invalid @enderror" placeholder="Weigth" />
                                                                         @error('width')
                                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                                         @enderror
@@ -1093,17 +1093,17 @@
                                                                         <div class="row mb-3 mt-3">
                                                                             <div class="col-lg-9 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Have you a Normal Period Cycle </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="wife_Period_Cycle" value="Yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="wife_Period_Cycle" value="No" /> <label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="Period_Cycle" value="Yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="Period_Cycle" value="No" /> <label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Abotion</label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="wife_Abotion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="wife_Abotion" value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="Abotion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="Abotion" value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto ">
                                                                                 <label class="title-label col-6">Contraceptive</label>
-                                                                                <select name="wife_Contraceptive" class="ui selection dropdown col-4">
+                                                                                <select name="Contraceptive" class="ui selection dropdown col-4">
                                                                                     <option hidden value="">Severity</option>
                                                                                     <option value="Pill">Pill</option>
                                                                                     <option value="Implant">Implant</option>
@@ -1119,32 +1119,32 @@
                                                                         <div class="row mb-3 mt-3">
                                                                             <div class="col-lg-9 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Have you a Normal Period Cycle </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_Period_Cycle" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_Period_Cycle" value="no" /> <label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="Period_Cycle" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="Period_Cycle" value="no" /> <label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Pregnency</label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_pregnency" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_pregnency" value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="pregnency" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="pregnency" value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Abotion</label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_abotion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_abotion" value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="abotion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="abotion" value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Types of Deliveries </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_deliveries" value="normal" /><label class="font-weight-600">Normal</label>
-                                                                                <input class="ui radio checkbox col-1 ml-3" type="radio" name="mother_deliveries" value="c.s" /><label class="font-weight-600">C.S</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="deliveries" value="normal" /><label class="font-weight-600">Normal</label>
+                                                                                <input class="ui radio checkbox col-1 ml-3" type="radio" name="deliveries" value="c.s" /><label class="font-weight-600">C.S</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Complicetion in Deliveries </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_complicetion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_complicetion" value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="complicetion" value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="complicetion" value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-4 mb-3 mr-auto ml-auto ">
                                                                                 <label class="title-label col-6">Contraceptive</label>
-                                                                                <select name="mother_Contraceptive" class="ui selection dropdown col-4">
+                                                                                <select name="Contraceptive" class="ui selection dropdown col-4">
                                                                                     <option hidden> Severity</option>
                                                                                     <option value="Pill">Pill</option>
                                                                                     <option value="Implant">Implant</option>

@@ -748,22 +748,22 @@
                                                                         <div class="row mb-3 mt-3">
                                                                             <div class="col-xl-9 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Have you a Normal Period Cycle </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="wife_Period_Cycle" {{$patient->patinets_data->wife_Period_Cycle == 'Yes' ? 'checked' : ''}} value="Yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="wife_Period_Cycle" {{$patient->patinets_data->wife_Period_Cycle == 'No' ? 'checked' : ''}} value="No" /> <label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="Period_Cycle" {{$patient->patinets_data->Period_Cycle == 'Yes' ? 'checked' : ''}} value="Yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="Period_Cycle" {{$patient->patinets_data->Period_Cycle == 'No' ? 'checked' : ''}} value="No" /> <label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-xl-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Abotion</label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="wife_Abotion" {{$patient->patinets_data->wife_Abotion == 'yes' ? 'checked' : ''}} value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="wife_Abotion" {{$patient->patinets_data->wife_Abotion == 'no' ? 'checked' : ''}} value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="Abotion" {{$patient->patinets_data->Abotion == 'yes' ? 'checked' : ''}} value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="Abotion" {{$patient->patinets_data->Abotion == 'no' ? 'checked' : ''}} value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-xl-9 col-md-4 mb-3 mr-auto ml-auto ">
                                                                                 <label class="title-label col-6">Contraceptive</label>
-                                                                                <select name="wife_Contraceptive" class="ui selection dropdown col-4">
+                                                                                <select name="Contraceptive" class="ui selection dropdown col-4">
                                                                                     <option hidden value="">Severity</option>
-                                                                                    <option {{$patient->patinets_data->wife_Contraceptive == 'Pill' ? 'selected' : ''}} value="Pill">Pill</option>
-                                                                                    <option {{$patient->patinets_data->wife_Contraceptive == 'Implant' ? 'selected' : ''}} value="Implant">Implant</option>
-                                                                                    <option {{$patient->patinets_data->wife_Contraceptive == 'Intrauterine' ? 'selected' : ''}} value="Intrauterine">Intrauterine Device</option>
-                                                                                    <option {{$patient->patinets_data->wife_Contraceptive == 'Injection' ? 'selected' : ''}} value="Injection">Injection</option>
+                                                                                    <option {{$patient->patinets_data->Contraceptive == 'Pill' ? 'selected' : ''}} value="Pill">Pill</option>
+                                                                                    <option {{$patient->patinets_data->Contraceptive == 'Implant' ? 'selected' : ''}} value="Implant">Implant</option>
+                                                                                    <option {{$patient->patinets_data->Contraceptive == 'Intrauterine' ? 'selected' : ''}} value="Intrauterine">Intrauterine Device</option>
+                                                                                    <option {{$patient->patinets_data->Contraceptive == 'Injection' ? 'selected' : ''}} value="Injection">Injection</option>
                                                                                 </select>
                                                                             </div>
                                                                         </div>
@@ -774,37 +774,37 @@
                                                                         <div class="row mb-3 mt-3">
                                                                             <div class="col-xl-9 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Have you a Normal Period Cycle </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_Period_Cycle" {{$patient->patinets_data->mother_Period_Cycle == 'yes' ? 'checked' : ''}} value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_Period_Cycle" {{$patient->patinets_data->mother_Period_Cycle == 'no' ? 'checked' : ''}} value="no" /> <label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="Period_Cycle" {{$patient->patinets_data->Period_Cycle == 'yes' ? 'checked' : ''}} value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="Period_Cycle" {{$patient->patinets_data->Period_Cycle == 'no' ? 'checked' : ''}} value="no" /> <label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-xl-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Pregnency</label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_pregnency" {{$patient->patinets_data->mother_pregnency == 'yes' ? 'checked' : ''}} value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_pregnency" {{$patient->patinets_data->mother_pregnency == 'no' ? 'checked' : ''}} value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="pregnency" {{$patient->patinets_data->pregnency == 'yes' ? 'checked' : ''}} value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="pregnency" {{$patient->patinets_data->pregnency == 'no' ? 'checked' : ''}} value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-xl-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Abotion</label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_abotion" {{$patient->patinets_data->mother_abotion == 'yes' ? 'checked' : ''}} value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_abotion" {{$patient->patinets_data->mother_abotion == 'no' ? 'checked' : ''}} value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="abotion" {{$patient->patinets_data->abotion == 'yes' ? 'checked' : ''}} value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="abotion" {{$patient->patinets_data->abotion == 'no' ? 'checked' : ''}} value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-xl-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Types of Deliveries </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_deliveries" {{$patient->patinets_data->mother_deliveries == 'normal' ? 'checked' : ''}} value="normal" /><label class="font-weight-600">Normal</label>
-                                                                                <input class="ui radio checkbox col-1 ml-3" type="radio" name="mother_deliveries" {{$patient->patinets_data->mother_deliveries == 'c.s' ? 'checked' : ''}} value="c.s" /><label class="font-weight-600">C.S</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="deliveries" {{$patient->patinets_data->deliveries == 'normal' ? 'checked' : ''}} value="normal" /><label class="font-weight-600">Normal</label>
+                                                                                <input class="ui radio checkbox col-1 ml-3" type="radio" name="deliveries" {{$patient->patinets_data->deliveries == 'c.s' ? 'checked' : ''}} value="c.s" /><label class="font-weight-600">C.S</label>
                                                                             </div>
                                                                             <div class="col-xl-9 col-md-4 mb-3 mr-auto ml-auto">
                                                                                 <label class="mr-7 col-6 title-label">Complicetion in Deliveries </label>
-                                                                                <input class="ui radio checkbox col-1" type="radio" name="mother_complicetion" {{$patient->patinets_data->mother_complicetion == 'yes' ? 'checked' : ''}} value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="mother_complicetion" {{$patient->patinets_data->mother_complicetion == 'no' ? 'checked' : ''}} value="no" /><label class="font-weight-600">No</label>
+                                                                                <input class="ui radio checkbox col-1" type="radio" name="complicetion" {{$patient->patinets_data->complicetion == 'yes' ? 'checked' : ''}} value="yes" /><label class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                <input class="ui radio checkbox col-1 ml-4" type="radio" name="complicetion" {{$patient->patinets_data->complicetion == 'no' ? 'checked' : ''}} value="no" /><label class="font-weight-600">No</label>
                                                                             </div>
                                                                             <div class="col-xl-9 col-md-4 mb-3 mr-auto ml-auto ">
                                                                                 <label class="title-label col-6">Contraceptive</label>
-                                                                                <select name="mother_Contraceptive" class="ui selection dropdown col-4">
+                                                                                <select name="Contraceptive" class="ui selection dropdown col-4">
                                                                                     <option hidden> Severity</option>
-                                                                                    <option {{$patient->patinets_data->mother_Contraceptive == 'Pill' ? 'selected' : ''}} value="Pill">Pill</option>
-                                                                                    <option {{$patient->patinets_data->mother_Contraceptive == 'Implant' ? 'selected' : ''}} value="Implant">Implant</option>
-                                                                                    <option {{$patient->patinets_data->mother_Contraceptive == 'Intrauterine' ? 'selected' : ''}} value="Intrauterine">Intrauterine Device</option>
-                                                                                    <option {{$patient->patinets_data->mother_Contraceptive == 'Injection' ? 'selected' : ''}} value="Injection">Injection</option>
+                                                                                    <option {{$patient->patinets_data->Contraceptive == 'Pill' ? 'selected' : ''}} value="Pill">Pill</option>
+                                                                                    <option {{$patient->patinets_data->Contraceptive == 'Implant' ? 'selected' : ''}} value="Implant">Implant</option>
+                                                                                    <option {{$patient->patinets_data->Contraceptive == 'Intrauterine' ? 'selected' : ''}} value="Intrauterine">Intrauterine Device</option>
+                                                                                    <option {{$patient->patinets_data->Contraceptive == 'Injection' ? 'selected' : ''}} value="Injection">Injection</option>
                                                                                 </select>
                                                                             </div>
                                                                         </div>

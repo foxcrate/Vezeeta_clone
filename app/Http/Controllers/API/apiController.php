@@ -90,12 +90,14 @@ class apiController extends Controller
     }
     /* function analzes index*/
     public function analyzesIndex(){
+
         // $analyzes = analyzes::get();
         // return response()->json([
         //     'data'  => $analyzes,
         //     'msg'   => 'all data analyzes',
         //     'status'    => true
         // ]);
+
 
         try{
             $rays = analyzes::get(['id','name']);
@@ -154,6 +156,7 @@ class apiController extends Controller
 
     /* function rays index */
     public function raysIndex(){
+
         // $rays = Rays::get();
         // return response()->json([
         //     'data'  => $rays,
@@ -161,6 +164,7 @@ class apiController extends Controller
         //     'status'=> true
         // ]);
 
+        
         try{
             $rays = Rays::get(['id','name']);
             if($rays->count() > 0){
@@ -245,5 +249,28 @@ class apiController extends Controller
             'msg'   => 'error'
         ]);
 
+    }
+    
+    public function getAllMedication(){
+        try{
+            $medication = Medication2::get(['id','name']);
+            if($medication){
+                return response()->json([
+                    'data' => $medication,
+                    'message' => 'success message',
+                    'status' => true
+                ]);
+            }
+            return response()->json([
+
+                'message' => 'not found',
+                'status' => false
+            ],400);
+        }catch(\Exception $ex){
+            return response()->json([
+                'message' => $ex->getMessage(),
+                'status' => false
+            ],500);
+        }
     }
 }
