@@ -27,7 +27,7 @@ Route::group(
             /* 3 pages */
             Route::get('/Insurance','backEndController@Insurance')->name('Insurance.page');
             Route::get('/online','backEndController@online')->name('online.page');
-            Route::get('/finder/patient/{id}','backEndController@finder')->name('finder.page');
+            Route::get('/finder/patient/{id}','backEndController@finder')->name('finder.page')->middleware([SessionAuthPatient::class]);
             /* 3 pages */
 
             //test
