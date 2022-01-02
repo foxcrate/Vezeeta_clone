@@ -102,7 +102,7 @@ class patienController extends Controller
                 'patient_id' => $id,
             ];
 
-            $patienCreate = patientData::create($data2);
+            //$patienCreate = patientData::create($data2);
 
             return view('backEnd.patien.welcomePage',compact('patient'));
         }
@@ -129,6 +129,7 @@ class patienController extends Controller
     }
     /* end of function */
     public function update_data_profile(Request $request , $id,$profile_id){
+        //return $request;
         $patient = Patien::findOrFail($id);
         $patienData = patientData::findOrFail($profile_id);
         /* insert all request */
@@ -230,6 +231,7 @@ class patienController extends Controller
 
         // $data2['online'] = 1;
         $patienData->update($data2);
+        //return $patienData;
         alert::image('','','https://phistory.life/public/imgs/alert/done.png');
         return redirect()->route("patien-profile",$data2['patient_id']);
 
