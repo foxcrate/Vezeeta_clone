@@ -75,44 +75,44 @@
     </div>
     <!--Start-Serv-->
     <div class="container row col-lg-6 ml-auto mr-auto text-center mt-5">
-        <div class="col-lg-3 ml-auto mr-auto">
+        <a href="{{route('finder.page',$patient->id)}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
           <div class="content-item ml-auto mr-auto">
-            <a href="{{route('finder.page',$patient->id)}}"><img src="{{url('imgs/finder.svg')}}" height="80" class="d-block w-100 mt-2" alt="..."></a>
+            <img src="{{url('imgs/finder.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
           </div>
           <h5 class="text-dark font-weight-bold ml-auto mr-auto">Finder</h5>
-        </div>
-        <div class="col-lg-3 ml-auto mr-auto">
+        </a>
+        <a href="{{route("getOnline",['patien',$patient->id])}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
           <div class="content-item ml-auto mr-auto">
-            <a href="{{route("getOnline",['patien',$patient->id])}}"><img src="{{url('imgs/hello.svg')}}" height="90" class="d-block w-100 mt-2" alt="..."></a>
+            <img src="{{url('imgs/hello.svg')}}" height="90" class="d-block w-100 mt-2" alt="...">
           </div>
           <h5 class="text-dark font-weight-bold ml-auto mr-auto">Online</h5>
-        </div>
-        <div class="col-lg-3 ml-auto mr-auto">
+        </a>
+        <a href="{{ route('patient.qr.index',$patient->id) }}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
           <div class="content-item ml-auto mr-auto">
-            <a href="{{ route('patient.qr.index',$patient->id) }}"><img src="{{url('imgs/qrCode.svg')}}" height="80" class="d-block w-100 mt-2" alt="..."></a>
+            <img src="{{url('imgs/qrCode.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
           </div>
           <h5 class="text-dark font-weight-bold ml-auto mr-auto">QR Code</h5>
-        </div>
-        <div class="col-lg-3 ml-auto mr-auto">
+        </a>
+        <a href="{{route('patient.club',$patient->id)}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
           <div class="content-item ml-auto mr-auto">
-            <a href="{{route('patient.club',$patient->id)}}"><img src="{{url('imgs/logo.svg')}}" height="80" class="d-block w-100 mt-2" alt="..."></a>
+            <img src="{{url('imgs/logo.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
           </div>
           <h5 class="text-dark font-weight-bold text-center">Club</h5>
-        </div>
+        </a>
     </div>
     <div class="row col-lg-6 ml-auto mr-auto text-center">
-        <div class="col-lg-3 ml-auto mr-auto">
+        <a href="{{route('donate.index',$patient->id)}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
           <div class="content-item ml-auto mr-auto">
-            <a href="{{route('donate.index',$patient->id)}}"><img src="{{url('imgs/handhelp.svg')}}" height="110" class="d-block w-100" alt="..."></a>
+            <img src="{{url('imgs/handhelp.svg')}}" height="110" class="d-block w-100" alt="...">
           </div>
           <h5 class="text-dark font-weight-bold text-center">Donate</h5>
-        </div>
-        <div class="col-lg-3 ml-auto mr-auto">
+        </a>
+        <a href="{{route('homecare.index',$patient->id)}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
           <div class="content-item ml-auto mr-auto">
-            <a href="{{route('homecare.index',$patient->id)}}"><img src="{{url('imgs/homeware.svg')}}" height="80" class="d-block w-100 mt-2" alt="..."></a>
+            <img src="{{url('imgs/homeware.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
           </div>
           <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Home Care</h5>
-        </div>
+        </a>
         <div class="col-lg-3 ml-auto mr-auto" data-toggle="modal" data-target="#exampleModal">
           <div class="content-item ml-auto mr-auto">
             <img src="{{url('imgs/familyicon.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
@@ -154,58 +154,58 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3 ml-auto mr-auto">
+        <a href="{{ route('patient.getCheckup',$patient->id) }}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
           <div class="content-item ml-auto mr-auto">
-            <a href="{{ route('patient.getCheckup',$patient->id) }}"><img src="{{url('imgs/checkup.svg')}}" height="80" class="d-block w-100 mt-2" alt="..."></a>
+            <img src="{{url('imgs/checkup.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
           </div>
           <h5 class="text-dark font-weight-bold text-center">Check Up</h5>
-        </div>
+        </a>
     </div>
     <div class="row col-lg-6 ml-auto mr-auto text-center">
-      <div class="col-lg-3 ml-auto mr-auto">
+      <a href="{{route('patient.favorite',$patient->id)}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{route('patient.favorite',$patient->id)}}"><img src="{{url('imgs/favoriteplaceicon.svg')}}" height="80" class="d-block w-100 mt-2" alt="..."></a>
+          <img src="{{url('imgs/favoriteplaceicon.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
         </div>
         <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Favorite</h5>
-      </div>
-      <div class="col-lg-3 ml-auto mr-auto">
+      </a>
+      <a href="{{route('patient_Appointments',$patient->id)}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{route('patient_Appointments',$patient->id)}}"><img src="{{url('imgs/calendar.png')}}" height="70" class="w-80 mt-3" alt="..."></a>
+          <img src="{{url('imgs/calendar.png')}}" height="70" class="w-80 mt-3" alt="...">
         </div>
         <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Appointments</h5>
-      </div>
-      <div class="col-lg-3 ml-auto mr-auto">
+      </a>
+      <a href="#" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="#"><img src="{{url('imgs/insurance.png')}}" height="70" class="w-80 mt-3" alt="..."></a>
+          <img src="{{url('imgs/insurance.png')}}" height="70" class="w-80 mt-3" alt="...">
         </div>
         <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Insurance</h5>
-      </div>
-      <div class="col-lg-3 ml-auto mr-auto">
+      </a>
+      <a href="{{route('covied.index',$patient->id)}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{route('covied.index',$patient->id)}}"><img src="{{url('imgs/corona.svg')}}" height="70" class="w-80 mt-3" alt="..."></a>
+          <img src="{{url('imgs/corona.svg')}}" height="70" class="w-80 mt-3" alt="...">
         </div>
         <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Covid-19</h5>
-      </div>
+      </a>
     </div>
     <div class="row col-lg-6 ml-auto mr-auto text-center mb-5">
-        <div class="col-lg-3 ml-auto mr-auto">
-            <div class="content-item ml-auto mr-auto">
-              <a href="{{route('doctorfamily.index',$patient->id)}}"><img src="{{url('imgs/doctorfamily.svg')}}" height="80" class="d-block w-100 mt-2" alt="..."></a>
-            </div>
-            <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Family Physican</h5>
+      <a href="{{route('doctorfamily.index',$patient->id)}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
+          <div class="content-item ml-auto mr-auto">
+            <img src="{{url('imgs/doctorfamily.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
           </div>
-      <div class="col-lg-3 ml-auto mr-auto">
+          <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Family Physican</h5>
+      </a>
+      <a href="#" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="#"><img src="{{url('imgs/starrate.svg')}}" height="70" class="w-80 mt-3" alt="..."></a>
+          <img src="{{url('imgs/starrate.svg')}}" height="70" class="w-80 mt-3" alt="...">
         </div>
         <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Rate</h5>
-      </div>
-      <div class="col-lg-3 ml-auto mr-auto">
+      </a>
+      <a href="{{route('patien.logout')}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{route('patien.logout')}}"><img src="{{url('imgs/logout.png')}}" height="70" class="w-80 mt-3" alt="..."></a>
+          <img src="{{url('imgs/logout.png')}}" height="70" class="w-80 mt-3" alt="...">
         </div>
         <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Log Out</h5>
-      </div>
+      </a>
       <div class="col-lg-3 ml-auto mr-auto">
       </div>
     </div>
