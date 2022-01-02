@@ -550,12 +550,13 @@ class onlineDoctorController extends Controller
 
     }
 
-    public function acceptSchedules($id){
+    public function acceptSchedules($sch_id){
         try{
             Alert::success('Success','Success Updated');
-            $doctor_sch = DoctorScudule::findOrFail($id);
+            $doctor_sch = DoctorScudule::findOrFail($sch_id);
             $doctor_sch->is_accept = 1;
             $doctor_sch->save();
+            //return "Alo";
             return redirect()->back();
         }
         catch(\Exception $ex){
@@ -565,10 +566,10 @@ class onlineDoctorController extends Controller
 
         // return $doctor_sch->is_accept;
     }
-    public function declineSchedules($id){
+    public function declineSchedules($sch_id){
         try{
             Alert::success('Success','Success Deleted');
-            $doctor_sch = DoctorScudule::findOrFail($id);
+            $doctor_sch = DoctorScudule::findOrFail($sch_id);
             $doctor_sch->delete();
             return redirect()->back();
         }

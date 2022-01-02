@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Yajra\DataTables\Facades\DataTables;
 use App\Http\Middleware\SessionAuthPatient;
 use App\Http\Middleware\SessionAuthOnlineDoctor;
+use App\Http\Middleware\SessionAuthClinic;
 
 /* admin routes */
 Route::group(
@@ -57,11 +58,13 @@ Route::group(
             });
             Route::post('efelate/register/{id}','patienController@efelate_post_Register')->name('efelate_post_Register');
             /* add to faviorate */
-            Route::post('patient/add_to_faviorate/nurse','finderController@add_to_faviorate_nurse')->name('add_to_faviorate_nurse');
-            Route::post('patient/add_to_faviorate/doctor','finderController@add_to_faviorate_doctor')->name('add_to_faviorate_doctor');
-            Route::post('patient/add_to_faviorate/pharmacy','finderController@add_to_faviorate_pharmacy')->name('add_to_faviorate_pharmacy');
-            Route::post('patient/add_to_faviorate/xray','finderController@add_to_faviorate_xray')->name('add_to_faviorate_xray');
-            Route::post('patient/add_to_faviorate/lab','finderController@add_to_faviorate_lab')->name('add_to_faviorate_lab');
+
+            // Route::post('patient/add_to_faviorate/nurse','finderController@add_to_faviorate_nurse')->name('add_to_faviorate_nurse');
+            // Route::post('patient/add_to_faviorate/doctor','finderController@add_to_faviorate_doctor')->name('add_to_faviorate_doctor');
+            // Route::post('patient/add_to_faviorate/pharmacy','finderController@add_to_faviorate_pharmacy')->name('add_to_faviorate_pharmacy');
+            // Route::post('patient/add_to_faviorate/xray','finderController@add_to_faviorate_xray')->name('add_to_faviorate_xray');
+            // Route::post('patient/add_to_faviorate/lab','finderController@add_to_faviorate_lab')->name('add_to_faviorate_lab');
+
             /* end finder routes */
             /* login and register */
             Route::get('/index','backEndController@index')->name('indexRoute');
@@ -71,6 +74,12 @@ Route::group(
             Route::get('/patien/register','patienController@register')->name('patienRegister');
             Route::post('/patien/register','patienController@postRegister')->name('patien_post_Register');
 
+            Route::get("online_doctor/register","onlineDoctorController@register")->name("onlineDoctorRegister");
+            Route::post("online_doctor/register","onlineDoctorController@postRegister")->name("postonlineDoctorRegister");
+
+            Route::get('/clinic/register','clinicController@register')->name('clinicRegister');
+            Route::post('/clinic/register','clinicController@postRegister')->name('clinic_post_Register');
+
             Route::middleware([SessionAuthPatient::class])->group(function ($id) {
 
                 Route::get('patien/homepage/{id}','patienController@homepage')->name('patien.homepage');
@@ -78,6 +87,62 @@ Route::group(
                 Route::post('patient/online_doctor/chat','patientRequest@patient_add_request')->name("patient_add_request");
 
                 Route::get('/patien/logout','patienController@logout')->name('patien.logout');
+
+                Route::post('patient/add_to_faviorate/nurse','finderController@add_to_faviorate_nurse')->name('add_to_faviorate_nurse');
+                Route::post('patient/add_to_faviorate/doctor','finderController@add_to_faviorate_doctor')->name('add_to_faviorate_doctor');
+                Route::post('patient/add_to_faviorate/pharmacy','finderController@add_to_faviorate_pharmacy')->name('add_to_faviorate_pharmacy');
+                Route::post('patient/add_to_faviorate/xray','finderController@add_to_faviorate_xray')->name('add_to_faviorate_xray');
+                Route::post('patient/add_to_faviorate/lab','finderController@add_to_faviorate_lab')->name('add_to_faviorate_lab');
+
+                Route::get('patient/appointments/{id}','patienController@patient_Appointments')->name('patient_Appointments');
+                Route::post('patient/addRate/doctor','patienController@addRateDoctor')->name('addRateDoctor');
+                Route::post('patient/addRate/xray','patienController@addRateXray')->name('addRateXray');
+                Route::post('patient/addRate/lab','patienController@addRateLab')->name('addRateLab');
+
+                Route::get('/welcome/patient/{id}','patienController@welcome')->name('patient.welcome');
+                Route::get('/patien/profile/{id}','patienController@profile')->name('patien-profile')->middleware('is_patient');
+                Route::get('/patien/edit/profile/{id}','patienController@editProfile')->name('edit.profile')->middleware('is_patient');
+                Route::post('patien/update/profile/{id}','patienController@updateProfile')->name('update.profile');
+                Route::get('patien/Getreport/{id}','patienController@getReport')->name('getReport');
+                // new edit data profile //
+                Route::get('patien/edit/data/profile/{id}','patienController@edit_data_profile')->name('edit_data_profile');
+                Route::post('patien/update/data/profile/{id}/{profile_id}','patienController@update_data_profile')->name('updata_data_profile');
+                // new edit data profile //
+                // Route::get('/patien/logout','patienController@logout')->name('patien.logout');
+                Route::get('/patien/edit/data/{id}','patienController@editData')->name('edit.data.profile');
+                Route::put('/patien/update/data/{id}','patienController@updateData')->name('update.data.profile');
+                Route::get('/patien/sendEmail/{id}','patienController@sendEmail')->name('patient_send_email');
+                Route::get('/patien/verify/{id}','patienController@verifyPatient')->name('verifyPatient');
+
+                Route::get('/verifyCode','backEndController@verify');
+                Route::post('/verifyCode','backEndController@postVerify')->name('postVerify');
+                Route::get('/ver','patienController@verfi');
+                Route::get('/notifacation/patient/{id}/pescription/{rocata_id?}','patienController@notifyRocata')->name('notifyRocata');
+                Route::get('/notifacation/patient/{id}/test/{test_id?}','patienController@notifyTest')->name('notifyTest');
+                Route::get('/notifacation/patient/{id}/ray/{ray_id?}','patienController@notifyRay')->name('notifyRay');
+                Route::get('notification/read','patienController@readNotify')->name('patient.readNotify');
+
+                /* old pescription route */
+                Route::get('/patien/old_pescription/{id}','patienController@getOldpescription')->name('get_old_pescription');
+                Route::get('/patien/{type}/{id}/download/pdf','patienController@download_pdf')->name('download_pdf');
+                Route::get('/patien/{type}/{id}/delete/files','patienController@deleteFiles')->name('deleteFiles');
+
+                /* get and search wife */
+                Route::get('patient/{id}/searchWife','patienController@searchWife')->name('patient.searchWife');
+                Route::get('patient/searchWife','patienController@getWife')->name('getWife');
+                Route::post('patient/{id}/addRequestWife','patienController@addRequestWife')->name('addRequestWife');
+                Route::post('patient/acceptRequestWife','patienController@acceptRequestWife')->name('acceptRequestWife');
+                Route::post('patient/declineRequestWife','patienController@declineRequestWife')->name('declineRequestWife');
+
+                // show report wife or husband //
+                Route::get('accept/report/patient/{id}','patienController@showReportAccept')->name('showReportAccept')->middleware([SessionAuthPatient::class]);
+                // add wife or husband
+                Route::post('addNew/wifeOrHusband','patienController@addNew_wifeOrHusband')->name('addNew_wifeOrHusband');
+
+                Route::post('patient/{id}/update_online','patienController@patient_update_online')->name('patient_update_online');
+                Route::post('patient/{id}/update_is_donor','donateController@patient_update_is_donor')->name('patient_update_is_donor');
+
+                Route::get('patient/{id}/doctor/{doctor_id}','patientRequest@patient_chat_doctor')->name('patient_chat_doctor');
 
                 Route::group(['prefix' => 'finder'],function(){
                     Route::get('pharmacy/patient/{id}','finderController@getPharmacy')->name('finder.pharmacy');
@@ -189,8 +254,7 @@ Route::group(
 
             });
 
-            Route::get("online_doctor/register","onlineDoctorController@register")->name("onlineDoctorRegister");
-            Route::post("online_doctor/register","onlineDoctorController@postRegister")->name("postonlineDoctorRegister");
+
 
             Route::middleware([SessionAuthOnlineDoctor::class])->group(function ($id) {
 
@@ -216,8 +280,8 @@ Route::group(
                 Route::get('online_doctor/{id}/report/patien/{patient_id}','onlineDoctorController@reportPatien')->name('reportPatien');
                 Route::get('doctor/{id}/show_profile/patient/{patient_id}','onlineDoctorController@show_profile_patient')->name('doctor_show_profile_patient');
                 Route::get('doctor/schedules/{id}','onlineDoctorController@getDoctorSchedules')->name('get.doctor.schedules');
-                Route::post('doctor/schedules/{id}/accept','onlineDoctorController@acceptSchedules')->name('doctor_acceptSchedules');
-                Route::post('doctor/schedules/{id}/decline','onlineDoctorController@declineSchedules')->name('doctor_DeclineSchedules');
+                Route::post('doctor/schedules/{sch_id}/accept','onlineDoctorController@acceptSchedules')->name('doctor_acceptSchedules');
+                Route::post('doctor/schedules/{sch_id}/decline','onlineDoctorController@declineSchedules')->name('doctor_DeclineSchedules');
                 Route::get('doctor/{id}/patient/{patient_id}/children','onlineDoctorController@doctor_all_children')->name('doctor_all_children');
                 Route::get('doctor/{id}/patient/{patient_id}/child/profile/{child_id}','onlineDoctorController@doctor_show_profile_child')->name('doctor_show_profile_child');
                 Route::get('doctor/{id}/patient/{patient_id}/child/{child_id}/add_prescription','onlineDoctorController@doctor_add_prescrption_child')->name('doctor_add_prescrption_child');
@@ -239,6 +303,66 @@ Route::group(
 
             });
 
+            Route::middleware([SessionAuthClinic::class])->group(function ($id) {
+
+                /* clinic routes */
+                Route::get('clinic/homepage/{id}','clinicController@homepage')->name('clinic.homepage');
+                Route::get('/welcome/clinic/{id}','clinicController@welcome')->name('clinic.welcome');
+                Route::get('/clinic/edit/profile/{id}','clinicController@editProfile')->name('clinic.edit.profile')->middleware('is_clinic');
+                Route::get('/clinic/profile/{id}','clinicController@profile')->name('clinic.profile')->middleware('is_Doctor_clinic');
+                Route::get('/clinic/{id}/patien/{patien_id}','clinicController@clinic_get_patien_profile')->name('clinic_get_patien_profile');
+                Route::get('/clinic/logout','clinicController@logout')->name('clinic.logout');
+                Route::get('/clinic/{id}/docotr/{doctor_id}/patient/search','clinicController@search')->name('clinic.patient.search')->middleware('is_clinic');
+                Route::put('/clinic/profile/{id}','clinicController@updateProfile')->name('clinic.update.profile');
+                Route::post('/clinic/raoucata','clinicController@storeRaoucata')->name('store_clinic_Raoucata');
+                Route::post('/clinic/add/analazes','clinicController@patient_clinic_add_analzes')->name('patient_clinic_add_analzes');
+                Route::post('/clinic/add/rays','clinicController@patient_clinic_add_rays')->name('patient_clinic_add_rays');
+                Route::get('/clinic/verify/{id}','clinicController@verifyClinic')->name('verifyClinic');
+                Route::get('/clinic/sendEmail/{id}','clinicController@sendEmail')->name('clinic_send_email');
+                Route::get('/clinic/as_doctor/{id}','clinicController@as_a_doctor')->name('clinic_as_doctor');
+                Route::get('/clinic/as_doctor/{id}/labs','clinicController@get_search_lab')->name('clinic_get_search_lab');
+                Route::get('/clinic/as_doctor_search/{id}/labs','clinicController@post_search_lab')->name('clinic_post_search_lab');
+                Route::get('/clinic/as_doctor/{id}/xray','clinicController@get_search_xray')->name('clinic_get_search_xray');
+                Route::get('/clinic/as_doctor_search/{id}/xray','clinicController@post_search_xray')->name('clinic_post_search_xray');
+                Route::get('/clinic/as_doctor/{id}/pharmacy','clinicController@get_search_pharmacy')->name('clinic_get_search_pharmacy');
+                Route::get('/clinic/as_doctor_search/{id}/pharmacy','clinicController@post_search_pharmacy')->name('clinic_post_search_pharmacy');
+                Route::post('/clinic/{id}/add/doctor','clinicController@clinic_add_doctor')->name('clinic_add_doctor');
+                Route::post("clinic/{id}/add/result/rays",'clinicController@clinic_addResult_rays')->name('clinic_add_Result_rays');
+                Route::post("clinic/{id}/add/result/analzes",'clinicController@clinic_addResult_analzes')->name('clinic_add_Result_analzes');
+                Route::post("clinic/{id}/add/result/child/rays",'clinicController@clinic_child_add_Result_rays')->name('clinic_child_add_Result_rays');
+                Route::post("clinic/{id}/add/result/child/test",'clinicController@clinic_child_addResult_analzes')->name('clinic_child_add_Result_test');
+                //Route::DELETE('/clinic/{id}/delete/doctor/{doctor_id}','clinicController@clinic_delete_doctor')->name('clinic_delete_doctor');
+
+                Route::get('/clinic/{id}/login/doctor','clinicController@loginDoctor')->name('clinic_login_doctor');
+                // Route::get('/clinic/{id}/login/doctor', function () {
+                //     return "Alo";
+                // })->name('clinic_login_doctor');
+
+                Route::post('/clinic/{id}/login/doctor','clinicController@postDoctor')->name('clinic_post_doctor');
+                Route::post('clinic/add/patient','clinicController@clinic_add_patien')->name('clinic_add_patien');
+                Route::post('/clinic/{id}/add/branch','branchController@clinic_add_branch')->name('clinic_add_branch');
+                Route::get('/clinic/{id}/patient/{patient_id}/allpescription','clinicController@clinic_getAllPrescription')->name('clinic_getAllPrescription');
+                Route::get('/clinic/{id}/patient/{patien_id}/oldprescreption','clinicController@clinic_old_prescription')->name('clinic_old_prescription');
+                Route::get('/clinic/doctor/{doctor_id}/logout',function($doctor_id){
+                    $doctor = Doctor::findOrFail($doctor_id);
+                    // $doctor->logout();
+                    auth()->guard('doctor')->logout();
+                    return redirect()->route('clinic_login_doctor',auth()->guard('clinic')->user()->id);
+                })->name('clinic_doctor.logout');
+                Route::get('/clinic/{id}/patient/{patient_id}/children','childController@clinic_all_children')->name('clinic_all_children');
+                Route::get('/clinic/{id}/patient/{patient_id}/child/profile/{child_id}','childController@clinic_child_profile')->name('clinic_child_profile');
+                Route::get('/clinic/{id}/patient/{patient_id}/child/{child_id}/add_prescription','childController@child_add_prescription')->name('child_add_prescription');
+                Route::post('child/addPrescription','childController@child_store_prescription')->name('child_store_prescription');
+                Route::get('/clinic/{id}/patient/{patient_id}/child/{child_id}/old_prescrption','childController@child_old_prescrption')->name('child_old_prescrption');
+                Route::get('/clinic/{id}/patient/{patient_id}/child/{child_id}/all_prescrption','childController@child_all_prescrption')->name('child_all_prescrption');
+                Route::get('clinic/{id}/find/doctor','clinicController@clinicFindDoctor')->name('clinicFindDoctor');
+                Route::post('clinic/appointmentsDoctor','clinicController@appointmentsDoctor')->name('clinic_appointmentsDoctor');
+                Route::get('clinic/{id}/doctorAppoiement','clinicController@clinicdoctorAppoiement')->name('clinicdoctorAppoiement');
+                Route::post('clinic/{id}/bookDoctorApp','clinicController@bookDocApp')->name('clinicBookDocApp');
+                /* clinic routes */
+
+            });
+
             Route::group(['prefix' => 'club'], function () {
                 Route::get('patient/{id}','clubController@patientClub')->name('patient.club')->middleware([SessionAuthPatient::class]);
                 Route::get('doctor/{id}','clubController@doctorClub')->name('doctor.club')->middleware([SessionAuthOnlineDoctor::class]);
@@ -247,6 +371,7 @@ Route::group(
                 Route::get('pharmacy/{id}','clubController@pharmacyClub')->name('pharmacy.club');
                 Route::get('nurse/{id}','clubController@nurseClub')->name('nurse.club');
             });
+
 
             /* qr */
             Route::group(['prefix' => 'Qr'],function(){
@@ -259,111 +384,62 @@ Route::group(
             });
             /* qr */
 
-            Route::get('/welcome/patient/{id}','patienController@welcome')->name('patient.welcome')->middleware([SessionAuthPatient::class]);
-            Route::get('/patien/profile/{id}','patienController@profile')->name('patien-profile')->middleware('is_patient')->middleware([SessionAuthPatient::class]);
-            Route::get('/patien/edit/profile/{id}','patienController@editProfile')->name('edit.profile')->middleware('is_patient')->middleware([SessionAuthPatient::class]);
-            Route::post('patien/update/profile/{id}','patienController@updateProfile')->name('update.profile');
-            Route::get('patien/Getreport/{id}','patienController@getReport')->name('getReport')->middleware([SessionAuthPatient::class]);
-            // new edit data profile //
-            Route::get('patien/edit/data/profile/{id}','patienController@edit_data_profile')->name('edit_data_profile')->middleware([SessionAuthPatient::class]);
-            Route::post('patien/update/data/profile/{id}/{profile_id}','patienController@update_data_profile')->name('updata_data_profile');
-            // new edit data profile //
-            // Route::get('/patien/logout','patienController@logout')->name('patien.logout');
-            Route::get('/patien/edit/data/{id}','patienController@editData')->name('edit.data.profile')->middleware([SessionAuthPatient::class]);
-            Route::put('/patien/update/data/{id}','patienController@updateData')->name('update.data.profile');
-            Route::get('/patien/sendEmail/{id}','patienController@sendEmail')->name('patient_send_email')->middleware([SessionAuthPatient::class]);
-            Route::get('/patien/verify/{id}','patienController@verifyPatient')->name('verifyPatient')->middleware([SessionAuthPatient::class]);
-            Route::get('/verifyCode','backEndController@verify');
-            Route::post('/verifyCode','backEndController@postVerify')->name('postVerify');
-            Route::get('/ver','patienController@verfi');
-            Route::get('/notifacation/patient/{id}/pescription/{rocata_id?}','patienController@notifyRocata')->name('notifyRocata');
-            Route::get('/notifacation/patient/{id}/test/{test_id?}','patienController@notifyTest')->name('notifyTest');
-            Route::get('/notifacation/patient/{id}/ray/{ray_id?}','patienController@notifyRay')->name('notifyRay');
-            Route::get('notification/read','patienController@readNotify')->name('patient.readNotify');
-            Route::get('patient/appointments/{id}','patienController@patient_Appointments')->name('patient_Appointments')->middleware([SessionAuthPatient::class]);
-            Route::post('patient/addRate/doctor','patienController@addRateDoctor')->name('addRateDoctor');
-            Route::post('patient/addRate/xray','patienController@addRateXray')->name('addRateXray');
-            Route::post('patient/addRate/lab','patienController@addRateLab')->name('addRateLab');
+
+            // Route::get('/welcome/patient/{id}','patienController@welcome')->name('patient.welcome');
+            // Route::get('/patien/profile/{id}','patienController@profile')->name('patien-profile')->middleware('is_patient');
+            // Route::get('/patien/edit/profile/{id}','patienController@editProfile')->name('edit.profile')->middleware('is_patient');
+            // Route::post('patien/update/profile/{id}','patienController@updateProfile')->name('update.profile');
+            // Route::get('patien/Getreport/{id}','patienController@getReport')->name('getReport');
+            // // new edit data profile //
+            // Route::get('patien/edit/data/profile/{id}','patienController@edit_data_profile')->name('edit_data_profile');
+            // Route::post('patien/update/data/profile/{id}/{profile_id}','patienController@update_data_profile')->name('updata_data_profile');
+            // // new edit data profile //
+            // // Route::get('/patien/logout','patienController@logout')->name('patien.logout');
+            // Route::get('/patien/edit/data/{id}','patienController@editData')->name('edit.data.profile');
+            // Route::put('/patien/update/data/{id}','patienController@updateData')->name('update.data.profile');
+            // Route::get('/patien/sendEmail/{id}','patienController@sendEmail')->name('patient_send_email');
+            // Route::get('/patien/verify/{id}','patienController@verifyPatient')->name('verifyPatient');
+
+            // Route::get('/verifyCode','backEndController@verify');
+            // Route::post('/verifyCode','backEndController@postVerify')->name('postVerify');
+            // Route::get('/ver','patienController@verfi');
+            // Route::get('/notifacation/patient/{id}/pescription/{rocata_id?}','patienController@notifyRocata')->name('notifyRocata');
+            // Route::get('/notifacation/patient/{id}/test/{test_id?}','patienController@notifyTest')->name('notifyTest');
+            // Route::get('/notifacation/patient/{id}/ray/{ray_id?}','patienController@notifyRay')->name('notifyRay');
+            // Route::get('notification/read','patienController@readNotify')->name('patient.readNotify');
+
+            // Route::get('patient/appointments/{id}','patienController@patient_Appointments')->name('patient_Appointments');
+            // Route::post('patient/addRate/doctor','patienController@addRateDoctor')->name('addRateDoctor');
+            // Route::post('patient/addRate/xray','patienController@addRateXray')->name('addRateXray');
+            // Route::post('patient/addRate/lab','patienController@addRateLab')->name('addRateLab');
+
             /* old pescription route */
-            Route::get('/patien/old_pescription/{id}','patienController@getOldpescription')->name('get_old_pescription')->middleware([SessionAuthPatient::class]);
-            Route::get('/patien/{type}/{id}/download/pdf','patienController@download_pdf')->name('download_pdf')->middleware([SessionAuthPatient::class]);
-            Route::get('/patien/{type}/{id}/delete/files','patienController@deleteFiles')->name('deleteFiles')->middleware([SessionAuthPatient::class]);
+            // Route::get('/patien/old_pescription/{id}','patienController@getOldpescription')->name('get_old_pescription');
+            // Route::get('/patien/{type}/{id}/download/pdf','patienController@download_pdf')->name('download_pdf');
+            // Route::get('/patien/{type}/{id}/delete/files','patienController@deleteFiles')->name('deleteFiles');
 
             /* get and search wife */
-            Route::get('patient/{id}/searchWife','patienController@searchWife')->name('patient.searchWife')->middleware([SessionAuthPatient::class]);
-            Route::get('patient/searchWife','patienController@getWife')->name('getWife')->middleware([SessionAuthPatient::class]);
-            Route::post('patient/{id}/addRequestWife','patienController@addRequestWife')->name('addRequestWife');
-            Route::post('patient/acceptRequestWife','patienController@acceptRequestWife')->name('acceptRequestWife');
-            Route::post('patient/declineRequestWife','patienController@declineRequestWife')->name('declineRequestWife');
-            // show report wife or husband //
-            Route::get('accept/report/patient/{id}','patienController@showReportAccept')->name('showReportAccept')->middleware([SessionAuthPatient::class]);
-            // add wife or husband
-            Route::post('addNew/wifeOrHusband','patienController@addNew_wifeOrHusband')->name('addNew_wifeOrHusband');
+            // Route::get('patient/{id}/searchWife','patienController@searchWife')->name('patient.searchWife');
+            // Route::get('patient/searchWife','patienController@getWife')->name('getWife');
+            // Route::post('patient/{id}/addRequestWife','patienController@addRequestWife')->name('addRequestWife');
+            // Route::post('patient/acceptRequestWife','patienController@acceptRequestWife')->name('acceptRequestWife');
+            // Route::post('patient/declineRequestWife','patienController@declineRequestWife')->name('declineRequestWife');
+
+            // // show report wife or husband //
+            // Route::get('accept/report/patient/{id}','patienController@showReportAccept')->name('showReportAccept')->middleware([SessionAuthPatient::class]);
+            // // add wife or husband
+            // Route::post('addNew/wifeOrHusband','patienController@addNew_wifeOrHusband')->name('addNew_wifeOrHusband');
 
 
 
+            // Route::post('patient/{id}/update_online','patienController@patient_update_online')->name('patient_update_online');
+            // Route::post('patient/{id}/update_is_donor','donateController@patient_update_is_donor')->name('patient_update_is_donor');
 
-
-            Route::post('patient/{id}/update_online','patienController@patient_update_online')->name('patient_update_online');
-            Route::post('patient/{id}/update_is_donor','donateController@patient_update_is_donor')->name('patient_update_is_donor');
             /* patient routes */
-            /* clinic routes */
-            Route::get('/clinic/register','clinicController@register')->name('clinicRegister');
-            Route::post('/clinic/register','clinicController@postRegister')->name('clinic_post_Register');
-            Route::get('clinic/homepage/{id}','clinicController@homepage')->name('clinic.homepage');
-            Route::get('/welcome/clinic/{id}','clinicController@welcome')->name('clinic.welcome');
-            Route::get('/clinic/edit/profile/{id}','clinicController@editProfile')->name('clinic.edit.profile')->middleware('is_clinic');
-            Route::get('/clinic/profile/{id}','clinicController@profile')->name('clinic.profile')->middleware('is_Doctor_clinic');
-            Route::get('/clinic/{id}/patien/{patien_id}','clinicController@clinic_get_patien_profile')->name('clinic_get_patien_profile');
-            Route::get('/clinic/logout','clinicController@logout')->name('clinic.logout');
-            Route::get('/clinic/{id}/docotr/{doctor_id}/patient/search','clinicController@search')->name('clinic.patient.search')->middleware('is_clinic');
-            Route::put('/clinic/profile/{id}','clinicController@updateProfile')->name('clinic.update.profile');
-            Route::post('/clinic/raoucata','clinicController@storeRaoucata')->name('store_clinic_Raoucata');
-            Route::post('/clinic/add/analazes','clinicController@patient_clinic_add_analzes')->name('patient_clinic_add_analzes');
-            Route::post('/clinic/add/rays','clinicController@patient_clinic_add_rays')->name('patient_clinic_add_rays');
-            Route::get('/clinic/verify/{id}','clinicController@verifyClinic')->name('verifyClinic');
-            Route::get('/clinic/sendEmail/{id}','clinicController@sendEmail')->name('clinic_send_email');
-            Route::get('/clinic/as_doctor/{id}','clinicController@as_a_doctor')->name('clinic_as_doctor');
-            Route::get('/clinic/as_doctor/{id}/labs','clinicController@get_search_lab')->name('clinic_get_search_lab');
-            Route::get('/clinic/as_doctor_search/{id}/labs','clinicController@post_search_lab')->name('clinic_post_search_lab');
-            Route::get('/clinic/as_doctor/{id}/xray','clinicController@get_search_xray')->name('clinic_get_search_xray');
-            Route::get('/clinic/as_doctor_search/{id}/xray','clinicController@post_search_xray')->name('clinic_post_search_xray');
-            Route::get('/clinic/as_doctor/{id}/pharmacy','clinicController@get_search_pharmacy')->name('clinic_get_search_pharmacy');
-            Route::get('/clinic/as_doctor_search/{id}/pharmacy','clinicController@post_search_pharmacy')->name('clinic_post_search_pharmacy');
-            Route::post('/clinic/{id}/add/doctor','clinicController@clinic_add_doctor')->name('clinic_add_doctor');
-            Route::post("clinic/{id}/add/result/rays",'clinicController@clinic_addResult_rays')->name('clinic_add_Result_rays');
-            Route::post("clinic/{id}/add/result/analzes",'clinicController@clinic_addResult_analzes')->name('clinic_add_Result_analzes');
-            Route::post("clinic/{id}/add/result/child/rays",'clinicController@clinic_child_add_Result_rays')->name('clinic_child_add_Result_rays');
-            Route::post("clinic/{id}/add/result/child/test",'clinicController@clinic_child_addResult_analzes')->name('clinic_child_add_Result_test');
-            //Route::DELETE('/clinic/{id}/delete/doctor/{doctor_id}','clinicController@clinic_delete_doctor')->name('clinic_delete_doctor');
 
-            Route::get('/clinic/{id}/login/doctor','clinicController@loginDoctor')->name('clinic_login_doctor');
-            // Route::get('/clinic/{id}/login/doctor', function () {
-            //     return "Alo";
-            // })->name('clinic_login_doctor');
 
-            Route::post('/clinic/{id}/login/doctor','clinicController@postDoctor')->name('clinic_post_doctor');
-            Route::post('clinic/add/patient','clinicController@clinic_add_patien')->name('clinic_add_patien');
-            Route::post('/clinic/{id}/add/branch','branchController@clinic_add_branch')->name('clinic_add_branch');
-            Route::get('/clinic/{id}/patient/{patient_id}/allpescription','clinicController@clinic_getAllPrescription')->name('clinic_getAllPrescription');
-            Route::get('/clinic/{id}/patient/{patien_id}/oldprescreption','clinicController@clinic_old_prescription')->name('clinic_old_prescription');
-            Route::get('/clinic/doctor/{doctor_id}/logout',function($doctor_id){
-                $doctor = Doctor::findOrFail($doctor_id);
-                // $doctor->logout();
-                 auth()->guard('doctor')->logout();
-                return redirect()->route('clinic_login_doctor',auth()->guard('clinic')->user()->id);
-            })->name('clinic_doctor.logout');
-            Route::get('/clinic/{id}/patient/{patient_id}/children','childController@clinic_all_children')->name('clinic_all_children');
-            Route::get('/clinic/{id}/patient/{patient_id}/child/profile/{child_id}','childController@clinic_child_profile')->name('clinic_child_profile');
-            Route::get('/clinic/{id}/patient/{patient_id}/child/{child_id}/add_prescription','childController@child_add_prescription')->name('child_add_prescription');
-            Route::post('child/addPrescription','childController@child_store_prescription')->name('child_store_prescription');
-            Route::get('/clinic/{id}/patient/{patient_id}/child/{child_id}/old_prescrption','childController@child_old_prescrption')->name('child_old_prescrption');
-            Route::get('/clinic/{id}/patient/{patient_id}/child/{child_id}/all_prescrption','childController@child_all_prescrption')->name('child_all_prescrption');
-            Route::get('clinic/{id}/find/doctor','clinicController@clinicFindDoctor')->name('clinicFindDoctor');
-            Route::post('clinic/appointmentsDoctor','clinicController@appointmentsDoctor')->name('clinic_appointmentsDoctor');
-            Route::get('clinic/{id}/doctorAppoiement','clinicController@clinicdoctorAppoiement')->name('clinicdoctorAppoiement');
-            Route::post('clinic/{id}/bookDoctorApp','clinicController@bookDocApp')->name('clinicBookDocApp');
-            /* clinic routes */
+
+
             /* hosptail routes */
             Route::get('/hosptail/register','hosptailController@register')->name('hosptailRegister');
             Route::post('/hosptail/register','hosptailController@postRegister')->name('hosptail_post_Register');
@@ -512,16 +588,18 @@ Route::group(
 
 
 
-            Route::get('patient/{id}/doctor/{doctor_id}','patientRequest@patient_chat_doctor')->name('patient_chat_doctor')->middleware([SessionAuthPatient::class]);
+            // Route::get('patient/{id}/doctor/{doctor_id}','patientRequest@patient_chat_doctor')->name('patient_chat_doctor');
 
             /* patien add request */
             /*
+
             /* doctor routes */
             Route::get("doctor/{id}/clinic/{clinic_id}",'clinicController@welocmeDoctor')->name("clinic_welcome_doctor");
             Route::get('doctor/{id}/hosptail/{hosptail_id}','hosptailController@hosptail_welcome_doctor')->name("hosptail_welcome_doctor");
             Route::get('doctor/{id}/hosptail/{hosptail_id}/branch/{branch_id}','hosptailController@hosptail_branch_welcome_doctor')->name("hosptail_branch_welcome_doctor");
             Route::get('doctor/{id}/clinic/{clinic_id}/branch/{branch_id}','clinicController@clinic_branch_welcome_doctor')->name("clinic_branch_welcome_doctor");
             /* doctor routes */
+
             /* Nurce routes */
             Route::group(['prefix' => 'nurse'],function(){
                 Route::get('register','nurseController@register')->name('nurce.register');

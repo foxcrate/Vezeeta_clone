@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Session;
 
-class SessionAuthPatient
+class SessionAuthClinic
 {
     /**
      * Handle an incoming request.
@@ -14,19 +14,16 @@ class SessionAuthPatient
      * @param  \Closure  $next
      * @return mixed
      */
-
-
-
     public function handle($request, Closure $next)
     {
 
-        //return $next($request);
+        return $next($request);
 
-        if(Session::has('PatientLogged') ){
+        if(Session::has('ClinicLogged') ){
 
             if( $request->route('id') ){
                 // return redirect()->route('indexRoute')->with('error',"There Is A Route ID");
-                if( Session::get('PatientLoggedID') == $request->route('id') ){
+                if( Session::get('ClinicLoggedID') == $request->route('id') ){
                     return $next($request);
                 }else{
                     // Auth::guard( 'patien' )->logout();
@@ -48,6 +45,6 @@ class SessionAuthPatient
             return redirect()->route('indexRoute')->with('error',"You Are Not Logged In");
         }
 
-    }
 
+    }
 }

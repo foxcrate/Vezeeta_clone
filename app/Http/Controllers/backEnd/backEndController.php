@@ -86,6 +86,7 @@ class backEndController extends Controller
         //Session::put('loggedType', $request->get('guard') );
 
         if( $request->get('guard') == 'patien' ){
+
             if( Session::has('PatientLogged') ){
                 Session::forget('PatientLoggedID');
                 Session::forget('PatientLogged');
@@ -93,7 +94,9 @@ class backEndController extends Controller
 
             Session::put('PatientLogged', 1 );
             Session::put('PatientLoggedID', auth()->guard($request->get('guard'))->user()->id );
+
         }elseif( $request->get('guard') == 'online_doctor' ){
+
             if( Session::has('OnlineDoctorLogged') ){
                 Session::forget('OnlineDoctorLoggedID');
                 Session::forget('OnlineDoctorLogged');
@@ -101,6 +104,7 @@ class backEndController extends Controller
 
             Session::put('OnlineDoctorLogged', 1 );
             Session::put('OnlineDoctorLoggedID', auth()->guard($request->get('guard'))->user()->id );
+
         }
 
         // return dd(auth()->guard('patien')->user());

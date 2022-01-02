@@ -146,18 +146,20 @@ Route::get('/xray/confirm/password/{id}','firebaseController@xray_confirm_passwo
 Route::post('/xray/confirm/password/{id}','firebaseController@post_xray_confirm_password')->name('post_xray_confirm_password');
 /* xray forgot password routes */
 
-/* patient forgot password routes */
+/* lab forgot password routes */
 Route::get('/labs/forgot/password/{id}','firebaseController@labs_password')->name('labs_password');
 Route::post('/labs/forgot/password/{id}','firebaseController@post_labs_password')->name('post_labs_password');
 Route::get('/labs/confirm/password/{id}','firebaseController@labs_confirm_password')->name('get_labs_confirm_password');
 Route::post('/labs/confirm/password/{id}','firebaseController@post_labs_confirm_password')->name('post_labs_confirm_password');
-/* patient forgot password routes */
+/* lab forgot password routes */
 
-/* patient forgot password routes */
+/* pharmacy forgot password routes */
 Route::get('/pharmacy/forgot/password/{id}','firebaseController@pharmacy_password')->name('pharmacy_password');
 Route::post('/pharmacy/forgot/password/{id}','firebaseController@post_pharmacy_password')->name('post_pharmacy_password');
 Route::get('/pharmacy/confirm/password/{id}','firebaseController@pharmacy_confirm_password')->name('get_pharmacy_confirm_password');
 Route::post('/pharmacy/confirm/password/{id}','firebaseController@post_pharmacy_confirm_password')->name('post_pharmacy_confirm_password');
+/* pharmacy forgot password routes */
+
 /* doctor forgot password routes */
 Route::get('/doctor/forgot/password/{id}','firebaseController@doctor_password')->name('doctor_password');
 Route::post('/doctor/forgot/password/{id}','firebaseController@post_doctor_password')->name('post_doctor_password');
