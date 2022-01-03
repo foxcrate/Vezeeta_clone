@@ -522,7 +522,7 @@
                                 </div>
                             </div>
                             <div class="col-12 text-center mb-5 mt-5">
-                                <button type="submit" class="col-9 btn btn-primary h5 font-weight-400 mr-auto ml-auto">Submite</button>
+                                <button type="submit" class="col-9 btn btn-primary h5 font-weight-400 mr-auto ml-auto">Submit</button>
                             </div>
                         </div>
                     </form>
