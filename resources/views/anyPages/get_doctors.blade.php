@@ -1,5 +1,5 @@
 @extends('backEnd.layoutes.mastar')
-@section('title','Finder Dcctor')
+@section('title','Finder Doctor')
 @section('content')
 <div class="d-flex" id="wrapper">
     @include('backEnd.patien.slidenav')

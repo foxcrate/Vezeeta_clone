@@ -18,9 +18,9 @@ class CreateDoctorScudulesTable extends Migration
             $table->bigInteger('patient_id')->unsigned();
             $table->string('patient_name')->nullable();
             $table->string('patient_phone')->nullable();
-            // $table->string('day_name');
-            // $table->string('from');
-            // $table->string('to');
+            $table->string('day_name');
+            $table->string('from');
+            $table->string('to');
             $table->string('time')->nullable();
             $table->boolean('is_accept')->nullable()->default(false);
             $table->foreign('patient_id')->references('id')->on('patiens')->onDelete('cascade');

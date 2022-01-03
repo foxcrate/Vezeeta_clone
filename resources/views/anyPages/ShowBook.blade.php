@@ -25,10 +25,10 @@
                     <input type="hidden" name="patient_id" value="{{$patient->id}}">
                     <input id="Hpatient_name" type="hidden" name="Hpatient_name" value="{{$doc_sucdule->patient_name}}">
                     <input id="Hpatient_phone" type="hidden" name="Hpatient_phone" value="{{$doc_sucdule->patient_phone}}">
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <input type="checkbox"  name="check_patient" id="check_patient">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label>Patient Name</label>
                         <input id="patient_name" disabled type="text" name="patient_name" value="{{$doc_sucdule->patient_name}}" class="col-lg-8 form-control">

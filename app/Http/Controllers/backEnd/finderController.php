@@ -204,9 +204,11 @@ class finderController extends Controller
     }
 
     public function get_appointments($id,$docotr_id){
+        //return $docotr_id ;
         try{
             $patient = Patien::findOrFail($id);
             $doctor = Appointment::findOrFail($docotr_id);
+            //return $doctor;
             // $doctor = Appointment::where('doctor_id',$docotr_id);
             // return $doctor;
             //return $doctor->appointments;
@@ -240,11 +242,22 @@ class finderController extends Controller
     }
 
     public function book(DoctorSucduleRequest $request,$id,$doctor_id){
+        //return $request;
         try{
             Alert::success('Success','Sucess Message');
             $patient = Patien::findOrFail($id);
             $doctor = Appointment::findOrFail($doctor_id);
             $bookRequest = $request->all();
+
+            //$repeated_schedule = false;
+            $repeated_schedule = testScudule::where('appoiment_id',$doctor_id)->where('patient_id',$id)->where('day_name',$request->appointmentsD)->where('from',$request->appointmentsF)->with('appoiment')->get();
+            //return $repeated_schedule->count();
+
+            if( $repeated_schedule->count() != 0 ){
+                Alert::error('Error','You have already booked with this doctor at this time');
+                return redirect()->back();
+            }
+
             $doc_sucdule = testScudule::create([
                 'patient_id'    => $request->patient_id,
                 'patient_name' => $request->patient_name,
@@ -268,6 +281,7 @@ class finderController extends Controller
 
     public function show_book($id,$doctor_id,$doc_sucdule_id){
         try{
+            //return "Alo";
             $patient = Patien::findOrFail($id);
             $doctor = Appointment::findOrFail($doctor_id);
             $doc_sucdule = testScudule::findOrFail($doc_sucdule_id);
@@ -300,10 +314,10 @@ class finderController extends Controller
             $doc_sucdulee->patient_name = $request->Hpatient_name;
             $doc_sucdulee->patient_phone = $request->Hpatient_phone;
             $doc_sucdulee->save();
-            return redirect()->back();
+            return redirect()->route('patien.homepage',$id)->with('message','Appointment Confirmed Successfully');
         }
         catch(\Exception $ex){
-            Alert::error('Error','Problem');
+            Alert::error('Error',$ex->getMessage());
             return redirect()->back();
         }
     }
