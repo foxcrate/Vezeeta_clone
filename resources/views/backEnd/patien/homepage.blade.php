@@ -44,6 +44,11 @@
         </div>
     </div>
     <!--End-Ada-->
+
+    {{-- @if(session('message'))
+        <div class="alert alert-success">{{session('message')}}</div>
+    @endif --}}
+
     <div class="container link" >
         <div class="row content-info col-lg-12 mt-5 ml-auto mr-auto">
             <div class="col-2">

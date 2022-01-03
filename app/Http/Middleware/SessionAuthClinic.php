@@ -17,7 +17,7 @@ class SessionAuthClinic
     public function handle($request, Closure $next)
     {
 
-        return $next($request);
+        //return $next($request);
 
         if(Session::has('ClinicLogged') ){
 
