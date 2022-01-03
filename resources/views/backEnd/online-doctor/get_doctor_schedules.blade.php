@@ -153,8 +153,5 @@
 
     </div>
 </div>
-<!-- footer -->
-        @include('backEnd.layoutes.footer')
-        <!-- footer -->
 
 @stop
