@@ -365,6 +365,12 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('patient/getBasicDate','patientController@getBasicDate');
 
     Route::post('patient/editProfile','patientController@editProfile');
+    
+    //get all kids
+    Route::get('get/allKids','DoctorController@getAllKids');
+    
+    // doctor edit profile
+    Route::get('doctor/editProfile','DoctorController@doctorEditProfile');
 
     /* routes app */
 
