@@ -5,6 +5,7 @@
 @include('backEnd.layoutes.navbar')
 <!--End-Navbar-->
 <!--Start-Ada-->
+<div class="container">
 <div id="carouselExampleIndicators" class="carousel slide" style="margin-top: 60px;" data-ride="carousel">
     <ol class="carousel-indicators ml-auto mr-auto">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -38,6 +39,7 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+</div>
 </div>
 <!--End-Ada-->
 <div class="container">

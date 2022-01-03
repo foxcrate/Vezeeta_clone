@@ -2,9 +2,10 @@
 @section('title','checkup ' . $patient->name)
 @section('content')
 @include('backEnd.patien.slidenav')
-@include('includes.patientNav')
+
 <div class="d-flex bg-page" id="wrapper">
   <div id="page-content-wrapper">
+    @include('includes.patientNav')
     <div class="container">
         <div class="content-two ml-auto mr-auto p-4 mt-5">
             <form action="{{route('patient.Postcheckup',$patient->id)}}" method="POST">

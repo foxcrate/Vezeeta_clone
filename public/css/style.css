@@ -987,6 +987,11 @@ a.text-lighter:hover, a.text-lighter:focus {
     border:  1px solid #0fAAc9;
     background-color: #0fAAc9;
 }
+.fav-button:hover {
+    border: 1px solid #dbbb00;
+    background-color: #dbbb00;
+    color: #000;
+}
 .bg-page {
     background-image: url('../imgs/bgPP.jpg');
     background-size: cover;
@@ -2601,7 +2606,10 @@ box-shadow: 1px 1px 10px -5px #cacaca;
     border-radius: 25px;
     border: 2px solid #0fAAc9;
     padding: 30px;
+    display: flex;
+    justify-content: space-around;
 }
+
 .book-title {
     border: 1px solid #d3d3d3;
     border-radius: 10px;
@@ -3088,7 +3096,12 @@ input[type=file]::-webkit-file-upload-button {
         height: 100%;
     }
 }
-
+.favourite-layouts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5%;
+}
 .online-layouts {
     display: flex;
     justify-content: center;
@@ -3114,10 +3127,3 @@ input[type=file]::-webkit-file-upload-button {
     animation: flash; /* referring directly to the animation's @keyframe declaration */
     animation-duration: 2s; /* don't forget to set a duration! */
   }
-
-
-/* .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-} */
