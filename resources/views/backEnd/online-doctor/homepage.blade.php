@@ -230,60 +230,60 @@
         </div>
     </div>
     <div class="row col-lg-6 ml-auto mr-auto text-center mt-5">
-      <div class="col-lg-3 ml-auto mr-auto">
+      <a href="{{route('get_doctor_search_patient',$online_doctor->id)}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{route('get_doctor_search_patient',$online_doctor->id)}}"><img src="{{url('imgs/icon_png/patient.svg')}}" height="80" class="d-block w-100 mt-2" alt="..."></a>
+          <img src="{{url('imgs/icon_png/patient.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
         </div>
         <h5 class="text-dark font-weight-bold ml-auto mr-auto">Patient</h5>
         {{-- <h1>{{ config('app.url') }}</h1> --}}
-      </div>
-      <div class="col-lg-3 ml-auto mr-auto">
+      </a>
+      <a href="{{route('doctor.club',$online_doctor->id)}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{route('doctor.club',$online_doctor->id)}}"><img src="{{url('imgs/logo.svg')}}" height="90" class="d-block w-100 mt-2" alt="..."></a>
+          <img src="{{url('imgs/logo.svg')}}" height="90" class="d-block w-100 mt-2" alt="...">
         </div>
         <h5 class="text-dark font-weight-bold ml-auto mr-auto">Club</h5>
-      </div>
-      <div class="col-lg-3 ml-auto mr-auto">
+      </a>
+      <a href="{{ route('doctor.qr.index',$online_doctor->id) }}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{ route('doctor.qr.index',$online_doctor->id) }}"><img src="{{url('imgs/qrCode.svg')}}" height="80" class="d-block w-100 mt-2" alt="..."></a>
+          <img src="{{url('imgs/qrCode.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
         </div>
         <h5 class="text-dark font-weight-bold ml-auto mr-auto">QR Code</h5>
-      </div>
+      </a>
     </div>
     <div class="row col-lg-6 ml-auto mr-auto text-center">
-      <div class="col-lg-4 ml-auto mr-auto">
+      <a href="{{route('online_doctor_get_myWork',$online_doctor->id)}}" class="col-lg-4 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{route('online_doctor_get_myWork',$online_doctor->id)}}"><img src="{{url('imgs/stethoscope.svg')}}" height="70" class="w-80 mt-3" alt="..."></a>
+          <img src="{{url('imgs/stethoscope.svg')}}" height="70" class="w-80 mt-3" alt="...">
         </div>
         <h5 class="col text-dark font-weight-bold ml-auto mr-auto">My Work</h5>
-      </div>
-      <div class="col-lg-4 ml-auto mr-auto">
+      </a>
+      <a href="{{route('get.doctor.schedules',$online_doctor->id)}}" class="col-lg-4 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{route('get.doctor.schedules',$online_doctor->id)}}"><img src="{{url('imgs/calendar.png')}}" height="70" class="w-80 mt-3" alt="..."></a>
+          <img src="{{url('imgs/calendar.png')}}" height="70" class="w-80 mt-3" alt="...">
         </div>
         <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Appointments</h5>
-      </div>
-      <div class="col-lg-4 ml-auto mr-auto">
+      </a>
+      <a href="#" class="col-lg-4 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="#"><img src="{{url('imgs/insurance.png')}}" height="70" class="w-80 mt-3" alt="..."></a>
+          <img src="{{url('imgs/insurance.png')}}" height="70" class="w-80 mt-3" alt="...">
         </div>
         <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Insurance</h5>
-      </div>
+      </a>
 
     </div>
     <div class="row col-lg-6 ml-auto mr-auto text-center">
-        <div class="col-lg-3 ml-auto mr-auto">
-            <div class="content-item ml-auto mr-auto">
-              <a href="{{ route('doctor.orders',$online_doctor->id) }}"><img src="{{url('imgs/insurance.png')}}" height="70" class="w-80 mt-3" alt="..."></a>
-            </div>
-            <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Orders</h5>
+        <a href="{{ route('doctor.orders',$online_doctor->id) }}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
+          <div class="content-item ml-auto mr-auto">
+            <img src="{{url('imgs/insurance.png')}}" height="70" class="w-80 mt-3" alt="...">
           </div>
-          <div class="col-lg-3 ml-auto mr-auto">
-            <div class="content-item ml-auto mr-auto">
-                <a href="{{route('online_doctor.logout')}}"><img src="{{url('imgs/logout.png')}}" height="70" class="w-80 mt-3" alt="..."></a>
-            </div>
-            <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Logout</h5>
+          <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Orders</h5>
+        </a>
+        <a href="{{route('online_doctor.logout')}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
+          <div class="content-item ml-auto mr-auto">
+            <img src="{{url('imgs/logout.png')}}" height="70" class="w-80 mt-3" alt="...">
           </div>
+          <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Logout</h5>
+        </a>
           <div class="col-lg-3 ml-auto mr-auto">
 
           </div>
