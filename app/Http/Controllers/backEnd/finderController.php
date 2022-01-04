@@ -242,6 +242,7 @@ class finderController extends Controller
     }
 
     public function book(DoctorSucduleRequest $request,$id,$doctor_id){
+        //return "Alo" ;
         //return $request;
         try{
             Alert::success('Success','Sucess Message');
@@ -295,7 +296,7 @@ class finderController extends Controller
 
     public function update_book(Request $request,$id,$doctor_id,$doc_sucdule_id){
         try{
-            Alert::success('Success','Sucess Confirmed');
+            //Alert::success('Success','Success Confirmed');
             $patient = Patien::findOrFail($id);
             $doctor = Appointment::findOrFail($doctor_id);
             $doc_sucdulee = testScudule::findOrFail($doc_sucdule_id);
@@ -314,6 +315,7 @@ class finderController extends Controller
             $doc_sucdulee->patient_name = $request->Hpatient_name;
             $doc_sucdulee->patient_phone = $request->Hpatient_phone;
             $doc_sucdulee->save();
+            Alert::success('Success','Appointment Confirmed');
             return redirect()->route('patien.homepage',$id)->with('message','Appointment Confirmed Successfully');
         }
         catch(\Exception $ex){

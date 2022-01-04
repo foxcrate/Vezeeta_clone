@@ -1637,6 +1637,7 @@ public function updateImage(Request $request){
     }
 
     public function editProfile(Request $request){
+        //return "Alo";
         try{
             $requestData = $request->all();
             $validator = Validator::make($requestData, [
