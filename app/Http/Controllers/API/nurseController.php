@@ -10,20 +10,23 @@ use App\models\Nurse;
 class nurseController extends Controller
 {
     public function register(Request $request) {
+        //return "Alo";
         try{
             $nurseRequest = $request -> all();
             $validator = Validator::make($nurseRequest, [
                 'image' => 'max:3072',
                 'name' => 'required',
                 'countryCode' => 'required',
-                'phoneNumber' => 'required|exists:nurses,phoneNumber',
+                // 'phoneNumber' => 'required|exists:nurses,phoneNumber',
+                'email' => 'email|unique:patiens,email',
+                'phoneNumber' => 'required|numeric|unique:nurses,phoneNumber',
                 'password' => 'required',
                 'gender' => 'required',
                 'information' => '',
                 'national_id_front_side' => 'max:2048',
                 'national_id_back_side' => 'max:2048',
                 'branch' => '',
-                'address' => '',
+                //'address' => 'required',
                 'latitude' => '',
                 'longitude' => ''
             ]);
@@ -33,13 +36,28 @@ class nurseController extends Controller
                     'status' => false
                 ],400);
             }
+
+            //return $request->countryCode ;
+
             $nurseRequest['password'] = bcrypt($request -> password);
+
             if($request->phoneNumber[0] == '0'){
                 $nurseRequest['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
             }else{
                 $nurseRequest['phoneNumber'] = $request->countryCode . $request->phoneNumber;
             }
-            $nurseRequest['idCode'] = str_replace('N', '+', $nurseRequest['phoneNumber']);
+
+            //return $request->countryCode ;
+            //return $nurseRequest['phoneNumber'];
+
+            // if($request->phoneNumber[0] == '+'){
+            //     $nurseRequest['idCode'] = str_replace('+', 'N', $nurseRequest['phoneNumber']);
+            // }else{
+            //     $nurseRequest['idCode'] = 'N' . $nurseRequest['phoneNumber'] ;
+            // }
+
+            $nurseRequest['idCode'] = str_replace('+', 'N', $nurseRequest['phoneNumber']);
+            //return $nurseRequest['idCode'] ;
             $nurseRequest['is_active'] = true;
             $nurseRequest['online'] = false;
             $nurseRequest['is_faviorate'] = true;
@@ -51,6 +69,11 @@ class nurseController extends Controller
                     'message' => 'success',
                     'token' => $success['token']
                 ]);
+            }else{
+                return response()->json([
+                    'message' => 'Error In Registration',
+                    'status' => false
+                 ],400);
             }
         }catch (\Exception $exception){
             return response()->json([

@@ -54,8 +54,24 @@ class patientController extends Controller
     }
     public function register(Request $request) {
         $hospitalRequest = $request -> all();
+
+        //return $request ;
+
+        // if( $request->countryCode[0] === "+" ){
+        //     return "Found";
+        // }else{
+        //     return "Not Found";
+        // }
+
+        if($request->phoneNumber[0] == '0'){
+            $hospitalRequest['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
+        }else{
+            $hospitalRequest['phoneNumber'] = $request->countryCode . $request->phoneNumber;
+        }
+
         $validator = Validator::make($hospitalRequest, [
             'image' => 'max:3071',
+            'countryCode'=>'required',
             'firstName' => 'required',
             'middleName' => '',
             'lastName' => '',
@@ -69,7 +85,8 @@ class patientController extends Controller
             'race' => '',
             'address' => 'required',
             'latitude' => '',
-            'longitude' => ''
+            'longitude' => '',
+            'phoneNumber'=>'numeric|unique:patiens,phoneNumber' ,
         ]);
         if ($validator -> fails()) {
             foreach($validator->errors()->toArray() as $e){
@@ -79,6 +96,9 @@ class patientController extends Controller
                 ],400);
             }
         }
+
+
+
         $hospitalRequest['password'] = bcrypt($request -> password);
         $hospitalRequest['password_confirmation'] = bcrypt(
             $request -> password_confirmation
@@ -98,13 +118,30 @@ class patientController extends Controller
         $hospitalRequest['is_active'] = false;
         $hospitalRequest['online'] = false;
         $hospitalCreate = Patien::create($hospitalRequest);
+        //return $hospitalCreate ;
+
+        // $w = [
+        //         [
+        //             "allergi_name"=> null,
+        //             "severity"=> null,
+        //             "reaction"=> null
+        //         ]
+        //     ] ;
+
+        // return $w ;
+
         $patientData = patientData::where('patient_id', $hospitalCreate -> id) -> create(
             [
                 'width' => $request -> width,
                 'height' => $request -> height,
                 'width_type' => $request -> width_type,
                 'blood' => $request -> blood,
-                'patient_id' => $hospitalCreate -> id
+                'patient_id' => $hospitalCreate -> id,
+                'allergi_data' => [ [ "allergi_name"=> null, "severity"=> null, "reaction"=> null ] ],
+                'surgery_data' => [ ["surgery_name"=>null, "surgery_date"=>null] ],
+                'medication_name' => [ ["name"=>null, "times_day"=>null, "time"=>null] ],
+                'smoking' =>[ ["name"=>null, "severity"=>null] ] ,
+
             ]
         );
         $success['token'] = $hospitalCreate -> createToken('MyApp') -> accessToken;
@@ -303,10 +340,12 @@ class patientController extends Controller
         return response() -> json(['message' => 'faild']);
     }
     public function allergiData(Request $request) {
+
         $dataRequest = $request->all();
         $validator = Validator::make($dataRequest, [
             'idCode' => 'required',
         ]);
+
         if ($validator -> fails()) {
             foreach($validator->errors()->toArray() as $e){
                 return response()->json([
@@ -315,6 +354,7 @@ class patientController extends Controller
                 ],400);
             }
         }
+
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if ($patient) {
             $profileCreate = patientData::where('patient_id', $patient -> id) -> update(
@@ -325,7 +365,9 @@ class patientController extends Controller
                 'message' => 'success'
             ]);
         }
+
         return response() -> json(['message' => 'faild',400]);
+
     }
     public function allergiDataGet(Request $request) {
         $patient = Patien::where('idCode', $request -> idCode) -> first();
