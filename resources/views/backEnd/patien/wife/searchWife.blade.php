@@ -96,7 +96,7 @@
                 <button id="addWife" class="btn btn-primary col-6 h2">Add Wife</button>
             </div>
         @endif
-        <div class="row col-4 mb-3 ml-auto mr-auto">
+        <div class="row col-4 mt-3 mb-3 ml-auto mr-auto">
             <button type="button" class="btn btn-primary col-12 " data-toggle="modal" data-target="#exampleModal">
                 Register {{ auth('patien')->user()->gender == 'male' ? 'wife' : 'Husband' }}
             </button>
@@ -541,11 +541,11 @@
                                 </div>
                                 <!-- race field -->
                                 <!-- address field -->
-                                <div class="col-md-6 mb-xl-3">
+                                <div class="col-md-12 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Address</label>
                                         <input type="text" id="pac-input"class="form-control" name="address">
-                                        <div id="map" style="height: 500px;width: 500px;"></div>
+                                        <div id="map" style="height: 500px;width: 100%;"></div>
 
                                         @error('address')
                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -581,7 +581,7 @@
                                 </div>
 
                                 <div class="col-12 text-center mb-5 mt-5">
-                                    <button  id = "sign-in-button" type="submit"  disabled class="h4 col-9 btn btn-primary font-weight-400 mr-auto ml-auto" >Submite</button>
+                                    <button  id = "sign-in-button" type="submit"  disabled class="h4 col-9 btn btn-primary font-weight-400 mr-auto ml-auto" >Submit</button>
                                 </div>
                             </div>
                         </form>

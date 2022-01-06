@@ -381,12 +381,12 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <label class="title-label ml-xl-3"></label>
-                                                <button  class = "btn btn-danger h5" style="margin-top:37px" type="button" id="remove_more_fields">Delete</button>
+                                                <button  class = "btn btn-danger h5" style="margin-top:37px" type="reset" id="remove_more_fields">Delete</button>
                                             </div>
                                         </div>
                                     </li>
                                 </ul>
-                                <button  class="btn btn-success col-2 h5" type="button" id="more_fields">Add</button>
+                                <button  class="btn btn-success col-3 h5" type="button" id="more_fields">Add New Allergy</button>
                             </div>
                             <hr />
                         </div>
@@ -431,12 +431,12 @@
                                             </div>
                                             <div class="col-md-2">
                                                 <label class="title-label ml-xl-3"></label>
-                                                <button  class = "btn btn-danger h5" style="margin-top:37px" type="button" id="remove_more_surgeries">Delete</button>
+                                                <button  class = "btn btn-danger h5" style="margin-top:37px" type="reset" id="remove_more_surgeries">Delete</button>
                                             </div>
                                         </div>
                                     </li>
                                 </ul>
-                                <button class="btn btn-success col-2 h5" type="button" id="more_surgeries">Add</button>
+                                <button class="btn btn-success col-3 h5" type="button" id="more_surgeries">Add New Surgery</button>
                             </div>
                             <hr />
                         </div>
@@ -473,13 +473,13 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <label class="title-label ml-xl-3"></label>
-                                                <button  class = "btn btn-danger h5"  type="button" id="remove_more_medication">Delete</button>
+                                                <button  class = "btn btn-danger h5"  type="reset" id="remove_more_medication">Delete</button>
                                             </div>
                                         </div>
                                     </li>
 
                                 </ul>
-                                <button class="btn btn-success col-2 h5" type="button" id="more_medication">Add</button>
+                                <button class="btn btn-success col-3 h5" type="button" id="more_medication">Add New Medication</button>
                             </div>
                             <hr />
                         </div>

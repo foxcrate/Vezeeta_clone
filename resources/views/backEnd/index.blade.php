@@ -15,7 +15,7 @@
                     <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
                     <div class="ml-2 col-md-12 pl-xl-0">
                         <h2 class="h2 animated fadeIn"> Welcome Doctor</h2>
-                        <h3 class="h3 mb-4">Everywhere, Anytime, Healthy Life <i class="fa fa-heartbeat text-primary" aria-hidden="true"></i>.</h3>
+                        <h3 class="h3 mb-4">Anytime, Everywhere, Healthy Life <i class="fa fa-heartbeat text-primary" aria-hidden="true"></i>.</h3>
                     </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
                     <div class="ml-2 col-md-12 pl-xl-0">
                         <h2 class="h2 animated fadeIn"> Welcome Hospital and Clinic</h2>
-                        <h3 class="h3 mb-4">Everywhere, Anytime, Healthy Life <i class="fa fa-heartbeat text-primary" aria-hidden="true"></i>.</h3>
+                        <h3 class="h3 mb-4">Anytime, Everywhere, Healthy Life <i class="fa fa-heartbeat text-primary" aria-hidden="true"></i>.</h3>
                     </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
                     <div class="ml-2 col-md-12 pl-xl-0">
                         <h2 class="h2 animated fadeIn"> Welcome Patient</h2>
-                        <h3 class="h3 mb-4">Everywhere, Anytime, Healthy Life <i class="fa fa-heartbeat text-primary" aria-hidden="true"></i>.</h3>
+                        <h3 class="h3 mb-4">Anytime, Everywhere, Healthy Life <i class="fa fa-heartbeat text-primary" aria-hidden="true"></i>.</h3>
                     </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                     <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
                     <div class="ml-2 col-md-12 pl-xl-0">
                         <h2 class="h2 animated fadeIn"> Welcome Labs and X-rays</h2>
-                        <h3 class="h3 mb-4">Everywhere, Anytime, Healthy Life <i class="fa fa-heartbeat text-primary" aria-hidden="true"></i>.</h3>
+                        <h3 class="h3 mb-4">Anytime, Everywhere, Healthy Life <i class="fa fa-heartbeat text-primary" aria-hidden="true"></i>.</h3>
                     </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                     <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
                     <div class="ml-2 col-md-12 pl-xl-0">
                         <h2 class="h2 animated fadeIn"> Welcome Pharmacy</h2>
-                        <h3 class="h3 mb-4">Everywhere, Anytime, Healthy Life <i class="fa fa-heartbeat text-primary" aria-hidden="true"></i>.</h3>
+                        <h3 class="h3 mb-4">Anytime, Everywhere, Healthy Life <i class="fa fa-heartbeat text-primary" aria-hidden="true"></i>.</h3>
                     </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
 
                                 </script>
                             <img class="mt-2" src="{{url('imgs/x-ray.svg')}}" height="60" alt="...">
-                            <span>X-ray</span>
+                            <span>Scan</span>
                         </div>
                         </label>
                         <label class="m-2" onclick="displaySong4()">

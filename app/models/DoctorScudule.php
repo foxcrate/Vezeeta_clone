@@ -12,7 +12,10 @@ class DoctorScudule extends Model
     'patient_phone',
     'is_accept',
     'time',
-    'appoiment_id'];
+    'appoiment_id',
+    'day_name',
+    'to',
+    'from'];
     protected $hidden = [
     'created_at',
     'updated_at',

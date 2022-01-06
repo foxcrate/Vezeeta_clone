@@ -5,6 +5,7 @@
 @include('backEnd.layoutes.navbar')
 <!--End-Navbar-->
 <!--Start-Ada-->
+<div class="container">
 <div id="carouselExampleIndicators" class="carousel slide" style="margin-top: 60px;" data-ride="carousel">
     <ol class="carousel-indicators ml-auto mr-auto">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -39,6 +40,7 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
+</div>
 <!--End-Ada-->
 <div class="container">
     <div class="row content-info col-lg-12 p-4 mt-5">
@@ -61,36 +63,36 @@
   </div>
   <!--Start-Serv-->
   <div class="container row col-lg-6 ml-auto mr-auto text-center mt-5 mb-5">
-      <div class="col-lg-3 ml-auto mr-auto">
+      <a href="{{ route('clinic_login_doctor',$clinic->id) }}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{ route('clinic_login_doctor',$clinic->id) }}"><img src="{{url('imgs/Patirnt.svg')}}" height="80" class="d-block w-100 mt-2" alt="..."></a>
+          <img src="{{url('imgs/Patirnt.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
         </div>
         <h5 class="text-dark font-weight-bold ml-auto mr-auto">Doctor</h5>
-      </div>
-      {{-- <div class="col-lg-3 ml-auto mr-auto">
+      </a>
+      <!-- <a href="#" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
           <img src="{{url('imgs/logo.svg')}}" height="90" class="d-block w-100 mt-2" alt="...">
         </div>
         <h5 class="text-dark font-weight-bold ml-auto mr-auto">Online</h5>
-      </div> --}}
-      {{-- <div class="col-lg-3 ml-auto mr-auto">
+      </a> 
+       <a href="#" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
           <img src="{{url('imgs/qrCode.svg')}}" height="80" class="d-block w-100 mt-2" alt="...">
         </div>
         <h5 class="text-dark font-weight-bold ml-auto mr-auto">QR Code</h5>
-      </div> --}}
-      <div class="col-lg-3 ml-auto mr-auto">
+      </a>  -->
+      <a href="{{ route('clinicdoctorAppoiement',$clinic->id) }}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{ route('clinicdoctorAppoiement',$clinic->id) }}"><img src="{{url('imgs/calendar.png')}}" height="80" class="w-80 mt-2" alt="..."></a>
+          <img src="{{url('imgs/calendar.png')}}" height="80" class="w-80 mt-2" alt="...">
         </div>
         <h5 class="text-dark font-weight-bold ml-auto mr-auto">Appoiement</h5>
-      </div>
-      <div class="col-lg-3 ml-auto mr-auto">
+      </a>
+      <a href="{{route('clinic.logout')}}" class="col-lg-3 ml-auto mr-auto" style="text-decoration:none;">
         <div class="content-item ml-auto mr-auto">
-          <a href="{{route('clinic.logout')}}"><img src="{{url('imgs/logout.png')}}" height="70" class="w-80 mt-3" alt="..."></a>
+          <img src="{{url('imgs/logout.png')}}" height="70" class="w-80 mt-3" alt="...">
         </div>
         <h5 class="col text-dark font-weight-bold ml-auto mr-auto">Log Out</h5>
-      </div>
+      </a>
   </div>
   <!--End-Serv-->
     <!--Start-Footer-->

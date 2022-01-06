@@ -13,6 +13,7 @@ class Nurse extends Authenticatable
     use Notifiable,HasApiTokens;
     protected $table = 'nurses';
     protected $guard = 'nurse';
+    protected $hidden = ['password'];
     protected $fillable = [
     'image',
     'name',

@@ -19,6 +19,7 @@ use App\models\DoctorScudule;
 use App\models\Hosptail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use App\models\Child;
 class DoctorController extends Controller
 {
 public function register(Request $request) {
@@ -547,39 +548,52 @@ public function register(Request $request) {
         return response() -> json(['message' => 'faild']);
     }
     public function store(Request $request) {
-        $patient = OnlineDoctor::where('idCode', $request ->idCode) -> first();
-        if ($patient) {
-            $doctor = Appointment::where('doctor_id', $patient ->id) -> where(
-                'longitude',
-                $request ->longitude
-            ) -> where('latitude', $request->latitude) -> first();
-            if ($doctor == false) {
-                $doctor = Appointment::create([
-                    'doctor_name'    => $request->doctor_name,
-                    'latitude'       => $request->latitude,
-                    'longitude'      => $request->longitude,
-                    'address'        => $request->address,
-                    'phoneNumber'    => $request->phoneNumber,
-                    'fees'           => $request->fees,
-                    'wating'         => $request->wating,
-                    'special'        => $request->special,
-                    'appointments'   => $request->appointments,
-                    'idCode'         => $request->idCode,
-                    'doctor_id'      => $patient->id
-                ]);
-                return response([
-                    'data' => $doctor,
-                    'message' => 'success'
-                ]);
-            } else {
-                $doctor -> update(['appointments' => $request->appointments]);
-                return response([
-                    'data' => $doctor,
-                    'message' => 'success'
-                ]);
+        try{
+            $patient = OnlineDoctor::where('idCode', $request ->idCode) -> first();
+            if ($patient) {
+                $doctor = Appointment::where('doctor_id', $patient ->id) -> where(
+                    'longitude',
+                    $request ->longitude
+                ) -> where('latitude', $request->latitude) -> first();
+                if ($doctor == false) {
+                    $doctor = Appointment::create([
+                        'doctor_name'    => $request->doctor_name,
+                        'latitude'       => $request->latitude,
+                        'longitude'      => $request->longitude,
+                        'address'        => $request->address,
+                        'phoneNumber'    => $request->phoneNumber,
+                        'fees'           => $request->fees,
+                        'wating'         => $request->wating,
+                        'special'        => $request->special,
+                        'appointments'   => $request->appointments,
+                        'idCode'         => $request->idCode,
+                        'doctor_id'      => $patient->id
+                    ]);
+                    return response([
+                        'data' => $doctor,
+                        'message' => 'success',
+                        'status' => true
+                    ]);
+                } else {
+                    $doctor -> update(['appointments' => $request->appointments]);
+                    return response([
+                        'data' => $doctor,
+                        'message' => 'success',
+                        'status' => true
+                    ]);
+                }
             }
+            return response([
+                'message' => 'faild message',
+                'status' => false
+            ],400);
+        }catch (\Exception $ex){
+            return response()->json([
+                'message' => $ex->getMessage(),
+                'status' => false
+            ],500);
         }
-        return response(['message' => 'faild']);
+
     }
     public function switchIsHomecara(Request $request) {
         try{
@@ -1134,6 +1148,64 @@ public function deleteRequestFamilyDoctor(Request $request){
         'status' => false,
         'message' => 'faild',
        ],404);
+   }
+   
+   public function getAllKids(Request $request){
+    try{
+        $kids = Child::where('patient_id',$request->patient_id)->get();
+        if($kids->count() > 0){
+            return response()->json([
+                 'data' => $kids,
+                 'message' => 'success',
+                 'status' => true
+            ]);
+        }
+        return response()->json([
+            'message' => 'kids not found',
+            'status' => false
+        ],400);
+
+    }catch (\Exception $ex){
+        return response()->json([
+           'message' => $ex->getMessage(),
+           'status' => false
+        ],500);
+    }
+   }
+   
+     public function doctorEditProfile(Request $request){
+    try{
+        $doctor = OnlineDoctor::where('idCode',$request->idCode)->first();
+        if($doctor){
+            $requestData = $request->all();
+            if($request->phoneNumber[0] == '0'){
+                $requestData['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
+            }else{
+                $requestData['phoneNumber'] = $request->countryCode . $request->phoneNumber;
+            }
+            $doctor->phoneNumber = $requestData['phoneNumber'];
+            $doctor->idCode = str_replace('+','D',$requestData['phoneNumber']);
+            $doctor->image = $request->image;
+            $doctor->email = $request->email;
+            $doctor->license_number = $request->license_number;
+            $doctor->address = $request->address;
+            $doctor->speciality_id = $request->speciality_id;
+            $doctor->save();
+            return response()->json([
+               'message' => 'updated successfuly',
+               'status' => true
+            ]);
+        }
+        return response()->json([
+           'message' => 'Doctor not found',
+           'status' => false
+        ],400);
+    }catch (\Exception $ex){
+        return response()->json([
+           'message' => $ex->getMessage(),
+           'status' => false
+        ],500);
+    }
    }
 
 }
