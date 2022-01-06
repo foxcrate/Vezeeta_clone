@@ -268,6 +268,7 @@ class patientController extends Controller
     }
     //get specific coloumn
     public function getPatientData(Request $request) {
+        //return $request;
         $patients = Patien::where('idCode', $request -> idCode) -> first();
         if ($patients) {
             $patient = patientData::where('patient_id', $patients -> id) -> select(

@@ -468,12 +468,39 @@ class patienController extends Controller
                 // dd(session()->get('updatePhoneNumber'));
             }
             if($request->image){
-                $img = Image::make($request->image)
-                    ->resize(1280,400, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save(public_path('uploads/' . $request->image->hashName()));
-                $requestData['image'] = asset('uploads/' . $request->image->hashName());
+
+                $extension = $request->file('image')->extension();
+                $file = $request->image;
+                $code = rand(1111111, 9999999);
+                $file_new_name=time().$code ."pi".'.'.$extension;
+                //return $file_new_name;
+
+                //$file->move('uploads/', $file_new_name);
+
+                // $img = Image::make($request->image)
+                //     ->resize(1280,400, function ($constraint) {
+                //         $constraint->aspectRatio();
+                //     })->save(public_path('uploads/' . $request->image->hashName()));
+                // $requestData['image'] = asset('uploads/' . $request->image->hashName());
+
+                // $img = Image::make($request->image)
+                // ->resize(1280,400, function ($constraint) {
+                //     $constraint->aspectRatio();
+                // })->save(public_path('uploads/', $file_new_name));
+
+                $file->move('public/uploads/', $file_new_name);
+                //return $file;
+                $requestData['image'] = asset('uploads/' . $file_new_name);
+                //return $requestData['image'] ;
             }
+
+            // $extension = $request->file('image')->extension();
+            // $file = $request->image;
+            // $code = rand(1111111, 9999999);
+            // $file_new_name=time().$code ."pi".'.'.$extension;
+            // $file->move('uploads/', $file_new_name);
+            // $the_file = 'uploads/images/' . $file_new_name ;
+
             if($request->phoneNumber[0] == '0'){
                 $requestData['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
             }else{
@@ -498,6 +525,7 @@ class patienController extends Controller
             return redirect()->route('patien.homepage',$patient->id);
         }
         catch(\Exception $ex){
+            return $ex->getMessage();
             Alert::error('Error',$ex->getMessage());
             return redirect()->back();
         }

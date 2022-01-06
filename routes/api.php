@@ -50,9 +50,9 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('medications','apiController@getAllMedication');
 
     /* routes app */
-    Route::group(['prefix' => 'patientRegister'],function(){
-        Route::post('/','patientController@register');
-    });
+    // Route::group(['prefix' => 'patientRegister'],function(){
+    //     Route::post('/','patientController@register');
+    // });
     //patient
     Route::post('patient/updateOnline','patientController@updateOnline');
     Route::post('/patientRegister','patientController@register');
