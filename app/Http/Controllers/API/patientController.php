@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Password;
 class patientController extends Controller
 {
     public function patientReport(Request $request){
+        return $request;
         try{
             $patientReport = Patien::where('idCode',$request->idCode)
                             ->with(['patinets_data','childern'])
@@ -222,11 +223,15 @@ class patientController extends Controller
     }
     //basicData
     public function basicData(Request $request){
+        //return $request;
+        //$req = $request -> except($request -> idCode);
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if ($patient) {
             $patientData = patientData::where('patient_id', $patient -> id) -> first();
             if ($patientData) {
-                $patientData -> update($request -> except($request -> idCode));
+                $patientData -> update( $request -> except($request -> idCode) );
+                //$patientData->save();
+                //return $patientData;
                 return response() -> json([
                     'data' => $patientData,
                     'message' => 'success'
@@ -268,14 +273,25 @@ class patientController extends Controller
     }
     //get specific coloumn
     public function getPatientData(Request $request) {
-        //return $request;
-        $patients = Patien::where('idCode', $request -> idCode) -> first();
-        if ($patients) {
-            $patient = patientData::where('patient_id', $patients -> id) -> select(
+        //return "Alo";
+        $patient = Patien::where('idCode', $request -> idCode) -> first();
+
+        if ($patient) {
+            $patient_data = patientData::where('patient_id', $patient -> id) -> select(
                 ['width', 'height', 'width_type', 'blood']
             ) -> first();
+            $patient_object = [
+                'width'=> $patient_data->width,
+                'height'=> $patient_data->height,
+                'width_type'=> $patient_data->width_type,
+                'blood'=> $patient_data->blood,
+                'job' => $patient->job,
+                'state' => $patient->state,
+                'race' => $patient->race
+            ];
+            return $patient_object;
             return response([
-                'data' => $patient,
+                'data' => $patient_data,
                 'message' => 'success'
             ], 200);
         } else {
@@ -438,11 +454,13 @@ class patientController extends Controller
         return response() -> json(['message' => 'faild'],400);
     }
     // mother data
-    public function motherData(Request $request, $idCode) {
+    public function motherData(Request $request) {
+        //return "Alo";
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if ($patient) {
             $profileCreate = patientData::where('patient_id', $patient -> id) -> update(
-                ['mother' => json_encode($request -> mother)]
+                // ['mother' => json_encode($request -> mother)]
+                ['mother' => $request -> mother]
             );
             return response() -> json([
                 'data' => $profileCreate,
@@ -453,7 +471,9 @@ class patientController extends Controller
     }
     // mother get data
     public function motherGet(Request $request) {
+        //return $request;
         $patient = Patien::where('idCode', $request -> idCode) -> first();
+        //return $patient;
         if ($patient) {
             $medicationGet = patientData::where('patient_id', $patient -> id) -> select(
                 ['mother']
@@ -467,11 +487,12 @@ class patientController extends Controller
         return response() -> json(['message' => 'faild'],400);
     }
     // father data
-    public function fatherData(Request $request, $idCode) {
+    public function fatherData(Request $request) {
+        //return $request ;
         $patient = Patien::where('idCode', $request->idCode) -> first();
         if ($patient) {
             $profileCreate = patientData::where('patient_id', $patient->id) -> update(
-                ['father' => json_encode($request->father)]
+                ['father' => $request->father]
             );
             return response() -> json([
                 'data' => $profileCreate,
@@ -482,6 +503,8 @@ class patientController extends Controller
     }
     // father get data
     public function fatherGet(Request $request) {
+        //return $request;
+        //return "Alo";
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if($patient){
         $medicationGet = patientData::where('patient_id', $patient -> id) -> first();
@@ -1702,6 +1725,7 @@ public function updateImage(Request $request){
                 }
             }
             $patient = Patien::where('idCode',$request->idCode)->first();
+            //return $patient ;
             if($patient){
                 if($request->phoneNumber[0] == '0'){
                     $requestData['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);

@@ -129,7 +129,7 @@ class patienController extends Controller
     }
     /* end of function */
     public function update_data_profile(Request $request , $id,$profile_id){
-        //return $request->allergi_data;
+        //return $request;
         $patient = Patien::findOrFail($id);
         $patienData = patientData::findOrFail($profile_id);
         /* insert all request */

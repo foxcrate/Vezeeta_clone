@@ -73,13 +73,14 @@ Route::group(['namespace'=>'API'],function(){
     Route::post('/patientSurgery/idCode','patientController@surgeryData');
     Route::get('/patientSurgery/idCode','patientController@surgeryGet');
     // ptient mother
-    Route::post('/patientMother/{idCode}','patientController@motherData');
+    Route::post('/patientMother','patientController@motherData');
     // patient mother
-    Route::get('/patientMother/{idCode}','patientController@motherGet');
+    Route::get('/patientMother','patientController@motherGet');
     // patient mother
-    Route::post('/patientFather/{idCode}','patientController@fatherData');
+    Route::post('/patientFather','patientController@fatherData');
     // patient father
-    Route::get('/patientFather/{idCode?}','patientController@fatherGet');
+    //Route::get('/patientFather/{idCode}','patientController@fatherGet');
+    Route::get('/patientFather','patientController@fatherGet');
     // patient father
     Route::post('/patientWife/{idCode}','patientController@WifeData');
     // patient wife
