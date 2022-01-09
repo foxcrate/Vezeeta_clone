@@ -168,8 +168,8 @@ class patienController extends Controller
             $dummy = $patienData->rocata_file;
             foreach($rocata_file as $ro){
                 $rocata_name= time().'.'.$ro->getClientOriginalName();
-                $ro->move('uploads/pdf_file/',$rocata_name);
-                $rocata= asset('uploads/pdf_file/' . $rocata_name);
+                $ro->move('public/uploads/pdf_file/',$rocata_name);
+                $rocata= asset('public/uploads/pdf_file/' . $rocata_name);
                 $multiple[]=$rocata;
             }
             if (is_array($dummy)) {
@@ -188,8 +188,8 @@ class patienController extends Controller
             $dummy1 = $patienData->rays_file;
             foreach($rays_file as $ray){
                 $rays_name = str_replace(' ','',rand(100000,999999).$ray->getClientOriginalName());
-                $ray->move('uploads/pdf_file/',$rays_name);
-                $rays= asset('uploads/pdf_file/' . $rays_name);
+                $ray->move('public/uploads/pdf_file/',$rays_name);
+                $rays= asset('public/uploads/pdf_file/' . $rays_name);
                 $multiple1[]=$rays;
             }
             if (is_array($dummy1)) {
@@ -209,8 +209,8 @@ class patienController extends Controller
             $dummy2 = $patienData->analzes_file;
             foreach($analzes_file as $ana){
                 $analzes_name =str_replace(' ','',rand(100000,999999).$ana->getClientOriginalName());
-                $ana->move('uploads/pdf_file/',$analzes_name);
-                $analzes = asset('uploads/pdf_file/' . $analzes_name);
+                $ana->move('public/uploads/pdf_file/',$analzes_name);
+                $analzes = asset('public/uploads/pdf_file/' . $analzes_name);
                 $multiple2[]=$analzes;
                 // return $mult;
             }
@@ -257,7 +257,9 @@ class patienController extends Controller
     /* function verify email */
     public function profile($id){
         try{
+            //return "Alo";
             $patient = Patien::with('patinets_data')->findOrFail($id);
+            //return $patient;
             // dd($patient->with('patinets_data'));
             return view('backEnd.patien.profile',compact('patient'));
         }

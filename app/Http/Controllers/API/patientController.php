@@ -717,23 +717,27 @@ class patientController extends Controller
         $destinationPath = public_path('uploads/pdf_file/');
         $image->move($destinationPath, $input);
         return response()->json([
-            'data' => asset('public/uploads/pdf_file/'.$input),
+            'data' => asset('/uploads/pdf_file/'.$input),
             'status' => true,
             'message' => 'success Message'
         ]);
     }
     public function rocata_file(Request $request) {
+        //return $request;
         $patient = Patien::where('idCode', $request->idCode)->first();
         if ($patient) {
             $medicationGet = patientData::where('patient_id',$patient->id)->update(
-                ['rocata_file' => json_encode($request -> rocata_file)]
+                // ['rocata_file' => json_encode($request -> rocata_file)]
+                ['rocata_file' => $request -> rocata_file ]
             );
+            $medicationGet = patientData::where('patient_id',$patient->id)->get();
+            return $medicationGet;
             return response() -> json([
                 'data' => $medicationGet,
                 'message' => 'success'
             ]);
         }
-        return response() -> json(['message' => 'faild'],400);
+        return response() -> json(['message' => 'Patient Not Found'],400);
     }
     public function rocata_fileGet(Request $request) {
         $patient = Patien::where('idCode', $request -> idCode) -> first();
@@ -750,14 +754,15 @@ class patientController extends Controller
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if ($patient) {
             $medicationGet = patientData::where('patient_id', $patient -> id) -> update(
-                ['rays_file' => json_encode($request -> rays_file)]
+                // ['rays_file' => json_encode($request -> rays_file)]
+                ['rays_file' => $request -> rays_file ]
             );
             return response() -> json([
                 'data' => $medicationGet,
                 'message' => 'success'
             ]);
         }
-        return response() -> json(['message' => 'faild'],400);
+        return response() -> json(['message' => 'Patient Not Found'],400);
     }
     // rays get file
     public function rays_fileGet(Request $request) {
@@ -796,7 +801,9 @@ class patientController extends Controller
         return response() -> json(['message' => 'faild'],400);
     }
     public function raouchehsGet(Request $request) {
+        //return $request;
         $patient = Patien::where('idCode', $request -> idCode) -> first();
+        //return $patient;
         if ($patient) {
             $raoucheh = Raoucheh::where('patient_id', $patient -> id) -> count();
             if ($raoucheh) {
@@ -809,10 +816,10 @@ class patientController extends Controller
                     'message' => 'success'
                 ]);
             } else {
-                return response() -> json(['message' => 'faild'],400);
+                return response() -> json(['message' => 'Patient Has No Prescriptions'],200);
             }
         }
-        return response() -> json(['message' => 'faild',400]);
+        return response() -> json(['message' => 'Patient Not Found',200]);
     }
     public function forgotPassword(Request $request){
         $userRequest = $request->all();
