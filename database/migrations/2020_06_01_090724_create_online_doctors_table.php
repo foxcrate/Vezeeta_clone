@@ -30,6 +30,9 @@ class CreateOnlineDoctorsTable extends Migration
             $table->string('national_id_front_side');
             $table->string('national_id_back_side');
             $table->string('Nationality')->nullable();
+
+            $table->enum('status_flag', ['approved', 'pending','rejected']);
+
             $table->boolean('is_active')->default(false);
             $table->boolean('online')->default(false);
             $table->string('speciality')->nullable();
