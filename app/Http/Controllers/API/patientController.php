@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 class patientController extends Controller
 {
+
     public function patientReport(Request $request){
         return $request;
         try{
@@ -53,6 +54,7 @@ class patientController extends Controller
             ],500);
         }
     }
+
     public function register(Request $request) {
         $hospitalRequest = $request -> all();
 
@@ -154,6 +156,7 @@ class patientController extends Controller
             ]);
         }
     }
+
     //return all patients
     public function getAll() {
         $hosptails = Patien::count();
@@ -167,6 +170,7 @@ class patientController extends Controller
             return response(['message' => 'failed']);
         }
     }
+
     //search patient by idCode
     public function searchId(Request $request) {
         $doctor = Patien::where('idCode', $request -> idCode) -> count();
@@ -179,6 +183,7 @@ class patientController extends Controller
         }
         return response() -> json(['message' => 'faild']);
     }
+
     public function login(){
         if (Auth::guard('patien') -> attempt([
             'idCode' => request('idCode'),
@@ -252,6 +257,28 @@ class patientController extends Controller
         }
         return response() -> json(['message' => 'faild'],400);
     }
+
+    public function patientDataReal(Request $request){
+        //return $request;
+        //$req = $request -> except($request -> idCode);
+        $patient = Patien::where('idCode', $request->idCode) -> first();
+        if ($patient) {
+            $patientData = patientData::where('patient_id', $patient -> id) -> first();
+            if ($patientData) {
+                //$patientData -> update( $request -> except($request -> idCode) );
+                //$patientData->save();
+                //return $patientData;
+                return response() -> json([
+                    'data' => $patientData,
+                    'message' => 'success'
+                ]);
+            } else {
+                return response() -> json( ['message' => 'Profile gas no profile yet'] , 400);
+            }
+        }
+        return response() -> json( ['message' => 'Patient Not Found'] , 400 );
+    }
+
     //if is need to be donor but blood is null so can updated enter
     public function updateBlood(Request $request){
         $patient = Patien::where('idCode', $request->idCode)->first();
@@ -315,6 +342,7 @@ class patientController extends Controller
             'message' => 'patient not found'
         ],404);
     }
+
     public function medication(Request $request) {
         $patient = Patien::where('idCode', $request -> idCode) -> first();
             if ($patient) {
@@ -328,6 +356,7 @@ class patientController extends Controller
             }
             return response()->json(['message' => 'faild'],400);
     }
+
     public function medicationGet(Request $request) {
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if ($patient) {
@@ -344,6 +373,7 @@ class patientController extends Controller
         }
         return response() -> json(['message' => 'faild'],400);
     }
+
     public function medicationdelete(Request $request) {
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if ($patient) {
@@ -356,6 +386,7 @@ class patientController extends Controller
         }
         return response() -> json(['message' => 'faild']);
     }
+
     public function allergiData(Request $request) {
 
         $dataRequest = $request->all();
@@ -711,16 +742,26 @@ class patientController extends Controller
         return response() -> json(['message' => 'faild']);
     }
     public function uploadFile(Request $request) {
-        $hospitalRequest = $request->file;
-        $image = $request->file('fileName');
-        $input = $hospitalRequest = $image->getClientOriginalName();
-        $destinationPath = public_path('uploads/pdf_file/');
-        $image->move($destinationPath, $input);
+
+        // $hospitalRequest = $request->file;
+        // $image = $request->file('fileName');
+        // $input = $hospitalRequest = $image->getClientOriginalName();
+        // $destinationPath = public_path('uploads/file/');
+        // $image->move($destinationPath, $input);
+
+        $extension = $request->fileName->extension();
+        $file = $request->fileName;
+        $code = rand(1111111, 9999999);
+        $file_new_name=time().$code ."f".'.'.$extension;
+        $file->move('public/uploads/files/', $file_new_name);
+        $the_file = 'public/uploads/files/' . $file_new_name ;
+
         return response()->json([
-            'data' => asset('/uploads/pdf_file/'.$input),
+            'data' => asset($the_file),
             'status' => true,
             'message' => 'success Message'
         ]);
+
     }
     public function rocata_file(Request $request) {
         //return $request;
@@ -874,21 +915,23 @@ class patientController extends Controller
          'message' => 'faild',
       ]);
   }
-  public function getDonor(Request $request){
-    $patient = Patien::where('idCode',$request->idCode)->first();
-    $donor = needDonor::where('patient_id', $patient->id)->count();
-    if($patient){
-    if($donor){
-    $donor = needDonor::where('patient_id', $patient->id)->get();
-    return response()->json([
-    'data' => $donor,
-    'message' => 'success',
-    ]);
-    }}
-    return response()->json([
-       'message' => 'faild',
-    ]);
-}
+
+    public function getDonor(Request $request){
+        $patient = Patien::where('idCode',$request->idCode)->first();
+        $donor = needDonor::where('patient_id', $patient->id)->count();
+        if($patient){
+        if($donor){
+        $donor = needDonor::where('patient_id', $patient->id)->get();
+        return response()->json([
+        'data' => $donor,
+        'message' => 'success',
+        ]);
+        }}
+        return response()->json([
+        'message' => 'faild',
+        ]);
+    }
+
 public function donorRequest(Request $request){
         $patient = Patien::where('idCode',$request->idCode)->first();
         $patientSender = Patien::where('idCode',$request->idSender)->first();
@@ -976,14 +1019,14 @@ public function donorRequest(Request $request){
    $request = requestDonor::where('accept',0)->where('patientIdSender',$don->id)->count();
    if($request){
     $request = requestDonor::where('accept',0)->where('patientIdSender',$don->id)->with(['donorForm','patientRequest'])->get();
-   return response()->json([
-   'data' => $request,
-   'message' => 'success',
-   ]);
-  }}
- return response()->json([
- 'message' => 'faild',
-  ]);
+    return response()->json([
+    'data' => $request,
+    'message' => 'success',
+    ]);
+    }}
+    return response()->json([
+    'message' => 'faild',
+    ]);
 
  }
     public function DonorsBloodSwitch(Request $request){
@@ -1038,7 +1081,8 @@ public function donorRequest(Request $request){
             return response(['message' => 'failed']);
         }
     }
-     private function getNearby($request ,$blood ) {
+
+    private function getNearby($request ,$blood ) {
         $latitudeTo = $request->latitude;
         $longitudeTo = $request->longitude;
         $earthRadius = 6378137; // earth radius it's fixed value 6378137
@@ -1694,6 +1738,7 @@ public function updateImage(Request $request){
     }
 
     public function getBasicDate(Request $request){
+        //return "Alo";
         $patient = Patien::where('idCode',$request->idCode)->first();
         if($patient){
             return response()->json([
