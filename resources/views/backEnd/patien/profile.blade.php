@@ -342,6 +342,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="tab-pane animated bounce slow py-0" id="v-pills-7" role="tabpanel" aria-labelledby="v-pills-7-tab">
                         <h5 class="col-12 ml-xl-8 mb-4 mt-3 ml-5">Files</h5>
                         <div class="pills-main col-xl-8 col-md-4 col-xs-12 row row-text mb-3 mr-auto ml-auto">
@@ -371,6 +372,7 @@
                                             <tr>
                                                 <td>Rays Files</td>
                                                 <td><a class="text-decoration" target="_blank" href="{{url($rays_file)}}">Show</a></td>
+                                                {{-- <h6>{{url($rays_file)}}</h6> --}}
                                                 <td><a class="text-decoration" href="{{ route('download_pdf',['ray',$patient->id]) }}">Download</a></td>
                                                 <td><a href="{{ route('deleteFiles',['ray',$patient->id]) }}" class="btn btn-danger">Delete</a></td>
                                             </tr>
@@ -394,6 +396,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 </div>
 

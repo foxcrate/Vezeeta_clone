@@ -153,7 +153,7 @@ class userController extends Controller
 
     // get user basic data
     public function getBasicDate(Request $request){
-        // code
+        //return "Alo";
         if($request->type == 'patient'){
             $patient = Patien::where('idCode',$request->idCode)->first();
             if($patient){

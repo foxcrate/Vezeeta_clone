@@ -50,9 +50,9 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('medications','apiController@getAllMedication');
 
     /* routes app */
-    Route::group(['prefix' => 'patientRegister'],function(){
-        Route::post('/','patientController@register');
-    });
+    // Route::group(['prefix' => 'patientRegister'],function(){
+    //     Route::post('/','patientController@register');
+    // });
     //patient
     Route::post('patient/updateOnline','patientController@updateOnline');
     Route::post('/patientRegister','patientController@register');
@@ -60,6 +60,9 @@ Route::group(['namespace'=>'API'],function(){
    // Route::post('/forgot-password', 'patientController@forgot_password');
     Route::get('/patients','patientController@getAll');
     Route::get('/patientSearch','patientController@searchId');
+
+    Route::get('/patientDataReal','patientController@patientDataReal');
+
     Route::post('/patientBasicData/idCode','patientController@basicData');
     Route::get('/getPatientBasicData/idCode','patientController@getPatientData');
     Route::post('/updateBlood','patientController@updateBlood');
@@ -73,13 +76,14 @@ Route::group(['namespace'=>'API'],function(){
     Route::post('/patientSurgery/idCode','patientController@surgeryData');
     Route::get('/patientSurgery/idCode','patientController@surgeryGet');
     // ptient mother
-    Route::post('/patientMother/{idCode}','patientController@motherData');
+    Route::post('/patientMother','patientController@motherData');
     // patient mother
-    Route::get('/patientMother/{idCode}','patientController@motherGet');
+    Route::get('/patientMother','patientController@motherGet');
     // patient mother
-    Route::post('/patientFather/{idCode}','patientController@fatherData');
+    Route::post('/patientFather','patientController@fatherData');
     // patient father
-    Route::get('/patientFather/{idCode?}','patientController@fatherGet');
+    //Route::get('/patientFather/{idCode}','patientController@fatherGet');
+    Route::get('/patientFather','patientController@fatherGet');
     // patient father
     Route::post('/patientWife/{idCode}','patientController@WifeData');
     // patient wife

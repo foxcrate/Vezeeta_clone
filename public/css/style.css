@@ -275,6 +275,12 @@ a.text-lighter:hover, a.text-lighter:focus {
     }
 }
 
+#menu-toggle {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
+
 .navbar {
     background-color: #FFF;
 }
@@ -1512,6 +1518,7 @@ a.text-lighter:hover, a.text-lighter:focus {
 .card-profile-image img {
     position: absolute;
     left: 50%;
+    top: -40px;
     max-width: 140px;
     max-height: 140px;
     -webkit-transition: all .15s ease;
