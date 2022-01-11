@@ -391,7 +391,7 @@
                             <div class="form-group">
                                 <label class="h6 font-weight-bold">Address</label>
                                 <input type="text" id="pac-input"class="form-control" name="address">
-                                <div id="map" style="height: 500px;width: 500px;"></div>
+                                <div id="map" style="height: 500px;width: 100%;"></div>
                                 @error('address')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -422,7 +422,7 @@
                         {{--<a href="{{route('mymap')}}"><lable>Address</lable></a>--}}
                         {{--</div>--}}
                         <div class="col-12 text-center mb-5 mt-5">
-                            <button type="submit" disabled id = "sign-in-button" class=" col-9 btn btn-primary font-weight-400 h3 mr-auto ml-auto">Submite</button>
+                            <button type="submit" disabled id = "sign-in-button" class=" col-9 btn btn-primary font-weight-400 h3 mr-auto ml-auto">Submit</button>
                         </div>
                     </div>
                 </form>

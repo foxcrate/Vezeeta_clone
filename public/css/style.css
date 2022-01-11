@@ -318,7 +318,7 @@ a.text-lighter:hover, a.text-lighter:focus {
 @media (max-width: 576px) {
     .navbar .h3 {
         font-size: 12pt;
-        margin-left: -10px;
+        margin-left: 10px;
     }
 }
 
@@ -330,7 +330,7 @@ a.text-lighter:hover, a.text-lighter:focus {
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -50px;
+    margin-top: -20px;
 }
 
 .bg-login form .text-forget {
@@ -444,16 +444,25 @@ a.text-lighter:hover, a.text-lighter:focus {
     background-image: url(../imgs/BgLoginAbout.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
+
 }
 .bg-About {
     background-image: url(../imgs/BgLoginAbout.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 85vh;
+}
+
+.register-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 10%;
 }
 
 .bg-About .card {
     border-radius: 50%;
-    padding: 10px;
     width: 220px;
     height: 220px;
     box-shadow: #5f5f5f;
@@ -467,14 +476,24 @@ a.text-lighter:hover, a.text-lighter:focus {
 }
 
 .bg-About .card-body {
-    padding-top: 30px;
-}
-
-.bg-About .card-body a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     color: #3a4348;
-    text-decoration: none;
 }
 
+@media (max-width: 576px) {
+    .bg-About {
+        height: 230vh;
+    }
+    .bg-About .card {
+        margin-bottom: 10px;
+    }
+    .form-group input[type="number"] {
+        padding-left: 120px !important;
+    }
+}
 /* End-LoginAbout */
 /* Start-Registr */
 .bg-registr {
@@ -485,7 +504,6 @@ a.text-lighter:hover, a.text-lighter:focus {
     box-shadow: black;
     -webkit-box-shadow: 1px 1px 10px -5px black;
     box-shadow: 1px 1px 10px -5px black;
-    margin-top: 130px;
     border-radius: 10px;
 }
 
@@ -1471,7 +1489,7 @@ a.text-lighter:hover, a.text-lighter:focus {
 .btn-primary {
     color: #fff;
     background-color: #0fAAc9;
-    border-color: #0fAAc9;
+    border-color: #fff;
 }
 
 .btn-primary:hover {

@@ -54,7 +54,7 @@
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Phone Number <i class="fa fa-star-of-life star"></i></label>
                                         <input value = "{{old('phoneNumber')}}" class="form-control @error('phoneNumber') is-invalid @enderror" type="number" name="phoneNumber" placeholder="Phone Number"  style="padding-left: 220px">
-                                        <select style="position: relative;bottom: 38px;width: 35%;" name="countryCode" id="" class="form-control">
+                                        <select style="position: relative;bottom: 38px;width: 28%;" name="countryCode" id="" class="form-control">
                                             <option data-countryCode="EG" value="+20">Egypt (+20)</option>
                                             <option data-countryCode="SA" value="+966">Saudi Arabia (+966)</option>
                                             <optgroup label="Other countries">
@@ -388,7 +388,7 @@
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Address</label>
                                         <input type="text" id="pac-input"class="form-control" name="address">
-                                        <div id="map" style="height: 500px;width: 500px;"></div>
+                                        <div id="map" style="height: 500px;width: 100%;"></div>
                                         {{-- <span><a id = "get_location" href="#">Get Location</a></span> --}}
                                         @error('address')
                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -409,7 +409,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 text-center mb-5 mt-5">
-                                    <button id = "sign-in-button" type="submit" disabled class=" col-9 btn btn-primary font-weight-600 h3 mr-auto ml-auto">Submite</button>
+                                    <button id = "sign-in-button" type="submit" disabled class=" col-9 btn btn-primary font-weight-600 h3 mr-auto ml-auto">Submit</button>
                                 </div>
                             </div>
                         </form>

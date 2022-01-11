@@ -68,8 +68,8 @@
                         <div class="col-md-12 mb-xl-3">
                             <div class="form-group">
                                 <label class="h6 font-weight-bold">Phone Number <i class="fa fa-star-of-life star"></i></label>
-                                <input type="text" name="phoneNumber" class="form-control @error('phoneNumber') is-invalid @enderror" value="{{old('phoneNumber')}}" placeholder="Phone Number" style="padding-left: 250px">
-                                    <select style="position: relative;bottom: 38px;width: 39%;" name="countryCode" id="" class="form-control">
+                                <input type="number" name="phoneNumber" class="form-control @error('phoneNumber') is-invalid @enderror" value="{{old('phoneNumber')}}" placeholder="Phone Number" style="padding-left: 250px">
+                                    <select style="position: relative;bottom: 38px;width: 30%;" name="countryCode" id="" class="form-control">
                                         <option data-countryCode="EG" value="+20">Egypt (+20)</option>
                                         <option data-countryCode="SA" value="+966">Saudi Arabia (+966)</option>
                                         <optgroup label="Other countries">
@@ -366,7 +366,7 @@
                             <div class="form-group">
                                 <label class="h6 font-weight-bold">Address <i class="fa fa-star-of-life star"></i></label>
                                 <input type="text" id="pac-input"class="form-control" name="address">
-                                <div id="map" style="height: 500px;width: 500px;"></div>
+                                <div id="map" style="height: 500px;width: 100%;"></div>
 
                                 @error('address')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -382,7 +382,7 @@
                         </div>
                     </div>
                     <div class="col-12 text-center mb-5 mt-5">
-                        <input type="submit" class="h4 col-9 btn btn-primary font-weight-400 mr-auto ml-auto" >
+                        <button type="submit" disabled id = "sign-in-button" class=" col-9 btn btn-primary font-weight-400 h3 mr-auto ml-auto">Submit</button>
                     </div>
                 </form>
             </div>
@@ -397,11 +397,16 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYG5g2aJ9TjMlbYk7E_VuFYKSvHC1Ee6Y&callback=initAutocomplete&libraries=places&v=weekly"
     defer
 ></script>
-<script>
+<script type="text/javascript">
+    @include('includes.maxDate')
     @include('includes.showPassword')
-    @include("includes.GoogleMap")
-
+    @include('includes.iAgree')
+    @include('includes.GoogleMap')
 </script>
+<script>
+    @include('includes.emailVaild')
+</script>
+
 @stop
 
 
