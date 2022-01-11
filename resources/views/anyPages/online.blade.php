@@ -3,18 +3,19 @@
 @section('content')
 <div class="d-flex bg-veiwdoctor" id="wrapper">
     <!-- Sidebar -->
+
     @if(auth()->guard('patien'))
-    @include('backEnd.patien.slidenav')
-    @elseif(auth()->guard('hosptail'))
-    @include('backEnd.hosptail.sidenav')
-    @elseif(auth()->guard('clinic'))
-    @include('backEnd.clinic.slidenav')
-    @elseif(auth()->guard('xray'))
-    @include('backEnd.xray.slidenav')
-    @elseif(auth()->guard('labs'))
-    @include('backEnd.lab.slidenav')
-    @elseif(auth()->guard('pharmacy'))
-    @include('backEnd.pharmacy.slidenav')
+        @include('backEnd.patien.slidenav')
+        @elseif(auth()->guard('hosptail'))
+        @include('backEnd.hosptail.sidenav')
+        @elseif(auth()->guard('clinic'))
+        @include('backEnd.clinic.slidenav')
+        @elseif(auth()->guard('xray'))
+        @include('backEnd.xray.slidenav')
+        @elseif(auth()->guard('labs'))
+        @include('backEnd.lab.slidenav')
+        @elseif(auth()->guard('pharmacy'))
+        @include('backEnd.pharmacy.slidenav')
     @endif
 
     <!-- Page Content -->
