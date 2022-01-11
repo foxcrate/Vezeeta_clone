@@ -870,7 +870,9 @@ public function register(Request $request) {
         ],400);
     }
       public function getAppoiment(Request $request) {
+        //return $request;
         $doctor = Appointment::where('phoneNumber', $request->phoneNumber)->first();
+        //return $doctor;
         if($doctor){
         $patient = DoctorScudule::where('appoiment_id',$doctor->id)->count();
         if ($patient) {

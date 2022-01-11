@@ -129,7 +129,7 @@ class patienController extends Controller
     }
     /* end of function */
     public function update_data_profile(Request $request , $id,$profile_id){
-        //return $request->allergi_data;
+        //return $request;
         $patient = Patien::findOrFail($id);
         $patienData = patientData::findOrFail($profile_id);
         /* insert all request */
@@ -168,8 +168,8 @@ class patienController extends Controller
             $dummy = $patienData->rocata_file;
             foreach($rocata_file as $ro){
                 $rocata_name= time().'.'.$ro->getClientOriginalName();
-                $ro->move('uploads/pdf_file/',$rocata_name);
-                $rocata= asset('uploads/pdf_file/' . $rocata_name);
+                $ro->move('public/uploads/pdf_file/',$rocata_name);
+                $rocata= asset('public/uploads/pdf_file/' . $rocata_name);
                 $multiple[]=$rocata;
             }
             if (is_array($dummy)) {
@@ -188,8 +188,8 @@ class patienController extends Controller
             $dummy1 = $patienData->rays_file;
             foreach($rays_file as $ray){
                 $rays_name = str_replace(' ','',rand(100000,999999).$ray->getClientOriginalName());
-                $ray->move('uploads/pdf_file/',$rays_name);
-                $rays= asset('uploads/pdf_file/' . $rays_name);
+                $ray->move('public/uploads/pdf_file/',$rays_name);
+                $rays= asset('public/uploads/pdf_file/' . $rays_name);
                 $multiple1[]=$rays;
             }
             if (is_array($dummy1)) {
@@ -209,8 +209,8 @@ class patienController extends Controller
             $dummy2 = $patienData->analzes_file;
             foreach($analzes_file as $ana){
                 $analzes_name =str_replace(' ','',rand(100000,999999).$ana->getClientOriginalName());
-                $ana->move('uploads/pdf_file/',$analzes_name);
-                $analzes = asset('uploads/pdf_file/' . $analzes_name);
+                $ana->move('public/uploads/pdf_file/',$analzes_name);
+                $analzes = asset('public/uploads/pdf_file/' . $analzes_name);
                 $multiple2[]=$analzes;
                 // return $mult;
             }
@@ -257,7 +257,9 @@ class patienController extends Controller
     /* function verify email */
     public function profile($id){
         try{
+            //return "Alo";
             $patient = Patien::with('patinets_data')->findOrFail($id);
+            //return $patient;
             // dd($patient->with('patinets_data'));
             return view('backEnd.patien.profile',compact('patient'));
         }
@@ -468,12 +470,39 @@ class patienController extends Controller
                 // dd(session()->get('updatePhoneNumber'));
             }
             if($request->image){
-                $img = Image::make($request->image)
-                    ->resize(1280,400, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save(public_path('uploads/' . $request->image->hashName()));
-                $requestData['image'] = asset('uploads/' . $request->image->hashName());
+
+                $extension = $request->file('image')->extension();
+                $file = $request->image;
+                $code = rand(1111111, 9999999);
+                $file_new_name=time().$code ."pi".'.'.$extension;
+                //return $file_new_name;
+
+                //$file->move('uploads/', $file_new_name);
+
+                // $img = Image::make($request->image)
+                //     ->resize(1280,400, function ($constraint) {
+                //         $constraint->aspectRatio();
+                //     })->save(public_path('uploads/' . $request->image->hashName()));
+                // $requestData['image'] = asset('uploads/' . $request->image->hashName());
+
+                // $img = Image::make($request->image)
+                // ->resize(1280,400, function ($constraint) {
+                //     $constraint->aspectRatio();
+                // })->save(public_path('uploads/', $file_new_name));
+
+                $file->move('public/uploads/', $file_new_name);
+                //return $file;
+                $requestData['image'] = asset('uploads/' . $file_new_name);
+                //return $requestData['image'] ;
             }
+
+            // $extension = $request->file('image')->extension();
+            // $file = $request->image;
+            // $code = rand(1111111, 9999999);
+            // $file_new_name=time().$code ."pi".'.'.$extension;
+            // $file->move('uploads/', $file_new_name);
+            // $the_file = 'uploads/images/' . $file_new_name ;
+
             if($request->phoneNumber[0] == '0'){
                 $requestData['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
             }else{
@@ -498,6 +527,7 @@ class patienController extends Controller
             return redirect()->route('patien.homepage',$patient->id);
         }
         catch(\Exception $ex){
+            return $ex->getMessage();
             Alert::error('Error',$ex->getMessage());
             return redirect()->back();
         }

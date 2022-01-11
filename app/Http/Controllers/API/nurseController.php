@@ -12,13 +12,22 @@ class nurseController extends Controller
     public function register(Request $request) {
         //return "Alo";
         try{
+
             $nurseRequest = $request -> all();
+
+
+            if($request->phoneNumber[0] == '0'){
+                $nurseRequest['phoneNumber'] = $request->countryCode . substr($request->phoneNumber,1);
+            }else{
+                $nurseRequest['phoneNumber'] = $request->countryCode . $request->phoneNumber;
+            }
+
             $validator = Validator::make($nurseRequest, [
                 'image' => 'max:3072',
                 'name' => 'required',
                 'countryCode' => 'required',
                 // 'phoneNumber' => 'required|exists:nurses,phoneNumber',
-                'email' => 'email|unique:patiens,email',
+                'email' => 'required|email|unique:nurses,email',
                 'phoneNumber' => 'required|numeric|unique:nurses,phoneNumber',
                 'password' => 'required',
                 'gender' => 'required',
