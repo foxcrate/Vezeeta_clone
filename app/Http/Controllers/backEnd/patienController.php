@@ -256,12 +256,15 @@ class patienController extends Controller
     }
     /* function verify email */
     public function profile($id){
+        //return "Alo";
         try{
+            //return "Alo";
             $patient = Patien::with('patinets_data')->findOrFail($id);
-            // dd($patient->with('patinets_data'));
+            //return $patient ;
             return view('backEnd.patien.profile',compact('patient'));
         }
         catch(\Exception $ex){
+            return $ex->getMessage();
             return redirect()->back()->with(['error' => 'problem']);
         }
     }
