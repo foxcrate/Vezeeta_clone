@@ -19,6 +19,7 @@ class CreatePatiensTable extends Migration
             $table->string('firstName')->nullable();
             $table->string('middleName')->nullable();
             $table->string('lastName')->nullable();
+            $table->string('name')->nullable()->after('lastName');
             $table->string('BirthDate')->nullable();
             $table->string('gender')->nullable();
             $table->string('email')->nullable();
@@ -50,6 +51,8 @@ class CreatePatiensTable extends Migration
             $table->boolean('is_active')->default(false);
             $table->boolean('online')->default(false);
             $table->integer('poients')->default(50);
+            $table->string('longitude')->after('latitude')->nullable();
+            $table->string('latitude')->after('online')->nullable();
             $table->timestamps();
         });
     }

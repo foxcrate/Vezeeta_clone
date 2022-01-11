@@ -48,15 +48,25 @@ class patienController extends Controller
 
     public function postRegister(Store $request){
         try{
-            // return $request;
+            //return $request;
             $request_data = $request->all();
             if($request->image){
-                $hospitalRequest = $request->image;
-                $image = $request->file('image');
-                $input = $hospitalRequest = $image->getClientOriginalName();
-                $destinationPath = public_path('uploads/');
-                $image->move($destinationPath, $input);
-                $request_data['image'] = asset('uploads/' . $input);
+
+                // $hospitalRequest = $request->image;
+                // $image = $request->file('image');
+                // $input = $hospitalRequest = $image->getClientOriginalName();
+                // $destinationPath = public_path('uploads/');
+                // $image->move($destinationPath, $input);
+                // $request_data['image'] = asset('uploads/' . $input);
+
+
+                $extension = $request->image->extension();
+                $file = $request->image;
+                $code = rand(1111111, 9999999);
+                $file_new_name=time().$code ."i".'.'.$extension;
+                $file->move('public/uploads/images/', $file_new_name);
+                $the_file = '/uploads/images/' . $file_new_name ;
+                $request_data['image'] = asset($the_file);
 
             }
             /* secure password */
@@ -164,12 +174,13 @@ class patienController extends Controller
             'patient_id'              =>$request->patient_id,
             'single_Period_Cycle'      => $request->single_Period_Cycle,
         ];
+
         if($rocata_file=$request->file('rocata_file')){
             $dummy = $patienData->rocata_file;
             foreach($rocata_file as $ro){
                 $rocata_name= time().'.'.$ro->getClientOriginalName();
-                $ro->move('uploads/pdf_file/',$rocata_name);
-                $rocata= asset('uploads/pdf_file/' . $rocata_name);
+                $ro->move('public/uploads/pdf_file/',$rocata_name);
+                $rocata= asset('public/uploads/pdf_file/' . $rocata_name);
                 $multiple[]=$rocata;
             }
             if (is_array($dummy)) {
@@ -188,8 +199,8 @@ class patienController extends Controller
             $dummy1 = $patienData->rays_file;
             foreach($rays_file as $ray){
                 $rays_name = str_replace(' ','',rand(100000,999999).$ray->getClientOriginalName());
-                $ray->move('uploads/pdf_file/',$rays_name);
-                $rays= asset('uploads/pdf_file/' . $rays_name);
+                $ray->move('public/uploads/pdf_file/',$rays_name);
+                $rays= asset('public/uploads/pdf_file/' . $rays_name);
                 $multiple1[]=$rays;
             }
             if (is_array($dummy1)) {
@@ -209,8 +220,8 @@ class patienController extends Controller
             $dummy2 = $patienData->analzes_file;
             foreach($analzes_file as $ana){
                 $analzes_name =str_replace(' ','',rand(100000,999999).$ana->getClientOriginalName());
-                $ana->move('uploads/pdf_file/',$analzes_name);
-                $analzes = asset('uploads/pdf_file/' . $analzes_name);
+                $ana->move('public/uploads/pdf_file/',$analzes_name);
+                $analzes = asset('public/uploads/pdf_file/' . $analzes_name);
                 $multiple2[]=$analzes;
                 // return $mult;
             }
@@ -260,7 +271,9 @@ class patienController extends Controller
         try{
             //return "Alo";
             $patient = Patien::with('patinets_data')->findOrFail($id);
-            //return $patient ;
+            
+            //return $patient;
+            // dd($patient->with('patinets_data'));
             return view('backEnd.patien.profile',compact('patient'));
         }
         catch(\Exception $ex){
@@ -444,6 +457,14 @@ class patienController extends Controller
     /* end of function */
     /* function update basic data UpdatePatien */
     public function updateData($id,UpdatePatien $request){
+        //return "Alo0";
+
+        // if($request->has('image')){
+        //     return "Alo";
+        // }else{
+        //     return "Alo2";
+        // }
+
         try{
             //return $request;
             $requestData = $request->all();
@@ -456,11 +477,21 @@ class patienController extends Controller
                     $requestData['phoneNumber'] = $request->countryCode . $request->phoneNumber;
                 }
                 if($request->image){
-                    $img = Image::make($request->image)
-                        ->resize(1280,400, function ($constraint) {
-                            $constraint->aspectRatio();
-                        })->save(public_path('uploads/' . $request->image->hashName()));
-                    $requestData['image'] = asset('uploads/' . $request->image->hashName());
+                    //return "Alo";
+                    // $img = Image::make($request->image)
+                    //     ->resize(1280,400, function ($constraint) {
+                    //         $constraint->aspectRatio();
+                    //     })->save(public_path('uploads/' . $request->image->hashName()));
+                    // $requestData['image'] = asset('uploads/' . $request->image->hashName());
+
+                    $extension = $request->image->extension();
+                    $file = $request->image;
+                    $code = rand(1111111, 9999999);
+                    $file_new_name=time().$code ."i".'.'.$extension;
+                    $file->move('public/uploads/images/', $file_new_name);
+                    $the_file = '/uploads/images/' . $file_new_name ;
+                    $requestData['image'] = asset($the_file );
+
                 }
                 // $patient->update($requestData);
                 $setSession = $request->session()->put('updatePhoneNumber',$requestData['phoneNumber']);
@@ -472,14 +503,15 @@ class patienController extends Controller
             }
             if($request->image){
 
-                $extension = $request->file('image')->extension();
-                $file = $request->image;
-                $code = rand(1111111, 9999999);
-                $file_new_name=time().$code ."pi".'.'.$extension;
+                // $extension = $request->file('image')->extension();
+                // $file = $request->image;
+                // $code = rand(1111111, 9999999);
+                // $file_new_name=time().$code ."pi".'.'.$extension;
+                // $file->move('public/uploads/', $file_new_name);
+                // $requestData['image'] = asset('uploads/' . $file_new_name);
+
                 //return $file_new_name;
-
                 //$file->move('uploads/', $file_new_name);
-
                 // $img = Image::make($request->image)
                 //     ->resize(1280,400, function ($constraint) {
                 //         $constraint->aspectRatio();
@@ -491,12 +523,22 @@ class patienController extends Controller
                 //     $constraint->aspectRatio();
                 // })->save(public_path('uploads/', $file_new_name));
 
-                $file->move('public/uploads/', $file_new_name);
                 //return $file;
-                $requestData['image'] = asset('uploads/' . $file_new_name);
-                //return $requestData['image'] ;
-            }
 
+                //return $requestData['image'] ;
+
+
+                $extension = $request->image->extension();
+                $file = $request->image;
+                $code = rand(1111111, 9999999);
+                $file_new_name=time().$code ."i".'.'.$extension;
+                $file->move('public/uploads/images/', $file_new_name);
+                $the_file = '/uploads/images/' . $file_new_name ;
+                $requestData['image'] = asset($the_file );
+
+            }
+            //return asset('o');
+            return $requestData['image'] ;
             // $extension = $request->file('image')->extension();
             // $file = $request->image;
             // $code = rand(1111111, 9999999);

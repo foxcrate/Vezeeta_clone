@@ -60,6 +60,9 @@ Route::group(['namespace'=>'API'],function(){
    // Route::post('/forgot-password', 'patientController@forgot_password');
     Route::get('/patients','patientController@getAll');
     Route::get('/patientSearch','patientController@searchId');
+
+    Route::get('/patientDataReal','patientController@patientDataReal');
+
     Route::post('/patientBasicData/idCode','patientController@basicData');
     Route::get('/getPatientBasicData/idCode','patientController@getPatientData');
     Route::post('/updateBlood','patientController@updateBlood');
