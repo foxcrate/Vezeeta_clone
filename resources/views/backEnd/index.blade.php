@@ -6,7 +6,7 @@
     <!-- navbarfile -->
     <!--Start-Content-->
 
-      <div id="carouselExampleControls" class="carousel mt-5" data-ride="carousel">
+      <div id="carouselExampleControls" class="carousel" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
             <img src="{{url('imgs/c1.jpg')}}" class="w-100 img-fluid animated fadeIn" alt="...">

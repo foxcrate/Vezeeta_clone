@@ -14,7 +14,7 @@ body {
     font-size: 16px;
     line-height: 1.8;
     font-weight: 400;
-    min-height: 0px !important;
+    min-height: 0 !important;
 }
 .error{
     border: 1px solid red;
@@ -277,8 +277,11 @@ a.text-lighter:hover, a.text-lighter:focus {
 
 #menu-toggle {
     background-color: transparent;
-    border: none;
-    font-size: 20px;
+    border: 1px solid #fff;
+    font-size: 17px;
+    color: #fff;
+    padding: 1px 7px;
+    border-radius: 5px;
 }
 
 .navbar {
@@ -321,6 +324,15 @@ a.text-lighter:hover, a.text-lighter:focus {
     color: #000;
 }
 
+.sticky.is-sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
 @media (max-width: 576px) {
     .navbar .h3 {
         font-size: 12pt;
@@ -336,7 +348,7 @@ a.text-lighter:hover, a.text-lighter:focus {
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -20px;
+    margin-top: -50px;
 }
 
 .bg-login form .text-forget {
@@ -387,6 +399,9 @@ a.text-lighter:hover, a.text-lighter:focus {
     font-size: 50px;
 }
 @media (max-width: 576px) {
+    .bg-login {
+        margin-top: -20px;
+    }
     .hero-wrap .h3 {
         font-size: 20px;
     }
@@ -1292,6 +1307,12 @@ a.text-lighter:hover, a.text-lighter:focus {
     margin-left: 0px;
 }
 
+.edit-data-address,
+.edit-data-email {
+    display: flex;
+    justify-content: start;
+}
+
 @media (max-width: 576px) {
     .pill-box-f {
         margin-left: 0px;
@@ -1679,6 +1700,26 @@ h4.text-pills {
     border: 1px solid #ffd600;
 }
 
+.allergy-header,
+.diseases-header,
+.preventative-header {
+    display: flex;
+    align-items: center;
+}
+
+.preventative-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:576px) {
+    .allergy-header,
+    .diseases-header,
+    .preventative-header {
+        display: flex;
+        align-items: flex-start;
+}
+}
 /*End-EditProfile*/
 /*# sourceMappingURL=style.css.map */
 
@@ -2557,7 +2598,6 @@ background-color: #0fAAc9;
     background-color: #effcff;
     cursor: pointer;
     font-weight: 700;
-    margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 15px;

@@ -1,4 +1,3 @@
-
 @extends('backEnd.layoutes.mastar')
 @section('title','Edit profile ')
 @section('content')
@@ -843,9 +842,7 @@
                                 if (current1 < max) {
                                     $('.field_group:first').clone(true).hide().insertAfter('.field_group:last').slideDown('slow');
                                     var last = $('.field_group:last');
-
                                     var current =  $(".field_group").length ;
-
                                     //last.append(new_button.clone(true));
                                     last.find('select').val([]);
                                     //console.log( last.find('select') );
@@ -856,11 +853,9 @@
                                     current1++;
                                     return false;
                                 }
-
                                 // else{
                                 //     console.log("Alo");
                                 // }
-
                                 //current = 0;
                             });
                             $("body").on("click", "#remove_more_fields", function (e) {
@@ -918,7 +913,6 @@
                             }
                             $(this).closest(".field_group2").remove();
                         });
-
                         $('#more_smoking').click(function(){
                             var max = 3;
                             var current1 =  $(".field_groupUn").length;
@@ -948,14 +942,12 @@
                           var $input = $(this),
                               $label = $input.next('.js-labelFile'),
                               labelVal = $label.html();
-
                          $input.on('change', function(element) {
                             var fileName = '';
                             if (element.target.value) fileName = element.target.value.split('\\').pop();
                             fileName ? $label.addClass('has-file').find('.js-fileName').html(fileName) : $label.removeClass('has-file').html(labelVal);
                          });
                         });
-
                       })();
                 </script>
             </div>
@@ -963,5 +955,3 @@
     </div>
 
 @stop
-
-
