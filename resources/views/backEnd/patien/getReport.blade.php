@@ -553,33 +553,33 @@
                                                 <th class="h5">Download</th>
                                             </tr>
                                             @if($patient->patinets_data->rocata_file)
-                                                @foreach($patient->patinets_data->rocata_file as $rocata_file)
+                                                @foreach($patient->patinets_data->rocata_file as $key => $rocata_file)
                                                     <tr>
                                                         <td>Prescription Files</td>
                                                         <td><a class="text-decoration" target="_blank" href="{{url($rocata_file)}}">Show</a></td>
-                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['rocata',$patient->id]) }}">Download</a></td>
+                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['rocata',$patient->id,$key]) }}">Download</a></td>
                                                     </tr>
                                                 @endforeach
                                                 @else
                                                 <div class="alert alert-danger">No Files</div>
                                             @endif
                                             @if($patient->patinets_data->rays_file)
-                                                @foreach($patient->patinets_data->rays_file as $rays_file)
+                                                @foreach($patient->patinets_data->rays_file as $key => $rays_file)
                                                     <tr>
                                                         <td>Rays Files</td>
                                                         <td><a class="text-decoration" target="_blank" href="{{url($rays_file)}}">Show</a></td>
-                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['ray',$patient->id]) }}">Download</a></td>
+                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['ray',$patient->id,$key]) }}">Download</a></td>
                                                     </tr>
                                                 @endforeach
                                                 @else
                                                 <div class="alert alert-danger">No Files</div>
                                             @endif
                                             @if($patient->patinets_data->analzes_file)
-                                                @foreach($patient->patinets_data->analzes_file as $analzes_file)
+                                                @foreach($patient->patinets_data->analzes_file as $key => $analzes_file)
                                                     <tr>
                                                         <td>Test Files</td>
                                                         <td><a class="text-decoration" target="_blank" href="{{url($analzes_file)}}">Show</a></td>
-                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['test',$patient->id]) }}">Download</a></td>
+                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['test',$patient->id,$key]) }}">Download</a></td>
                                                     </tr>
                                                 @endforeach
                                                 @else

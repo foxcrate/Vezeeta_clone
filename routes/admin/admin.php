@@ -124,7 +124,7 @@ Route::group(
 
                 /* old pescription route */
                 Route::get('/patien/old_pescription/{id}','patienController@getOldpescription')->name('get_old_pescription');
-                Route::get('/patien/{type}/{id}/download/pdf','patienController@download_pdf')->name('download_pdf');
+                Route::get('/patien/{type}/{id}/{key}/download/pdf','patienController@download_pdf')->name('download_pdf');
                 Route::get('/patien/{type}/{id}/delete/files','patienController@deleteFiles')->name('deleteFiles');
 
                 /* get and search wife */

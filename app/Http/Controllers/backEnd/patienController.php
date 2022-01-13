@@ -139,7 +139,8 @@ class patienController extends Controller
     }
     /* end of function */
     public function update_data_profile(Request $request , $id,$profile_id){
-        //return $request;
+
+        //return $request->rocata_file[1];
         $patient = Patien::findOrFail($id);
         $patienData = patientData::findOrFail($profile_id);
         /* insert all request */
@@ -177,16 +178,38 @@ class patienController extends Controller
 
         if($rocata_file=$request->file('rocata_file')){
             $dummy = $patienData->rocata_file;
+            $multiple = [];
+
+            // $extension = $request->rocata_file->extension();
+            // $file = $request->rocata_file;
+            // $code = rand(1111111, 9999999);
+            // $file_new_name=time().$code ."rf".'.'.$extension;
+            // $file->move('public/uploads/files/', $file_new_name);
+            // $the_file = 'public/uploads/files/' . $file_new_name ;
+
             foreach($rocata_file as $ro){
-                $rocata_name= time().'.'.$ro->getClientOriginalName();
-                $ro->move('public/uploads/pdf_file/',$rocata_name);
-                $rocata= asset('public/uploads/pdf_file/' . $rocata_name);
-                $multiple[]=$rocata;
+
+                $extension = $ro->extension();
+                $file = $ro;
+                $code = rand(1111111, 9999999);
+                $file_new_name=time().$code . "rf" . '.' . $extension;
+                $file->move('public/uploads/files/', $file_new_name);
+                //$the_file = 'public/uploads/files/' . $file_new_name ;
+                $the_file = asset('uploads/files/' . $file_new_name);
+
+                array_push( $multiple , $the_file );
+
+                // $rocata_name= time().'.'.$ro->getClientOriginalName();
+                // $ro->move('public/uploads/files/',$rocata_name);
+                // $rocata= asset('uploads/files/' . $rocata_name);
+                // $multiple[]=$rocata;
+
             }
+
             if (is_array($dummy)) {
                 foreach($multiple as $multi){
                     $s=array_push($dummy,$multi);
-                    //  $data2['rocata_file'] = $dummy;
+                    //$data2['rocata_file'] = $dummy;
                 }
                 $data2['rocata_file'] = $dummy;
             }else{
@@ -194,15 +217,33 @@ class patienController extends Controller
                 $dummy=array_push($dummy,$multiple);
                 $data2['rocata_file'] = $multiple;
             }
+
+            //return $data2['rocata_file'] ;
+
         }
+
         if($rays_file = $request->file('rays_file')){
             $dummy1 = $patienData->rays_file;
+            $multiple1 = [];
+
             foreach($rays_file as $ray){
-                $rays_name = str_replace(' ','',rand(100000,999999).$ray->getClientOriginalName());
-                $ray->move('public/uploads/pdf_file/',$rays_name);
-                $rays= asset('public/uploads/pdf_file/' . $rays_name);
-                $multiple1[]=$rays;
+                // $rays_name = str_replace(' ','',rand(100000,999999).$ray->getClientOriginalName());
+                // $ray->move('public/uploads/pdf_file/',$rays_name);
+                // $rays= asset('public/uploads/pdf_file/' . $rays_name);
+                // $multiple1[]=$rays;
+
+                $extension = $ray->extension();
+                $file = $ray;
+                $code = rand(1111111, 9999999);
+                $file_new_name=time().$code . "rf" . '.' . $extension;
+                $file->move('public/uploads/files/', $file_new_name);
+                //$the_file = 'public/uploads/files/' . $file_new_name ;
+                $the_file = asset('uploads/files/' . $file_new_name);
+
+                array_push( $multiple1 , $the_file );
+
             }
+
             if (is_array($dummy1)) {
                 foreach($multiple1 as $multi){
                     $s=array_push($dummy1,$multi);
@@ -215,15 +256,30 @@ class patienController extends Controller
                 $data2['rays_file'] = $multiple1;
 
             }
+
         }
         if($analzes_file = $request->file('analzes_file')){
             $dummy2 = $patienData->analzes_file;
+            $multiple2 = [];
+
             foreach($analzes_file as $ana){
-                $analzes_name =str_replace(' ','',rand(100000,999999).$ana->getClientOriginalName());
-                $ana->move('public/uploads/pdf_file/',$analzes_name);
-                $analzes = asset('public/uploads/pdf_file/' . $analzes_name);
-                $multiple2[]=$analzes;
+
+                // $analzes_name =str_replace(' ','',rand(100000,999999).$ana->getClientOriginalName());
+                // $ana->move('public/uploads/pdf_file/',$analzes_name);
+                // $analzes = asset('public/uploads/pdf_file/' . $analzes_name);
+                // $multiple2[]=$analzes;
                 // return $mult;
+
+
+                $extension = $ana->extension();
+                $file = $ana;
+                $code = rand(1111111, 9999999);
+                $file_new_name=time().$code . "rf" . '.' . $extension;
+                $file->move('public/uploads/files/', $file_new_name);
+                //$the_file = 'public/uploads/files/' . $file_new_name ;
+                $the_file = asset('uploads/files/' . $file_new_name);
+
+                array_push( $multiple2 , $the_file );
             }
             if (is_array($dummy2)) {
                 foreach($multiple2 as $multi){
@@ -271,7 +327,7 @@ class patienController extends Controller
         try{
             //return "Alo";
             $patient = Patien::with('patinets_data')->findOrFail($id);
-            
+
             //return $patient;
             // dd($patient->with('patinets_data'));
             return view('backEnd.patien.profile',compact('patient'));
@@ -294,20 +350,81 @@ class patienController extends Controller
         // return dd(Patien::find(1)->first()->agrees());
     }
     /* end of function */
-    public function download_pdf($type,$id){
+    public function download_pdf($type,$id,$key){
+
+        //return $key;
         $patient = Patien::findOrFail($id);
+
+        // $headers = array(
+        //     'Content-Type: application/pdf',
+        // );
+
         if($type == 'rocata'){
-            foreach($patient->patinets_data->rocata_file as $ro){
-                return Response::download(public_path('uploads/pdf_file/' . str_replace('https://localhost/Phistory/public/uploads/pdf_file/','',$ro)));
-            }
+            // foreach($patient->patinets_data->rocata_file as $ro){
+
+                //return Response::download( public_path( 'uploads/pdf_file/' . str_replace( config( 'app.url' )  . '/public/uploads/files/' ,'', $ro ) ) );
+
+                // return $ro ;
+
+                // $file = substr($ro, 0, 3);
+
+                //return public_path();
+                //return $key;
+
+
+                $all_link = $patient->patinets_data->rocata_file[$key];
+                //$all_link = 'https://localhost/phistory/uploads/files/16419858056956043rf.jpeg' ;
+                $uploads_word = 'uploads';
+                $uploads_offset = strpos ( $all_link , $uploads_word , 0 ) ;
+                $after_public = substr( $all_link , $uploads_offset , strlen($all_link) );
+
+                $point_before_extension = '.';
+                $file_extension_offset = strpos ( $all_link , $point_before_extension , 0 ) ;
+                $file_extension = substr( $all_link , $file_extension_offset , strlen($all_link) );
+
+                //return $file_extension ;
+
+                return Response::download( public_path( '/'.$after_public ) , 'rocheta_file_' . $key . $file_extension );
+
+            // }
         }elseif($type == 'test'){
-            foreach($patient->patinets_data->analzes_file as $ro){
-                return Response::download(public_path('uploads/pdf_file/' . str_replace('https://localhost/Phistory/public/uploads/pdf_file/','',$ro)));
-            }
+            // foreach($patient->patinets_data->analzes_file as $ro){
+                //return Response::download(public_path('uploads/pdf_file/' . str_replace('https://localhost/Phistory/public/uploads/pdf_file/','',$ro)));
+
+
+                $all_link = $patient->patinets_data->analzes_file[$key];
+                //$all_link = 'https://localhost/phistory/uploads/files/16419858056956043rf.jpeg' ;
+                $uploads_word = 'uploads';
+                $uploads_offset = strpos ( $all_link , $uploads_word , 0 ) ;
+                $after_public = substr( $all_link , $uploads_offset , strlen($all_link) );
+
+                $point_before_extension = '.';
+                $file_extension_offset = strpos ( $all_link , $point_before_extension , 0 ) ;
+                $file_extension = substr( $all_link , $file_extension_offset , strlen($all_link) );
+
+                //return $x ;
+
+                return Response::download( public_path( '/'.$after_public ) , 'analzes_file_' . $key . $file_extension);
+            // }
         }else{
-            foreach($patient->patinets_data->rays_file as $ro){
-                return Response::download(public_path('uploads/pdf_file/' . str_replace('https://localhost/Phistory/public/uploads/pdf_file/','',$ro)));
-            }
+            // foreach($patient->patinets_data->rays_file as $ro){
+            //     return Response::download(public_path('uploads/pdf_file/' . str_replace('https://localhost/Phistory/public/uploads/pdf_file/','',$ro)));
+
+
+                $all_link = $patient->patinets_data->rays_file[$key];
+                //$all_link = 'https://localhost/phistory/uploads/files/16419858056956043rf.jpeg' ;
+                $uploads_word = 'uploads';
+                $uploads_offset = strpos ( $all_link , $uploads_word , 0 ) ;
+                $after_public = substr( $all_link , $uploads_offset , strlen($all_link) );
+
+                $point_before_extension = '.';
+                $file_extension_offset = strpos ( $all_link , $point_before_extension , 0 ) ;
+                $file_extension = substr( $all_link , $file_extension_offset , strlen($all_link) );
+
+                //return $x ;
+
+                return Response::download( public_path( '/'.$after_public ) , 'rays_file_' . $key . $file_extension);
+            // }
         }
 
     }
@@ -347,9 +464,10 @@ class patienController extends Controller
             }
         }
     }
+
     /* compleate profile function */
     public function updateProfile($id,Request $request){
-        //return $request;
+        //return $request->analzes_file;
         Alert::success('Success', 'Updated Profile Successfuly');
         $patient = Patien::findOrFail($id);
         /* insert all request */
@@ -390,35 +508,68 @@ class patienController extends Controller
         //return "Alo";
         //return $data2;
         if($rocata_file=$request->file('rocata_file')){
-            foreach($rocata_file as $ro){
-                $rocata_name= str_replace(' ','',rand(100000,999999).$ro->getClientOriginalName());
-                $ro->move('uploads/pdf_file/',$rocata_name);
-                $rocata[]=asset('uploads/pdf_file/' . $rocata_name);
-                $data2['rocata_file'] = $rocata;
-            }
 
+            // foreach($rocata_file as $ro){
+            //     $rocata_name= str_replace(' ','',rand(100000,999999).$ro->getClientOriginalName());
+            //     $ro->move('uploads/pdf_file/',$rocata_name);
+            //     $rocata[]=asset('uploads/pdf_file/' . $rocata_name);
+            //     $data2['rocata_file'] = $rocata;
+            // }
+
+            $extension = $request->rocata_file[0]->extension();
+            $file = $request->rocata_file[0];
+            $code = rand(1111111, 9999999);
+            $file_new_name=time().$code . "rf" . '.' . $extension;
+            $file->move('public/uploads/files/', $file_new_name);
+
+            $rocata[] = asset('uploads/files/' . $file_new_name);;
+            $data2['rocata_file'] = $rocata;
 
         }
         if($rays_file = $request->file('rays_file')){
-            foreach($rays_file as $ray){
-                $rays_name = str_replace(' ','',rand(100000,999999).$ray->getClientOriginalName());
-                $ray->move('uploads/pdf_file/' , $rays_name);
-                $rays[]=asset('uploads/pdf_file/' . $rays_name);
-                $data2['rays_file'] = $rays;
-            }
 
+            // foreach($rays_file as $ray){
+            //     $rays_name = str_replace(' ','',rand(100000,999999).$ray->getClientOriginalName());
+            //     $ray->move('uploads/pdf_file/' , $rays_name);
+            //     $rays[]=asset('uploads/pdf_file/' . $rays_name);
+            //     $data2['rays_file'] = $rays;
+            // }
+
+            $extension = $request->rays_file[0]->extension();
+            $file = $request->rays_file[0];
+            $code = rand(1111111, 9999999);
+            $file_new_name=time().$code . "rf" . '.' . $extension;
+            $file->move('public/uploads/files/', $file_new_name);
+
+            $rays[] = asset('uploads/files/' . $file_new_name);;
+            $data2['rays_file'] = $rays;
 
         };
         if($analzes_file = $request->file('analzes_file')){
-            foreach($analzes_file as $ana){
-                $analzes_name = str_replace(' ','',rand(100000,999999).$ana->getClientOriginalName());
-                $ana->move('uploads/pdf_file/' , $analzes_name);
-                $analzes[] = asset('uploads/pdf_file/' . $analzes_name);
-                $data2['analzes_file'] = $analzes;
-            }
+
+            // foreach($analzes_file as $ana){
+            //     $analzes_name = str_replace(' ','',rand(100000,999999).$ana->getClientOriginalName());
+            //     $ana->move('uploads/pdf_file/' , $analzes_name);
+            //     $analzes[] = asset('uploads/pdf_file/' . $analzes_name);
+            //     $data2['analzes_file'] = $analzes;
+            // }
+
+            $extension = $request->analzes_file[0]->extension();
+            $file = $request->analzes_file[0];
+            $code = rand(1111111, 9999999);
+            $file_new_name=time().$code . "af" . '.' . $extension;
+            $file->move('public/uploads/files/', $file_new_name);
+
+            $analzes[] = asset('uploads/files/' . $file_new_name);;
+            $data2['analzes_file'] = $analzes;
+
         };
 
+        //return $data2['analzes'] ;
+
         $patienCreate = patientData::create($data2);
+
+        //return $patienCreate ;
         // $patienCreate = patientData::where('patient_id',$id);
 
         $patient = Patien::findOrFail($id);
@@ -448,6 +599,7 @@ class patienController extends Controller
 
         //dd($request->all());
     }
+
     /* end of function */
     /* function edit data profile */
     public function editData($id){
