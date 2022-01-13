@@ -8,7 +8,41 @@
     {{-- @include('includes.alerts.success') --}}
     <!--Start-Ada-->
     <div class="container">
-        <div id="carouselExampleIndicators" class="carousel slide" style="margin-top: 120px;" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 50px;">
+            <ol class="carousel-indicators ml-auto mr-auto">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="{{url('imgs/3.png')}}" alt="..." style="border-radius:15px;">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="{{url('imgs/4.png')}}" alt="..." style="border-radius:15px;">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="{{url('imgs/1.png')}}" alt="..." style="border-radius:15px;">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="{{url('imgs/5.png')}}" alt="..." style="border-radius:15px;">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="{{url('imgs/6.png')}}" alt="..." style="border-radius:15px;">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        {{-- <div id="carouselExampleIndicators" class="carousel slide" style="margin-top: 120px;" data-ride="carousel">
             <ol class="carousel-indicators ml-auto mr-auto">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -41,7 +75,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
             </a>
-        </div>
+        </div> --}}
     </div>
     <!--End-Ada-->
 
@@ -51,14 +85,14 @@
 
     <div class="container link" >
         <div class="row content-info col-lg-12 mt-5 ml-auto mr-auto">
-            <div class="col-2">
+            <div class="col-md-2 col-sm-12">
                 @if(!$patient->image)
                     <img alt="Image placeholder" src="{{ asset('uploads/default.png') }}" width="120" height="120" class="rounded-circle d-block mt-2">
                 @else
                     <img alt="Image placeholder" src="{{ $patient->image }}" width="120" height="120" class="rounded-circle d-block mt-2">
                 @endif
             </div>
-            <div class="col-8">
+            <div class="col-md-8 col-sm-12">
                 <h4 class="text-dark mt-3 mb-2 font-weight-bold text-capitalize">{{$patient->firstName . ' ' . $patient->lastName}}</h4>
                 <h5 class="text-dark">{{$patient->idCode}}</h5>
                 <h5 class="text-dark">{{$patient->Age}} Years</h5>
@@ -67,7 +101,7 @@
                     <h5 class="col-lg-4 text-dark">{{ $patient->poients }} Point</h5>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-sm-12">
                 @if($patient->patinets_data)
                     <a href="{{route("edit_data_profile",$patient->id)}}"><img src="{{url('imgs/edit.svg')}}" height="45" class="d-block w-100 mt-3 mb-5" alt="..."></a>
                 @else
