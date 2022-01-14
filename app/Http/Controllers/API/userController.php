@@ -156,6 +156,7 @@ class userController extends Controller
         //return "Alo";
         if($request->type == 'patient'){
             $patient = Patien::where('idCode',$request->idCode)->first();
+            //return $patient;
             if($patient){
                 return response()->json([
                     'data' => $patient,
