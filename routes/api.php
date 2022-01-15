@@ -110,7 +110,10 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('/raysFileGet','patientController@rays_fileGet');
     Route::post('/analzesFile','patientController@analzes_file');
     Route::get('/analzesFileGet','patientController@analzes_fileGet');
+
     Route::get('/patientPrescription/{idCode?}','patientController@raouchehsGet');
+    Route::post('/patientPrescription','patientController@raouchehsPost');
+
     Route::get('patient/forgot/password','patientController@forgotPassword');
     Route::post('patientForgotPassword','patientController@confirm_password');
     Route::post('/bloodDonorOn','patientController@DonorsBloodSwitch');

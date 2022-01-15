@@ -138,7 +138,7 @@
 
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted ">Female</h5>
-                                            @if($patient->patinets_data->single_Period_Cycle == 'Yes' || $patient->patinets_data->mother_Period_Cycle == 'Yes'|| $patient->patinets_data->wife_Period_Cycle == 'Yes')
+                                            @if($patient->patinets_data->single_Period_Cycle == 'Yes' || $patient->patinets_data->Period_Cycle == 'Yes')
                                             <span class="h5 font-weight-bold mb-0">Have Normal Period Cycle </span>
                                             @else
                                             <span class="h5 font-weight-bold mb-0">Have Not Normal Period Cycle </span>
@@ -470,13 +470,13 @@
                 @if($patient->gender == 'female' && $patient->state == 'married' || $patient->state =='divorce')
                 <div class="container-fluid mb-5">
                     <h2 class="row mt-4 ml-5 mb-5">Female History</h2>
-                    @if($patient->patinets_data->mother_Period_Cycle != null || $patient->patinets_data->mother_pregnency != null || $patient->patinets_data->mother_abotion != null)
+                    @if($patient->patinets_data->Period_Cycle != null || $patient->patinets_data->pregnency != null || $patient->patinets_data->Abotion != null)
                     <div><h5 class="card-title mt-4 ml-5 mb-5 text-uppercase text-muted mb-3">Female Mother</h5></div>
                     @else
                     <div><h5 class="card-title mt-4 ml-5 mb-5 text-capitalize text-muted mb-3">Female Wife</h5></div>
                     @endif
                     <div class="row tab-content col-md-10 p-4 mt-2 mr-auto ml-auto">
-                        @if($patient->patinets_data->mother_Period_Cycle != null || $patient->patinets_data->mother_pregnency != null || $patient->patinets_data->mother_abotion != null)
+                        @if($patient->patinets_data->Period_Cycle != null || $patient->patinets_data->pregnency != null || $patient->patinets_data->Abotion != null)
                         <div class="col-xl-4 col-md-2 col-xs-12 mb-4">
                             <div class="pills-main-pink card card-stats">
                                 <!-- Card body -->
@@ -489,7 +489,7 @@
                                         </div>
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-3">Pregnency</h5>
-                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->mother_pregnency}}</span>
+                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->pregnency}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -507,7 +507,7 @@
                                         </div>
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-3">Abortion</h5>
-                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->mother_abotion}}</span>
+                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->Abotion}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -525,7 +525,7 @@
                                         </div>
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-3">Contraceptives</h5>
-                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->mother_Contraceptive}}</span>
+                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->Contraceptive}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -543,7 +543,7 @@
                                         </div>
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-3">Types of Deliveries</h5>
-                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->mother_deliveries}}</span>
+                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->deliveries}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -561,7 +561,7 @@
                                         </div>
                                             <div class="col">
                                                 <h5 class="card-title text-uppercase text-muted mb-3">Complicetion in Deliveries</h5>
-                                                <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->mother_complicetion}}</span>
+                                                <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->complicetion}}</span>
                                             </div>
 
                                     </div>
@@ -569,7 +569,7 @@
                             </div>
                         </div>
                         @endif
-                        @if($patient->patinets_data->wife_Period_Cycle != null || $patient->patinets_data->wife_Abotion != null || $patient->patinets_data->wife_Contraceptive != null)
+                        @if($patient->patinets_data->Period_Cycle != null || $patient->patinets_data->Abotion != null || $patient->patinets_data->Contraceptive != null)
                         <div class="col-xl-6 col-md-2 col-xs-12 mb-5">
                             <div class="pills-main-pink card card-stats">
                                 <!-- Card body -->
@@ -582,7 +582,7 @@
                                         </div>
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-3">Abortion</h5>
-                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->wife_Abotion}}</span>
+                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->Abotion}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -600,7 +600,7 @@
                                         </div>
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-3">Contraceptives</h5>
-                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->wife_Contraceptive}}</span>
+                                            <span class="h5 font-weight-bold mb-0">{{$patient->patinets_data->Contraceptive}}</span>
                                         </div>
                                     </div>
                                 </div>

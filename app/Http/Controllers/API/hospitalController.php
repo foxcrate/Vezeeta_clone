@@ -80,7 +80,7 @@ class hospitalController extends Controller
         return response() -> json([
             // 'data' => asset('uploads/'.$input),
             'data' => asset( $the_file),
-            'message' => 'success Message'
+            'status' => true,
         ], 200);
     }
     else{

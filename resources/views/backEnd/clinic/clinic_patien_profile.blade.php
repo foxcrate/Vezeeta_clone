@@ -19,7 +19,7 @@
                             <!-- Search form -->
                             <h6 class="h5 text-white">{{$patien->patinets_data->online == 1 ? 'online' : 'Ofline'}}</h6>
                             <ul class="navbar-nav align-items-center ml-md-auto">
-                               
+
                             </ul>
                             <ul class="navbar-nav align-items-center ml-auto ml-md-0 ">
                                 <li class="nav-item dropdown">
@@ -152,7 +152,7 @@
                         <div class="tab-content mr-auto ml-auto" id="v-pills-tabContent">
                             <div class="tab-pane animated bounce mr-auto ml-auto active slow py-0" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
                                 <h5 class="col-12 ml-xl-8 mb-4 mt-3 ml-5">Diseases</h5>
-                               
+
                                 @php
                                     $agree_name = json_decode($patien->patinets_data->agree_name);
                                 @endphp
@@ -176,7 +176,7 @@
                                 @php
                                     $medication_name = json_decode($patien->patinets_data->medication_name);
                                 @endphp
-                                
+
                                     <div class="pills-main col-xl-8 col-md-4 col-xs-12 row row-text mb-3 mr-auto ml-auto p-2">
                                         <div class="col-2">
                                             <img src="{{url('imgs/02.png')}}" width="40" alt="...">
@@ -206,7 +206,7 @@
                                         </div>
                                     </div>
 
-                                 
+
                             </div>
                             <div class="tab-pane animated bounce slow py-0" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
                                 <h5 class="col-12 mb-4 mt-3 ml-5">Allergies</h5>
@@ -215,9 +215,9 @@
                                         <div class="col-8">
                                             @if($array->allergi_name)
                                                 <h4 class="mt-3 pl-4">{{$array->allergi_name}}</h4>
-                                                @else 
+                                                @else
                                                 None
-                                               
+
                                             @endif
                                             @if($array->severity)
                                                 <h5 class="pl-4"><img src="{{url('imgs/lavel.png')}}" width="50" alt="...">{{$array->severity}}</h5>
@@ -236,7 +236,7 @@
                                         <div class="col-8">
                                             @if($array_su->surgery_name)
                                                 <h4 class="mt-3 pl-4">{{$array_su->surgery_name}}</h4>
-                                                @else 
+                                                @else
                                                 None
                                             @endif
                                             @if($array_su->surgery_date)
@@ -347,8 +347,8 @@
                                 <h4 class="text-pills m-auto" style="font-size: 12pt;padding-top:15px;">Father</h4>
                             </div>
                         </a>
-                        
-                        
+
+
                     </div>
                     <div class="col-md-10 mr-auto ml-auto pill-box-f p-4 align-items-center js-fullheight animated">
                         <div class="tab-content mr-auto ml-auto" id="v-pills-tabContent">
@@ -366,7 +366,7 @@
                                 @if($mother > 0)
                                 <div class="ml-5"><img src="{{url('imgs/mother.png')}}" width="80"></div>
                                     @foreach($mother as $mother)
-                                        
+
                                         <div class="pills-main col-xl-8 col-md-4 col-xs-12 row mb-3 mr-auto ml-auto">
                                             <div class="col-2">
                                                 <img src="{{url('imgs/01.png')}}" width="60" alt="...">
@@ -392,7 +392,7 @@
                                 @if($father > 0)
                                 <div class="ml-5"><img src="{{url('imgs/father.png')}}" width="80"></div>
                                     @foreach($father as $father)
-                                        
+
                                         <div class="pills-main pills-main-orange col-xl-8 col-md-4 col-xs-12 row mb-3 mr-auto ml-auto">
                                             <div class="col-2">
                                                 <img src="{{url('imgs/01.png')}}" width="60" alt="...">
@@ -418,7 +418,7 @@
                                 @if($sister > 0)
                                 <div class="ml-5"><img src="{{url('imgs/sis.png')}}" width="80"></div>
                                     @foreach($sister as $sister)
-                                        
+
                                         <div class="pills-main pills-main-green col-xl-8 col-md-4 col-xs-12 row mb-3 mr-auto ml-auto">
                                             <div class="col-2">
                                                 <img src="{{url('imgs/01.png')}}" width="60" alt="...">
@@ -444,7 +444,7 @@
                                 @if($brother > 0)
                                 <div class="ml-5"><img src="{{url('imgs/bro.png')}}" width="80"></div>
                                     @foreach($brother as $brother)
-                                        
+
                                         <div class="pills-main pills-main-teal col-xl-8 col-md-4 col-xs-12 row mb-3 mr-auto ml-auto">
                                             <div class="col-2">
                                                 <img src="{{url('imgs/01.png')}}" width="60" alt="...">
@@ -470,7 +470,7 @@
                                 @if($grandmam >0)
                                 <div class="ml-5"><img src="{{url('imgs/grandma.png')}}" width="80"></div>
                                     @foreach($grandmam as $grandmam)
-                                        
+
                                         <div class="pills-main pills-main-yellow col-xl-8 col-md-4 col-xs-12 row mb-3 mr-auto ml-auto">
                                             <div class="col-2">
                                                 <img src="{{url('imgs/01.png')}}" width="60" alt="...">
@@ -496,7 +496,7 @@
                                 @if($grandmaf > 0)
                                 <div class="ml-5"><img src="{{url('imgs/grandma.png')}}" width="80"></div>
                                     @foreach($grandmaf as $grandmaf)
-                                        
+
                                         <div class="pills-main pills-main-green col-xl-8 col-md-4 col-xs-12 row mb-3 mr-auto ml-auto">
                                             <div class="col-2">
                                                 <img src="{{url('imgs/01.png')}}" width="60" alt="...">
@@ -522,7 +522,7 @@
                                 @if($grandpam > 0)
                                 <div class="ml-5"><img src="{{url('imgs/grandpa.png')}}" width="80"></div>
                                     @foreach($grandpam as $grandpam)
-                                        
+
                                         <div class="pills-main pills-main-teal col-xl-8 col-md-4 col-xs-12 row mb-3 mr-auto ml-auto">
                                             <div class="col-2">
                                                 <img src="{{url('imgs/01.png')}}" width="60" alt="...">
@@ -548,7 +548,7 @@
                                 @if($grandpaf > 0)
                                 <div class="ml-5"><img src="{{url('imgs/grandpa.png')}}" width="80"></div>
                                     @foreach($grandpaf as $grandpaf)
-                                        
+
                                         <div class="pills-main pills-main-teal col-xl-8 col-md-4 col-xs-12 row mb-3 mr-auto ml-auto">
                                             <div class="col-2">
                                                 <img src="{{url('imgs/01.png')}}" width="60" alt="...">
@@ -580,7 +580,7 @@
                             <h2 class="row mt-4 ml-5 mb-5">Female History</h2>
                             <div><h5 class="card-title mt-4 ml-5 mb-5 text-uppercase text-muted mb-3">Female Mother</h5></div>
                             <div class="row mt-2 mr-auto ml-auto">
-                                @if($patien->patinets_data->mother_Period_Cycle != null || $patien->patinets_data->mother_pregnency != null || $patien->patinets_data->mother_abotion != null)
+                                @if($patien->patinets_data->Period_Cycle != null || $patien->patinets_data->pregnency != null || $patien->patinets_data->Abotion != null)
                                     <div class="col-xl-6 col-md-2 col-xs-12 mb-4">
                                         <div class="pills-main pills-main-pink card card-stats">
                                             <!-- Card body -->
@@ -636,7 +636,7 @@
                                         </div>
                                     </div>
                                 @endif
-                                @if($patien->patinets_data->wife_Period_Cycle != null || $patien->patinets_data->wife_Abotion != null || $patien->patinets_data->wife_Contraceptive != null)
+                                @if($patien->patinets_data->Period_Cycle != null || $patien->patinets_data->Abotion != null || $patien->patinets_data->Contraceptive != null)
                                     <div class="col-xl-4 col-md-2 col-xs-12 mb-5">
                                         <div class="pills-main pills-main-pink card card-stats">
                                             <!-- Card body -->
@@ -676,7 +676,7 @@
                                         </div>
                                     </div>
                                 @endif
-                                
+
                             </div>
                         </div>
                 @endif

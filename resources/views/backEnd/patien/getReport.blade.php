@@ -676,11 +676,11 @@
                                 </div>
                                 <div class="col-4">
                                     <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                        <h6 class="col-12 font-weight-bold text-dark text-center">{{ $patient->patinets_data->mother_Period_Cycle }}</h6>
+                                        <h6 class="col-12 font-weight-bold text-dark text-center">{{ $patient->patinets_data->Period_Cycle }}</h6>
                                     </div>
                                 </div>
                             </div>
-                            @if($patient->patinets_data->mother_Period_Cycle != null || $patient->patinets_data->mother_pregnency != null || $patient->patinets_data->mother_abotion != null)
+                            @if($patient->patinets_data->Period_Cycle != null || $patient->patinets_data->pregnency != null || $patient->patinets_data->Abotion != null)
                                 <div class="row col-12 mb-3 ml-auto mr-auto">
                                     <div class="col-6">
                                         <div class="pt-2 pb-1 row col-12">
@@ -689,7 +689,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->mother_pregnency}} </h6>
+                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->pregnency}} </h6>
                                         </div>
                                     </div>
                                 </div>
@@ -701,7 +701,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->mother_abotion}} </h6>
+                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->Abotion}} </h6>
                                         </div>
                                     </div>
                                 </div>
@@ -713,7 +713,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->mother_Contraceptive}} </h6>
+                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->Contraceptive}} </h6>
                                         </div>
                                     </div>
                                 </div>
@@ -725,7 +725,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->mother_deliveries}} </h6>
+                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->deliveries}} </h6>
                                         </div>
                                     </div>
                                 </div>
@@ -737,7 +737,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{ $patient->patinets_data->mother_complicetion }} </h6>
+                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{ $patient->patinets_data->complicetion }} </h6>
                                         </div>
                                     </div>
                                 </div>

@@ -149,6 +149,14 @@ class patientController extends Controller
         );
         $success['token'] = $hospitalCreate -> createToken('MyApp') -> accessToken;
         if ($hospitalCreate) {
+
+            $clupTransctionCreate = clupTransaction::create([
+                'transaction'  => 'Registeration',
+                'point'        => 50,
+                'balance'      => 50,
+                'patient_id'   => $hospitalCreate->id,
+            ]);
+
             return response() -> json([
                 'data' => $hospitalCreate,
                 'message' => 'success',
@@ -553,12 +561,14 @@ class patientController extends Controller
     }
     // wife data
     public function WifeData(Request $request, $idCode) {
+        //return "Alo";
+        return $request;
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if ($patient) {
             $profileCreate = patientData::where('patient_id', $patient -> id) -> update([
-                'wife_Period_Cycle' => $request -> wife_Period_Cycle,
-                'wife_Abotion' => $request -> wife_Abotion,
-                'wife_Contraceptive' => $request -> wife_Contraceptive
+                'Period_Cycle' => $request -> Period_Cycle,
+                'Abotion' => $request -> Abotion,
+                'Contraceptive' => $request -> Contraceptive
             ]);
             return response() -> json([
                 'data' => $profileCreate,
@@ -573,7 +583,7 @@ class patientController extends Controller
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if ($patient) {
             $medicationGet = patientData::where('patient_id', $patient -> id) -> select(
-                ['wife_Period_Cycle', 'wife_Abotion', 'wife_Contraceptive']
+                ['Period_Cycle', 'Abotion', 'Contraceptive']
             ) -> first();
             return response() -> json([
                 'data' => $medicationGet,
@@ -586,12 +596,12 @@ class patientController extends Controller
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if ($patient) {
             $profileCreate = patientData::where('patient_id', $patient -> id) -> update([
-                'mother_Period_Cycle' => $request -> mother_Period_Cycle,
-                'mother_pregnency' => $request -> mother_pregnency,
-                'mother_abotion' => $request -> mother_abotion,
-                'mother_deliveries' => $request -> mother_deliveries,
-                'mother_complicetion' => $request -> mother_complicetion,
-                'mother_Contraceptive' => $request -> mother_Contraceptive,
+                'Period_Cycle' => $request -> Period_Cycle,
+                'pregnency' => $request -> pregnency,
+                'Abotion' => $request -> Abotion,
+                'deliveries' => $request -> deliveries,
+                'complicetion' => $request -> complicetion,
+                'Contraceptive' => $request -> Contraceptive,
             ]);
             return response() -> json([
                 'data' => $profileCreate,
@@ -604,12 +614,12 @@ class patientController extends Controller
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if ($patient) {
             $medicationGet = patientData::where('patient_id', $patient -> id) -> select([
-                'mother_Period_Cycle',
-                'mother_pregnency',
-                'mother_abotion',
-                'mother_deliveries',
-                'mother_complicetion',
-                'mother_Contraceptive'
+                'Period_Cycle',
+                'pregnency',
+                'Abotion',
+                'deliveries',
+                'complicetion',
+                'Contraceptive'
             ]) -> first();
             return response() -> json([
                 'data' => $medicationGet,
@@ -742,7 +752,7 @@ class patientController extends Controller
         return response() -> json(['message' => 'faild']);
     }
     public function uploadFile(Request $request) {
-
+        //return "Alo";
         // $hospitalRequest = $request->file;
         // $image = $request->file('fileName');
         // $input = $hospitalRequest = $image->getClientOriginalName();
@@ -754,13 +764,13 @@ class patientController extends Controller
         $code = rand(1111111, 9999999);
         $file_new_name=time().$code ."f".'.'.$extension;
         $file->move('public/uploads/files/', $file_new_name);
-        $the_file = 'public/uploads/files/' . $file_new_name ;
+        $the_file = 'uploads/files/' . $file_new_name ;
+        //return asset('');
 
         return response()->json([
             'data' => asset($the_file),
             'status' => true,
-            'message' => 'success Message'
-        ]);
+        ],200);
 
     }
     public function rocata_file(Request $request) {
@@ -862,6 +872,47 @@ class patientController extends Controller
         }
         return response() -> json(['message' => 'Patient Not Found',200]);
     }
+
+    public function raouchehsPost(Request $request) {
+        //return $request;
+        $data = $request->all();
+        //return $data;
+
+        $validator = Validator::make($data, [
+            'patient_idCode' => 'required',
+            'prescription' => 'required',
+            'date' => 'required|date',
+        ]);
+
+        if ($validator -> fails()) {
+            // foreach($validator->errors()->toArray() as $e){
+                return response()->json([
+                    'message' => $validator->errors(),
+                    'status' => false,
+                ],406);
+            // }
+        }
+
+        $patient = Patien::where('idCode', $request -> patient_idCode) -> first();
+        //return $patient;
+
+
+
+        if ($patient) {
+
+            $data['patient_id'] = $patient->id;
+            $new_Raoucheh = Raoucheh::create($data);
+
+            if($new_Raoucheh){
+                return response() -> json(['message' => 'Created Successfully'],200);
+            }else{
+                return response() -> json(['message' => 'Error In Saving'],500);
+            }
+
+        }
+        return response() -> json(['message' => 'Patient Not Found'],400);
+    }
+
     public function forgotPassword(Request $request){
         $userRequest = $request->all();
             if($request->idCode[3] == '0'){
