@@ -164,7 +164,7 @@ class apiController extends Controller
         //     'status'=> true
         // ]);
 
-        
+
         try{
             $rays = Rays::get(['id','name']);
             if($rays->count() > 0){
@@ -250,27 +250,28 @@ class apiController extends Controller
         ]);
 
     }
-    
-    public function getAllMedication(){
-        try{
-            $medication = Medication2::get(['id','name']);
-            if($medication){
-                return response()->json([
-                    'data' => $medication,
-                    'message' => 'success message',
-                    'status' => true
-                ]);
-            }
-            return response()->json([
 
-                'message' => 'not found',
-                'status' => false
-            ],400);
-        }catch(\Exception $ex){
-            return response()->json([
-                'message' => $ex->getMessage(),
-                'status' => false
-            ],500);
-        }
-    }
+    // public function getAllMedication(){
+    //     try{
+    //         $medication = Medication2::get(['id','name']);
+    //         if($medication){
+    //             return response()->json([
+    //                 'data' => $medication,
+    //                 'message' => 'success message',
+    //                 'status' => true
+    //             ]);
+    //         }
+    //         return response()->json([
+
+    //             'message' => 'not found',
+    //             'status' => false
+    //         ],400);
+    //     }catch(\Exception $ex){
+    //         return response()->json([
+    //             'message' => $ex->getMessage(),
+    //             'status' => false
+    //         ],500);
+    //     }
+    // }
+
 }

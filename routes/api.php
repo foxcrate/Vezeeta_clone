@@ -47,7 +47,7 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('medications','apiController@getAllMedication');
 
     // get all medication
-    Route::get('medications','apiController@getAllMedication');
+    //Route::get('medications','apiController@getAllMedication');
 
     /* routes app */
     // Route::group(['prefix' => 'patientRegister'],function(){
