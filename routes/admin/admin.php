@@ -134,8 +134,6 @@ Route::group(
                 Route::post('patient/acceptRequestWife','patienController@acceptRequestWife')->name('acceptRequestWife');
                 Route::post('patient/declineRequestWife','patienController@declineRequestWife')->name('declineRequestWife');
 
-                // show report wife or husband //
-                Route::get('accept/report/patient/{id}','patienController@showReportAccept')->name('showReportAccept')->middleware([SessionAuthPatient::class]);
                 // add wife or husband
                 Route::post('addNew/wifeOrHusband','patienController@addNew_wifeOrHusband')->name('addNew_wifeOrHusband');
 
@@ -253,6 +251,9 @@ Route::group(
                 /* doctor family */
 
             });
+
+            // show report wife or husband //
+            Route::get('accept/report/patient/{id}/{id2}','patienController@showReportAccept')->name('showReportAccept');
 
 
 

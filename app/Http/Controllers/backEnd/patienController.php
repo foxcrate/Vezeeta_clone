@@ -1005,7 +1005,7 @@ class patienController extends Controller
     }
     public function addRequestWife($id,Request $request){
         try{
-            Alert::success('Success', 'Request Added successfuly');
+
             $user = auth('patien')->user()->id;
             $CouplesCreate = Couples::create([
                 'patientAccept_id'  => $request->patientAcceptId,
@@ -1013,6 +1013,7 @@ class patienController extends Controller
                 'couples'   => false,
             ]);
             // $user->notify(new \App\Notifications\addRequestWife($CouplesCreate['patientAccept_id'],$CouplesCreate['patientRequest_id']));
+            Alert::success('Success', 'Request Added successfuly');
             return redirect()->back();
         }catch(\Exception $ex){
             Alert::error('Error','Problem');
@@ -1089,10 +1090,15 @@ class patienController extends Controller
 
     }
 
-    public function showReportAccept($id){
+    public function showReportAccept($id,$id2){
+
         $patient = Patien::with(['patinets_data'])->findOrFail($id);
-        $lastCheckup = Checkup::where('patient_id',$id)->orderBy('id','DESC')->first();
-        return view('backEnd.patien.showReportAccept',compact('patient','lastCheckup'));
+        //return $patient;
+        $patient2 = Patien::with(['patinets_data'])->findOrFail($id2);
+        $lastCheckup = Checkup::where('patient_id',$id2)->orderBy('id','DESC')->first();
+
+        return view('backEnd.patien.showReportAccept',compact('patient','patient2','lastCheckup'));
+
     }
 
     public function addNew_wifeOrHusband(Request $request){

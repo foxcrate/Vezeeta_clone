@@ -60,47 +60,79 @@
             <h5 class="text-dark font-weight-bold text-center">Add {{ auth('patien')->user()->gender == 'male' ? 'wife' : 'Husband' }}</h5>
         </div> --}}
 
-        @if(count($patient->couples) > 0 && $patient->couples[0]->couples == 1)
+        {{-- <h6>{{ $patient->couples}}</h6> --}}
+
+        {{-- @if(count($patient->couples) > 0 && $patient->couples[0]->couples == 1) --}}
+        @if( count($patient->couples) > 0 )
+
+
+
             @foreach($patient->couples as $value)
+
                 @if($value->couples == 1)
+
                     <div class="row col-lg-8 ml-auto mr-auto mb-3 card-person-add">
                         <div class="col-lg-2 mb-auto mt-auto">
                             <img src="{{url('imgs/family.png')}}" width="130" alt="...">
                         </div>
                         <div class="col-lg-8 mb-auto mt-auto">
-                            <h4 class="col-lg-10 font-weight-bold" ><a style="text-transform:capitalize" href="{{ route('showReportAccept',$value->patientRequest->id) }}">{{ $value->patientRequest->name }}</a></h4>
+
+                            {{-- <h1>{{ $patient->id }}</h1>
+                            <h1>{{ $value->patientRequest->id }}</h1> --}}
+                            @if( $value->patientRequest->id == $patient->id)
+                            <h4 class="col-lg-10 font-weight-bold" ><a style="text-transform:capitalize" href=" {{ route( 'showReportAccept',[$patient->id,$value->patientRequest->id] ) }} ">{{ $value->patientAccept_id->name }}</a></h4>
+                            @else
+                            <h4 class="col-lg-10 font-weight-bold" ><a style="text-transform:capitalize" href=" {{ route( 'showReportAccept',[$patient->id,$value->patientRequest->id] ) }} ">{{ $value->patientRequest->name }}</a></h4>
+                            @endif
+                            <h5 class="col-lg-10 font-weight-bold" >{{ $value->patientRequest->idCode }}</h5>
+                        </div>
+                    </div>
+
+                @endif
+
+            @endforeach
+
+            {{-- <h1>Alo 1 {{ count($patient->couples) }}</h1> --}}
+
+            {{-- <div class="row col-4 mb-3 ml-auto mr-auto">
+                <button id="addWife" class="btn btn-primary col-12 h2">Add Wife</button>
+            </div> --}}
+
+        @endif
+
+        {{-- @if(count($patient->Requestcouples) > 0 && $patient->Requestcouples[0]->couples == 0) --}}
+        @if( count($patient->Requestcouples) > 0 )
+
+            @foreach($patient->Requestcouples as $value)
+
+                @if($value->couples == 0)
+                    <div class="row col-lg-8 ml-auto mr-auto mb-3 card-person-add">
+                        <div class="col-lg-2 mb-auto mt-auto">
+                            <img src="{{url('imgs/family.png')}}" width="130" alt="...">
+                        </div>
+                        <div class="col-lg-8 mb-auto mt-auto">
+                            <h4 class="col-lg-10 font-weight-bold" ><a style="text-transform:capitalize" href=" {{ route( 'showReportAccept',[$patient->id,$value->patientRequest->id] ) }} ">{{ $value->patientRequest->name }}</a></h4>
                             <h5 class="col-lg-10 font-weight-bold" >{{ $value->patientRequest->idCode }}</h5>
                         </div>
                     </div>
                 @endif
+
             @endforeach
-            <div class="row col-4 mb-3 ml-auto mr-auto">
-                <button id="addWife" class="btn btn-primary col-12 h2">Add Wife</button>
-            </div>
-        @endif
-        @if(count($patient->Requestcouples) > 0 && $patient->Requestcouples[0]->couples == 1)
-            @foreach($patient->Requestcouples as $value)
-                @if($value->couples == 1)
-                    <div class="row col-lg-8 ml-auto mr-auto mb-3 card-person-add">
-                        <div class="col-lg-2 mb-auto mt-auto">
-                            <img src="{{url('imgs/family.png')}}" width="130" alt="...">
-                        </div>
-                        <div class="col-lg-8 mb-auto mt-auto">
-                            <h4 class="col-lg-10 font-weight-bold" ><a style="text-transform:capitalize" href="{{ route('showReportAccept',$value->patient->id) }}">{{ $value->patient->name }}</a></h4>
-                            <h5 class="col-lg-10 font-weight-bold" >{{ $value->patient->idCode }}</h5>
-                        </div>
-                    </div>
-                @endif
-            @endforeach
-            <div class="row col-4 mb-3 ml-auto mr-auto">
+
+            {{-- <h1>Alo 2 {{ count($patient->Requestcouples) }}</h1> --}}
+
+            {{-- <div class="row col-4 mb-3 ml-auto mr-auto">
                 <button id="addWife" class="btn btn-primary col-6 h2">Add Wife</button>
-            </div>
+            </div> --}}
+
         @endif
-        <div class="row col-4 mt-3 mb-3 ml-auto mr-auto">
+
+        <div class="row col-4 mt-4 mb-3 ml-auto mr-auto">
             <button type="button" class="btn btn-primary col-12 " data-toggle="modal" data-target="#exampleModal">
-                Register {{ auth('patien')->user()->gender == 'male' ? 'wife' : 'Husband' }}
+                Register Your {{ auth('patien')->user()->gender == 'male' ? 'Wife' : 'Husband' }} With Us
             </button>
         </div>
+
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog  modal-lg" role="document">
@@ -589,6 +621,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Start-wifehusbend -->
         <div id="searchWife"class="tab-wife-husband col-lg-10 ml-auto mr-auto col-md-2">
             <div class="row">

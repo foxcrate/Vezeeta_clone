@@ -1,10 +1,11 @@
 @extends('backEnd.layoutes.mastar')
-@section('title','Report ' . $patient->firstName . ' ' . $patient->lastName)
+@section('title','Report ' . $patient2->firstName . ' ' . $patient2->lastName)
 @section("content")
 @include("backEnd.patien.slidenav")
 <div class="d-flex bg-veiwdoctor" id="wrapper">
     <div id="page-content-wrapper">
         @include('includes.patientNav')
+        {{-- <h6>{{ $patient }}</h6> --}}
         <div class="card col-lg-10 ml-auto mr-auto mt-4">
             <div class="card-body">
                 <div class="row">
@@ -13,10 +14,10 @@
                         <h5 class="font-weight-bold text-capitalize col-lg-9 mt-4">Patient Medical History Report</h4>
                     </div>
                     <div class="col d-flex justify-content-end">
-                        @if(!$patient->image)
+                        @if(!$patient2->image)
                             <img class="rounded-circle" alt="Image placeholder" src="{{ asset('uploads/default.png') }}"  width="80" height="80">
                         @else
-                            <img class="rounded-circle" alt="Image placeholder" src="{{ $patient->image }}"  width="80" height="80">
+                            <img class="rounded-circle" alt="Image placeholder" src="{{ $patient2->image }}"  width="80" height="80">
                         @endif
                     </div>
                 </div>
@@ -25,41 +26,41 @@
                         <div class="col-4">
                           <div class="row">
                               <h6 class="col-5 font-weight-bold text-primary pl-5"> Name :</h6>
-                              <div class="col-7 h6 text-dark font-weight-bold">@if($patient->name) {{ $patient->name }} @else Null @endif</div>
+                              <div class="col-7 h6 text-dark font-weight-bold">@if($patient2->name) {{ $patient2->name }} @else Null @endif</div>
                           </div>
                           <div class="row">
                             <h6 class="col-5 font-weight-bold text-primary pl-4"> Patient ID:</h6>
-                            <div class="col-7 h6 text-dark font-weight-bold">@if($patient->idCode) {{ $patient->idCode }}   @else Null @endif </div>
+                            <div class="col-7 h6 text-dark font-weight-bold">@if($patient2->idCode) {{ $patient2->idCode }}   @else Null @endif </div>
                           </div>
                         </div>
                         <div class="col-3">
                           <div class="row">
                               <h6 class="col-6 font-weight-bold text-primary pl-5"> Age :</h6>
-                              <div class="col-6 h6 text-dark font-weight-bold">@if($patient->Age) {{ $patient->Age }} @else Null @endif</div>
+                              <div class="col-6 h6 text-dark font-weight-bold">@if($patient2->Age) {{ $patient2->Age }} @else Null @endif</div>
                           </div>
                           <div class="row">
                               <div class="col-6 h6 font-weight-bold text-primary pl-4">Gender :</div>
-                              <div class="col-6 h6 text-dark font-weight-bold">@if($patient->gender) {{ $patient->gender }} @else Null @endif</div>
+                              <div class="col-6 h6 text-dark font-weight-bold">@if($patient2->gender) {{ $patient2->gender }} @else Null @endif</div>
                           </div>
                         </div>
                         <div class="col-2">
                             <div class="row">
                                 <h6 class="col-6 font-weight-bold text-primary"> Blood :</h6>
-                                <div class="col-6 h6 text-dark font-weight-bold">@if($patient->patinets_data && $patient->patinets_data->blood) {{ $patient->patinets_data->blood }} @else Null @endif</div>
+                                <div class="col-6 h6 text-dark font-weight-bold">@if($patient2->patinets_data && $patient2->patinets_data->blood) {{ $patient2->patinets_data->blood }} @else Null @endif</div>
                             </div>
                             <div class="row">
                                 <div class="col-6 h6 font-weight-bold text-primary">States:</div>
-                                <div class="col-6 h6 text-dark font-weight-bold">@if($patient->state) {{ $patient->state }} @else Null @endif </div>
+                                <div class="col-6 h6 text-dark font-weight-bold">@if($patient2->state) {{ $patient2->state }} @else Null @endif </div>
                             </div>
                           </div>
                         <div class="col-2 ml-5">
                             <div class="row">
                                 <h6 class="col-6 h6 font-weight-bold text-primary"> Height:</h6>
-                                <div class="col-6 h6 text-dark font-weight-bold">@if($patient->patinets_data && $patient->patinets_data->height) {{ $patient->patinets_data->height . ' CM' }} @else Null @endif </div>
+                                <div class="col-6 h6 text-dark font-weight-bold">@if($patient2->patinets_data && $patient2->patinets_data->height) {{ $patient2->patinets_data->height . ' CM' }} @else Null @endif </div>
                             </div>
                             <div class="row">
                                 <h6 class="col-6 h6 font-weight-bold text-primary"> Weight:</h6>
-                                <div class="col-6 h6 text-dark font-weight-bold"> @if($patient->patinets_data && $patient->patinets_data->width) {{ $patient->patinets_data->width .  $patient->patinets_data->width_type }} @else Null  @endif </div>
+                                <div class="col-6 h6 text-dark font-weight-bold"> @if($patient2->patinets_data && $patient2->patinets_data->width) {{ $patient2->patinets_data->width .  $patient2->patinets_data->width_type }} @else Null  @endif </div>
                             </div>
                           </div>
                     </div>
@@ -101,7 +102,7 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                                @foreach($patient->checkup as $checkup)
+                                                @foreach($patient2->checkup as $checkup)
                                                     <tr>
                                                         <th class="text-center" scope="row">{{ date('d-m-Y',$checkup->date . '')}}{{ ' ' . Carbon\Carbon::parse($checkup->created_at)->format('H:i:s A') }}</th>
                                                         <td class="text-center">{{$checkup->temperature}}</td>
@@ -147,8 +148,8 @@
                                 <div class="bg-doctor p-2 col-12  text-center">
                                     <div class="col-12 h6 text-dark font-weight-bold mb-2">
                                         @php
-                                            $weight = $patient->patinets_data->width;
-                                            $heightT = ($patient->patinets_data->height * $patient->patinets_data->height / 10000);
+                                            $weight = $patient2->patinets_data->width;
+                                            $heightT = ($patient2->patinets_data->height * $patient2->patinets_data->height / 10000);
                                             if($heightT == 0){
                                             $bodyMass = 0;
                                             }else{
@@ -176,7 +177,7 @@
                     <div class="contanier">
                         <div class="row pt-3">
                             @php
-                                $agree_name = $patient->patinets_data->agree_name;
+                                $agree_name = $patient2->patinets_data->agree_name;
                             @endphp
                             @if($agree_name && $agree_name > 0)
                                 @foreach($agree_name as $agree)
@@ -226,7 +227,7 @@
                             </div>
                         </div>
                             @php
-                                $medication_name = $patient->patinets_data->medication_name;
+                                $medication_name = $patient2->patinets_data->medication_name;
                             @endphp
                             @if($medication_name === null)
                                 <p></p>
@@ -284,7 +285,7 @@
                             </div>
                         </div>
                         @php
-                            $allergis =$patient->patinets_data->allergi_data;
+                            $allergis =$patient2->patinets_data->allergi_data;
                         @endphp
                         <div class="row col-12 ml-auto mr-auto">
                             @if($allergis)
@@ -329,7 +330,7 @@
                     </div>
                     <div class="row pt-2">
                         @php
-                            $surgerys = $patient->patinets_data->surgery_data;
+                            $surgerys = $patient2->patinets_data->surgery_data;
                         @endphp
 
                         <div class="row col-12 ml-auto mr-auto">
@@ -396,7 +397,7 @@
                         </div>
                         <div class="row col-12 ml-auto mr-auto">
                             @php
-                                $smoking = $patient->patinets_data->smoking;
+                                $smoking = $patient2->patinets_data->smoking;
                             @endphp
                             @if($smoking)
                                 @foreach($smoking as $smoke)
@@ -443,34 +444,34 @@
                                                 <th class="h5">Show</th>
                                                 <th class="h5">Download</th>
                                             </tr>
-                                            @if($patient->patinets_data->rocata_file)
-                                                @foreach($patient->patinets_data->rocata_file as $rocata_file)
+                                            @if($patient2->patinets_data->rocata_file)
+                                                @foreach($patient2->patinets_data->rocata_file as $rocata_file)
                                                     <tr>
                                                         <td>Prescription Files</td>
                                                         <td><a class="text-decoration" target="_blank" href="{{url($rocata_file)}}">Show</a></td>
-                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['rocata',$patient->id]) }}">Download</a></td>
+                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['rocata',$patient2->id]) }}">Download</a></td>
                                                     </tr>
                                                 @endforeach
                                                 @else
                                                 <div class="alert alert-danger">No Files</div>
                                             @endif
-                                            @if($patient->patinets_data->rays_file)
-                                                @foreach($patient->patinets_data->rays_file as $rays_file)
+                                            @if($patient2->patinets_data->rays_file)
+                                                @foreach($patient2->patinets_data->rays_file as $rays_file)
                                                     <tr>
                                                         <td>Rays Files</td>
                                                         <td><a class="text-decoration" target="_blank" href="{{url($rays_file)}}">Show</a></td>
-                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['ray',$patient->id]) }}">Download</a></td>
+                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['ray',$patient2->id]) }}">Download</a></td>
                                                     </tr>
                                                 @endforeach
                                                 @else
                                                 <div class="alert alert-danger">No Files</div>
                                             @endif
-                                            @if($patient->patinets_data->analzes_file)
-                                                @foreach($patient->patinets_data->analzes_file as $analzes_file)
+                                            @if($patient2->patinets_data->analzes_file)
+                                                @foreach($patient2->patinets_data->analzes_file as $analzes_file)
                                                     <tr>
                                                         <td>Test Files</td>
                                                         <td><a class="text-decoration" target="_blank" href="{{url($analzes_file)}}">Show</a></td>
-                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['test',$patient->id]) }}">Download</a></td>
+                                                        <td><a class="text-decoration" href="{{ route('download_pdf',['test',$patient2->id]) }}">Download</a></td>
                                                     </tr>
                                                 @endforeach
                                                 @else
@@ -500,7 +501,7 @@
                                 </div>
                             </div>
                             @php
-                                $mother = $patient->patinets_data->mother;
+                                $mother = $patient2->patinets_data->mother;
                             @endphp
                             @if($mother > 0)
                                 @foreach($mother as $value)
@@ -528,7 +529,7 @@
                                 </div>
                             </div>
                             @php
-                                $father = $patient->patinets_data->father;
+                                $father = $patient2->patinets_data->father;
                             @endphp
                             @if($father > 0)
                                 @foreach($father as $father)
@@ -550,7 +551,7 @@
                         </div>
                     </div>
                 </div>
-                @if($patient->gender == 'female' && $patient->state == 'married' || $patient->state =='divorce')
+                @if($patient2->gender == 'female' && $patient2->state == 'married' || $patient2->state =='divorce')
                     <div class="container p-2">
                         <div class="row bg-title ml-auto mr-auto ">
                             <div class="row col-8 pt-2 pb-2">
@@ -567,11 +568,11 @@
                                 </div>
                                 <div class="col-4">
                                     <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                        <h6 class="col-12 font-weight-bold text-dark text-center">{{ $patient->patinets_data->Period_Cycle }}</h6>
+                                        <h6 class="col-12 font-weight-bold text-dark text-center">{{ $patient2->patinets_data->Period_Cycle }}</h6>
                                     </div>
                                 </div>
                             </div>
-                            @if($patient->patinets_data->Period_Cycle != null || $patient->patinets_data->pregnency != null || $patient->patinets_data->Abotion != null)
+                            @if($patient2->patinets_data->Period_Cycle != null || $patient2->patinets_data->pregnency != null || $patient2->patinets_data->Abotion != null)
                                 <div class="row col-12 mb-3 ml-auto mr-auto">
                                     <div class="col-6">
                                         <div class="pt-2 pb-1 row col-12">
@@ -580,7 +581,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->pregnency}} </h6>
+                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient2->patinets_data->pregnency}} </h6>
                                         </div>
                                     </div>
                                 </div>
@@ -592,7 +593,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->Abotion}} </h6>
+                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient2->patinets_data->Abotion}} </h6>
                                         </div>
                                     </div>
                                 </div>
@@ -604,7 +605,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->Contraceptive}} </h6>
+                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient2->patinets_data->Contraceptive}} </h6>
                                         </div>
                                     </div>
                                 </div>
@@ -616,7 +617,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient->patinets_data->deliveries}} </h6>
+                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{$patient2->patinets_data->deliveries}} </h6>
                                         </div>
                                     </div>
                                 </div>
@@ -628,7 +629,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="bg-doctor pt-2 pb-1 row col-12 text-center">
-                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{ $patient->patinets_data->complicetion }} </h6>
+                                            <h6 class="col-12 font-weight-bold text-dark text-center"> {{ $patient2->patinets_data->complicetion }} </h6>
                                         </div>
                                     </div>
                                 </div>

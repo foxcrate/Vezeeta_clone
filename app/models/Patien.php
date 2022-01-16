@@ -159,12 +159,18 @@ class Patien extends Authenticatable
     public function rate(){
         return $this->hasMany('App\models\RateDoctor','patient_id');
     }
+
+
     public function couples(){
-        return $this->hasMany('App\models\Couples','patientRequest_id');
-    }
-    public function Requestcouples(){
         return $this->hasMany('App\models\Couples','patientAccept_id');
     }
+
+
+    public function Requestcouples(){
+        return $this->hasMany('App\models\Couples','patientRequest_id');
+    }
+
+
     public function doctorFamily(){
         return $this->hasOne('App\models\familyDoctor','idCodePatient');
     }

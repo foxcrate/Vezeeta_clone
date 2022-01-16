@@ -682,17 +682,21 @@ public function rayChildrenGet(Request $request) {
      }
     public function setCouplesGet(Request $request){
         $patien2 = Patien::where('idCode',$request->idCode)->first();
-            if($patien2){
-               $couples = Couples::where('patientAccept_id',$patien2->id)->where('couples',0)->count();
-               if($couples){
-                $couples = Couples::with('patient')->where('patientAccept_id',$patien2->id)->where('couples',0)->get();
-               return response()->json([
-                   'data' => $couples,
-                   'message'=> 'success',
-               ]);
+        //return $patien2;
 
-               }
+        if($patien2){
+            $couples = Couples::where('patientAccept_id',$patien2->id)->where('couples',0)->count();
+            //return $couples;
+
+            if($couples){
+                $couples = Couples::with('patient')->where('patientAccept_id',$patien2->id)->where('couples',0)->get();
+                return response()->json([
+                    'data' => $couples,
+                    'message'=> 'success',
+                ]);
+            }
         }
+
         return response()->json([
           'message' => 'faild'
         ],400);
