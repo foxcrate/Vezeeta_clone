@@ -132,7 +132,10 @@
                   <button class="row col-lg-5 ml-auto mr-auto btn btn-success mb-3">
                     <img src="{{url('imgs/invitation.svg')}}" width="30" class="mr-3 mb-auto mt-auto"><span style="font-size: 20px;">Invite Friend</span>
                   </button>
-                  <button class="col-lg-5 ml-auto mr-auto btn btn-danger mb-3"><span style="font-size: 20px;">Back</span></button>
+
+                  {{-- <button class="col-lg-5 ml-auto mr-auto btn btn-danger mb-3"><span style="font-size: 20px;">Back</span></button> --}}
+                  <a href="{{route('online_doctor.homepage',$online_doctor->id)}}" class="col-lg-5 ml-auto mr-auto btn btn-danger mb-3"> <span style="font-size: 20px;">Back</span> </a>
+
             </div>
         </div>
     </div>
