@@ -191,7 +191,9 @@ class apiController extends Controller
 
     public function getAllMedication(){
         try{
-            $medication = Medication2::get(['id','name']);
+            // $data = Category::paginate(request()->all());
+            // $medication = Medication2::get(['id','name']);
+            $medication = Medication2::paginate(50);
             if($medication){
                 return response()->json([
                     'data' => $medication,
