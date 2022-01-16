@@ -93,85 +93,28 @@
             <section class="radio-toolbar">
                 <div class="row middle">
                     <div class="col-lg-12 patein-radio">
+                        <label class="m-2" onclick="displaySong6()">
+                            <input id="online_doctor" type="radio" name="guard" value="online_doctor"/><div class="box">
+                                    <script>function displaySong6() {
+                                            var textField = $('#name');
+                                            textField.val('D')
+                                        }
+
+                                    </script>
+                                <img class="mt-2" src="{{url('imgs/icon_png/onlineDoctor.svg')}}" height="60" alt="...">
+                                <span>Doctor</span>
+                            </div>
+                            </label>
                         <label class="m-2" onclick="displaySong()">
                         <input id = "patien" type="radio" name="guard" value="patien"/><div class="box patein-radio" checked >
-                                <script>function displaySong() {
-                                        var textField = $('#name');
-                                        textField.val('P')
-                                    }
-                                </script>
+                            <script>
+                                function displaySong() {
+                                    var textField = $('#name');
+                                    textField.val('P')
+                                }
+                            </script>
                             <img class="mt-2" src="{{url('imgs/icon_png/patient.svg')}}" height="60" alt="...">
                             <span class="">Patient</span>
-                        </div>
-                        </label>
-                        <label class="m-2" onclick="displaySong1()">
-                        <input id="clinic" type="radio" name="guard" value="clinic"/><div class="box">
-                                <script>function displaySong1() {
-                                        var textField = $('#name');
-                                        textField.val('C')
-                                    }
-                                </script>
-                            <img class="mt-2" src="{{url('imgs/icon_png/clinic.svg')}}" height="60" alt="...">
-                            <span>Clinic</span>
-                        </div>
-                        </label>
-                        <label class="m-2" onclick="displaySong2()">
-                        <input id="hosptail" type="radio" name="guard" value="hosptail"/><div class="box">
-                                <script>function displaySong2() {
-                                        var textField = $('#name');
-                                        textField.val('H')
-                                    }
-                                </script>
-                            <img class="mt-2" src="{{url('imgs/Hospital.svg')}}" height="60" alt="...">
-                            <span>Hospital</span>
-                        </div>
-                        </label>
-                        <label class="m-2" onclick="displaySong3()">
-                        <input id="xray" type="radio" name="guard" value="xray"/><div class="box">
-                                <script>function displaySong3() {
-                                        var textField = $('#name');
-                                        textField.val('X')
-                                    }
-
-                                </script>
-                            <img class="mt-2" src="{{url('imgs/x-ray.svg')}}" height="60" alt="...">
-                            <span>Scan</span>
-                        </div>
-                        </label>
-                        <label class="m-2" onclick="displaySong4()">
-                        <input id="labs" type="radio" name="guard" value="labs"/><div class="box">
-                                <script>function displaySong4() {
-                                        var textField = $('#name');
-                                        textField.val('L')
-                                    }
-
-                                </script>
-                            <img class="mt-2" src="{{url('imgs/labs.svg')}}" height="60" alt="...">
-                            <span>Labs</span>
-                        </div>
-                        </label>
-                        <label class="m-2" onclick="displaySong5()">
-                        <input id="pharmacy" type="radio" name="guard" value="pharmacy"/><div class="box">
-                                <script>function displaySong5() {
-                                        var textField = $('#name');
-                                        textField.val('Y')
-                                    }
-
-                                </script>
-                            <img class="mt-2" src="{{url('imgs/pharmacy.svg')}}" height="60" alt="...">
-                            <span>Pharmacy</span>
-                        </div>
-                        </label>
-                        <label class="m-2" onclick="displaySong6()">
-                        <input id="online_doctor" type="radio" name="guard" value="online_doctor"/><div class="box">
-                                <script>function displaySong6() {
-                                        var textField = $('#name');
-                                        textField.val('D')
-                                    }
-
-                                </script>
-                            <img class="mt-2" src="{{url('imgs/icon_png/onlineDoctor.svg')}}" height="60" alt="...">
-                            <span>Doctor</span>
                         </div>
                         </label>
                         <label class="m-2" onclick="displaySong7()">
@@ -185,6 +128,64 @@
                                 <img class="mt-2" src="{{url('imgs/nurse.svg')}}" height="60" alt="...">
                                 <span>Nurse</span>
                             </div>
+                        </label>
+                        <label class="m-2" onclick="displaySong2()">
+                            <input id="hosptail" type="radio" name="guard" value="hosptail"/><div class="box">
+                                    <script>function displaySong2() {
+                                            var textField = $('#name');
+                                            textField.val('H')
+                                        }
+                                    </script>
+                                <img class="mt-2" src="{{url('imgs/Hospital.svg')}}" height="60" alt="...">
+                                <span>Hospital</span>
+                            </div>
+                            </label>
+                        <label class="m-2" onclick="displaySong1()">
+                        <input id="clinic" type="radio" name="guard" value="clinic"/><div class="box">
+                                <script>function displaySong1() {
+                                        var textField = $('#name');
+                                        textField.val('C')
+                                    }
+                                </script>
+                            <img class="mt-2" src="{{url('imgs/icon_png/clinic.svg')}}" height="60" alt="...">
+                            <span>Clinic</span>
+                        </div>
+                        </label>
+                        <label class="m-2" onclick="displaySong5()">
+                            <input id="pharmacy" type="radio" name="guard" value="pharmacy"/><div class="box">
+                                    <script>function displaySong5() {
+                                            var textField = $('#name');
+                                            textField.val('Y')
+                                        }
+
+                                    </script>
+                                <img class="mt-2" src="{{url('imgs/pharmacy.svg')}}" height="60" alt="...">
+                                <span>Pharmacy</span>
+                            </div>
+                        </label>
+                        <label class="m-2" onclick="displaySong4()">
+                            <input id="labs" type="radio" name="guard" value="labs"/><div class="box">
+                                    <script>function displaySong4() {
+                                            var textField = $('#name');
+                                            textField.val('L')
+                                        }
+
+                                    </script>
+                                <img class="mt-2" src="{{url('imgs/labs.svg')}}" height="60" alt="...">
+                                <span>Labs</span>
+                            </div>
+                        </label>
+                        <label class="m-2" onclick="displaySong3()">
+                        <input id="xray" type="radio" name="guard" value="xray"/><div class="box">
+                                <script>function displaySong3() {
+                                        var textField = $('#name');
+                                        textField.val('X')
+                                    }
+
+                                </script>
+                            <img class="mt-2" src="{{url('imgs/x-ray.svg')}}" height="60" alt="...">
+                            <span>Scan</span>
+                        </div>
                         </label>
                     </div>
                 </div>
