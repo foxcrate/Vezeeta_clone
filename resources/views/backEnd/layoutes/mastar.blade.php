@@ -51,6 +51,7 @@
             @yield('content')
         </div>
         <script src="{{url('js/jquery-3.4.1.js')}}"></script>
+        <script src="{{url('js/jquery-3.5.1.js')}}"></script>
         <script src="{{url('js/popper.js')}}"></script>
         <script src="{{url('js/bootstrap.js')}}"></script>
         <script src="{{url('js/location.js')}}"></script>
