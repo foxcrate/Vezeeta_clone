@@ -846,4 +846,72 @@ public function rayChildrenGet(Request $request) {
 
     }
 
+    public function sendRequestCouple(Request $request){
+
+        $sender_patient = Patien::where('idCode',$request->sender_idCode)->first();
+        $receiver_patient = Patien::where('idCode',$request->receiver_idCode)->first();
+
+        // $x=[ $sender_patient , $receiver_patient ];
+        // return $x;
+
+        // return $patient ;
+        if( $sender_patient && $receiver_patient ){
+
+            // $existRequest = Couples::where('patientRequest_id' , $sender_patient->id)->orWhere('patientAccept_id' , $receiver_patient->id)->orWhere('patientAccept_id' , $sender_patient->id)->orWhere('patientRequest_id' , $receiver_patient->id)->get();
+            $existRequest = Couples::where('patientRequest_id' , $sender_patient->id)->where('patientAccept_id' , $receiver_patient->id)->get();
+            //return count($existRequest);
+
+            if( count($existRequest) > 0 )
+            {
+
+                return response()->json([
+                    'message' => 'You Already Send Request To this User'
+                ],400);
+
+            }else{
+
+                $CouplesCreate = Couples::create([
+                    'patientAccept_id'  => $receiver_patient->id,
+                    'patientRequest_id'  => $sender_patient->id,
+                    'couples'   => false,
+                ]);
+
+                return response()->json([
+                    'message' => 'Request Sent'
+                ],200);
+
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Patients Not Found'
+              ],400);
+        }
+
+    }
+
+    // public function acceptRequest(Request $request){
+
+    //     $patient = Patien::where('idCode',$request->idCode)->first();
+    //     // return $patient ;
+    //     if($patient){
+    //         //return $patient;
+    //         $his_couples = $patient->myCouplesData();
+    //         //return count($his_couples);
+    //         if( count($his_couples)  > 0 ){
+    //             return $his_couples;
+    //         }else{
+    //             return response()->json([
+    //                 'message' => 'Patient Has No Couples'
+    //               ],400);
+    //         }
+
+    //     }else{
+    //         return response()->json([
+    //             'message' => 'Patient Not Found'
+    //           ],400);
+    //     }
+
+    // }
+
 }

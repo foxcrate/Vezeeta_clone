@@ -1819,6 +1819,8 @@ public function updateImage(Request $request){
                 'state' => 'required',
                 'job' => '',
                 'race' => '',
+                'latitude' => '',
+                'longitude' => '',
                 'address' => 'required',
                 'countryCode' => 'required',
                 'phoneNumber' => 'required'
@@ -1847,6 +1849,8 @@ public function updateImage(Request $request){
                 $patient->race = $request->race;
                 $patient->state = $request->state;
                 $patient->job = $request->job;
+                $patient->latitude = $request->latitude;
+                $patient->longitude = $request->longitude;
                 $patient->idCode = str_replace('+','P',$requestData['phoneNumber']);
                 $patient->save();
                 return response()->json([
