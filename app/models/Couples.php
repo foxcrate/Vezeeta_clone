@@ -13,7 +13,7 @@ class Couples extends Model
     //     return $this->belongsTo('App\models\Patien','patientRequest_id');
     // }
 
-    public function patientAccepted(){
+    public function patientAccept(){
         return $this->belongsTo('App\models\Patien','patientAccept_id');
     }
 

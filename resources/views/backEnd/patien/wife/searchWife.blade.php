@@ -60,16 +60,20 @@
             <h5 class="text-dark font-weight-bold text-center">Add {{ auth('patien')->user()->gender == 'male' ? 'wife' : 'Husband' }}</h5>
         </div> --}}
 
-        {{-- <h6>{{ $patient->couples}}</h6> --}}
+        {{-- <h6>{{ count($patient->myCouples()) }}</h6> --}}
+        {{-- @foreach($patient->myCouples() as $value)
+        <h1>{{$value->patientRequest->name }}</h1>
+        <h1>-----------</h1>
+        @endforeach --}}
 
         {{-- @if(count($patient->couples) > 0 && $patient->couples[0]->couples == 1) --}}
-        @if( count($patient->couples) > 0 )
+        @if( count( $patient->myCouples() ) > 0 )
 
 
 
-            @foreach($patient->couples as $value)
+            @foreach($patient->myCouples() as $value)
 
-                @if($value->couples == 1)
+                {{-- @if($value->couples == 1) --}}
 
                     <div class="row col-lg-8 ml-auto mr-auto mb-3 card-person-add">
                         <div class="col-lg-2 mb-auto mt-auto">
@@ -80,15 +84,17 @@
                             {{-- <h1>{{ $patient->id }}</h1>
                             <h1>{{ $value->patientRequest->id }}</h1> --}}
                             @if( $value->patientRequest->id == $patient->id)
-                            <h4 class="col-lg-10 font-weight-bold" ><a style="text-transform:capitalize" href=" {{ route( 'showReportAccept',[$patient->id,$value->patientRequest->id] ) }} ">{{ $value->patientAccept_id->name }}</a></h4>
+                                <h4 class="col-lg-10 font-weight-bold" ><a style="text-transform:capitalize" href=" {{ route( 'showReportAccept',[$patient->id,$value->patientRequest->id] ) }} ">{{ $value->patientAccept->name }}</a></h4>
+                                <h5 class="col-lg-10 font-weight-bold" >{{ $value->patientAccept->idCode }}</h5>
                             @else
-                            <h4 class="col-lg-10 font-weight-bold" ><a style="text-transform:capitalize" href=" {{ route( 'showReportAccept',[$patient->id,$value->patientRequest->id] ) }} ">{{ $value->patientRequest->name }}</a></h4>
+                                <h4 class="col-lg-10 font-weight-bold" ><a style="text-transform:capitalize" href=" {{ route( 'showReportAccept',[$patient->id,$value->patientRequest->id] ) }} ">{{ $value->patientRequest->name }}</a></h4>
+                                <h5 class="col-lg-10 font-weight-bold" >{{ $value->patientRequest->idCode }}</h5>
                             @endif
-                            <h5 class="col-lg-10 font-weight-bold" >{{ $value->patientRequest->idCode }}</h5>
+
                         </div>
                     </div>
 
-                @endif
+                {{-- @endif --}}
 
             @endforeach
 
@@ -101,7 +107,8 @@
         @endif
 
         {{-- @if(count($patient->Requestcouples) > 0 && $patient->Requestcouples[0]->couples == 0) --}}
-        @if( count($patient->Requestcouples) > 0 )
+
+        {{-- @if( count($patient->Requestcouples) > 0 )
 
             @foreach($patient->Requestcouples as $value)
 
@@ -119,13 +126,29 @@
 
             @endforeach
 
-            {{-- <h1>Alo 2 {{ count($patient->Requestcouples) }}</h1> --}}
+        @endif --}}
 
-            {{-- <div class="row col-4 mb-3 ml-auto mr-auto">
-                <button id="addWife" class="btn btn-primary col-6 h2">Add Wife</button>
-            </div> --}}
+
+        @if( count($patient->couples) > 0 )
+
+            @foreach($patient->couples as $value)
+
+                @if($value->couples == 0)
+                    <div class="row col-lg-8 ml-auto mr-auto mb-3 card-person-add">
+                        <div class="col-lg-2 mb-auto mt-auto">
+                            <img src="{{url('imgs/family.png')}}" width="130" alt="...">
+                        </div>
+                        <div class="col-lg-8 mb-auto mt-auto">
+                            <h4 class="col-lg-10 font-weight-bold" ><a style="text-transform:capitalize" href=" {{ route( 'showReportAccept',[$patient->id,$value->patientRequest->id] ) }} ">{{ $value->patientRequest->name }}</a></h4>
+                            <h5 class="col-lg-10 font-weight-bold" >{{ $value->patientRequest->idCode }}</h5>
+                        </div>
+                    </div>
+                @endif
+
+            @endforeach
 
         @endif
+
 
         <div class="row col-4 mt-4 mb-3 ml-auto mr-auto">
             <button type="button" class="btn btn-primary col-12 " data-toggle="modal" data-target="#exampleModal">

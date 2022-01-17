@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\PatientResetPasswordNotification;
+use App\models\Couples;
 use Carbon\Carbon;
 class Patien extends Authenticatable
 {
@@ -168,6 +169,41 @@ class Patien extends Authenticatable
 
     public function Requestcouples(){
         return $this->hasMany('App\models\Couples','patientRequest_id');
+    }
+
+    //
+
+    public function myCouples(){
+
+        //return "Alo";
+        $my_couples = Couples::where('couples',1)->orWhere( [ [ 'patientAccept_id' , $this->id ] , [ 'patientRequest_id' , $this->id ] ] )->get();
+
+        //return $this->id;
+        return $my_couples;
+    }
+
+    public function myCouplesData(){
+
+        //return "Alo";
+        $my_couples_requests = Couples::where('couples',1)->orWhere( [ [ 'patientAccept_id' , $this->id ] , [ 'patientRequest_id' , $this->id ] ] )->get();
+        $my_couples = [];
+
+        foreach( $my_couples_requests as $couple_request){
+
+            if( $this->id == $couple_request->patientAccept->id ){
+
+                array_push($my_couples,$couple_request->patientRequest);
+
+            }else{
+
+                array_push($my_couples,$couple_request->patientAccept);
+
+            }
+
+        }
+
+        //return $this->id;
+        return $my_couples;
     }
 
 

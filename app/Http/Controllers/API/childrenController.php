@@ -659,28 +659,31 @@ public function rayChildrenGet(Request $request) {
             }}
         }
         return response() -> json(['message' => 'faild'],400);
-     }
+    }
+
     public function setCouples(Request $request){
-     $patien = Patien::where('idCode',$request->idCode)->first();
-     if($patien){
-     $patien2 = Patien::where('idCode',$request->id)->first();
-         if($patien2){
+        $patien = Patien::where('idCode',$request->idCode)->first();
+        if($patien){
+        $patien2 = Patien::where('idCode',$request->id)->first();
+            if($patien2){
             $couples = Couples::create([
-             'patientRequest_id' => $patien->id ,
-             'patientAccept_id' => $patien2->id,
-             'idCode' => $patien->idCode,
+                'patientRequest_id' => $patien->id ,
+                'patientAccept_id' => $patien2->id,
+                'idCode' => $patien->idCode,
             ]);
             return response()->json([
                 'data' => $couples,
                 'message'=> 'success',
             ],200);
-         }
-     }
-     return response()->json([
-       'message' => 'faild'
-     ],400);
-     }
+            }
+        }
+        return response()->json([
+        'message' => 'faild'
+        ],400);
+    }
+
     public function setCouplesGet(Request $request){
+        //return $request;
         $patien2 = Patien::where('idCode',$request->idCode)->first();
         //return $patien2;
 
@@ -700,7 +703,8 @@ public function rayChildrenGet(Request $request) {
         return response()->json([
           'message' => 'faild'
         ],400);
-       }
+    }
+
     public function acceptCouples(Request $request){
         $patien = Patien::where('idCode',$request->idCode)->first();
         if($patien){
@@ -722,7 +726,8 @@ public function rayChildrenGet(Request $request) {
         return response()->json([
           'message' => 'faild'
         ],400);
-     }
+    }
+
     public function declineCouples(Request $request){
         $patien = Patien::where('idCode',$request->idCode)->first();
         if($patien){
@@ -742,8 +747,9 @@ public function rayChildrenGet(Request $request) {
         return response()->json([
           'message' => 'faild'
         ],400);
-     }
-     public function removeCouples(Request $request){
+    }
+
+    public function removeCouples(Request $request){
         $patien2 = Patien::where('idCode',$request->idCode)->first();
         $patien1 = Patien::where('idCode',$request->id)->first();
         if($patien2){
@@ -766,9 +772,11 @@ public function rayChildrenGet(Request $request) {
         }
         return response()->json([
             'message' => 'faild'
-          ],400);
-     }
+            ],400);
+    }
+
     public function requestCouplesGet(Request $request){
+
         $patien2 = Patien::where('idCode',$request->idCode)->first();
             if($patien2){
                $couples = Couples::where('patientRequest_id',$patien2->id)->where('couples',1)->count();
@@ -782,8 +790,11 @@ public function rayChildrenGet(Request $request) {
         return response()->json([
           'message' => 'faild'
         ],400);
-       }
+
+    }
+
     public function getIdcodeCouples(Request $request){
+
         $patien2 = Patien::where('idCode',$request->idCode)->first();
         if($patien2){
         $couples = Couples::where('patientRequest_id',$patien2->id)->where('couples',1)->count();
@@ -806,5 +817,33 @@ public function rayChildrenGet(Request $request) {
         return response()->json([
             'message' => 'faild'
           ],400);
-       }
+
+    }
+
+    // New Couple's Functions
+
+    public function getMyCouples(Request $request){
+
+        $patient = Patien::where('idCode',$request->idCode)->first();
+        // return $patient ;
+        if($patient){
+            //return $patient;
+            $his_couples = $patient->myCouplesData();
+            //return count($his_couples);
+            if( count($his_couples)  > 0 ){
+                return $his_couples;
+            }else{
+                return response()->json([
+                    'message' => 'Patient Has No Couples'
+                  ],400);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Patient Not Found'
+              ],400);
+        }
+
+    }
+
 }

@@ -267,13 +267,17 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('/allKidsTest','childrenController@allTestChildrenGet');
     Route::post('/linkkidsRay','childrenController@rayChildrenUpdate');
     Route::post('/linkkidsTest','childrenController@testChildrenUpdate');
-    Route::post('/requestCouples','childrenController@setCouples');
-    Route::get('/requestCouples','childrenController@setCouplesGet');
-    Route::get('/getAcceptRequest','childrenController@requestCouplesGet');
-    Route::get('/strCouples','childrenController@getIdcodeCouples');
-    Route::post('/Couples','childrenController@acceptCouples');
-    Route::delete('/Couples','childrenController@declineCouples');
-    Route::delete('/removeCouples','childrenController@removeCouples');
+
+    // Route::post('/requestCouples','childrenController@setCouples');
+    // Route::get('/requestCouples','childrenController@setCouplesGet');
+    // Route::get('/getAcceptRequest','childrenController@requestCouplesGet');
+    // Route::get('/strCouples','childrenController@getIdcodeCouples');
+    // Route::post('/Couples','childrenController@acceptCouples');
+    // Route::delete('/Couples','childrenController@declineCouples');
+    // Route::delete('/removeCouples','childrenController@removeCouples');
+
+    Route::get('/getMyCouples','childrenController@getMyCouples');
+
     //Hospital
     Route::post('/hospitalRegister','hospitalController@register');
     Route::post('/uploadImage','hospitalController@uploadImage');

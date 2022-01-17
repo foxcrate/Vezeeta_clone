@@ -1022,10 +1022,11 @@ class patienController extends Controller
     }
     public function acceptRequestWife(Request $request){
         try{
-            Alert::success('Success','Couples updated Successfualy');
+
             $couples = Couples::findOrFail($request->request_id);
             $couples->couples = true;
             $couples->save();
+            Alert::success('Success','Couples updated Successfualy');
             return redirect()->back();
         }catch(\Exception $ex){
             Alert::error('Error','problem');
@@ -1034,9 +1035,10 @@ class patienController extends Controller
     }
     public function declineRequestWife(Request $request){
         try{
-            Alert::success('Success','Couples Decline Successfuly');
+
             $couples = Couples::findOrFail($request->request_id);
             $couples->delete();
+            Alert::success('Success','Couples Decline Successfuly');
             return redirect()->back();
         }catch(\Exception $ex){
             Alert::error('Error','Problem');
