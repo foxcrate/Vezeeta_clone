@@ -112,6 +112,9 @@ class patientController extends Controller
         }else{
             $hospitalRequest['phoneNumber'] = $request->countryCode . $request->phoneNumber;
         }
+
+        $hospitalRequest['phoneNumberReal'] =  $request->phoneNumber;
+
         $hospitalRequest['idCode'] = str_replace(
             '+',
             'P',
@@ -1758,6 +1761,7 @@ public function updateImage(Request $request){
             }else{
                 $request_data['phoneNumber'] = $request->countryCode . $request->phoneNumber;
             }
+            $request_data['phoneNumberReal'] =  $request->phoneNumber;
             $request_data['role'] = 'patient';
             $request_data['is_active'] = false;
             $patientPhone = Patien::where('phoneNumber',$request_data['phoneNumber'])->first();
@@ -1835,7 +1839,9 @@ public function updateImage(Request $request){
                 }else{
                     $requestData['phoneNumber'] = $request->countryCode . $request->phoneNumber;
                 }
+                $requestData['phoneNumberReal'] = $request->phoneNumber;
                 $patient->phoneNumber = $requestData['phoneNumber'];
+                $patient->phoneNumberReal = $requestData['phoneNumberReal'];
                 $patient->email = $request->email;
                 $patient->address = $request->address;
                 $patient->race = $request->race;

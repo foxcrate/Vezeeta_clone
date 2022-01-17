@@ -24,6 +24,7 @@ class Patien extends Authenticatable
             'BirthDate',
             'gender',
             'email',
+            'phoneNumberReal',
             'phoneNumber',
             'password',
             'state',
