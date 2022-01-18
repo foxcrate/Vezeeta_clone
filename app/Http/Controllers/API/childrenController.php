@@ -835,13 +835,13 @@ public function rayChildrenGet(Request $request) {
             }else{
                 return response()->json([
                     'message' => 'Patient Has No Couples'
-                  ],400);
+                  ],410);
             }
 
         }else{
             return response()->json([
                 'message' => 'Patient Not Found'
-              ],400);
+              ],405);
         }
 
     }
@@ -865,8 +865,8 @@ public function rayChildrenGet(Request $request) {
             {
 
                 return response()->json([
-                    'message' => 'You Already Send Request To this User'
-                ],400);
+                    'message' => 'You Have Already Tried To Connect With This User'
+                ],410);
 
             }else{
 
@@ -885,7 +885,7 @@ public function rayChildrenGet(Request $request) {
         }else{
             return response()->json([
                 'message' => 'Patients Not Found'
-              ],400);
+              ],405);
         }
 
     }
@@ -917,7 +917,7 @@ public function rayChildrenGet(Request $request) {
       else{
         return response()->json([
             'message' => 'Request Not Found'
-          ],400);
+          ],405);
       }
 
     }
@@ -932,20 +932,56 @@ public function rayChildrenGet(Request $request) {
         if($receiver_patient){
 
             //return $receiver_patient->id;
-            $request_couple = Couples::where( 'patientAccept_id' , $receiver_patient->id)->with( 'patientRequest' )->get();
+            $request_couple = Couples::where( 'patientAccept_id' , $receiver_patient->id)->where( 'couples', 0 )->with( 'patientRequest' )->get();
             if( count( $request_couple ) > 0){
                 return $request_couple ;
             }else{
                 return response()->json([
                     'message' => 'Patient Has No Couples Requests'
-                  ],400);
+                  ],410);
             }
 
 
         }else{
             return response()->json([
                 'message' => 'Patient Not Found'
-              ],400);
+              ],405);
+        }
+
+    }
+
+    public function deleteMyCouple(Request $request){
+
+        //return $request;
+
+        $iPatient = Patien::where( 'idCode' , $request->MyidCode )->first();
+        $otherPatient = Patien::where( 'idCode' , $request->OtheridCode )->first(); ;
+
+        // $x=[ $iPatient , $otherPatient ];
+        // return $x;
+
+        if( $iPatient && $otherPatient ){
+
+            $the_request = Couples::where('couples',1)->where( 'patientRequest_id' , $iPatient->id )->where( 'patientAccept_id' , $otherPatient->id )->orWhere( 'patientAccept_id' , $iPatient->id )->where( 'patientRequest_id' , $otherPatient->id )->first();
+
+            if( $the_request ){
+
+                $the_request->delete();
+
+                return response()->json([
+                    'message' => 'Couple Deleted Successfully'
+                ],200);
+
+            }else{
+                return response()->json([
+                    'message' => 'Couple Not Found'
+                  ],410);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Patient Not Found'
+              ],405);
         }
 
     }

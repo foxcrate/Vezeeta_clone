@@ -1812,6 +1812,7 @@ public function updateImage(Request $request){
     public function editProfile(Request $request){
         //return "Alo";
         try{
+
             $requestData = $request->all();
             $validator = Validator::make($requestData, [
                 'idCode' => 'required',
@@ -1851,7 +1852,15 @@ public function updateImage(Request $request){
                 $patient->job = $request->job;
                 $patient->latitude = $request->latitude;
                 $patient->longitude = $request->longitude;
+
                 $patient->idCode = str_replace('+','P',$requestData['phoneNumber']);
+
+                if( $request->has('image') ){
+
+                    $patient->image = $request->image;
+
+                }
+
                 $patient->save();
                 return response()->json([
                     'message' => 'updated successfuly',

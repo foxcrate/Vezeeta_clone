@@ -236,6 +236,7 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('getFamilyDoctor','DoctorController@getFamilyDoctor');
     Route::get('acceptPatientFamilyDoctor','DoctorController@getAllPatientRequest');
    Route::get('getHomecareDoctor','DoctorController@getHomecareDoctor');
+
     //children
     Route::post('/kidsRegister/{idCode?}','childrenController@Register');
     Route::get('/kidsRegister/{idCode?}','childrenController@RegisterGet');
@@ -280,6 +281,7 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('/getMyCouplesRequests','childrenController@getMyCouplesRequests');
     Route::post('/sendCouplesRequest','childrenController@sendCouplesRequest');
     Route::post('/responseCouplesRequest','childrenController@responseCouplesRequest');
+    Route::post('/deleteMyCouple','childrenController@deleteMyCouple');
 
     //Hospital
     Route::post('/hospitalRegister','hospitalController@register');
