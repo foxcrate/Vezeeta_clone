@@ -356,7 +356,7 @@
                                                                     <div class="col-md-3">
                                                                         {{-- <h6>key: {{$key}}</h6> --}}
                                                                         <label class="title-label ml-xl-3">Allergy</label>
-                                                                        <select name="allergi_data[{{$key}}][allergi_name]" class="form-control item_typee">
+                                                                        <select name="allergi_data[{{$key}}][allergi_name]" class="add-allergy form-control item_typee">
                                                                             <option value="" hidden>Allergy</option>
                                                                             <option {{$array['allergi_name'] == "Drug" ? "selected" : ''}}   value="Drug">Drug allergy</option>
                                                                             <option {{$array['allergi_name'] == "Food" ? "selected" : ''}} value="Food">Food allergy</option>
@@ -372,7 +372,7 @@
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label class="title-label d-block">Severity</label>
-                                                                        <select name="allergi_data[{{$key}}][severity]" class="form-control seleect_custom">
+                                                                        <select name="allergi_data[{{$key}}][severity]" class="add-allergy-severity form-control seleect_custom">
                                                                             <option value="" hidden>Severity</option>
                                                                             <option {{$array['severity'] == 'High' ? 'selected' : ''}} value="High">High</option>
                                                                             <option {{$array['severity'] == 'Middle' ? 'selected' : ''}} value="Middle">Middle</option>
@@ -381,7 +381,7 @@
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label class="title-label ml-xl-3">Reaction</label>
-                                                                        <input value = "{{$array['reaction']}}" class="form-control seelect_custom" type="text" name="allergi_data[{{$key}}][reaction]" placeholder="Reaction">
+                                                                        <input value = "{{$array['reaction']}}" class="add-reaction form-control seelect_custom" type="text" name="allergi_data[{{$key}}][reaction]" placeholder="Reaction">
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label class="title-label ml-xl-3"></label>
@@ -392,7 +392,7 @@
                                                             </li>
                                                         </ul>
                                                         @endforeach
-                                                        <button  class="btn btn-success col-2 h5" type="button" id="more_fields">Add</button>
+                                                            <button  class="btn btn-success col-3 h5" type="button" id="more_fields">Add Another Allergy</button>
 
                                                     </div>
                                                     <hr />
@@ -408,7 +408,7 @@
                                                                 <div class="row mb-3">
                                                                     <div class="col-md-4">
                                                                         <label class="title-label">Surgery</label>
-                                                                        <select name="surgery_data[{{$key}}][surgery_name]" class="form-control item_surgeries">
+                                                                        <select name="surgery_data[{{$key}}][surgery_name]" class="add-surgery form-control item_surgeries">
                                                                             <option value="" hidden>Surgery</option>
                                                                             <option {{$array_su['surgery_name'] == "Hernia" ? "selected" : ''}} value="Hernia">Hernia Surgery</option>
                                                                             <option {{$array_su['surgery_name'] == "Hemorrhoid" ? "selected" : ''}} value="Hemorrhoid">Hemorrhoid Surgery</option>
@@ -432,7 +432,7 @@
                                                                     </div>
                                                                     <div class="col-md-5">
                                                                         <label class="title-label">Date</label>
-                                                                        <input value = "{{$array_su['surgery_date']}}" class="form-control seleect_surgeries" type="date" name="surgery_data[{{$key}}][surgery_date]" placeholder="">
+                                                                        <input value = "{{$array_su['surgery_date']}}" class="add-surgery-date form-control seleect_surgeries" type="date" name="surgery_data[{{$key}}][surgery_date]" placeholder="">
                                                                     </div>
                                                                     <div class="col-md-2">
                                                                         <label class="title-label ml-xl-3"></label>
@@ -443,7 +443,7 @@
                                                             </li>
                                                         </ul>
                                                         @endforeach
-                                                        <button class="btn btn-success col-2 h5" type="button" id="more_surgeries">Add</button>
+                                                        <button class="btn btn-success col-3 h5" type="button" id="more_surgeries">Add Another Surgery</button>
                                                     </div>
                                                     <hr />
                                                 </div>
@@ -453,11 +453,11 @@
                                                         <img src="{{url('imgs/02.png')}}" class="mr-3 mb-3" width="50">
                                                         <label class="title-info">Current Medication</label>
                                                         @foreach($patient->patinets_data->medication_name as $key =>$med)
-                                                        <ul class=" list-unstyled read-more-wrap field_group2">
+                                                        <ul class="list-unstyled read-more-wrap field_group2">
                                                             <li class="">
                                                                 <div class="row">
                                                                     <div class="col-md-3 mb-3">
-                                                                        <input list="brow" class="form-control item_medication" name="medication_name[{{$key}}][name]" placeholder="Medication" value="{{$med['name']}}">
+                                                                        <input list="brow" class="add-medication form-control item_medication" name="medication_name[{{$key}}][name]" placeholder="Medication" value="{{$med['name']}}">
                                                                         <datalist id="brow">
                                                                             <option hidden>Choose</option>
                                                                             @foreach($medications as $m)
@@ -467,7 +467,7 @@
                                                                     </div>
 
                                                                     <div class="col-md-3 mb-3">
-                                                                        <select name="medication_name[{{$key}}][times_day]" class="col-12 custom-select required seleect_medication" id="inputGroupSelect01" value="{{$med['times_day']}}">
+                                                                        <select name="medication_name[{{$key}}][times_day]" class="medication-day col-12 custom-select required seleect_medication" id="inputGroupSelect01" value="{{$med['times_day']}}">
                                                                             <option value="" hidden >Times Day</option>
                                                                             <option value="1" {{$med['times_day'] == '1' ? 'selected' : ''}}>1</option>
                                                                             <option value="2" {{$med['times_day'] == '2' ? 'selected' : ''}}>2</option>
@@ -477,7 +477,7 @@
                                                                     </div>
 
                                                                     <div class="col-md-3 mb-3">
-                                                                        <select name="medication_name[{{$key}}][time]" class="col-12 custom-select required select_medication" id="inputGroupSelect01">
+                                                                        <select name="medication_name[{{$key}}][time]" class="medication-time col-12 custom-select required select_medication" id="inputGroupSelect01">
                                                                             <option value="" hidden >Time</option>
                                                                             <option value="Before Eating" {{$med['time'] == 'Before Eating' ? 'selected' : ''}}>Before Eating</option>
                                                                             <option value="After Eating" {{$med['time'] == 'After Eating' ? 'selected' : ''}}>After Eating</option>
@@ -492,7 +492,7 @@
                                                             </li>
                                                         </ul>
                                                         @endforeach
-                                                        <button class="btn btn-success col-2 h5" type="button" id="more_medication">Add</button>
+                                                        <button class="btn btn-success col-3 h5" type="button" id="more_medication">Add Another Medication</button>
 
                                                     </div>
                                                     <hr />
@@ -588,7 +588,7 @@
                                                                     <div class="row">
                                                                         <div class="col-md-5 mb-3">
                                                                             <label class="title-label">Unhealthy Habits</label>
-                                                                            <select name="smoking[{{ $key }}][name]" class="item_smoking form-control">
+                                                                            <select name="smoking[{{ $key }}][name]" class="add-habit item_smoking form-control">
                                                                                 <option value="" hidden>Name</option>
                                                                                 <option {{$smoking_array['name'] == "alcohol" ? "selected" : ''}} value="alcohol">Alcohol</option>
                                                                                 <option {{$smoking_array['name'] == "cigarette" ? "selected" : ''}} value="cigarette">Cigarette</option>
@@ -598,7 +598,7 @@
 
                                                                         <div class="col-md-4 mb-3">
                                                                             <label class="title-label">Severity</label>
-                                                                            <select name="smoking[{{ $key }}][severity]" class="item_smoking_severity form-control">
+                                                                            <select name="smoking[{{ $key }}][severity]" class="add-habit-severity item_smoking_severity form-control">
                                                                                 <option value="" hidden>Severity</option>
                                                                                 <option {{$smoking_array['severity'] == "high" ? "selected" : ''}} value="high">High</option>
                                                                                 <option {{$smoking_array['severity'] == "middle" ? "selected" : ''}} value="middle">Middle</option>
@@ -614,7 +614,7 @@
                                                                 </li>
                                                             </ul>
                                                         @endforeach
-                                                        <button class="btn btn-success col-2 h5" type="button" id="more_smoking">Add</button>
+                                                        <button class="btn btn-success col-3 h5" type="button" id="more_smoking">Add Another Habit</button>
                                                     </div>
                                                     <hr />
                                                 </div>
@@ -833,9 +833,47 @@
                 <script
                     src="https://code.jquery.com/jquery-3.5.1.min.js"
                     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-                    crossorigin="anonymous"></script>
+                    crossorigin="anonymous">
+                </script>
                 <script>
-                    $(function(){
+                    (function () {
+                        'use strict';
+                        $('.input-file').each(function () {
+                            var $input = $(this),
+                                $label = $input.next('.js-labelFile'),
+                                labelVal = $label.html();
+
+                            $input.on('change', function (element) {
+                                var fileName = '';
+                                if (element.target.value) fileName = element.target.value.split('\\')
+                                    .pop();
+                                fileName ? $label.addClass('has-file').find('.js-fileName').html(
+                                    fileName) : $label.removeClass('has-file').html(labelVal);
+                            });
+                        });
+
+                    })();
+                </script>
+                <script>
+                    $(document).ready(function () {
+                        //Disabled Allergy Button
+
+                        $('#more_fields').attr('disabled', 'disabled');
+                        $(".add-reaction, .add-allergy-severity, .add-allergy").change(function () {
+                            var isAllergyFormValid =
+                                $(".add-allergy").val().length > 0 &&
+                                $(".add-allergy-severity").val().length > 0 &&
+                                $(".add-reaction").val().length > 0;
+
+                            if (isAllergyFormValid) {
+                                $('#more_fields').removeAttr("disabled");
+                            } else {
+                                $('#more_fields').attr('disabled', 'disabled');
+                            }
+                        });
+
+                        //Clone Allergy Field
+
                         $('#more_fields').click(function(e){
                             var max = 9;
                             var current1 =  $(".field_group").length;
@@ -843,33 +881,43 @@
                                     $('.field_group:first').clone(true).hide().insertAfter('.field_group:last').slideDown('slow');
                                     var last = $('.field_group:last');
                                     var current =  $(".field_group").length ;
-                                    //last.append(new_button.clone(true));
                                     last.find('select').val([]);
-                                    //console.log( last.find('select') );
                                     last.find('select.item_typee').attr("name", "allergi_data[" + current + "][allergi_name]").val('');
                                     last.find('select.seleect_custom').attr("name", "allergi_data[" + current + "][severity]").val('');
                                     last.find('input.seelect_custom').attr("name", "allergi_data[" + current + "][reaction]").val('');
-                                    //console.log(last);
                                     current1++;
                                     return false;
                                 }
-                                // else{
-                                //     console.log("Alo");
-                                // }
-                                //current = 0;
+
                             });
-                            $("body").on("click", "#remove_more_fields", function (e) {
-                                var current =  $(".field_group").length;
-                                if(current == 1){
-                                   e.prevent();
-                                   // document.getElementById('remove_more_fields').style.visibility = 'hidden';
-                                   // $(this).closest("#remove_more_fields").hide();
-                                }
-                                else{
-                                    $(this).closest(".field_group").remove();
-                                }
-                            });
-                    });
+
+                        //Remove Allergy Field
+
+                        $("body").on("click", "#remove_more_fields", function (e) {
+                            var current = $(".field_group").length;
+                            if (current == 1) {
+                                e.prevent();
+                            }
+                            $(this).closest(".field_group").remove();
+                        });
+
+                        //Disabled Surgery Button
+
+                        $('#more_surgeries').attr('disabled', 'disabled');
+                        $(".add-surgery, .add-surgery-date").change(function () {
+                            var isSurgeryFormValid =
+                                $(".add-surgery").val().length > 0 &&
+                                $(".add-surgery-date").val().length > 0;
+
+                            if (isSurgeryFormValid) {
+                                $('#more_surgeries').removeAttr("disabled");
+                            } else {
+                                $('#more_surgeries').attr('disabled', 'disabled');
+                            }
+                        });
+
+                        //Clone Surgery Field
+
                         $('#more_surgeries').click(function(){
                             var max = 18;
                             var current1 =  $(".field_group1").length;
@@ -877,13 +925,15 @@
                         $('.field_group1:first').clone(true).hide().insertAfter('.field_group1:last').slideDown('slow');
                             var last = $('.field_group1:last');
                             var current =  $(".field_group1").length - 1;
-                            //last.append(new_button.clone(true));
                             last.find('select').val([]);
                             last.find('select.item_surgeries').attr("name", "surgery_data[" + current + "][surgery_name]").val('');
                             last.find('input.seleect_surgeries').attr("name", "surgery_data[" + current + "][surgery_date]").val('');
                             current1++;
                             return false;
                         }});
+
+                        //Remove Surgery Field
+
                         $("body").on("click", "#remove_more_surgeries", function () {
                             var current =  $(".field_group1").length;
                                 if(current == 1){
@@ -891,6 +941,25 @@
                                 }
                             $(this).closest(".field_group1").remove();
                         });
+
+                        //Disabled Medication Button
+
+                        $('#more_medication').attr('disabled', 'disabled');
+                        $(".add-medication, .medication-day, .medication-time").change(function () {
+                            var isMedicationFormValid =
+                                $(".add-medication").val().length > 0 &&
+                                $(".medication-day").val().length > 0 &&
+                                $(".medication-time").val().length > 0;
+
+                            if (isMedicationFormValid) {
+                                $('#more_medication').removeAttr("disabled");
+                            } else {
+                                $('#more_medication').attr('disabled', 'disabled');
+                            }
+                        });
+
+                        //Clone Medication Field
+
                         $('#more_medication').click(function(){
                             var max = 10;
                             var current1 =  $(".field_group2").length;
@@ -898,14 +967,16 @@
                         $('.field_group2:first').clone(true).hide().insertAfter('.field_group2:last').slideDown('slow');
                             var last = $('.field_group2:last');
                             var current =  $(".field_group2").length - 1;
-                            //last.append(new_button.clone(true));
                             last.find('select').val([]);
                             last.find('input.item_medication').attr("name", "medication_name[" + current + "][name]").val('');
                             last.find('select.seleect_medication').attr("name", "medication_name[" + current + "][times_day]").val('');
                             last.find('select.select_medication').attr("name", "medication_name[" + current + "][time]").val('');
                             current1++;
                             return false;
-                        } });
+                        }
+                        });
+
+                        //Remove Medication Field
                         $("body").on("click", "#remove_more_medication", function () {
                             var current =  $(".field_group2").length;
                             if(current == 1){
@@ -913,6 +984,24 @@
                             }
                             $(this).closest(".field_group2").remove();
                         });
+
+                        //Disabled Unhealthy Habits Button
+
+                        $('#more_smoking').attr('disabled', 'disabled');
+                        $(".add-habit, .add-habit-severity").change(function () {
+                            var isHabitFormValid =
+                                $(".add-habit").val().length > 0 &&
+                                $(".add-habit-severity").val().length > 0;
+
+                            if (isHabitFormValid) {
+                                $('#more_smoking').removeAttr("disabled");
+                            } else {
+                                $('#more_smoking').attr('disabled', 'disabled');
+                            }
+                        });
+
+                        //Clone Unhealthy Habits Field
+
                         $('#more_smoking').click(function(){
                             var max = 3;
                             var current1 =  $(".field_groupUn").length;
@@ -920,37 +1009,26 @@
                             $('.field_groupUn:first').clone(true).hide().insertAfter('.field_groupUn:last').slideDown('slow');
                                 var last = $('.field_groupUn:last');
                                 var current =  $(".field_groupUn").length - 1;
-                                //last.append(new_button.clone(true));
                                 last.find('select').val([]);
                                 last.find('select.item_smoking').attr("name", "smoking[" + current + "][name]").val('');
                                 last.find('select.item_smoking_severity').attr("name", "smoking[" + current + "][severity]").val('');
                                 current1++;
                                 return false;
-                            }  });
-                            $("body").on("click", "#remove_more_smoking", function () {
-                                var current =  $(".field_groupUn").length;
-                                if(current == 1){
-                                   e.prevent();
-                                }
-                                $(this).closest(".field_groupUn").remove();
-                            });
-                </script>
-                <script>
-                    (function() {
-                        'use strict';
-                        $('.input-file').each(function() {
-                          var $input = $(this),
-                              $label = $input.next('.js-labelFile'),
-                              labelVal = $label.html();
-                         $input.on('change', function(element) {
-                            var fileName = '';
-                            if (element.target.value) fileName = element.target.value.split('\\').pop();
-                            fileName ? $label.addClass('has-file').find('.js-fileName').html(fileName) : $label.removeClass('has-file').html(labelVal);
-                         });
+                            }
                         });
-                      })();
+
+                        //Remove Unhealthy Habits Field
+
+                        $("body").on("click", "#remove_more_smoking", function () {
+                            var current =  $(".field_groupUn").length;
+                            if(current == 1){
+                                e.prevent();
+                            }
+                            $(this).closest(".field_groupUn").remove();
+                        });
+                    });
                 </script>
-            </div>
+
         </div>
     </div>
 

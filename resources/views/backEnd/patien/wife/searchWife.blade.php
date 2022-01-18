@@ -142,6 +142,10 @@
                             <h4 class="col-lg-10 font-weight-bold" ><a style="text-transform:capitalize" href=" {{ route( 'showReportAccept',[$patient->id,$value->patientRequest->id] ) }} ">{{ $value->patientRequest->name }}</a></h4>
                             <h5 class="col-lg-10 font-weight-bold" >{{ $value->patientRequest->idCode }}</h5>
                         </div>
+                        <div class="request-button">
+                            <button type="submit" class="btn btn-success"><a href="#">Accept</a></button>
+                            <button type="submit" class="btn btn-danger"><a href="#">Refuse</a></button>
+                        </div>
                     </div>
                 @endif
 

@@ -743,7 +743,7 @@
                                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                                             @enderror
                                                                             <select
-                                                                                style="position:relative; bottom:38px; width:30%; left:170px;"
+                                                                                style="position:relative; bottom:38px; width:10%; left:170px;"
                                                                                 name="width_type" id="" class="form-control">
                                                                                 <optgroup>
                                                                                     <option value="KG">KG</option>
