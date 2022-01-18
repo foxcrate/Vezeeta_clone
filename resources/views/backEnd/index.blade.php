@@ -225,6 +225,13 @@
     <!-- footer -->
     @include('backEnd.layoutes.footer')
     <script>
+        displaySong();
+
+        var newAccount = document.getElementById('new_account');
+        newAccount.setAttribute('href',$("#config_app").text()+'/en/dashbord/patien/register');
+        document.getElementById("patien").setAttribute("checked","checked");
+        // console.log("Alo");
+
         var newAccount = document.getElementById('new_account'),
             patientRadio = document.getElementById('patien'),
             clinicRadio = document.getElementById('clinic'),

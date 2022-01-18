@@ -829,7 +829,7 @@ public function rayChildrenGet(Request $request) {
         if($patient){
             //return $patient;
             $his_couples = $patient->myCouplesData();
-            //return count($his_couples);
+            //return $his_couples ;
             if( count($his_couples)  > 0 ){
                 return $his_couples;
             }else{
@@ -846,7 +846,7 @@ public function rayChildrenGet(Request $request) {
 
     }
 
-    public function sendRequestCouple(Request $request){
+    public function sendCouplesRequest(Request $request){
 
         $sender_patient = Patien::where('idCode',$request->sender_idCode)->first();
         $receiver_patient = Patien::where('idCode',$request->receiver_idCode)->first();
@@ -858,7 +858,7 @@ public function rayChildrenGet(Request $request) {
         if( $sender_patient && $receiver_patient ){
 
             // $existRequest = Couples::where('patientRequest_id' , $sender_patient->id)->orWhere('patientAccept_id' , $receiver_patient->id)->orWhere('patientAccept_id' , $sender_patient->id)->orWhere('patientRequest_id' , $receiver_patient->id)->get();
-            $existRequest = Couples::where('patientRequest_id' , $sender_patient->id)->where('patientAccept_id' , $receiver_patient->id)->get();
+            $existRequest = Couples::where( 'patientRequest_id' , $sender_patient->id )->where( 'patientAccept_id' , $receiver_patient->id )->orWhere( 'patientRequest_id' , $receiver_patient->id )->where( 'patientAccept_id' , $sender_patient->id )->get();
             //return count($existRequest);
 
             if( count($existRequest) > 0 )
@@ -890,28 +890,56 @@ public function rayChildrenGet(Request $request) {
 
     }
 
-    // public function acceptRequest(Request $request){
+    public function responseCouplesRequest(Request $request){
 
-    //     $patient = Patien::where('idCode',$request->idCode)->first();
-    //     // return $patient ;
-    //     if($patient){
-    //         //return $patient;
-    //         $his_couples = $patient->myCouplesData();
-    //         //return count($his_couples);
-    //         if( count($his_couples)  > 0 ){
-    //             return $his_couples;
-    //         }else{
-    //             return response()->json([
-    //                 'message' => 'Patient Has No Couples'
-    //               ],400);
-    //         }
+      //return $request ;
 
-    //     }else{
-    //         return response()->json([
-    //             'message' => 'Patient Not Found'
-    //           ],400);
-    //     }
+      $request_couple = Couples::find($request->request_couple_id);
 
-    // }
+      if( $request_couple ){
+
+        $request_couple->couples = $request->response;
+        $request_couple->save() ;
+
+        return response()->json([
+            'message' => 'Request Updated Successfully'
+        ],200);
+
+      }
+      else{
+        return response()->json([
+            'message' => 'Request Not Found'
+          ],400);
+      }
+
+    }
+
+    public function getMyCouplesRequests(Request $request){
+
+        //return $request;
+
+        $receiver_patient = Patien::where( 'idCode' , $request->idCode )->first();
+        //return $receiver_patient;
+
+        if($receiver_patient){
+
+            //return $receiver_patient->id;
+            $request_couple = Couples::where( 'patientAccept_id' , $receiver_patient->id)->with( 'patientRequest' , 'patientAccept' )->get();
+            if( count( $request_couple ) > 0){
+                return $request_couple ;
+            }else{
+                return response()->json([
+                    'message' => 'Patient Has No Couples Requests'
+                  ],400);
+            }
+
+
+        }else{
+            return response()->json([
+                'message' => 'Patient Not Found'
+              ],400);
+        }
+
+    }
 
 }
