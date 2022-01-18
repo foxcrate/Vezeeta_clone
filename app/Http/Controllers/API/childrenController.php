@@ -898,8 +898,16 @@ public function rayChildrenGet(Request $request) {
 
       if( $request_couple ){
 
-        $request_couple->couples = $request->response;
-        $request_couple->save() ;
+
+
+        if( $request->response == 1 ){
+
+            $request_couple->couples = 1;
+            $request_couple->save() ;
+
+        }elseif( $request->response == 0 ){
+            $request_couple->delete();
+        }
 
         return response()->json([
             'message' => 'Request Updated Successfully'
@@ -924,7 +932,7 @@ public function rayChildrenGet(Request $request) {
         if($receiver_patient){
 
             //return $receiver_patient->id;
-            $request_couple = Couples::where( 'patientAccept_id' , $receiver_patient->id)->with( 'patientRequest' , 'patientAccept' )->get();
+            $request_couple = Couples::where( 'patientAccept_id' , $receiver_patient->id)->with( 'patientRequest' )->get();
             if( count( $request_couple ) > 0){
                 return $request_couple ;
             }else{
