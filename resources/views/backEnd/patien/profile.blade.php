@@ -655,8 +655,8 @@
                                         @if($patient->Requestcouples)
                                             @foreach($patient->Requestcouples as $requestCouples)
                                                 @if($requestCouples->couples == false)
-                                                <h5 class="font-weight-bold" >{{$requestCouples->patient->firstName . ' ' . $requestCouples->patient->lastName}}</h5>
-                                                <h6 class="font-weight-bold" >{{$requestCouples->patient->idCode}}</h6>
+                                                <h5 class="font-weight-bold" >{{$requestCouples->patientAccept->firstName . ' ' . $requestCouples->patientAccept->lastName}}</h5>
+                                                <h6 class="font-weight-bold" >{{$requestCouples->patientAccept->idCode}}</h6>
                                     </div>
                                         <div class="row">
                                             <form action="{{route('acceptRequestWife')}}" method="POST">

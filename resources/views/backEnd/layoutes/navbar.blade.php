@@ -43,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="col-md-6">
                 </div>
-                <div class="col-md-6">
+                {{-- <div class="col-md-6">
                     <div>
                         @if(config('app.locale') == 'en')
                         <a rel="alternate" href="{{LaravelLocalization::getLocalizedURL('ar') }}"
@@ -60,7 +60,51 @@
                         @endif
                     </div>
                     <button class=" float-right getapp form-control col-3 btn p-2">Get App</button>
-                </div>
+                </div> --}}
+
+                @if(Session::has('PatientLogged'))
+                    <form id="patient_update_online" action="{{route('patient_update_online',$patient->id)}}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="col-lg-6">
+
+                            <div class="switch-button">
+                                <div class="button" id="button-1">
+                                    <input type="checkbox" class="privacy-box" name="online" class="onoffswitch-checkbox" id="myonoffswitchH1" value="{{$patient->online == 1 ? 1 : 0}}" {{$patient->online == 1 ? 'checked' : ''}}>
+                                    <div class="knobs">
+                                    <span>Private</span>
+                                    </div>
+                                    <div class="layer"></div>
+                                    <script>
+                                        $('#myonoffswitchH1').on('change', function() {
+                                            console.log("Sumbit Start");
+                                            this.value =
+                                            this.checked ? 1 : 0;
+                                            $("#patient_update_online").submit();
+                                            console.log("Sumbit Done");
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+
+                            <!--<div class="onoffswitch">-->
+                            <!--<input type="checkbox" name="online" class="onoffswitch-checkbox" id="myonoffswitchH" value="{{$patient->online == 1 ? 1 : 0}}" {{$patient->online == 1 ? 'checked' : ''}}>-->
+                            <!--<label class="onoffswitch-label" for="myonoffswitchH">-->
+                            <!--    <script>-->
+                            <!--        $('#myonoffswitchH').on('change', function() {-->
+                            <!--            this.value =-->
+                            <!--            this.checked ? 1 : 0;-->
+                            <!--            $("#patient_update_online").submit();-->
+                            <!--        });-->
+                            <!--    </script>-->
+                            <!--    <div class="onoffswitch-inner"></div>-->
+                            <!--    <div class="onoffswitch-switch"></div>-->
+                            <!--</label>-->
+                            <!--</div>-->
+
+                        </div>
+                    </form>
+                @endif
+
             </div>
         </div>
     </nav>

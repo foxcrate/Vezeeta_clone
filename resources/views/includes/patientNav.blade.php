@@ -7,7 +7,7 @@
             <!-- Online Form -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-           <form id="patient_update_online" action="{{route('patient_update_online',$patient->id)}}" method="POST">
+            {{-- <form id="patient_update_online" action="{{route('patient_update_online',$patient->id)}}" method="POST">
                 {{ csrf_field() }}
                 <div class="col-lg-6">
 
@@ -46,7 +46,7 @@
                     <!--</div>-->
 
                 </div>
-            </form>
+            </form> --}}
 
             <!-- Online Form -->
 

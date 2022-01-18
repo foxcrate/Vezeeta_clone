@@ -2807,18 +2807,119 @@ Chat
     cursor: pointer;
 }
 
-.carousel-indicators .active {
+/*Popup Download*/
+.black_overlay {
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 191vh;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.7;
+    opacity: .70;
+    filter: alpha(opacity=70);
+  }
+
+  .white_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 30%;
+    height: 15%;
+    padding: 16px;
+    border: 2px solid black;
+    background-color: white;
+    z-index: 1002;
+    overflow: auto;
+  }
+
+  .white_content h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 5px;
+  }
+
+  .white_content h1::before {
+    content: '';
+    height: 3px;
+    width: 90%;
+    background-color: #000;
+    position: absolute;
+    left: 4%;
+    bottom: 0;
+  }
+
+  .white_content .download-imgs {
+    display: flex;
+    justify-content: space-around;
+  }
+  .textright {
+    float: right;
+  }
+
+  .white_content .close {
+    background: red;
+    color: #FFFFFF;
+    line-height: 30px;
+    position: absolute;
+    right: 15px;
+    text-align: center;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    font-size: 1.1em;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 50%;
+    opacity: 1;
+  }
+
+  .white_content .close:hover {
+    background: red;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+
+  @media (max-width: 576px) {
+    .white_content {
+        width: 100%;
+        left: 0;
+    }
+    .white_content h1 {
+        font-size: 1.2rem;
+    }
+    .white_content .download-imgs img {
+        width: 90%;
+    }
+    .white_content .close {
+        width: 20px;
+        height: 20px;
+        font-size: 1rem;
+        line-height: 22px;
+    }
+    .black_overlay {
+        height: 440vh;
+    }
+  }
+.homePage-carousel .carousel-indicators .active {
     background-color: #0fAAc9;
 }
 
-.carousel-indicators {
+.homePage-carousel .carousel-indicators {
     width: 100px;
     background-color: #ffffff59;
     padding: 5px;
     border-radius: 10px;
 }
 
-.carousel-indicators li {
+.homePage-carousel .carousel-indicators li {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -3228,6 +3329,23 @@ input[type=file]::file-selector-button {
     border: 1px solid #ede1ff;
     border-radius: 20px;
     padding: 30px;
+    margin-top: 30px;
+}
+
+.card-person-add .request-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-person-add .request-button button {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.card-person-add .request-button a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .content-FD {
@@ -3502,6 +3620,9 @@ input[type=file]::file-selector-button {
 
 .completeData {
     position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
 }
 .completeData .carousel-indicators {
     position: absolute;
@@ -3513,7 +3634,7 @@ input[type=file]::file-selector-button {
     padding-top: 10px;
 }
 
-ol.carousel-indicators li{
+.completeData ol.carousel-indicators li{
     width: 120px;
     height: 40px;
     border-radius: 0;
@@ -3534,7 +3655,7 @@ ol.carousel-indicators li{
 #medicalData {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-around;
-    margin-top: 5%;
+    justify-content: space-between;
+    margin-top: 8%;
+    margin-bottom: 2%;
 }
-

@@ -141,15 +141,15 @@
                             </div>
                             </label>
                         <label class="m-2" onclick="displaySong1()">
-                        <input id="clinic" type="radio" name="guard" value="clinic"/><div class="box">
-                                <script>function displaySong1() {
-                                        var textField = $('#name');
-                                        textField.val('C')
-                                    }
-                                </script>
-                            <img class="mt-2" src="{{url('imgs/icon_png/clinic.svg')}}" height="60" alt="...">
-                            <span>Clinic</span>
-                        </div>
+                            <input id="clinic" type="radio" name="guard" value="clinic"/><div class="box">
+                                    <script>function displaySong1() {
+                                            var textField = $('#name');
+                                            textField.val('C')
+                                        }
+                                    </script>
+                                <img class="mt-2" src="{{url('imgs/icon_png/clinic.svg')}}" height="60" alt="...">
+                                <span>Clinic</span>
+                            </div>
                         </label>
                         <label class="m-2" onclick="displaySong5()">
                             <input id="pharmacy" type="radio" name="guard" value="pharmacy"/><div class="box">
@@ -176,16 +176,16 @@
                             </div>
                         </label>
                         <label class="m-2" onclick="displaySong3()">
-                        <input id="xray" type="radio" name="guard" value="xray"/><div class="box">
-                                <script>function displaySong3() {
-                                        var textField = $('#name');
-                                        textField.val('X')
-                                    }
+                            <input id="xray" type="radio" name="guard" value="xray"/><div class="box">
+                                    <script>function displaySong3() {
+                                            var textField = $('#name');
+                                            textField.val('X')
+                                        }
 
-                                </script>
-                            <img class="mt-2" src="{{url('imgs/x-ray.svg')}}" height="60" alt="...">
-                            <span>Scan</span>
-                        </div>
+                                    </script>
+                                <img class="mt-2" src="{{url('imgs/x-ray.svg')}}" height="60" alt="...">
+                                <span>Scan</span>
+                            </div>
                         </label>
                     </div>
                 </div>

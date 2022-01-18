@@ -7,7 +7,17 @@
 <div class="bg-waves">
     {{-- @include('includes.alerts.success') --}}
     <!--Start-Ada-->
-    <div class="container">
+    <div id="popupBox" class="white_content">
+        <h1>Download Our Application Now</h1>
+        <a href="javascript:void(0)" onclick="document.getElementById('popupBox').style.display='none';document.getElementById('popupBackground').style.display='none'" class="textright close">X</a>
+        <div class="download-imgs">
+            <a href="#"><img src="{{url('imgs/download-Android.png')}}"></a>
+            <a href="#"><img src="{{url('imgs/download-ios.png')}}"></a>
+        </div>
+    </div>
+    <div id="popupBackground" class="black_overlay"></div>
+
+    <div class="container homePage-carousel">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 50px;">
             <ol class="carousel-indicators ml-auto mr-auto">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
