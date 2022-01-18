@@ -277,6 +277,9 @@ Route::group(['namespace'=>'API'],function(){
     // Route::delete('/removeCouples','childrenController@removeCouples');
 
     Route::get('/getMyCouples','childrenController@getMyCouples');
+    Route::get('/getMyCouplesRequests','childrenController@getMyCouplesRequests');
+    Route::post('/sendCouplesRequest','childrenController@sendCouplesRequest');
+    Route::post('/responseCouplesRequest','childrenController@responseCouplesRequest');
 
     //Hospital
     Route::post('/hospitalRegister','hospitalController@register');

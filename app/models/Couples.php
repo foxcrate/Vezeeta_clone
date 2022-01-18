@@ -30,7 +30,7 @@ class Couples extends Model
         return $this->id;
     }
 
-    protected $casts = [
-        'couples' => 'boolean',
-    ];
+    // protected $casts = [
+    //     'couples' => 'boolean',
+    // ];
 }

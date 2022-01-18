@@ -652,11 +652,19 @@
                                 </div>
                                 <div class="row px-3 py-3">
                                     <div class="col-lg-7 mb-auto mt-auto">
+
                                         @if($patient->Requestcouples)
                                             @foreach($patient->Requestcouples as $requestCouples)
                                                 @if($requestCouples->couples == false)
+<<<<<<< HEAD
                                                 <h5 class="font-weight-bold" >{{$requestCouples->patientAccept->firstName . ' ' . $requestCouples->patientAccept->lastName}}</h5>
                                                 <h6 class="font-weight-bold" >{{$requestCouples->patientAccept->idCode}}</h6>
+=======
+                                                {{-- <h5 class="font-weight-bold" >{{$requestCouples->patient->firstName . ' ' . $requestCouples->patient->lastName}}</h5> --}}
+                                                <h5 class="font-weight-bold" >{{$requestCouples->patientRequest->firstName . ' ' . $requestCouples->patientRequest->lastName}}</h5>
+                                                {{-- <h6 class="font-weight-bold" >{{$requestCouples->patient->idCode}}</h6> --}}
+                                                <h6 class="font-weight-bold" >{{$requestCouples->patientRequest->idCode}}</h6>
+>>>>>>> 28926dee534d5b15c75230510de4f54b29789781
                                     </div>
                                         <div class="row">
                                             <form action="{{route('acceptRequestWife')}}" method="POST">

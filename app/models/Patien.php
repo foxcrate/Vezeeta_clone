@@ -24,6 +24,7 @@ class Patien extends Authenticatable
             'BirthDate',
             'gender',
             'email',
+            'phoneNumberReal',
             'phoneNumber',
             'password',
             'state',
@@ -176,7 +177,7 @@ class Patien extends Authenticatable
     public function myCouples(){
 
         //return "Alo";
-        $my_couples = Couples::where('couples',1)->orWhere( [ [ 'patientAccept_id' , $this->id ] , [ 'patientRequest_id' , $this->id ] ] )->get();
+        $my_couples = Couples::where('couples',1)->where('patientAccept_id' , $this->id)->orWhere('couples',1)->where('patientRequest_id' , $this->id)->get();
 
         //return $this->id;
         return $my_couples;
@@ -185,10 +186,11 @@ class Patien extends Authenticatable
     public function myCouplesData(){
 
         //return "Alo";
-        $my_couples_requests = Couples::where('couples',1)->orWhere( [ [ 'patientAccept_id' , $this->id ] , [ 'patientRequest_id' , $this->id ] ] )->get();
+        $my_accepted_couples_requests = Couples::where('couples',1)->where('patientAccept_id' , $this->id)->orWhere('couples',1)->where('patientRequest_id' , $this->id)->get();
         $my_couples = [];
+        //return $my_accepted_couples_requests;
 
-        foreach( $my_couples_requests as $couple_request){
+        foreach( $my_accepted_couples_requests as $couple_request){
 
             if( $this->id == $couple_request->patientAccept->id ){
 

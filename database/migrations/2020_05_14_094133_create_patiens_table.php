@@ -25,6 +25,7 @@ class CreatePatiensTable extends Migration
             $table->string('email')->nullable();
             $table->string('countryCode')->nullable();
             $table->string('phoneNumber')->unique();
+            $table->string('phoneNumberReal')->nullable();
             $table->string('idCode')->nullable();
             $table->string('password');
             $table->string('password_confirmation');

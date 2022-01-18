@@ -76,6 +76,9 @@ class patienController extends Controller
             }else{
                 $request_data['phoneNumber'] = $request->countryCode . $request->phoneNumber;
             }
+
+            $request_data['phoneNumberReal'] = $request->phoneNumber;
+
             $request_data['password_confirmation'] = bcrypt($request->password_confirmation);
             $request_data['name'] = $request->firstName .' ' . $request->lastName;
             $request_data['idCode'] = $request_data['phoneNumber'];
@@ -628,6 +631,7 @@ class patienController extends Controller
                 }else{
                     $requestData['phoneNumber'] = $request->countryCode . $request->phoneNumber;
                 }
+                $requestData['phoneNumberReal'] = $request->phoneNumber;
                 if($request->image){
                     //return "Alo";
                     // $img = Image::make($request->image)
@@ -690,7 +694,9 @@ class patienController extends Controller
 
             }
             //return asset('o');
-            return $requestData['image'] ;
+
+            //return $requestData['image'] ;
+
             // $extension = $request->file('image')->extension();
             // $file = $request->image;
             // $code = rand(1111111, 9999999);
@@ -703,6 +709,7 @@ class patienController extends Controller
             }else{
                 $requestData['phoneNumber'] = $request->countryCode . $request->phoneNumber;
             }
+            $requestData['phoneNumberReal'] = $request->phoneNumber;
             $requestData['address'] = $request->address;
             $requestData['latitude'] = $request->latitude;
             $requestData['longitude'] = $request->longitude;
@@ -1129,6 +1136,7 @@ class patienController extends Controller
         }else{
             $request_data['phoneNumber'] = $request->countryCode . $request->phoneNumber;
         }
+        $request_data['phoneNumberReal'] = $request->phoneNumber;
         $request_data['password_confirmation'] = bcrypt($request->password_confirmation);
         $request_data['name'] = $request->firstName .' ' . $request->lastName;
         $request_data['idCode'] = str_replace('+','P', $request_data['phoneNumber']);
@@ -1188,6 +1196,7 @@ class patienController extends Controller
             }else{
                 $request_data['phoneNumber'] = $request->countryCode . $request->phoneNumber;
             }
+            $request_data['phoneNumberReal'] = $request->phoneNumber;
             $request_data['password_confirmation'] = bcrypt($request->password_confirmation);
             $request_data['name'] = $request->firstName .' ' . $request->lastName;
             $request_data['idCode'] = $request_data['phoneNumber'];
