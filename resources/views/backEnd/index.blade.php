@@ -2,7 +2,9 @@
 @section('title','Home page')
 @section('content')
 <!-- navbar file -->
-@include('backEnd.layoutes.navbar')
+
+{{-- @include('backEnd.layoutes.navbar') --}}
+
 <!-- navbarfile -->
 <!--Start-Content-->
 

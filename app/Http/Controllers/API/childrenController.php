@@ -33,11 +33,11 @@ class childrenController extends Controller
         ]);
         } else {
         $profileCreate = Child::create([
-        'child_name' => $request ->child_name,
-        'image' => $request ->image,
-        'birthDay' => $request ->birthDay,
-        'gender' => $request ->gender,
-        'patient_id' => $patient ->id
+            'child_name' => $request ->child_name,
+            'image' => $request ->image,
+            'birthDay' => $request ->birthDay,
+            'gender' => $request ->gender,
+            'patient_id' => $patient ->id
         ]);
         return response()->json([
         'data' => $profileCreate,
@@ -67,38 +67,47 @@ class childrenController extends Controller
     public function basicData(Request $request) {
         $patient = Patien::where('idCode', $request->idCode)->first();
         if ($patient) {
-        $patientData = Child::where('patient_id', $patient->id)->where('child_name',$request ->child_name)->first();
-        if($patientData) {
-        $patientData->update($request->except($request ->idCode));
-        return response()->json([
-        'data' => $patientData,
-        'message' => 'success'
-        ]);
-        } else {
-        return response()->json(['message' => 'faild'],400);
-        }
+            $patientData = Child::where('patient_id', $patient->id)->where('child_name',$request ->child_name)->first();
+            if($patientData) {
+                $patientData->update($request->except($request ->idCode));
+                return response()->json([
+                    'data' => $patientData,
+                    'message' => 'success'
+                ]);
+            } else {
+                return response()->json(['message' => 'faild'],400);
+            }
         }
         return response()->json(['message' => 'faild'],400);
      }
-     //return get children data with specific data
+
+    //return get children data with specific data
     public function getChildrenData(Request $request) {
-        $hosptails = Patien::where('idCode', $request ->idCode) -> first();
-        if ($hosptails) {
-        $hosptail = Child::where('patient_id', $hosptails ->id) -> where('child_name', $request ->child_name)
-        -> select(['weight', 'weight_type', 'height', 'blood']) -> first();
-        if ($hosptail) {
-        return response([
-        'data' => $hosptail,
-        'message' => 'success'
-        ], 200);
+
+        //return $request;
+
+        $patient = Patien::where('idCode', $request ->idCode) -> first();
+        //return $patient;
+
+        if ($patient) {
+            // $child = Child::where('patient_id', $patient ->id) -> where('child_name', $request ->child_name)
+            //-> select(['weight', 'weight_type', 'height', 'blood']) -> first();
+
+            $child = Child::where('patient_id', $patient ->id) -> where('child_name', 'LIKE' , '%' . $request ->child_name . '%' )-> first();
+
+            //return $child ;
+            if ($child) {
+                return response( $child , 200);
+            } else {
+                return response(['Child Not Found' => 'failed'],410);
+            }
         } else {
-        return response(['message' => 'failed'],400);
+            return response(['Patient Not Found' => 'failed'],405);
         }
-        } else {
-        return response(['message' => 'failed'],400);
-        }
+
      }
-     //update disease in childern
+
+    //update disease in childern
     public function diseaseData(Request $request) {
         $patient = Patien::where('idCode', $request ->idCode) -> first();
         if($patient) {
@@ -750,6 +759,7 @@ public function rayChildrenGet(Request $request) {
     }
 
     public function removeCouples(Request $request){
+        //return "Alpo";
         $patien2 = Patien::where('idCode',$request->idCode)->first();
         $patien1 = Patien::where('idCode',$request->id)->first();
         if($patien2){
@@ -982,6 +992,108 @@ public function rayChildrenGet(Request $request) {
             return response()->json([
                 'message' => 'Patient Not Found'
               ],405);
+        }
+
+    }
+
+    public function removeChild(Request $request){
+
+        //return $request ;
+
+        $patient = Patien::where('idCode',$request->idCode)->first();
+
+        if($patient){
+
+            $patient_child = Child::find( $request->child_id );
+
+            if($patient_child){
+
+                $patient_child->delete();
+
+                return response()->json([
+                    'message' => 'Child Deleted Successfully'
+                ],200);
+
+            }else{
+                return response()->json([
+                    'message' => 'Child Not Found'
+                  ],410);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Patient Not Found'
+            ],405);
+        }
+
+    }
+
+    public function kidRegister(Request $request){
+
+        //return $request;
+
+        // 'title' => 'required|unique:posts|max:255',
+        // 'body' => 'required',
+
+        $validator = Validator::make( $request->all(), [
+            'child_name' => 'required',
+            //'image' => 'required',
+            'birthDay' => 'required',
+            'gender' => 'required',
+            'weight' => 'required',
+            'weight_type' => 'required',
+            // 'height' => 'required',
+            // 'blood' => 'required',
+            // 'disease' => 'required',
+            // 'Surgeries' => 'required',
+            // 'allergy' => 'required',
+            // 'medication' => 'required',
+            // 'fatherdisease' => 'required',
+            // 'motherdisease' => 'required',
+            'patient_idCode' => 'required',
+        ] );
+
+        if ($validator->fails()) {
+            // return redirect('post/create')
+            //             ->withErrors($validator)
+            //             ->withInput();
+
+            //return $validator->errors();
+            return response()->json( $validator->errors() , 405 );
+        }
+
+        $patient = Patien::where('idCode',$request->patient_idCode)->first();
+
+        if($patient){
+
+            $new_child = Child::create([
+                'child_name' => $request ->child_name,
+                'image' => $request ->image,
+                'birthDay' => $request ->birthDay,
+                'gender' => $request ->gender,
+                'weight' => $request -> weight,
+                'weight_type' => $request -> weight_type,
+                'height' => $request -> height,
+                'blood' => $request -> blood,
+                'disease' => $request -> disease,
+                'Surgeries' => $request -> Surgeries,
+                'allergy' => $request -> allergy,
+                'medication' => $request -> medication,
+                'fatherdisease' => $request -> fatherdisease,
+                'motherdisease' => $request -> motherdisease,
+                'patient_id' => $patient ->id
+            ]);
+
+            return $new_child ;
+
+            return response()->json([
+                'message' => 'Patient Created Successfully'
+            ],200);
+
+        }else{
+            return response()->json([
+                'message' => 'Patient Not Found'
+            ],410);
         }
 
     }
