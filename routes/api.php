@@ -241,7 +241,7 @@ Route::group(['namespace'=>'API'],function(){
     Route::post('/kidsRegister/{idCode?}','childrenController@Register');
     Route::get('/kidsRegister/{idCode?}','childrenController@RegisterGet');
     Route::post('/kidsBasicData/{idCode?}','childrenController@basicData');
-    Route::get('/kidsBasicData/{idCode?}','childrenController@getChildrenData');
+    // Route::get('/kidsBasicData/{idCode?}','childrenController@getChildrenData');
     Route::post('/kidsDisease/{idCode?}','childrenController@diseaseData');
     Route::get('/kidsDisease/{idCode?}','childrenController@diseaseGet');
     Route::post('/kidsSurgery/{idCode?}','childrenController@Surgeries');
@@ -254,7 +254,7 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('/kidsFatherdisease/{idCode?}','childrenController@fatherdiseaseGet');
     Route::post('/kidsMotherdisease/{idCode?}','childrenController@motherdisease');
     Route::get('/kidsMotherdisease/{idCode?}','childrenController@motherdiseaseGet');
-    Route::get('/kids/{idCode?}','childrenController@kidsGet');
+    // Route::get('/kids/{idCode?}','childrenController@kidsGet');
     Route::post('/kidsVaccination/{idCode?}','childrenController@vaccinations');
     Route::get('/kidsVaccination/{idCode?}','childrenController@vaccinationsGet');
     Route::post('/kidsPrescription/{idCode?}','childrenController@rocataChildren');
@@ -276,12 +276,6 @@ Route::group(['namespace'=>'API'],function(){
     // Route::post('/Couples','childrenController@acceptCouples');
     // Route::delete('/Couples','childrenController@declineCouples');
     // Route::delete('/removeCouples','childrenController@removeCouples');
-
-    Route::get('/getMyCouples','childrenController@getMyCouples');
-    Route::get('/getMyCouplesRequests','childrenController@getMyCouplesRequests');
-    Route::post('/sendCouplesRequest','childrenController@sendCouplesRequest');
-    Route::post('/responseCouplesRequest','childrenController@responseCouplesRequest');
-    Route::post('/deleteMyCouple','childrenController@deleteMyCouple');
 
     //Hospital
     Route::post('/hospitalRegister','hospitalController@register');
@@ -389,6 +383,25 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('doctor/editProfile','DoctorController@doctorEditProfile');
 
     /* routes app */
+
+
+    ///////////////////////////////////// Fawzy Links /////////////////////////////////////////////////
+
+    //Couples
+    Route::get('/getMyCouples','childrenController@getMyCouples');
+    Route::get('/getMyCouplesRequests','childrenController@getMyCouplesRequests');
+    Route::post('/sendCouplesRequest','childrenController@sendCouplesRequest');
+    Route::post('/responseCouplesRequest','childrenController@responseCouplesRequest');
+    Route::delete('/deleteMyCouple','childrenController@deleteMyCouple');
+
+    //Kids
+
+    Route::get('/kids','childrenController@kidsGet');
+    Route::get('/kidsBasicData','childrenController@getChildrenData');
+    Route::delete('/removeChild','childrenController@removeChild');
+    Route::post('/kidRegister','childrenController@kidRegister');
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 });

@@ -119,6 +119,7 @@ class nurseController extends Controller
         return response() -> json(['massage' => 'failed'],400);
     }
     public function switchOn(Request $request) {
+        //return $request;
         $reqdata = $request -> all();
         $reqdata['online'] = 1;
         $lesson = Nurse::where('idCode', $request -> idCode)->first();
