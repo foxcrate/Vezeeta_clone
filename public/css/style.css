@@ -3690,8 +3690,7 @@ input[type=file]::file-selector-button {
 .completeData {
     position: relative;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .completeData .carousel-indicators {
@@ -3726,10 +3725,13 @@ input[type=file]::file-selector-button {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin-top: 8%;
+    margin-top: 11%;
     margin-bottom: 2%;
 }
 
+.card-container {
+    margin-top: 6%;
+}
 .report-personal-info {
     display: flex;
     justify-content: space-between;
