@@ -249,13 +249,19 @@
 
 <!-- footer -->
 @include('backEnd.layoutes.footer')
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script>
+
+    // console.log("Alo1");
     displaySong();
 
     var newAccount = document.getElementById('new_account');
+    // console.log("Alo2");
     newAccount.setAttribute('href', $("#config_app").text() + '/en/dashbord/patien/register');
+    // console.log("Alo3");
     document.getElementById("patien").setAttribute("checked", "checked");
-    // console.log("Alo");
+    // console.log("Alo4");
 
     var newAccount = document.getElementById('new_account'),
         patientRadio = document.getElementById('patien'),
@@ -322,8 +328,8 @@
 @stop
 
 @section('scripts')
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+{{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> --}}
 <script>
     @include('includes.showPassword')
 </script>

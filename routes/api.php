@@ -387,6 +387,7 @@ Route::group(['namespace'=>'API'],function(){
 
     ///////////////////////////////////// Fawzy Links /////////////////////////////////////////////////
 
+
     //Couples
     Route::get('/getMyCouples','childrenController@getMyCouples');
     Route::get('/getMyCouplesRequests','childrenController@getMyCouplesRequests');
@@ -400,6 +401,7 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('/kidsBasicData','childrenController@getChildrenData');
     Route::delete('/removeChild','childrenController@removeChild');
     Route::post('/kidRegister','childrenController@kidRegister');
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -1059,36 +1059,56 @@ public function rayChildrenGet(Request $request) {
             //             ->withInput();
 
             //return $validator->errors();
-            return response()->json( $validator->errors() , 405 );
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
         }
 
         $patient = Patien::where('idCode',$request->patient_idCode)->first();
 
         if($patient){
 
-            $new_child = Child::create([
-                'child_name' => $request ->child_name,
-                'image' => $request ->image,
-                'birthDay' => $request ->birthDay,
-                'gender' => $request ->gender,
-                'weight' => $request -> weight,
-                'weight_type' => $request -> weight_type,
-                'height' => $request -> height,
-                'blood' => $request -> blood,
-                'disease' => $request -> disease,
-                'Surgeries' => $request -> Surgeries,
-                'allergy' => $request -> allergy,
-                'medication' => $request -> medication,
-                'fatherdisease' => $request -> fatherdisease,
-                'motherdisease' => $request -> motherdisease,
-                'patient_id' => $patient ->id
-            ]);
+            $patient_children = $patient->childern;
 
-            return $new_child ;
+            $repeated_child_name = false;
+            foreach( $patient_children as $patient_child ){
 
-            return response()->json([
-                'message' => 'Patient Created Successfully'
-            ],200);
+                if( $patient_child->child_name == $request ->child_name ){
+                    $repeated_child_name = true ;
+                }
+
+            }
+
+            if($repeated_child_name == false){
+
+                $new_child = Child::create([
+                    'child_name' => $request ->child_name,
+                    'image' => $request ->image,
+                    'birthDay' => $request ->birthDay,
+                    'gender' => $request ->gender,
+                    'weight' => $request -> weight,
+                    'weight_type' => $request -> weight_type,
+                    'height' => $request -> height,
+                    'blood' => $request -> blood,
+                    'disease' => $request -> disease,
+                    'Surgeries' => $request -> Surgeries,
+                    'allergy' => $request -> allergy,
+                    'medication' => $request -> medication,
+                    'fatherdisease' => $request -> fatherdisease,
+                    'motherdisease' => $request -> motherdisease,
+                    'patient_id' => $patient ->id
+                ]);
+
+                //return $new_child ;
+
+                return response()->json([
+                    'message' => 'Patient Created Successfully',
+                    'data' => $new_child
+                ],200);
+
+            }else{
+                return response()->json([
+                    'message' => 'Repeated Child Name'
+                ],415);
+            }
 
         }else{
             return response()->json([
