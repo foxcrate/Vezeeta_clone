@@ -102,7 +102,8 @@
                                 <h5 class="card-title text-uppercase text-dark mb-3">Diseases</h5>
                             </div>
                             @php
-                                $disease = json_decode($child->disease);
+                                //$disease = json_decode($child->disease);
+                                $disease = $child->disease ;
                             @endphp
                             @if($disease)
                                 @foreach($disease as $disease)
@@ -133,27 +134,28 @@
                             <div class="col-lg-12">
                                 <div class="col-10 ml-auto mr-auto">
                                     <h5 class="mt-3">
-                                    <table class="table">
-                                        <tbody>
-                                        <tr>
-                                            <th style="border-top:none;" class="text-center">Medication Name</th>
-                                            <th style="border-top:none;" class="text-center">Times Day</th>
-                                            <th style="border-top:none;" class="text-center">Time</th>
-                                        </tr>
-                                        @php
-                                            $medication = $child->medication;
-                                        @endphp
-                                        @if($medication)
-                                            @foreach($medication as $medication)
+                                        <table class="table">
+                                            <tbody>
                                             <tr>
-                                                <td class="text-center border-0">{{$medication['medication_name']}}</td>
-                                                <td class="text-center border-0">{{$medication['times_day']}}</td>
-                                                <td class="text-center border-0">{{$medication['time']}}</td>
+                                                <th style="border-top:none;" class="text-center">Medication Name</th>
+                                                <th style="border-top:none;" class="text-center">Times Day</th>
+                                                <th style="border-top:none;" class="text-center">Time</th>
                                             </tr>
-                                            @endforeach
-                                        @endif
-                                        </tbody>
-                                    </table>
+                                            @php
+                                                $medications = $child->medication;
+                                            @endphp
+                                            @if($medications)
+                                                @foreach($medications as $medication)
+                                                <tr>
+                                                    <td class="text-center border-0">{{$medication['medication_name']}}</td>
+                                                    <td class="text-center border-0">{{$medication['times_day']}}</td>
+                                                    <td class="text-center border-0">{{$medication['time']}}</td>
+                                                </tr>
+                                                @endforeach
+                                            @endif
+                                            </tbody>
+                                        </table>
+
                                     </h5>
                                 </div>
                             </div>
@@ -234,6 +236,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="row kidsfam container mr-auto ml-auto mb-5 mt-5" >
                 <div class="col-lg-6 ml-auto mr-auto">
                     <div class=" card card-stats mt-3">
@@ -245,71 +248,73 @@
                             </div>
                             <div class="row">
                                 @php
-                                    $motherdisease = json_decode($child->motherdisease)
+                                    $motherdiseases = $child->motherdisease
                                 @endphp
 
-                                @if($motherdisease)
-                                @foreach($motherdisease as $motherdisease)
-                                <div class="col-lg-11 ml-auto mr-auto mt-3 row">
-                                    <div class="col-2">
-                                        <img src="{{url('imgs/01.png')}}" width="40" alt="...">
-                                    </div>
-                                    <div class="col-8">
-                                        <h5 class="mt-3">
-                                            {{$motherdisease}}
-                                        </h5>
-                                    </div>
-                                </div>
-                                @endforeach
+                                @if($motherdiseases)
+                                    @foreach($motherdiseases as $motherdisease)
+                                        <div class="col-lg-11 ml-auto mr-auto mt-3 row">
+                                            <div class="col-2">
+                                                <img src="{{url('imgs/01.png')}}" width="40" alt="...">
+                                            </div>
+                                            <div class="col-8">
+                                                <h5 class="mt-3">
+                                                    {{$motherdisease}}
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 @else
                                 <div class="col-8">
                                   <h5 class="mt-3">
                                       None
                                   </h5>
-                              </div>
+                                </div>
 
                                 @endif
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 ml-auto mr-auto">
                   <div class=" card card-stats mt-3">
-                      <div class="card-body">
-                          <div class="row">
-                              <div class="col-12 father">
-                                  <h2 class="card-title text-uppercase font-weight-bold text-white p-5">Father Diseases</h2>
-                              </div>
-                          </div>
-                          <div class="row">
-                              @php
-                                  $Fatherdisease = json_decode($child->fatherdisease)
-                              @endphp
-                              @if($Fatherdisease)
-                                @foreach($Fatherdisease as $Fatherdisease)
-                                    <div class="col-lg-11 ml-auto mr-auto mt-3 row">
-                                        <div class="col-2">
-                                            <img src="{{url('imgs/01.png')}}" width="40" alt="...">
-                                        </div>
-                                        <div class="col-8">
-                                            <h5 class="mt-3">
-                                                {{$Fatherdisease}}
-                                            </h5>
-                                        </div>
-                                    </div>
-                                @endforeach
-                              @else
-                              <div class="col-8">
-                                <h5 class="mt-3">
-                                    None
-                                </h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 father">
+                                    <h2 class="card-title text-uppercase font-weight-bold text-white p-5">Father Diseases</h2>
+                                </div>
                             </div>
-                              @endif
-                          </div>
-                      </div>
-                  </div>
+                            <div class="row">
+                                @php
+                                    $Fatherdiseases = $child->fatherdisease
+                                @endphp
+                                @if($Fatherdiseases)
+                                    @foreach($Fatherdiseases as $Fatherdisease)
+                                        <div class="col-lg-11 ml-auto mr-auto mt-3 row">
+                                            <div class="col-2">
+                                                <img src="{{url('imgs/01.png')}}" width="40" alt="...">
+                                            </div>
+                                            <div class="col-8">
+                                                <h5 class="mt-3">
+                                                    {{$Fatherdisease}}
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @else
+                                <div class="col-8">
+                                    <h5 class="mt-3">
+                                        None
+                                    </h5>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <!-- Start-Vaccinations -->
             <div class="tab-kids col-lg-12 ml-auto mr-auto col-md-2 mb-4">
               <a href="@if(!$child->Vaccination) {{route('child.Vaccinations',[$patient->id,$child->id])}} @else {{route('child.edit.Vaccinations',[$patient->id,$child->id,$child->Vaccination->id])}} @endif" class="p-4 text-primary" style="text-decoration:none;">
@@ -327,6 +332,8 @@
             </div>
             <!-- End-Vaccinations -->
         </div>
+
+
         <!-- footer -->
         @include('backEnd.layoutes.footer')
         <!-- footer -->

@@ -150,6 +150,7 @@ class childController extends Controller
     }
     // get all child
     public function getAllChild($id){
+        //return "Alo";
         $patient = Patien::with('childern')->findOrFail($id);
         //return $patient->childern;
         return view('backEnd.patien.child.getAllChild',compact('patient'));

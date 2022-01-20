@@ -272,22 +272,24 @@ class patientController extends Controller
     public function patientDataReal(Request $request){
         //return $request;
         //$req = $request -> except($request -> idCode);
-        $patient = Patien::where('idCode', $request->idCode) -> first();
+        $patient = Patien::where('idCode', $request->idCode) -> with('patinets_data') -> first();
+        //return $patient->patinets_data;
+
         if ($patient) {
-            $patientData = patientData::where('patient_id', $patient -> id) -> first();
-            if ($patientData) {
+            //$patientData = patientData::where('patient_id', $patient -> id) -> first();
+            if ($patient->patinets_data) {
                 //$patientData -> update( $request -> except($request -> idCode) );
                 //$patientData->save();
                 //return $patientData;
                 return response() -> json([
-                    'data' => $patientData,
+                    'data' => $patient,
                     'message' => 'success'
-                ]);
+                ],200);
             } else {
-                return response() -> json( ['message' => 'Profile gas no profile yet'] , 400);
+                return response() -> json( ['message' => 'Patient has no profile yet'] , 410);
             }
         }
-        return response() -> json( ['message' => 'Patient Not Found'] , 400 );
+        return response() -> json( ['message' => 'Patient Not Found'] , 405 );
     }
 
     //if is need to be donor but blood is null so can updated enter
