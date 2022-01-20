@@ -97,12 +97,15 @@ class childController extends Controller
                     'height'                => $request->height,
                     'weight_type'            => $request->weight_type,
                     'blood'                 => $request->blood,
-                    'disease'            => json_encode($request->disease),
+                    // 'disease'            => json_encode($request->disease),
+                    'disease'            => $request->disease,
                     'allergy'               => $request->allergi_data,
                     'Surgeries'             => $request->surgery_data,
                     'medication'            => $request->medication_name,
-                    'motherdisease'            => json_encode($request->motherdisease),
-                    'fatherdisease'            => json_encode($request->fatherdisease),
+                    // 'motherdisease'            => json_encode($request->motherdisease),
+                    'motherdisease'            => $request->motherdisease,
+                    // 'fatherdisease'            => json_encode($request->fatherdisease),
+                    'fatherdisease'            => $request->fatherdisease,
                     // 'patient_id'                => $request->patient_id
                 ];
             // }
@@ -160,7 +163,7 @@ class childController extends Controller
     // update profile child
     public function updaeProfile($id,$child_id,Request $request){
         // try{
-            Alert::success('Success','Updated Data Success');
+
             $patient = Patien::findOrFail($id);
             $child = Child::findOrFail($child_id);
             $childRequest = $request->all();
@@ -177,12 +180,15 @@ class childController extends Controller
                     'height'                => $request->height,
                     'weight_type'            => $request->weight_type,
                     'blood'                 => $request->blood,
-                    'disease'               => json_encode($request->disease),
+                    // 'disease'               => json_encode($request->disease),
+                    'disease'               => $request->disease,
                     'allergy'                   => $request->allergy,
                     'Surgeries'             => $request->Surgeries,
                     'medication'            => $request->medication,
-                    'motherdisease'            => json_encode($request->motherdisease),
-                    'fatherdisease'            => json_encode($request->fatherdisease),
+                    // 'motherdisease'            => json_encode($request->motherdisease),
+                    'motherdisease'            => $request->motherdisease,
+                    // 'fatherdisease'            => json_encode($request->fatherdisease),
+                    'fatherdisease'            => $request->fatherdisease,
                     // 'patient_id'                => $request->patient_id
                 ];
         if($request->image){
@@ -195,6 +201,7 @@ class childController extends Controller
         $data2['patient_id'] = $request->patient_id;
         // dd($data2);
         $child->update($data2);
+        Alert::success('Success','Updated Data Success');
         return redirect()->route('patient.child.profile',[$id,$child_id]);
         // }
         // catch(\Exception $ex){

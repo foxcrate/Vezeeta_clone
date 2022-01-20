@@ -127,7 +127,8 @@
                                 <div class="form-flex">
                                     <div class="form-group row">
                                         @php
-                                            $diseases = json_decode($child->disease);
+                                            // $diseases = json_decode($child->disease);
+                                            $diseases = $child->disease ;
                                         @endphp
                                         <!-- col -->
                                         <div class="col-sm-3">
@@ -460,8 +461,10 @@
                                                 <option value="high-Blood-Pressure">High Blood Pressure</option>
                                                 <option value="diabetes">Diabetes</option>
                                                 <option value="cancer">Cancer (Past or Present)</option>
-                                                @if(json_decode($child->motherdisease))
-                                                    @foreach (json_decode($child->motherdisease) as $mother )
+                                                {{-- @if(json_decode($child->motherdisease)) --}}
+                                                @if($child->motherdisease)
+                                                    {{-- @foreach (json_decode($child->motherdisease) as $mother ) --}}
+                                                    @foreach ( $child->motherdisease as $mother )
                                                         <option value="{{$mother}}" selected>
                                                             {{$mother}}
                                                         </option>
@@ -484,8 +487,10 @@
                                                 <option value="high-Blood-Pressure">High Blood Pressure</option>
                                                 <option value="diabetes">Diabetes</option>
                                                 <option value="cancer">Cancer (Past or Present)</option>
-                                                @if(json_decode($child->fatherdisease))
-                                                    @foreach (json_decode($child->fatherdisease) as $father )
+                                                {{-- @if(json_decode($child->fatherdisease)) --}}
+                                                @if($child->fatherdisease)
+                                                    {{-- @foreach (json_decode($child->fatherdisease) as $father ) --}}
+                                                    @foreach ($child->fatherdisease as $father )
                                                         <option value="{{$father}}" selected>
                                                             {{$father}}
                                                         </option>
