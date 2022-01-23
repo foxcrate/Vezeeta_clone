@@ -114,7 +114,8 @@ class childrenController extends Controller
         $profileCreate = Child::where('patient_id', $patient->id)
         ->where('child_name',$request->child_name)
         ->update([
-            'disease' => json_encode($request->disease)
+            // 'disease' => json_encode($request->disease)
+            'disease' => $request->disease
         ]);
         return response()->json([
                 'data'    => $profileCreate,
@@ -149,7 +150,8 @@ class childrenController extends Controller
         $patient = Child::where('patient_id', $patient->id)
         ->where('child_name',$request->child_name)->first();
         if($patient){
-        $patient->update(['Surgeries' => json_encode($request ->Surgeries)]);
+        // $patient->update(['Surgeries' => json_encode($request ->Surgeries)]);
+        $patient->update(['Surgeries' => $request ->Surgeries]);
         return response() -> json([
         'data' => $patient,
         'message' => 'success'
@@ -183,7 +185,8 @@ class childrenController extends Controller
             ->where('child_name',$request->child_name)->first();
             if ($patient) {
                 $patient->update([
-                    'allergy' => json_encode($request ->allergy)
+                    // 'allergy' => json_encode($request ->allergy)
+                    'allergy' => $request ->allergy
                 ]);
                 return response()->json([
                     'data' => $patient,
@@ -308,7 +311,8 @@ class childrenController extends Controller
             $patient = Child::where('patient_id', $patient->id)->where('child_name',$request->child_name)->first();
             if($patient){
                 $patient->update([
-                    'medication' => json_encode($request->medication)
+                    // 'medication' => json_encode($request->medication)
+                    'medication' => $request->medication
                 ]);
                 return response()->json([
                     'data' => $patient,
@@ -350,7 +354,8 @@ class childrenController extends Controller
             $patient = Child::where('patient_id', $patient->id)->where('child_name',$request->child_name)->first();
             if($patient ){
             $patient->update([
-            'fatherdisease' => json_encode($request->fatherdisease)
+            // 'fatherdisease' => json_encode($request->fatherdisease)
+            'fatherdisease' => $request->fatherdisease
             ]);
             return response()->json([
             'data' => $patient,
@@ -390,7 +395,8 @@ class childrenController extends Controller
             $patient = Child::where('patient_id', $patient->id)->where('child_name',$request->child_name)->first();
             if($patient ){
             $patient->update([
-            'motherdisease' => json_encode($request->motherdisease)
+            // 'motherdisease' => json_encode($request->motherdisease)
+            'motherdisease' => $request->motherdisease
             ]);
             return response()->json([
             'data' => $patient,

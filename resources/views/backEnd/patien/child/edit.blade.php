@@ -376,36 +376,38 @@
                                     <li>
 
                                         <div class="row mb-3">
-                                            @foreach($child->Surgeries as $key => $Surgeries)
-                                            <div class="col-md-5">
-                                                <label class="title-label">Surgery</label>
-                                                <select name="Surgeries[{{$key}}][surgery_name]" class="form-control">
-                                                    <option value="" hidden>Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Hernia" ? "selected" : ''}} value="Hernia">Hernia Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Hemorrhoid" ? "selected" : ''}} value="Hemorrhoid">Hemorrhoid Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Eye" ? "selected" : ''}} value="Eye">Eye surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Gallbladder" ? "selected" : ''}} value="Gallbladder">Gallbladder Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Appendix" ? "selected" : ''  }} value="Appendix">Appendix Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Cardiovascular" ? "selected" : ''}} value="Cardiovascular">Cardiovascular Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Tonsil" ? "selected" : ''}} value="Tonsil">Tonsil Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Liver" ? "selected" : ''}} value="Liver">Liver Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Cancer" ? "selected" : ''}} value="Cancer">Cancer and Oncology Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Kidney" ? "selected" : ''}} value="Kidney">Kidney Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Brain" ? "selected" : ''}} value="Brain">Brain Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Gastrointestinal" ? "selected" : ''}} value="Gastrointestinal">Gastrointestinal Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Reproductive" ? "selected" : ''}} value="Reproductive">Reproductive system Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Nervous" ? "selected" : ''}} value="Nervous">Nervous system Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Respiratory" ? "selected" : ''}} value="Respiratory">Respiratory Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Orthopaedic" ? "selected" : ''}} value="Orthopaedic">Orthopaedic Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Ear" ? "selected" : ''}} value="Ear">Ear, nose and throat Surgery</option>
-                                                    <option {{$Surgeries['surgery_name'] == "Other" ? "selected" : ''}} value="Other">Other</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <label class="title-label">Date</label>
-                                                <input value = "{{$Surgeries['surgery_date']}}" class="form-control" type="date" name="Surgeries[{{$key}}][surgery_date]" placeholder="">
-                                            </div>
-                                            @endforeach
+                                            @if($child->Surgeries)
+                                                @foreach($child->Surgeries as $key => $Surgeries)
+                                                    <div class="col-md-5">
+                                                        <label class="title-label">Surgery</label>
+                                                        <select name="Surgeries[{{$key}}][surgery_name]" class="form-control">
+                                                            <option value="" hidden>Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Hernia" ? "selected" : ''}} value="Hernia">Hernia Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Hemorrhoid" ? "selected" : ''}} value="Hemorrhoid">Hemorrhoid Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Eye" ? "selected" : ''}} value="Eye">Eye surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Gallbladder" ? "selected" : ''}} value="Gallbladder">Gallbladder Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Appendix" ? "selected" : ''  }} value="Appendix">Appendix Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Cardiovascular" ? "selected" : ''}} value="Cardiovascular">Cardiovascular Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Tonsil" ? "selected" : ''}} value="Tonsil">Tonsil Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Liver" ? "selected" : ''}} value="Liver">Liver Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Cancer" ? "selected" : ''}} value="Cancer">Cancer and Oncology Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Kidney" ? "selected" : ''}} value="Kidney">Kidney Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Brain" ? "selected" : ''}} value="Brain">Brain Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Gastrointestinal" ? "selected" : ''}} value="Gastrointestinal">Gastrointestinal Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Reproductive" ? "selected" : ''}} value="Reproductive">Reproductive system Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Nervous" ? "selected" : ''}} value="Nervous">Nervous system Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Respiratory" ? "selected" : ''}} value="Respiratory">Respiratory Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Orthopaedic" ? "selected" : ''}} value="Orthopaedic">Orthopaedic Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Ear" ? "selected" : ''}} value="Ear">Ear, nose and throat Surgery</option>
+                                                            <option {{$Surgeries['surgery_name'] == "Other" ? "selected" : ''}} value="Other">Other</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <label class="title-label">Date</label>
+                                                        <input value = "{{$Surgeries['surgery_date']}}" class="form-control" type="date" name="Surgeries[{{$key}}][surgery_date]" placeholder="">
+                                                    </div>
+                                                @endforeach
+                                            @endif
                                         </div>
 
 
@@ -421,29 +423,31 @@
                                     <li class="">
 
                                         <div class="row">
-                                            @foreach($child->medication as $key =>$med)
-                                            <div class="col-md-4 mb-3">
-                                                <input class="form-control" type="text" name="medication[{{$key}}][medication_name]" placeholder="Medication" value="{{$med['medication_name']}}">
-                                            </div>
+                                            @if($child->medication)
+                                                @foreach($child->medication as $key =>$med)
+                                                    <div class="col-md-4 mb-3">
+                                                        <input class="form-control" type="text" name="medication[{{$key}}][medication_name]" placeholder="Medication" value="{{$med['medication_name']}}">
+                                                    </div>
 
-                                            <div class="col-md-4 mb-3">
-                                                <select name="medication[{{$key}}][times_day]" class="col-8 custom-select required" id="inputGroupSelect01" value="{{$med['times_day']}}">
-                                                    <option value="" hidden >Times Day</option>
-                                                    <option value="1" {{$med['times_day'] == '1' ? 'selected' : ''}}>1</option>
-                                                    <option value="2" {{$med['times_day'] == '2' ? 'selected' : ''}}>2</option>
-                                                    <option value="3" {{$med['times_day'] == '3' ? 'selected' : ''}}>3</option>
-                                                    <option value="If necessity" {{$med['times_day'] == 'If necessity' ? 'selected' : ''}}>If necessity</option>
-                                                </select>
-                                            </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <select name="medication[{{$key}}][times_day]" class="col-8 custom-select required" id="inputGroupSelect01" value="{{$med['times_day']}}">
+                                                            <option value="" hidden >Times Day</option>
+                                                            <option value="1" {{$med['times_day'] == '1' ? 'selected' : ''}}>1</option>
+                                                            <option value="2" {{$med['times_day'] == '2' ? 'selected' : ''}}>2</option>
+                                                            <option value="3" {{$med['times_day'] == '3' ? 'selected' : ''}}>3</option>
+                                                            <option value="If necessity" {{$med['times_day'] == 'If necessity' ? 'selected' : ''}}>If necessity</option>
+                                                        </select>
+                                                    </div>
 
-                                            <div class="col-md-4 mb-3">
-                                                <select name="medication[{{$key}}][time]" class="col-8 custom-select required" id="inputGroupSelect01">
-                                                    <option value="" hidden >Time</option>
-                                                    <option value="Before Eating" {{$med['time'] == 'Before Eating' ? 'selected' : ''}}>Before Eating</option>
-                                                    <option value="After Eating" {{$med['time'] == 'After Eating' ? 'selected' : ''}}>After Eating</option>
-                                                </select>
-                                            </div>
-                                            @endforeach
+                                                    <div class="col-md-4 mb-3">
+                                                        <select name="medication[{{$key}}][time]" class="col-8 custom-select required" id="inputGroupSelect01">
+                                                            <option value="" hidden >Time</option>
+                                                            <option value="Before Eating" {{$med['time'] == 'Before Eating' ? 'selected' : ''}}>Before Eating</option>
+                                                            <option value="After Eating" {{$med['time'] == 'After Eating' ? 'selected' : ''}}>After Eating</option>
+                                                        </select>
+                                                    </div>
+                                                @endforeach
+                                            @endif
                                         </div>
 
 
