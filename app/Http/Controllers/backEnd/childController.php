@@ -39,7 +39,7 @@ class childController extends Controller
     //Store
     public function create_child(Request $request,$id){
 
-
+        //return "Alo";
         $this->validate($request, [
             'image' => 'required|image|max:3072',
             'child_name'    => 'required|string',
@@ -76,7 +76,7 @@ class childController extends Controller
                 return redirect()->back()->with(['error' => 'Repeated Child']);
             }
         }
-
+        //return "Alo 2";
         /* insert all request */
         $childData = $request->all();
 
@@ -111,6 +111,7 @@ class childController extends Controller
             // }
 
         // }
+        //return "Alo 3";
         if($request->image){
             $img = Image::make($request->image)
             ->resize(1280,400, function ($constraint) {
@@ -122,8 +123,13 @@ class childController extends Controller
         // dd($request->all());
         $data2['patient_id'] = $request->patient_id;
         // return $data2;
+        //return "alo 5";
+        try{
         $child = Child::create($data2);
-
+        }catch(\Exception $ex){
+            return $ex->getMessage();
+        }
+        //return "Alo 4";
         /* return redirect profile patient */
         return redirect()->route('patient.child.profile',[$patient->id,$child['id']]);
         // }
