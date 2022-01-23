@@ -273,7 +273,7 @@ class patientController extends Controller
         //return $request;
         //$req = $request -> except($request -> idCode);
         $patient = Patien::where('idCode', $request->idCode) -> with('patinets_data') -> first();
-        //return $patient->patinets_data;
+        //return $patient->last_checkup();
 
         if ($patient) {
             //$patientData = patientData::where('patient_id', $patient -> id) -> first();
@@ -282,8 +282,8 @@ class patientController extends Controller
                 //$patientData->save();
                 //return $patientData;
                 return response() -> json([
-                    'data' => $patient,
-                    'message' => 'success'
+                    'data' => $patient ,
+                    'last_checkup' =>$patient->last_checkup()
                 ],200);
             } else {
                 return response() -> json( ['message' => 'Patient has no profile yet'] , 410);

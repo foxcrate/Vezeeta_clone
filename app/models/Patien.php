@@ -143,6 +143,12 @@ class Patien extends Authenticatable
     public function checkup(){
         return $this->hasMany('App\models\Checkup','patient_id');
     }
+    public function last_checkup(){
+
+        $last_checkup = Checkup::where('patient_id',$this->id)->latest()->first();
+        return $last_checkup;
+
+    }
     public function doctor_scudule(){
         return $this->hasMany('App\models\DoctorScudule','patient_id');
     }

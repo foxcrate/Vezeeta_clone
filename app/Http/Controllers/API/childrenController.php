@@ -294,22 +294,24 @@ class childrenController extends Controller
         return response() -> json(['message' => 'failed'],400);
      }
     public function medecation(Request $request){
-            $patient = Patien::where('idCode', $request->idCode)->first();
-            if($patient){
+        //return json_encode($request->medication);
+        $patient = Patien::where('idCode', $request->idCode)->first();
+        if($patient){
             $patient = Child::where('patient_id', $patient->id)->where('child_name',$request->child_name)->first();
             if($patient){
-            $patient->update([
-            'medication' => json_encode($request->medication)
-            ]);
-            return response()->json([
-            'data' => $patient,
-            'message'   => 'success',
-            ]);
-            }}
-            return response()->json([
-            'message'   => 'faild',
-            ],400);
+                $patient->update([
+                    'medication' => json_encode($request->medication)
+                ]);
+                return response()->json([
+                    'data' => $patient,
+                    'message'   => 'success',
+                ]);
             }
+        }
+        return response()->json([
+        'message'   => 'faild',
+        ],400);
+    }
 
 
 
