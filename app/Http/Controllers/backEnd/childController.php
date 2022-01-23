@@ -39,7 +39,7 @@ class childController extends Controller
     //Store
     public function create_child(Request $request,$id){
 
-
+        //return " Alo";
         $this->validate($request, [
             'image' => 'required|image|max:3072',
             'child_name'    => 'required|string',
