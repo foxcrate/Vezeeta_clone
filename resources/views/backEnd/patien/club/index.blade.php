@@ -9,11 +9,13 @@
             @include('includes.patientNav')
             <div class="container">
                 <h3 class="mt-5" style="font-size: 40pt;">Membership</h3>
-                <div class="row col-lg-12 col-sm-6 mt-5 card-imgCard">
-                    <div class="id-num ml-4 col-lg-10 h3 text-white">{{$patient->idCode}}</div>
-                    <div class="name-user ml-4 col-lg-10 h3 text-white">{{$patient->name}}</div>
-                    <div class="date-exp ml-4 col-lg-5 h3 text-white">EXP 22/08</div>
-                    <div class="point col-lg-5 h3 text-white">{{ $patient->poients }} Point</div>
+                <div class="card-imgCard">
+                    <div class="imgCard-info d-flex">
+                        <div class="id-num h3 text-white pb-3">{{$patient->idCode}}</div>
+                        <div class="name-user h3 text-white pb-3">{{$patient->name}}</div>
+                        <div class="date-exp h3 text-white pb-3">EXP 22/08</div>
+                    </div>
+                    <div class="point h3 text-white pb-3">{{ $patient->poients }} Point</div>
                 </div>
                 <div class="row mt-5">
                   <div class="col-lg-6 ml-auto mr-auto text-center">
@@ -50,7 +52,7 @@
                   </div>
                 </div>
             </div>
-            <div class="row col-lg-8 ml-auto mr-auto mt-5">
+            <div class="row col-sm-8 ml-auto mr-auto mt-5">
               <h2>Statement</h2>
               <table class="table">
                 <thead>

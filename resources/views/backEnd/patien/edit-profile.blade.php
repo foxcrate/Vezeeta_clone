@@ -27,14 +27,14 @@
                         <div class="col-12">
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
                                 data-interval="false">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                                <div class="carousel-indicators">
+                                    <button data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
                                         Personal Information
-                                    </li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                                    </button>
+                                    <button data-target="#carouselExampleIndicators" data-slide-to="1">
                                         Medical History
-                                    </li>
-                                </ol>
+                                    </button>
+                                </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <div id="personalData">
@@ -1508,7 +1508,7 @@
                                                                             </div>
                                                                         </li>
                                                                     </ul>
-                                                                    <button class="btn btn-success col-4 h5"
+                                                                    <button class="btn btn-success col-sm-3 h5"
                                                                         type="button" id="more_fields">Add
                                                                         Another Allergy</button>
                                                                 </div>
@@ -1613,14 +1613,14 @@
                                                                                     <label
                                                                                         class="title-label ml-xl-3"></label>
                                                                                     <button class="btn btn-danger h5"
-                                                                                        style="margin-top:12px"
+                                                                                        style="margin-top:40px"
                                                                                         type="button"
                                                                                         id="remove_more_surgeries">Delete</button>
                                                                                 </div>
                                                                             </div>
                                                                         </li>
                                                                     </ul>
-                                                                    <button class="btn btn-success col-4 h5"
+                                                                    <button class="btn btn-success col-sm-3 h5"
                                                                         type="button" id="more_surgeries">Add Another
                                                                         Surgery</button>
                                                                 </div>
@@ -1698,7 +1698,7 @@
                                                                             </div>
                                                                         </li>
                                                                     </ul>
-                                                                    <button class="btn btn-success col-4 h5"
+                                                                    <button class="btn btn-success col-sm-3 h5"
                                                                         type="button" id="more_medication">Add Another
                                                                         Medication</button>
                                                                 </div>
@@ -1893,14 +1893,14 @@
                                                                                     <label
                                                                                         class="title-label ml-xl-3"></label>
                                                                                     <button class="btn btn-danger h5"
-                                                                                        style="margin-top:12px"
+                                                                                        style="margin-top:40px"
                                                                                         type="button"
                                                                                         id="remove_more_smoking">Delete</button>
                                                                                 </div>
                                                                             </div>
                                                                         </li>
                                                                     </ul>
-                                                                    <button class="btn btn-success col-4 h5"
+                                                                    <button class="btn btn-success col-sm-3 h5"
                                                                         type="button" id="more_smoking">Add
                                                                         Another Habit</button>
                                                                 </div>
