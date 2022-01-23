@@ -252,7 +252,7 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('/kidsMedication/{idCode?}','childrenController@medecationGet');
     Route::post('/kidsFatherdisease/{idCode?}','childrenController@fatherdisease');
     Route::get('/kidsFatherdisease/{idCode?}','childrenController@fatherdiseaseGet');
-    Route::post('/kidsMotherdisease/{idCode?}','childrenController@motherdisease');
+    Route::post('/kidsMotherdiseasePost/{idCode?}','childrenController@motherdisease');
     Route::get('/kidsMotherdisease/{idCode?}','childrenController@motherdiseaseGet');
     // Route::get('/kids/{idCode?}','childrenController@kidsGet');
     Route::post('/kidsVaccination/{idCode?}','childrenController@vaccinations');

@@ -374,9 +374,11 @@ class childrenController extends Controller
             'message'   => 'faild',
             ],400);
      }
+
     public function motherdisease(Request $request){
-            $patient = Patien::where('idCode', $request->idCode)->first();
-            if($patient){
+        //return "Alo Post";
+        $patient = Patien::where('idCode', $request->idCode)->first();
+        if($patient){
             $patient = Child::where('patient_id', $patient->id)->where('child_name',$request->child_name)->first();
             if($patient ){
             $patient->update([
@@ -386,13 +388,14 @@ class childrenController extends Controller
             'data' => $patient,
             'message'   => 'success',
             ]);
-            }}
-            return response()->json([
+        }}
+        return response()->json([
             'message'   => 'faild',
-            ],400);
-            }
+        ],400);
+    }
 
     public function motherdiseaseGet(Request $request){
+        //return "Alo Get";
             $patient = Patien::where('idCode', $request->idCode)->first();
             if($patient ){
             $medicationGet = Child::where('patient_id',$patient->id)->where('child_name',$request->child_name)->select(['motherdisease'])->first();
