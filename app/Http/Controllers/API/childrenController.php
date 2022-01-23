@@ -231,26 +231,25 @@ class childrenController extends Controller
     public function vaccinations(Request $request) {
         $patient = Patien::where('idCode', $request->idCode)->first();
         if($patient){
-        $child = Child::where('patient_id', $patient->id)
-        ->where('child_name',$request->child_name)->first();
-        if($child){
-        $childvac = Vaccination::where('child_id', $child->id)->first();
-        if($childvac){
-        $childvac -> update([
-        'at_birth'           => $request ->at_birth,
-        'two_month'          => $request ->two_month,
-        'four_month'         => $request ->four_month,
-        'six_month'          => $request ->six_month,
-        'nine_month'         => $request ->nine_month,
-        'twelve_month'       => $request ->twelve_month,
-        'eighteen_month'     => $request ->eighteen_month,
-        'twenty_four_month'  => $request ->twenty_four_month,
-        'child_id'           => $child ->id
-                ]);
+            $child = Child::where('patient_id', $patient->id)
+            ->where('child_name',$request->child_name)->first();
+            if($child){
+            $childvac = Vaccination::where('child_id', $child->id)->first();
+            if($childvac){
+                $childvac -> update([
+                'at_birth'           => $request ->at_birth,
+                'two_month'          => $request ->two_month,
+                'four_month'         => $request ->four_month,
+                'six_month'          => $request ->six_month,
+                'nine_month'         => $request ->nine_month,
+                'twelve_month'       => $request ->twelve_month,
+                'eighteen_month'     => $request ->eighteen_month,
+                'twenty_four_month'  => $request ->twenty_four_month,
+                'child_id'           => $child ->id
+                        ]);
                 return response() -> json([
                     'data' => $childvac,
-                    'message' => 'success'
-                ]);
+                ],200);
             } else {
                 $childvac1 = Vaccination::create([
                     'at_birth' => $request ->at_birth,
@@ -265,20 +264,27 @@ class childrenController extends Controller
                 ]);
                 return response() -> json([
                     'data' => $childvac1,
-                    'message' => 'success'
-                ]);
+                ],200);
             }
-        }}
-        return response() -> json(['message' => 'failed'],400);
+            }else{
+                return response() -> json(['message' => 'Child Not Found'],410);
+            }
+        }else{
+
+            return response() -> json(['message' => 'Patient Not Found'],405);
+        }
      }
     public function vaccinationsGet(Request $request) {
+        //return $request ;
         $patient = Patien::where('idCode', $request ->idCode) -> first();
+        //return $patient;
         if ($patient) {
             $patientChild = Child::where('patient_id', $patient ->id) -> where(
                 'child_name',
                 $request ->child_name
             ) -> first();
             if ($patientChild) {
+                //return $patientChild;
                 $vac = Vaccination::where('child_id', $patientChild ->id) -> count();
                 if ($vac) {
                     $vac = Vaccination::where('child_id', $patientChild ->id) -> get();
@@ -286,12 +292,14 @@ class childrenController extends Controller
                         'data' => $vac,
                         'message' => 'success'
                     ]);
+                }else{
+                    return response() -> json(['message' => "Kid Didn't get any vaccinations"],200);
                 }
             } else {
-                return response() -> json(['message' => 'failed'],400);
+                return response() -> json(['Child Not Found' => 'failed'],410);
             }
         }
-        return response() -> json(['message' => 'failed'],400);
+        return response() -> json(['message' => 'Patient Not Found'],405);
      }
     public function medecation(Request $request){
         //return json_encode($request->medication);

@@ -331,36 +331,38 @@
                                 <ul class="list-unstyled read-more-wrap">
                                     <li>
                                         <div class="row mb-3">
-                                            @foreach($child->allergy as $key => $allergy)
-                                                <div class="col-md-4">
-                                                    <label class="title-label ml-xl-3">Allergy</label>
-                                                    <select name="allergy[{{$key}}][allergi_name]" class="form-control">
-                                                        <option value="" hidden>Allergy</option>
-                                                        <option {{$allergy['allergi_name'] == "Drug" ? "selected" : ''}}   value="Drug">Drug allergy</option>
-                                                        <option {{$allergy['allergi_name'] == "Food" ? "selected" : ''}} value="Food">Food allergy</option>
-                                                        <option {{$allergy['allergi_name'] == "Pet" ? "selected" : '' }} value="Pet">Pet allergy</option>
-                                                        <option {{$allergy['allergi_name'] == "Insect" ? "selected" : '' }} value="Insect">Insect allergy</option>
-                                                        <option {{$allergy['allergi_name'] == "Latex" ? "selected" : '' }} value="Latex">Latex allergy</option>
-                                                        <option {{$allergy['allergi_name'] == "Mold" ? "selected" : '' }} value="Mold">Mold allergy</option>
-                                                        <option {{$allergy['allergi_name'] == "Pollen" ? "selected" : ''}} value="Pollen">Pollen allergy</option>
-                                                        <option {{$allergy['allergi_name'] == "Dust" ? "selected" : '' }} value="Dust">Dust allergy</option>
-                                                        <option {{$allergy['allergi_name'] == "Other" ? "selected" : '' }} value="Other">Other</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="title-label d-block">Severity</label>
-                                                    <select name="allergy[{{$key}}][severity]" class="form-control">
-                                                        <option value="" hidden>Severity</option>
-                                                        <option {{$allergy['severity'] == 'Mild' ? 'selected' : ''}} value="Mild">Mild</option>
-                                                        <option {{$allergy['severity'] == 'Moderate' ? 'selected' : ''}} value="Moderate">Moderate</option>
-                                                        <option {{$allergy['severity'] == 'Severe' ? 'selected' : ''}} value="Severe">Severe</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="title-label ml-xl-3">Reaction</label>
-                                                    <input onkeypress="return /[a-z]/i.test(event.key)" value = "{{$allergy['reaction']}}" class="form-control" type="text" name="allergy[{{$key}}][reaction]" placeholder="Reaction">
-                                                </div>
-                                            @endforeach
+                                            @if($child->allergy)
+                                                @foreach($child->allergy as $key => $allergy)
+                                                    <div class="col-md-4">
+                                                        <label class="title-label ml-xl-3">Allergy</label>
+                                                        <select name="allergy[{{$key}}][allergi_name]" class="form-control">
+                                                            <option value="" hidden>Allergy</option>
+                                                            <option {{$allergy['allergi_name'] == "Drug" ? "selected" : ''}}   value="Drug">Drug allergy</option>
+                                                            <option {{$allergy['allergi_name'] == "Food" ? "selected" : ''}} value="Food">Food allergy</option>
+                                                            <option {{$allergy['allergi_name'] == "Pet" ? "selected" : '' }} value="Pet">Pet allergy</option>
+                                                            <option {{$allergy['allergi_name'] == "Insect" ? "selected" : '' }} value="Insect">Insect allergy</option>
+                                                            <option {{$allergy['allergi_name'] == "Latex" ? "selected" : '' }} value="Latex">Latex allergy</option>
+                                                            <option {{$allergy['allergi_name'] == "Mold" ? "selected" : '' }} value="Mold">Mold allergy</option>
+                                                            <option {{$allergy['allergi_name'] == "Pollen" ? "selected" : ''}} value="Pollen">Pollen allergy</option>
+                                                            <option {{$allergy['allergi_name'] == "Dust" ? "selected" : '' }} value="Dust">Dust allergy</option>
+                                                            <option {{$allergy['allergi_name'] == "Other" ? "selected" : '' }} value="Other">Other</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label class="title-label d-block">Severity</label>
+                                                        <select name="allergy[{{$key}}][severity]" class="form-control">
+                                                            <option value="" hidden>Severity</option>
+                                                            <option {{$allergy['severity'] == 'Mild' ? 'selected' : ''}} value="Mild">Mild</option>
+                                                            <option {{$allergy['severity'] == 'Moderate' ? 'selected' : ''}} value="Moderate">Moderate</option>
+                                                            <option {{$allergy['severity'] == 'Severe' ? 'selected' : ''}} value="Severe">Severe</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label class="title-label ml-xl-3">Reaction</label>
+                                                        <input onkeypress="return /[a-z]/i.test(event.key)" value = "{{$allergy['reaction']}}" class="form-control" type="text" name="allergy[{{$key}}][reaction]" placeholder="Reaction">
+                                                    </div>
+                                                @endforeach
+                                            @endif
                                         </div>
                                     </li>
                                 </ul>
