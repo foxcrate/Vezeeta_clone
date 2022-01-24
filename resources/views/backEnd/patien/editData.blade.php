@@ -445,7 +445,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <label class="h6 font-weight-bold" for="state">State</label>
-                                        <div class="form-flex row">
+                                        <div class="form-flex row d-flex justify-content-between">
                                             <div class="col-2">
                                                 <input value = "single" {{$patient->state == 'single'? 'checked' : ''}} type="radio" name="state" value="single" id="single" />
                                                 <label for="single" class="ml-2">Single</label>
@@ -461,9 +461,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row col-md-12 text-center mb-5 mt-5">
-                                    <button type="submit"  class=" col-6 btn btn-primary font-weight-400">Submit</button>
-                                    <a href="{{ route('cancel',$patient->id) }}" class=" col-6 btn btn-danger">Cancel</a>
+                                <div class="row col-md-12 text-center mb-5 mt-5 d-flex justify-content-between">
+                                    <button type="submit"  class=" col-5 btn btn-primary font-weight-400">Submit</button>
+                                    <a href="{{ route('cancel',$patient->id) }}" class=" col-5 btn btn-danger">Cancel</a>
                                 </div>
                             </form>
                         </div>

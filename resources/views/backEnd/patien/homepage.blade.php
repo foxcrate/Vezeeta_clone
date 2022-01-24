@@ -16,7 +16,6 @@
         </div>
     </div>
     <div id="popupBackground" class="black_overlay"></div> --}}
-
     <div class="container homePage-carousel">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 50px;">
             <ol class="carousel-indicators ml-auto mr-auto">
@@ -258,6 +257,18 @@
       <div class="col-lg-3 ml-auto mr-auto">
       </div>
     </div>
+    <div class="bts-popup" role="alert">
+        <div class="bts-popup-container">
+            <div class="download-container">
+                <h1>Download Our Application Now</h1>
+                <div class="download-imgs">
+                    <a href="#"><img src="{{url('imgs/download-Android.png')}}"></a>
+                    <a href="#"><img src="{{url('imgs/download-ios.png')}}"></a>
+                </div>
+            </div>
+            <a href="#0" class="bts-popup-close img-replace">Close</a>
+        </div>
+    </div>
     <!--End-Serv-->
     {{-- <div class="download-container">
         <h1>Download Our Application Now</h1>
@@ -274,5 +285,34 @@
     $('.link').on('click', function () {
         window.location = "{{route('patien-profile',$patient->id)}}";
     });
+</script>
+
+<script>
+    jQuery(document).ready(function($){
+
+  window.onload = function (){
+    $(".bts-popup").delay(1000).addClass('is-visible');
+  }
+
+  //open popup
+  $('.bts-popup-trigger').on('click', function(event){
+    event.preventDefault();
+    $('.bts-popup').addClass('is-visible');
+  });
+
+  //close popup
+  $('.bts-popup').on('click', function(event){
+    if( $(event.target).is('.bts-popup-close') || $(event.target).is('.bts-popup') ) {
+      event.preventDefault();
+      $(this).removeClass('is-visible');
+    }
+  });
+  //close popup when clicking the esc keyboard button
+  $(document).keyup(function(event){
+      if(event.which=='27'){
+        $('.bts-popup').removeClass('is-visible');
+      }
+    });
+});
 </script>
 @endsection
