@@ -266,7 +266,7 @@
                     <a href="#"><img src="{{url('imgs/download-ios.png')}}"></a>
                 </div>
             </div>
-            <a href="#0" class="bts-popup-close img-replace">Close</a>
+            <a href="#0" class="bts-popup-close img-replace"><i class="fas fa-times"></i></a>
         </div>
     </div>
     <!--End-Serv-->

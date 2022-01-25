@@ -2815,9 +2815,9 @@ Chat
 .download-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
-    height: 15%;
+    height: 55%;
     padding: 16px;
     border: 2px solid black;
     background-color: white;
@@ -3681,10 +3681,8 @@ input[type=file]::file-selector-button {
 
 #personalData,
 #medicalData {
-    display: flex;
-    /* flex-direction: row-reverse;
-    justify-content: space-between; */
-    margin-top: 11%;
+    width: 1050px;
+    margin-top: 9%;
     margin-bottom: 2%;
 }
 
@@ -3762,6 +3760,7 @@ input[type=file]::file-selector-button {
   .bts-popup-container {
     position: relative;
     width: 30%;
+    height: 40%;
     margin: 4em auto;
     border-radius: none;
     text-align: center;
@@ -3849,4 +3848,28 @@ input[type=file]::file-selector-button {
     .bts-popup-container {
       margin: 8em auto;
     }
+  }
+
+  .download-part {
+      position: relative;
+  }
+
+  .download-part::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    width: 3px;
+    height: 25px;
+    background-color: #00acc1;
+    left: -5px;
+  }
+
+  .download-part::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    width: 3px;
+    height: 25px;
+    background-color: #00acc1;
+    right: -8px;
   }

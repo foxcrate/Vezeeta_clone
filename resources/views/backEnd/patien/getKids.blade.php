@@ -386,7 +386,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <button  class="btn btn-success col-3 h5" type="button" id="more_fields">Add New Allergy</button>
+                                <button  class="btn btn-success col-3 h5" type="button" id="more_fields">Add Another Allergy</button>
                             </div>
                             <hr />
                         </div>
@@ -436,7 +436,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <button class="btn btn-success col-3 h5" type="button" id="more_surgeries">Add New Surgery</button>
+                                <button class="btn btn-success col-3 h5" type="button" id="more_surgeries">Add Another Surgery</button>
                             </div>
                             <hr />
                         </div>
@@ -479,7 +479,7 @@
                                     </li>
 
                                 </ul>
-                                <button class="btn btn-success col-3 h5" type="button" id="more_medication">Add New Medication</button>
+                                <button class="btn btn-success col-3 h5" type="button" id="more_medication">Add Another Medication</button>
                             </div>
                             <hr />
                         </div>
@@ -540,83 +540,172 @@
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossorigin="anonymous">
         </script>
-                <script>
-                    $('#more_fields').click(function(e){
-                        var max = 9;
-                        var current1 =  $(".field_group").length;
-                            if (current1 < max) {
-                                $('.field_group:first').clone(true).hide().insertAfter('.field_group:last').slideDown('slow');
-                                var last = $('.field_group:last');
-                                var current =  $(".field_group").length;
-                                //last.append(new_button.clone(true));
-                                last.find('select').val([]);
-                                last.find('select.item_typee').attr("name", "allergi_data[" + current + "][allergi_name]").val('');
-                                last.find('select.seleect_custom').attr("name", "allergi_data[" + current + "][severity]").val('');
-                                last.find('input.seelect_custom').attr("name", "allergi_data[" + current + "][reaction]").val('');
-                                current1++;
-                                return false;
-                            }
-                        });
-                        $("body").on("click", "#remove_more_fields", function (e) {
-                            var current =  $(".field_group").length;
-                            if(current == 1){
-                               e.prevent();
-                               // document.getElementById('remove_more_fields').style.visibility = 'hidden';
-                               // $(this).closest("#remove_more_fields").hide();
-                            }
-                            else{
-                                $(this).closest(".field_group").remove();
-                            }
-                        });
+        <script>
+            (function () {
+                'use strict';
+                $('.input-file').each(function () {
+                    var $input = $(this),
+                        $label = $input.next('.js-labelFile'),
+                        labelVal = $label.html();
 
+                    $input.on('change', function (element) {
+                        var fileName = '';
+                        if (element.target.value) fileName = element.target.value.split('\\')
+                            .pop();
+                        fileName ? $label.addClass('has-file').find('.js-fileName').html(
+                            fileName) : $label.removeClass('has-file').html(labelVal);
+                    });
+                });
 
-                    $('#more_surgeries').click(function(){
-                        var max = 18;
-                        var current1 =  $(".field_group1").length;
-                        if (current1 < max) {
-                    $('.field_group1:first').clone(true).hide().insertAfter('.field_group1:last').slideDown('slow');
+            })();
+        </script>
+        <script>
+            $(document).ready(function () {
+                //Disabled Allergy Button
+
+                $('#more_fields').attr('disabled', 'disabled');
+                $(".add-reaction, .add-allergy-severity, .add-allergy").change(function () {
+                    var isAllergyFormValid =
+                        $(".add-allergy").val().length > 0 &&
+                        $(".add-allergy-severity").val().length > 0 &&
+                        $(".add-reaction").val().length > 0;
+
+                    if (isAllergyFormValid) {
+                        $('#more_fields').removeAttr("disabled");
+                    } else {
+                        $('#more_fields').attr('disabled', 'disabled');
+                    }
+                });
+
+                //Clone Allergy Field
+
+                $('#more_fields').click(function (e) {
+                    var max = 9;
+                    var current1 = $(".field_group").length;
+                    if (current1 < max) {
+                        $('.field_group:first').clone(true).hide().insertAfter('.field_group:last')
+                            .slideDown('slow');
+                        var last = $('.field_group:last');
+                        var current = $(".field_group").length;
+                        last.find('select').val([]);
+                        last.find('select.item_typee').attr("name", "allergi_data[" + current +
+                            "][allergi_name]").val('');
+                        last.find('select.seleect_custom').attr("name", "allergi_data[" + current +
+                            "][severity]").val('');
+                        last.find('input.seelect_custom').attr("name", "allergi_data[" + current +
+                            "][reaction]").val('');
+                        current1++;
+                        return false;
+                    }
+
+                });
+
+                //Remove Allergy Field
+
+                $("body").on("click", "#remove_more_fields", function (e) {
+                    var current = $(".field_group").length;
+                    if (current == 1) {
+                        e.prevent();
+                    }
+                    $(this).closest(".field_group").remove();
+                });
+
+                //Disabled Surgery Button
+
+                $('#more_surgeries').attr('disabled', 'disabled');
+                $(".add-surgery, .add-surgery-date").change(function () {
+                    var isSurgeryFormValid =
+                        $(".add-surgery").val().length > 0 &&
+                        $(".add-surgery-date").val().length > 0;
+
+                    if (isSurgeryFormValid) {
+                        $('#more_surgeries').removeAttr("disabled");
+                    } else {
+                        $('#more_surgeries').attr('disabled', 'disabled');
+                    }
+                });
+
+                //Clone Surgery Field
+
+                $('#more_surgeries').click(function () {
+                    var max = 18;
+                    var current1 = $(".field_group1").length;
+                    if (current1 < max) {
+                        $('.field_group1:first').clone(true).hide().insertAfter(
+                            '.field_group1:last').slideDown('slow');
                         var last = $('.field_group1:last');
-                        var current =  $(".field_group1").length - 1;
-                        //last.append(new_button.clone(true));
+                        var current = $(".field_group1").length - 1;
                         last.find('select').val([]);
-                        last.find('select.item_surgeries').attr("name", "surgery_data[" + current + "][surgery_name]").val('');
-                        last.find('input.seleect_surgeries').attr("name", "surgery_data[" + current + "][surgery_date]").val('');
+                        last.find('select.item_surgeries').attr("name", "surgery_data[" + current +
+                            "][surgery_name]").val('');
+                        last.find('input.seleect_surgeries').attr("name", "surgery_data[" +
+                            current + "][surgery_date]").val('');
                         current1++;
                         return false;
-                    }});
-                    $("body").on("click", "#remove_more_surgeries", function () {
-                        var current =  $(".field_group1").length;
-                            if(current == 1){
-                               e.prevent();
-                            }
-                        $(this).closest(".field_group1").remove();
-                    });
-                    $('#more_medication').click(function(){
-                        var max = 10;
-                        var current1 =  $(".field_group2").length;
-                        if (current1 < max) {
-                    $('.field_group2:first').clone(true).hide().insertAfter('.field_group2:last').slideDown('slow');
+                    }
+                });
+
+                //Remove Surgery Field
+
+                $("body").on("click", "#remove_more_surgeries", function () {
+                    var current = $(".field_group1").length;
+                    if (current == 1) {
+                        e.prevent();
+                    }
+                    $(this).closest(".field_group1").remove();
+                });
+
+                //Disabled Medication Button
+
+                $('#more_medication').attr('disabled', 'disabled');
+                $(".add-medication, .medication-day, .medication-time").change(function () {
+                    var isMedicationFormValid =
+                        $(".add-medication").val().length > 0 &&
+                        $(".medication-day").val().length > 0 &&
+                        $(".medication-time").val().length > 0;
+
+                    if (isMedicationFormValid) {
+                        $('#more_medication').removeAttr("disabled");
+                    } else {
+                        $('#more_medication').attr('disabled', 'disabled');
+                    }
+                });
+
+                //Clone Medication Field
+
+                $('#more_medication').click(function () {
+                    var max = 10;
+                    var current1 = $(".field_group2").length;
+                    if (current1 < max) {
+                        $('.field_group2:first').clone(true).hide().insertAfter(
+                            '.field_group2:last').slideDown('slow');
                         var last = $('.field_group2:last');
-                        var current =  $(".field_group2").length - 1;
-                        //last.append(new_button.clone(true));
+                        var current = $(".field_group2").length - 1;
                         last.find('select').val([]);
-                        last.find('input.item_medication').attr("name", "medication_name[" + current + "][name]").val('');
-                        last.find('select.seleect_medication').attr("name", "medication_name[" + current + "][times_day]").val('');
-                        last.find('select.select_medication').attr("name", "medication_name[" + current + "][time]").val('');
+                        last.find('input.item_medication').attr("name", "medication_name[" +
+                            current + "][name]").val('');
+                        last.find('select.seleect_medication').attr("name", "medication_name[" +
+                            current + "][times_day]").val('');
+                        last.find('select.select_medication').attr("name", "medication_name[" +
+                            current + "][time]").val('');
                         current1++;
                         return false;
-                    } });
-                    $("body").on("click", "#remove_more_medication", function () {
-                        var current =  $(".field_group2").length;
-                        if(current == 1){
-                           e.prevent();
-                        }
-                        $(this).closest(".field_group2").remove();
-                    });
-                </script>
-                <!-- footer -->
-                @include('backEnd.layoutes.footer')
-                <!-- footer -->
+                    }
+                });
+
+                //Remove Medication Field
+                $("body").on("click", "#remove_more_medication", function () {
+                    var current = $(".field_group2").length;
+                    if (current == 1) {
+                        e.prevent();
+                    }
+                    $(this).closest(".field_group2").remove();
+                });
+            });
+        </script>
+        <!-- footer -->
+        @include('backEnd.layoutes.footer')
+        <!-- footer -->
     </div>
 </div>
 
