@@ -396,11 +396,28 @@ Route::group(['namespace'=>'API'],function(){
     Route::delete('/deleteMyCouple','childrenController@deleteMyCouple');
 
     //Kids
-
     Route::get('/kids','childrenController@kidsGet');
     Route::get('/kidsBasicData','childrenController@getChildrenData');
-    Route::delete('/removeChild','childrenController@removeChild');
+    Route::delete('/removeKid','childrenController@removeKid');
     Route::post('/kidRegister','childrenController@kidRegister');
+
+    Route::get('/kidDiseasesGet','childrenController@kidsDiseaseGet');
+    Route::post('/kidDiseasesPost','childrenController@kidsDiseasePost');
+
+    Route::get('/kidSurgeriesGet','childrenController@kidSurgeriesGet');
+    Route::post('/kidSurgeriesPost','childrenController@kidSurgeriesPost');
+
+    Route::get('/kidAllergiesGet','childrenController@kidAllergiesGet');
+    Route::post('/kidAllergiesPost','childrenController@kidAllergiesPost');
+
+    Route::get('/kidMedicationsGet','childrenController@kidMedicationsGet');
+    Route::post('/kidMedicationsPost','childrenController@kidMedicationsPost');
+
+    Route::get('/kidFatherDiseasesGet','childrenController@kidFatherDiseasesGet');
+    Route::post('/kidFatherDiseasesPost','childrenController@kidFatherDiseasesPost');
+
+    Route::get('/kidMotherDiseasesGet','childrenController@kidMotherDiseasesGet');
+    Route::post('/kidMotherDiseasesPost','childrenController@kidMotherDiseasesPost');
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////

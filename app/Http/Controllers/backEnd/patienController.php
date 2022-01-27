@@ -143,7 +143,7 @@ class patienController extends Controller
     /* end of function */
     public function update_data_profile(Request $request , $id,$profile_id){
 
-        //return $request->rocata_file[1];
+        //return $request;
         $patient = Patien::findOrFail($id);
         $patienData = patientData::findOrFail($profile_id);
         /* insert all request */
@@ -470,7 +470,7 @@ class patienController extends Controller
 
     /* compleate profile function */
     public function updateProfile($id,Request $request){
-        //return $request->analzes_file;
+        //return $request;
         Alert::success('Success', 'Updated Profile Successfuly');
         $patient = Patien::findOrFail($id);
         /* insert all request */

@@ -124,6 +124,7 @@ class childrenController extends Controller
         }
         return response()->json(['message' => 'faild'],400);
      }
+
     //get disease
     public function diseaseGet(Request $request) {
         $patient = Patien::where('idCode', $request->idCode)->first();
@@ -143,6 +144,7 @@ class childrenController extends Controller
         }
         return response()->json(['message' => 'faild'],400);
      }
+
     //post surgeries children
     public function Surgeries(Request $request) {
         $patient = Patien::where('idCode', $request->idCode)->first();
@@ -849,6 +851,9 @@ public function rayChildrenGet(Request $request) {
 
     }
 
+
+    ///////////////////////////////////////////////////// New APIs ////////////////////////////////////////////////////
+
     // New Couple's Functions
 
     public function getMyCouples(Request $request){
@@ -1015,7 +1020,7 @@ public function rayChildrenGet(Request $request) {
 
     }
 
-    public function removeChild(Request $request){
+    public function removeKid(Request $request){
 
         //return $request ;
 
@@ -1134,6 +1139,416 @@ public function rayChildrenGet(Request $request) {
                 'message' => 'Patient Not Found'
             ],410);
         }
+
+    }
+
+    public function kidsDiseaseGet(Request $req){
+        // return $req;
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            if($kid->disease){
+                return response()->json([
+                    'data' => $kid->disease
+                ],200);
+            }else{
+                return response()->json([
+                    'message' => 'Kid Has No Diseases'
+                ],415);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
+
+    }
+
+    public function kidsDiseasePost(Request $req){
+        //return $req;
+
+        //return json_encode($req->diseases);
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required',
+            'diseases' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            // $kid->disease = explode(',',$req->diseases);
+            $kid->disease = $req->diseases;
+            $kid->save();
+            //return $kid;
+            return response()->json([
+                'message' => 'Updated Successfully',
+                'data'=> $kid->disease
+            ],200);
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
+
+    }
+
+    public function kidSurgeriesGet(Request $req){
+        //return $req;
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            if($kid->fatherdisease){
+                return response()->json([
+                    'data' => $kid->Surgeries
+                ],200);
+            }else{
+                return response()->json([
+                    'message' => "Kid's Father Has No Surgeries"
+                ],415);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
+
+    }
+
+    public function kidSurgeriesPost(Request $req){
+        //return $req;
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required',
+            'surgeries' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            // $kid->disease = explode(',',$req->diseases);
+            $kid->Surgeries = $req->surgeries;
+            $kid->save();
+            //return $kid;
+            return response()->json([
+                'message' => 'Updated Successfully',
+                'data'=> $kid->Surgeries
+            ],200);
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
+
+    }
+
+    public function kidAllergiesGet(Request $req){
+        //return $req;
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            if($kid->allergy){
+                return response()->json([
+                    'data' => $kid->allergy
+                ],200);
+            }else{
+                return response()->json([
+                    'message' => "Kid's Father Has No Allergies"
+                ],415);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
+
+    }
+
+    public function kidAllergiesPost(Request $req){
+        //return $req;
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required',
+            'allergies' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            // $kid->disease = explode(',',$req->diseases);
+            $kid->allergy = $req->allergies;
+            $kid->save();
+            //return $kid;
+            return response()->json([
+                'message' => 'Updated Successfully',
+                'data'=> $kid->allergy
+            ],200);
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
+
+    }
+
+    public function kidMedicationsGet(Request $req){
+        //return $req;
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            if($kid->medication){
+                return response()->json([
+                    'data' => $kid->medication
+                ],200);
+            }else{
+                return response()->json([
+                    'message' => "Kid's Father Has No Medications"
+                ],415);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
+
+    }
+
+    public function kidMedicationsPost(Request $req){
+        //return $req;
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required',
+            'medications' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            // $kid->disease = explode(',',$req->diseases);
+            $kid->medication = $req->medications;
+            $kid->save();
+            //return $kid;
+            return response()->json([
+                'message' => 'Updated Successfully',
+                'data'=> $kid->medication
+            ],200);
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
+
+    }
+
+    public function kidFatherDiseasesGet(Request $req){
+        //return $req;
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            if($kid->fatherdisease){
+                return response()->json([
+                    'data' => $kid->fatherdisease
+                ],200);
+            }else{
+                return response()->json([
+                    'message' => "Kid's Father Has No Diseases"
+                ],415);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
+
+    }
+
+    public function kidFatherDiseasesPost(Request $req){
+        //return $req;
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required',
+            'diseases' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            // $kid->disease = explode(',',$req->diseases);
+            $kid->fatherdisease = $req->diseases;
+            $kid->save();
+            //return $kid;
+            return response()->json([
+                'message' => 'Updated Successfully',
+                'data'=> $kid->fatherdisease
+            ],200);
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
+
+    }
+
+    public function kidMotherDiseasesGet(Request $req){
+        //return $req;
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            if($kid->motherdisease){
+                return response()->json([
+                    'data' => $kid->motherdisease
+                ],200);
+            }else{
+                return response()->json([
+                    'message' => "Kid's Mother Has No Diseases"
+                ],415);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
+
+    }
+
+    public function kidMotherDiseasesPost(Request $req){
+        //return $req;
+
+        $validator = Validator::make( $req->all(), [
+            'child_id' => 'required',
+            'diseases' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($req->child_id);
+
+        if($kid){
+
+            // $kid->disease = explode(',',$req->diseases);
+            $kid->motherdisease = $req->diseases;
+            $kid->save();
+            //return $kid;
+            return response()->json([
+                'message' => 'Updated Successfully',
+                'data'=> $kid->motherdisease
+            ],200);
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+        //return $kid->disease;
 
     }
 

@@ -836,7 +836,8 @@ class patientController extends Controller
         $patient = Patien::where('idCode', $request -> idCode) -> first();
         if ($patient) {
             $medicationGet = patientData::where('patient_id', $patient -> id) -> update(
-                ['analzes_file' => json_encode($request -> analzes_file)]
+                // ['analzes_file' => json_encode($request -> analzes_file)]
+                ['analzes_file' => $request -> analzes_file]
             );
             return response() -> json([
                 'data' => $medicationGet,

@@ -2443,7 +2443,7 @@
                     $('.field_group:first').clone(true).hide().insertAfter('.field_group:last')
                         .slideDown('slow');
                     var last = $('.field_group:last');
-                    var current = $(".field_group").length;
+                    var current = $(".field_group").length -1;
                     last.find('select').val([]);
                     last.find('select.item_typee').attr("name", "allergi_data[" + current +
                         "][allergi_name]").val('');
