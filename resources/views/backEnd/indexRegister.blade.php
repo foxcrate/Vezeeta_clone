@@ -16,10 +16,16 @@
                         <h4 class="font-weight-bold">Patient</h4>
                     </div>
                 </a>
-                <a href="{{route('clinicRegister')}}" class="card" style="text-decoration:none;">
+                <a href="{{route('onlineDoctorRegister')}}" class="card" style="text-decoration:none;">
                     <div class="card-body">
-                        <img src="{{url('imgs/icon_png/clinic.svg')}}" height="90" class="card-img-top" alt="...">
-                        <h4 class="font-weight-bold">Clinic</h4>
+                        <img src="{{url('imgs/icon_png/onlineDoctor.svg')}}" height="90" class="card-img-top" alt="...">
+                        <h4 class="font-weight-bold">Doctor</h4>
+                    </div>
+                </a>
+                <a href="{{route('nurce.register')}}" class="card" style="text-decoration:none;">
+                    <div class="card-body">
+                        <img src="{{url('imgs/nurse.svg')}}" height="90" class="card-img-top" alt="...">
+                        <h4 class="font-weight-bold">Nurse</h4>
                     </div>
                 </a>
                 <a href="{{route('hosptailRegister')}}" class="card" style="text-decoration:none;">
@@ -28,24 +34,12 @@
                         <h4 class="font-weight-bold">Hospital</h4>
                     </div>
                 </a>
-                <a href="{{route('xrayRegister')}}" class="card" style="text-decoration:none;">
-                    <div class="card-body">
-                        <img src="{{url('imgs/x-ray.svg')}}" height="90" class="card-img-top" alt="...">
-                        <h4 class="font-weight-bold">X-ray</h4>
-                    </div>
-                </a>
             </div>
             <div class="register-cards col-12">
-                <a href="{{route('nurce.register')}}" class="card" style="text-decoration:none;">
+                <a href="{{route('clinicRegister')}}" class="card" style="text-decoration:none;">
                     <div class="card-body">
-                        <img src="{{url('imgs/nurse.svg')}}" height="90" class="card-img-top" alt="...">
-                        <h4 class="font-weight-bold">Nurse</h4>
-                    </div>
-                </a>
-                <a href="{{route('labsRegister')}}" class="card" style="text-decoration:none;">
-                    <div class="card-body">
-                        <img src="{{url('imgs/labs.svg')}}" height="90" class="card-img-top" alt="...">
-                        <h4 class="font-weight-bold">Labs</h4>
+                        <img src="{{url('imgs/icon_png/clinic.svg')}}" height="90" class="card-img-top" alt="...">
+                        <h4 class="font-weight-bold">Clinic</h4>
                     </div>
                 </a>
                 <a href="{{route('pharmacyRegister')}}" class="card" style="text-decoration:none;">
@@ -54,10 +48,16 @@
                         <h4 class="font-weight-bold">Pharmacy</h4>
                     </div>
                 </a>
-                <a href="{{route('onlineDoctorRegister')}}" class="card" style="text-decoration:none;">
+                <a href="{{route('labsRegister')}}" class="card" style="text-decoration:none;">
                     <div class="card-body">
-                        <img src="{{url('imgs/icon_png/onlineDoctor.svg')}}" height="90" class="card-img-top" alt="...">
-                        <h4 class="font-weight-bold">Doctor</h4>
+                        <img src="{{url('imgs/labs.svg')}}" height="90" class="card-img-top" alt="...">
+                        <h4 class="font-weight-bold">Labs</h4>
+                    </div>
+                </a>
+                <a href="{{route('xrayRegister')}}" class="card" style="text-decoration:none;">
+                    <div class="card-body">
+                        <img src="{{url('imgs/x-ray.svg')}}" height="90" class="card-img-top" alt="...">
+                        <h4 class="font-weight-bold">Scan</h4>
                     </div>
                 </a>
             </div>

@@ -529,7 +529,7 @@
                                                         </li>
                                                     </ul>
                                                     @endforeach
-                                                    <button class="btn btn-success col-3 h5" type="button"
+                                                    <button class="btn btn-success col-sm-3 h5" type="button"
                                                         id="more_fields">Add Another Allergy</button>
 
                                                 </div>
@@ -636,7 +636,7 @@
                                                         </li>
                                                     </ul>
                                                     @endforeach
-                                                    <button class="btn btn-success col-3 h5" type="button"
+                                                    <button class="btn btn-success col-sm-3 h5" type="button"
                                                         id="more_surgeries">Add Another Surgery</button>
                                                 </div>
                                                 <hr />
@@ -709,7 +709,7 @@
                                                         </li>
                                                     </ul>
                                                     @endforeach
-                                                    <button class="btn btn-success col-3 h5" type="button"
+                                                    <button class="btn btn-success col-sm-3 h5" type="button"
                                                         id="more_medication">Add Another Medication</button>
 
                                                 </div>
@@ -773,9 +773,9 @@
                                                 <div class="">
                                                     <div id="myRadioGroup">
                                                         <div class="row">
-                                                            <label class="col-5 ml-4 mb-3 title-label">Have you had a
+                                                            <label class="col-sm-5 ml-4 mb-3 title-label">Have you had a
                                                                 colonscopy</label>
-                                                            <div class="col-3">
+                                                            <div class="col-sm-3">
                                                                 <input class="ui radio checkbox" type="radio"
                                                                     name="colonscopy"
                                                                     {{$patient->patinets_data->colonscopy == 1 ? 'checked' : ''}}
@@ -800,9 +800,9 @@
                                                 <div class="">
                                                     <div id="myRadioGroup">
                                                         <div class="row">
-                                                            <label class="h5 col-5 ml-4 mb-3 title-label">Have you had a
+                                                            <label class="h5 col-sm-5 ml-4 mb-3 title-label">Have you had a
                                                                 Mammogram</label>
-                                                            <div class="col-3">
+                                                            <div class="col-sm-3">
                                                                 <input class="ui radio checkbox" type="radio"
                                                                     name="mammogram"
                                                                     {{$patient->patinets_data->mammogram == 3 ? 'checked' : ''}}
@@ -878,7 +878,7 @@
                                                         </li>
                                                     </ul>
                                                     @endforeach
-                                                    <button class="btn btn-success col-3 h5" type="button"
+                                                    <button class="btn btn-success col-sm-3 h5" type="button"
                                                         id="more_smoking">Add Another Habit</button>
                                                 </div>
                                                 <hr />
@@ -890,7 +890,7 @@
                                                     <h4 class="text-primary ml-5 mt-3 mb-5 font-weight-bold">Family
                                                         Diseases</h4>
                                                     <div class="col-12">
-                                                        <div class="nav flex-row family-one nav-pills row ml-auto mr-auto decor-none"
+                                                        <div class="nav flex-row family-one nav-pills row ml-auto mr-auto decor-none justify-content-around"
                                                             id="v-pills-tab" role="tablist"
                                                             aria-orientation="horizontal">
                                                             <a class="col-xl-3 col-md-2 col-4 nav-item nav-links active"
@@ -1024,8 +1024,8 @@
                                                 <h4 class="text-pink ml-5 mt-3 mb-4 font-weight-bold">Female Single</h4>
                                                 <div class="row tab-Female col-10 mr-auto ml-auto mb-3 mt-3">
                                                     <div class="p-3 col-xl-9 mb-2 mt-3 mr-auto ml-auto">
-                                                        <label class="mr-7 col-6 title-label">Have you a Normal Period
-                                                            Cycle </label>
+                                                        <label class="mr-7 col-sm-6 title-label">Have you a Normal Period
+                                                            Cycle ?</label>
                                                         <input class="ui radio checkbox col-1" type="radio"
                                                             name="single_Period_Cycle" value="Yes" /><label
                                                             class="font-weight-600">Yes</label> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -1239,7 +1239,7 @@
                                                 </div>
                                                 <div class="col-12 text-center mb-3 mt-5">
                                                     <input type="submit" value="Update profile"
-                                                        class="col-8 btn btn-success">
+                                                        class="col-sm-8 btn btn-success">
                                                 </div>
                                             </div>
                                         </div>

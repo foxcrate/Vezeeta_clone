@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-md-10 ml-auto mr-auto mb-4 pharmacy_item">
                         <div class="m-5 col-lg-6 mr-auto ml-auto">
-                            {!! QrCode::size(400)->generate($patient->idCode); !!}
+                            {!! QrCode::size(300)->generate($patient->idCode); !!}
                         </div>
                     </div>
                 </div>

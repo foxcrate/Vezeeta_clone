@@ -2,10 +2,10 @@
 @section('title','Favorite')
 @section('content')
 @include('backEnd.patien.slidenav')
-<div class="d-flex" id="wrapper" style="background-color:#535353; height: 98%;">
+<div class="d-flex favouritePage" id="wrapper">
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <div class="col-lg-8 ml-auto mr-auto text-center mb-5">
+            <div class="col-lg-8 ml-auto mr-auto text-center mb-5 mt-5">
                 <img src="{{url('imgs/favoriteplace.svg')}}" width="300" style="margin-top: 5%;">
             </div>
            <div class="favourite-layouts">

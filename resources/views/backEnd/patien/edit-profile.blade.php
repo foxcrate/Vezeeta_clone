@@ -27,14 +27,14 @@
                         <div class="col-12">
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
                                 data-interval="false">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                                <div class="carousel-indicators">
+                                    <button data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
                                         Personal Information
-                                    </li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                                    </button>
+                                    <button data-target="#carouselExampleIndicators" data-slide-to="1">
                                         Medical History
-                                    </li>
-                                </ol>
+                                    </button>
+                                </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <div id="personalData">
@@ -46,7 +46,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card-body">
+                                                <div class="card-body d-flex flex-column">
                                                     <h3 class="title-sub text-uppercase text-muted mb-4">User
                                                         information
                                                     </h3>
@@ -1049,7 +1049,7 @@
                                                                                         {{ $message }}</div>
                                                                                     @enderror
                                                                                     <select
-                                                                                        style="position:relative; bottom:38px; width:40%; left:110px;"
+                                                                                        style="position:relative; bottom:38px; width:40%; left:177px;"
                                                                                         name="width_type" id=""
                                                                                         class="form-control">
                                                                                         <optgroup>
@@ -1107,17 +1107,18 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <a data-target="#carouselExampleIndicators" data-slide-to="1" class="col-4 btn btn-success"
-                                                    style="color: #fff;
-                                                    text-decoration: none;
-                                                    position: absolute;
-                                                    right: 35%;
-                                                    top: 95%;">Next</a>
+                                                    <div class="next-button">
+                                                        <a data-target="#carouselExampleIndicators" data-slide-to="1" class="col-4 btn btn-success"
+                                                        style="color: #fff;
+                                                        text-decoration: none;
+                                                        margin-left: 30%;
+                                                        margin-bottom: 10px;">Next</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="carousel-item" style="width: 950px;">
+                                    <div class="carousel-item">
                                         <div id="medicalData">
                                             <div class="card">
                                                 <div class="card-body">
@@ -1508,7 +1509,7 @@
                                                                             </div>
                                                                         </li>
                                                                     </ul>
-                                                                    <button class="btn btn-success col-4 h5"
+                                                                    <button class="btn btn-success col-sm-3 h5"
                                                                         type="button" id="more_fields">Add
                                                                         Another Allergy</button>
                                                                 </div>
@@ -1613,14 +1614,14 @@
                                                                                     <label
                                                                                         class="title-label ml-xl-3"></label>
                                                                                     <button class="btn btn-danger h5"
-                                                                                        style="margin-top:12px"
+                                                                                        style="margin-top:40px"
                                                                                         type="button"
                                                                                         id="remove_more_surgeries">Delete</button>
                                                                                 </div>
                                                                             </div>
                                                                         </li>
                                                                     </ul>
-                                                                    <button class="btn btn-success col-4 h5"
+                                                                    <button class="btn btn-success col-sm-3 h5"
                                                                         type="button" id="more_surgeries">Add Another
                                                                         Surgery</button>
                                                                 </div>
@@ -1698,7 +1699,7 @@
                                                                             </div>
                                                                         </li>
                                                                     </ul>
-                                                                    <button class="btn btn-success col-4 h5"
+                                                                    <button class="btn btn-success col-sm-3 h5"
                                                                         type="button" id="more_medication">Add Another
                                                                         Medication</button>
                                                                 </div>
@@ -1893,14 +1894,14 @@
                                                                                     <label
                                                                                         class="title-label ml-xl-3"></label>
                                                                                     <button class="btn btn-danger h5"
-                                                                                        style="margin-top:12px"
+                                                                                        style="margin-top:40px"
                                                                                         type="button"
                                                                                         id="remove_more_smoking">Delete</button>
                                                                                 </div>
                                                                             </div>
                                                                         </li>
                                                                     </ul>
-                                                                    <button class="btn btn-success col-4 h5"
+                                                                    <button class="btn btn-success col-sm-3 h5"
                                                                         type="button" id="more_smoking">Add
                                                                         Another Habit</button>
                                                                 </div>
@@ -2314,7 +2315,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 text-center mb-3 mt-5 d-flex justify-content-between">
-                                                                <input value="Previos" data-target="#carouselExampleIndicators" data-slide-to="0" class="col-5 btn btn-primary">
+                                                                <input type="button" value="Previous" data-target="#carouselExampleIndicators" data-slide-to="0" class="col-5 btn btn-primary">
                                                                 <input type="submit" value="Submit"
                                                                     class="col-5 btn btn-success">
                                                             </div>
@@ -2385,9 +2386,10 @@
                     </div>
             </form>
         </div>
+        <!-- footer -->
+        @include('backEnd.layoutes.footer')
     </div>
 
-    <!-- footer -->
     <script>
         @include("includes.GoogleMap")
     </script>
@@ -2610,10 +2612,9 @@
             interval: false,
         });
     </script>
-    <!-- footer -->
+
 </div>
 
-@include('backEnd.layoutes.footer')
 
 
 @stop

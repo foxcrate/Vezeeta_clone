@@ -30,12 +30,14 @@
         <link rel="icon" href="{{url('imgs/Favicon.svg')}}" type="image/png">
         <link rel="stylesheet" href="{{url('css/semantic.min.css')}}">
         <link rel="stylesheet" href="{{url('css/fontawesome.min.css')}}">
+        <link rel="stylesheet" href="{{url('css/fontawesome.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.3/css/bootstrap-select.css" />
         <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{url('css/hover-min.css')}}">
         <link rel="stylesheet" href="{{url('css/animate.css')}}">
         <link rel="stylesheet" href="{{url('css/all.min.css')}}">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css" integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css" integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap">
         <link rel="stylesheet" href="{{url('css/simple-sidebar.css')}}">
         {{-- <link rel="stylesheet" href="{{url('css/simple-sidebars.css')}}"> --}}

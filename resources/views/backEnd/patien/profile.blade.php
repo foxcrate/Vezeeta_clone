@@ -157,32 +157,32 @@
                 </div>
                 <!-- Information -->
                 <div class="nav row testimonial-group nav-pills menu-info col-10 ml-auto mr-auto mb-4" d="v-pills-tab" role="tablist" aria-orientation="horizontal">
-                    <a class="nav-link col P-1 ml-3 active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">
+                    <a class="nav-link P-1 ml-3 active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">
                         <div class="font-weight-600 text-center mt-1"><img src="{{url('imgs/01.png')}}" class="mr-2" width="30" alt="...">Diseases</div>
                     </a>
-                    <a class="nav-link col p-1 " id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">
+                    <a class="nav-link p-1 " id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">
                         <div class="font-weight-600 text-center mt-2"><img src="{{url('imgs/medication.svg')}}" class="mr-2" width="30" alt="...">Medication</div>
                     </a>
-                    <a  class="nav-link col p-1" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">
+                    <a  class="nav-link p-1" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">
                         <div class="font-weight-600 text-center mt-2"><img src="{{url('imgs/03.png')}}" class="mr-2" width="30" alt="...">Allergies</div>
                     </a>
-                    <a  class="nav-link col p-1" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">
+                    <a  class="nav-link p-1" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">
                         <div class="font-weight-600 text-center mt-2"><img src="{{url('imgs/dissection.png')}}" class="mr-2" width="30" alt="...">Surgeries</div>
                     </a>
-                    <a class="nav-link col p-1" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-5" aria-selected="false">
+                    <a class="nav-link p-1" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-5" aria-selected="false">
                         <div class="font-weight-600 text-center mt-2"><img src="{{url('imgs/06.png')}}" class="mr-2" width="30" alt="...">Habits</div>
                     </a>
-                    <a class="nav-link col  p-1" id="v-pills-6-tab" data-toggle="pill" href="#v-pills-6" role="tab" aria-controls="v-pills-6" aria-selected="false">
+                    <a class="nav-link  p-1" id="v-pills-6-tab" data-toggle="pill" href="#v-pills-6" role="tab" aria-controls="v-pills-6" aria-selected="false">
                         <div class="font-weight-600 text-center mt-2"><img src="{{url('imgs/05.png')}}" class="mr-2" width="30" alt="...">Screen</div>
                     </a>
-                    <a class="nav-link col p-1" id="v-pills-7-tab" data-toggle="pill" href="#v-pills-7" role="tab" aria-controls="v-pills-7" aria-selected="false">
+                    <a class="nav-link p-1" id="v-pills-7-tab" data-toggle="pill" href="#v-pills-7" role="tab" aria-controls="v-pills-7" aria-selected="false">
                         <div class="font-weight-600 text-center mt-2"><img src="{{url('imgs/folder.svg')}}" class="mr-2" width="30" alt="...">Files</div>
                     </a>
                 </div>
                 <div class="col-md-10 p-4 mr-auto ml-auto align-items-center js-fullheight animated">
                 <div class="tab-content mr-auto ml-auto" id="v-pills-tabContent">
                     <div class="tab-pane animated bounce mr-auto ml-auto active slow py-0" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
-                        <h5 class="col-12 ml-xl-8 mb-4 mt-3 ml-5">Diseases</h5>
+                        <h5 class="col-10 ml-xl-8 mb-4 mt-3 ml-5">Diseases</h5>
                         @php
                             $agree_name = $patient->patinets_data->agree_name;
                         @endphp
@@ -615,11 +615,11 @@
                 <!-- Start-kids -->
                 <div class="tab-kids col-lg-10 ml-auto mr-auto col-md-2 mb-4">
                     <a href="{{route('getAllChild',$patient->id)}}" class="p-4 text-primary" style="text-decoration:none;">
-                        <div class="row">
-                        <div class="col-3 text-center">
+                        <div class="row d-flex justify-content-around">
+                        <div class="text-center">
                             <img src="{{url('imgs/kids.svg')}}" width="120" alt="...">
                         </div>
-                        <div class="col-6 mb-auto mt-auto">
+                        <div class="mb-auto mt-auto">
                             <h2 class="">Kids</h2>
                             <h6 class="text-muted">Add and Edit</h6>
 
@@ -632,15 +632,15 @@
                 <!-- Start-wifehusbend -->
                 <div class="tab-wife-husband col-lg-10 ml-auto mr-auto col-md-2 mb-5">
                     <div class="p-4 text-wife" style="text-decoration:none;">
-                        <div class="row">
-                        <div class="col-3 text-center">
+                        <div class="row d-flex justify-content-around align-items-center">
+                        <div class="text-center">
                             <img src="{{url('imgs/fatherandmother.png')}}" width="100" alt="...">
                         </div>
-                        <div class="col-6 mb-auto mt-auto">
+                        <div class="mb-auto mt-auto">
                             <a href="{{route('patient.searchWife',$patient->id)}}" class="h2 text-wife" style="text-decoration:none;">Wife or Husband</a>
                             <h6 class="text-muted">Add and Edit</h6>
                         </div>
-                        <div class="col-3 navbar-nav align-items-center ml-md-auto">
+                        <div class="navbar-nav align-items-center">
                             <li class="nav-item dropdown">
                             <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-bell fa-fw mr-lg-3 mt-lg-1" style="font-size: 23pt; color:#632fb1;"></i>

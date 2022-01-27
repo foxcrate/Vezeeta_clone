@@ -8,7 +8,7 @@
         <!-- Search form -->
         {{-- <h6 class="h5 text-white">{{$patient->online == 1 ? 'online' : 'Ofline'}}</h6> --}}
         <form id="patient_update_online" action="{{route('patient_update_online',$patient->id)}}" method="POST">
-            {{ csrf_field() }}
+            {{-- {{ csrf_field() }}
             <div class="col-lg-6">
 
                 <div class="switch-button">
@@ -26,7 +26,7 @@
                             });
                         </script>
                     </div>
-                </div>
+                </div> --}}
 
                 <!--<div class="onoffswitch">-->
                 <!--<input type="checkbox" name="online" class="onoffswitch-checkbox" id="myonoffswitchH" value="{{$patient->online == 1 ? 1 : 0}}" {{$patient->online == 1 ? 'checked' : ''}}>-->
@@ -43,7 +43,7 @@
                 <!--</label>-->
                 <!--</div>-->
 
-            </div>
+            {{-- </div> --}}
         </form>
         <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item dropdown">

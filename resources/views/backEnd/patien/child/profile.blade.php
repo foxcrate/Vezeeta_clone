@@ -32,6 +32,7 @@
                                         <div class="h4 col-lg-2 font-weight-bold text-center text-white">{{$child->CalcAgeDay}}</div>
                                     </div>
                                     <a class="col-lg-6 btn btn-primary text-capitalize mt-3" href="{{route('patient.child.editProfile',[$patient->id,$child->id])}}}"><i class="fa fa-edit mr-3"></i>Edit</a>
+                                    <a class="col-lg-6 btn btn-danger text-capitalize mt-3" href="#">Remove</a>
                                 </div>
                             </div>
                           </div>
