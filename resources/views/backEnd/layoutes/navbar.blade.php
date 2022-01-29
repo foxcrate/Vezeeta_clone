@@ -30,8 +30,7 @@
             </h1>
             {{-- <h1>{{ $route }}</h1> --}}
 
-            {{-- <a href={{ $href }} class="row" style="text-decoration:none"> --}}
-            <a href=# class="row" style="text-decoration:none">
+            <a href={{ $href }} class="row" style="text-decoration:none">
                 <img class="ml-2" src="{{url('imgs/logo.svg')}}" width="60" alt="Responsive image">
                 <h3 class="h3 ml-lg-3 mt-2 font-weight-bold text-uppercase ">Patient Medical History</h3>
             </a>
@@ -65,7 +64,7 @@
                 </div> --}}
 
                 @if(Session::has('PatientLogged'))
-                    <form id="patient_update_online" action="{{route('patient_update_online',$patient->id)}}" method="POST">
+                    <form id="patient_update_online" action="{{route('patient_update_online',Session::get('PatientLoggedID'))}}" method="POST">
                         {{ csrf_field() }}
                         <div class="col-lg-6">
 
@@ -106,6 +105,8 @@
                         </div>
                     </form>
                 @endif
+
+               
 
             </div>
         </div>
