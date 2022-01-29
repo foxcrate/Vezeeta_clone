@@ -29,7 +29,9 @@
                 @endphp
             </h1>
             {{-- <h1>{{ $route }}</h1> --}}
-            <a href={{ $href }} class="row" style="text-decoration:none">
+
+            {{-- <a href={{ $href }} class="row" style="text-decoration:none"> --}}
+            <a href=# class="row" style="text-decoration:none">
                 <img class="ml-2" src="{{url('imgs/logo.svg')}}" width="60" alt="Responsive image">
                 <h3 class="h3 ml-lg-3 mt-2 font-weight-bold text-uppercase ">Patient Medical History</h3>
             </a>
