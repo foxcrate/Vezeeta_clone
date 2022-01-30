@@ -45,7 +45,7 @@
                         <img class="mt-2" src="{{url('imgs/x-ray.svg')}}" height="60" alt="...">
                     </div>
                     <div class="col-5 mb-auto mt-auto">
-                        <h3 class="font-weight-bold mt-2">Xray Orders</h3>
+                        <h3 class="font-weight-bold mt-2 ml-4">Xray Orders</h3>
                     </div>
                 </div>
                 <table class="table table-bordered bg-white">

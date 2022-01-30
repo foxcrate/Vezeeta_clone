@@ -37,47 +37,49 @@
                 </div>
             </nav>
             <div class="container">
-                <h3 class="mt-5" style="font-size: 40pt;">Membership</h3>
-                <div class="row col-lg-12 col-sm-6 mt-5 card-imgCard">
-                  <div class="id-num ml-4 col-lg-10 h3 text-white">{{$xray->idCode}}</div>
-                  <div class="name-user ml-4 col-lg-10 h3 text-white">{{$xray->xrayName}}</div>
-                  <div class="date-exp ml-4 col-lg-5 h3 text-white">EXP 22/08</div>
-                  <div class="point col-lg-5 h3 text-white">{{$xray->poients}} Point</div>
-                </div>
-                <div class="row mt-5">
-                  <div class="col-lg-6 ml-auto mr-auto text-center">
-                    <div class="skills-area">
-                        <div class="single-skill col-lg-12 ml-auto mr-auto">
-                            <div class="circlechart" data-percentage="92"><svg class="circle-chart" viewBox="0 0 33.83098862 33.83098862" xmlns="http://www.w3.org/2000/svg"><circle class="circle-chart__background" cx="16.9" cy="16.9" r="15.9"></circle>
-                                <circle class="circle-chart__circle success-stroke" stroke-dasharray="{{$xray->poients/5000*100}},5000" cx="16.9" cy="16.9" r="15.9"></circle><g class="circle-chart__info">
-                                <text class="circle-chart__percent" x="16.9" y="14.5">{{$xray->poients}}</text>
-                                <text class="circle-chart__subline" x="16.91549431" y="22">Point</text>
-                                </g></svg>
-                            </div>
-                        </div>
-                      </div>
+              <h3 class="mt-5" style="font-size: 40pt;">Membership</h3>
+              <div class="card-imgCard">
+                  <div class="imgCard-info d-flex">
+                      <div class="id-num h3 text-white pb-3">{{$xray->idCode}}</div>
+                      <div class="name-user h3 text-white pb-3">{{$xray->xrayName}}</div>
+                      <div class="date-exp h3 text-white pb-3">EXP 22/08</div>
                   </div>
-                  <div class="col-lg-6 ml-auto mr-auto">
-                    <button class="button-club col-lg-12">
-                      <img src="{{url('imgs/package.svg')}}" width="50">
-                      <h3 class="mt-3">Package</h3>
-                    </button>
-                    <div class="row mt-3">
-                      <div class="col-lg-6  ml-auto mr-auto">
-                        <button class="button-club col-lg-12">
-                          <img src="{{url('imgs/system-update.svg')}}" width="50">
-                          <h3 class="mt-3">Upgrade</h3>
-                        </button>
+                  <div class="point h3 text-white pb-3">{{$xray->poients}} Point</div>
+              </div>
+              <div class="row mt-5">
+                <div class="col-lg-6 ml-auto mr-auto text-center">
+                  <div class="skills-area">
+                      <div class="single-skill col-lg-12 ml-auto mr-auto">
+                          <div class="circlechart" data-percentage="5000"><svg class="circle-chart" viewBox="0 0 33.83098862 33.83098862" xmlns="http://www.w3.org/2000/svg"><circle class="circle-chart__background" cx="16.9" cy="16.9" r="15.9"></circle>
+                              <circle class="circle-chart__circle success-stroke" stroke-dasharray="{{$xray->poients/5000*100}},100" cx="16.9" cy="16.9" r="15.9"></circle><g class="circle-chart__info">
+                              <text class="circle-chart__percent" x="16.9" y="14.5">{{$xray->poients}}</text>
+                              <text class="circle-chart__subline" x="16.91549431" y="22">Point</text>
+                              </g></svg>
+                          </div>
                       </div>
-                      <div class="col-lg-6  ml-auto mr-auto">
-                        <button class="button-club col-lg-12">
-                          <img src="{{url('imgs/updated.svg')}}" width="50">
-                          <h3 class="mt-3">Update</h3>
-                        </button>
-                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ml-auto mr-auto">
+                  <button class="button-club col-lg-12">
+                    <img src="{{url('imgs/package.svg')}}" width="50">
+                    <h3 class="mt-3">Package</h3>
+                  </button>
+                  <div class="row mt-3">
+                    <div class="col-lg-6  ml-auto mr-auto">
+                      <button class="button-club col-lg-12">
+                        <img src="{{url('imgs/system-update.svg')}}" width="50">
+                        <h3 class="mt-3">Upgrade</h3>
+                      </button>
+                    </div>
+                    <div class="col-lg-6  ml-auto mr-auto">
+                      <button class="button-club col-lg-12">
+                        <img src="{{url('imgs/updated.svg')}}" width="50">
+                        <h3 class="mt-3">Update</h3>
+                      </button>
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
             <div class="row col-lg-8 ml-auto mr-auto mt-5">
               <h2>Statement</h2>

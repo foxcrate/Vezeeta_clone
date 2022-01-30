@@ -74,7 +74,7 @@
                     <div class="form-group col-lg-12">
                         <label class="font-weight-bold text-primary">Address</label>
                         <input id="pac-input" type="text" name="address" class="form-control @error('address') is-invalid @enderror">
-                        <div id="map" style="height: 500px;width: 500px;"></div>
+                        <div id="map" style="height: 500px;width: 100%;"></div>
                         @error('address')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

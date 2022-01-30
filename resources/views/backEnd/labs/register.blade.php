@@ -384,7 +384,7 @@
                                     </div>
                                 </div>
                                  <!-- address field -->
-                                 <div class="col-md-6 mb-xl-3">
+                                 <div class="col-md-12 mb-xl-3">
                                     <div class="form-group">
                                         <label class="h6 font-weight-bold">Address</label>
                                         <input type="text" id="pac-input"class="form-control" name="address">

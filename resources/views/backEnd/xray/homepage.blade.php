@@ -6,52 +6,86 @@
 <!--End-Navbar-->
 <div class="bg-waves">
   <!--Start-Ada-->
-  <div class="container">
-      <div id="carouselExampleIndicators" class="carousel slide" style="margin-top: 120px;" data-ride="carousel">
-          <ol class="carousel-indicators ml-auto mr-auto">
+  <div class="container homePage-carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 50px;">
+        <ol class="carousel-indicators ml-auto mr-auto">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-          </ol>
-          <div class="carousel-inner">
+        </ol>
+        <div class="carousel-inner">
           <div class="carousel-item active">
-              <img src="{{url('imgs/3.png')}}" height="550" class="d-block w-100" alt="..." style="border-radius:15px;">
+            <img class="d-block w-100" src="{{url('imgs/3.png')}}" alt="..." style="border-radius:15px;">
           </div>
           <div class="carousel-item">
-              <img src="{{url('imgs/4.png')}}" height="550" class="d-block w-100" alt="..." style="border-radius:15px;">
+            <img class="d-block w-100" src="{{url('imgs/4.png')}}" alt="..." style="border-radius:15px;">
           </div>
           <div class="carousel-item">
-              <img src="{{url('imgs/1.png')}}" height="550" class="d-block w-100" alt="..." style="border-radius:15px;">
+            <img class="d-block w-100" src="{{url('imgs/1.png')}}" alt="..." style="border-radius:15px;">
           </div>
           <div class="carousel-item">
-              <img src="{{url('imgs/5.png')}}" height="550" class="d-block w-100" alt="..." style="border-radius:15px;">
+            <img class="d-block w-100" src="{{url('imgs/5.png')}}" alt="..." style="border-radius:15px;">
           </div>
           <div class="carousel-item">
-              <img src="{{url('imgs/6.png')}}" height="550" class="d-block w-100" alt="..." style="border-radius:15px;">
+            <img class="d-block w-100" src="{{url('imgs/6.png')}}" alt="..." style="border-radius:15px;">
           </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
-          </a>
+        </a>
       </div>
+    {{-- <div id="carouselExampleIndicators" class="carousel slide" style="margin-top: 120px;" data-ride="carousel">
+        <ol class="carousel-indicators ml-auto mr-auto">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{url('imgs/3.png')}}" height="550" class="d-block w-100" alt="..." style="border-radius:15px;">
+        </div>
+        <div class="carousel-item">
+            <img src="{{url('imgs/4.png')}}" height="550" class="d-block w-100" alt="..." style="border-radius:15px;">
+        </div>
+        <div class="carousel-item">
+            <img src="{{url('imgs/1.png')}}" height="550" class="d-block w-100" alt="..." style="border-radius:15px;">
+        </div>
+        <div class="carousel-item">
+            <img src="{{url('imgs/5.png')}}" height="550" class="d-block w-100" alt="..." style="border-radius:15px;">
+        </div>
+        <div class="carousel-item">
+            <img src="{{url('imgs/6.png')}}" height="550" class="d-block w-100" alt="..." style="border-radius:15px;">
+        </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+    </div> --}}
   </div>
   <!--End-Ada-->
   <div class="container">
     <div class="row content-info col-lg-12 p-4 mt-5">
-      <div class="col-2 mt-2">
+      <div class="col-sm-2 mt-2">
             @if(!$xray->image)
                 <img src="{{asset('uploads/default.png')}}" width="120" height="120" class="rounded-circle">
             @else
                 <img src="{{$xray->image}}" class="rounded-circle" width="120" height="120">
             @endif
-        </div>
+      </div>
       <div class="col-8">
        <h4 class="mt-3 mb-3 font-weight-bold">{{$xray->xrayName . ' xray'}}</h4>
        <h5 class="">{{$xray->idCode}}</h5>

@@ -4,6 +4,7 @@
 @section('content')
 @include('backEnd.patien.slidenav')
 
+
 <div class="d-flex" id="wrapper">
     <div id="page-content-wrapper">
         <!-- Topnav -->

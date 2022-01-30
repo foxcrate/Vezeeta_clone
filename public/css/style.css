@@ -720,6 +720,7 @@ a.text-lighter:focus {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
+    flex-wrap: wrap;
 }
 
 .copy-right h6 {
@@ -1100,7 +1101,6 @@ a.text-lighter:focus {
     background-image: url('../imgs/bgas.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 900px;
 }
 
 .menu-info {
@@ -3687,7 +3687,7 @@ input[type=file]::file-selector-button {
 }
 
 .card-container {
-    margin-top: 6%;
+    margin-top: 7%;
 }
 .report-personal-info {
     display: flex;
@@ -3844,9 +3844,17 @@ input[type=file]::file-selector-button {
     -o-transform: translateY(0);
     transform: translateY(0);
   }
+
+@media (max-width: 576px) {
+    .bts-popup-container {
+        width: 100%;
+        margin-top: 30%;
+    }
+}
+
   @media only screen and (min-width: 1170px) {
     .bts-popup-container {
-      margin: 8em auto;
+      margin: 20em auto;
     }
   }
 
