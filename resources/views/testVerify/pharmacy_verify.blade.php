@@ -92,8 +92,9 @@ function phoneAuth(){
                             $("#r-send").show();
                             // console.log(error.message);
                         });
-                        var credential = firebase.auth.PhoneAuthProvider.credential(confirmationResult.verificationId, code);
-                        firebase.auth().signInWithCredential(credential);
+                        
+                        // var credential = firebase.auth.PhoneAuthProvider.credential(confirmationResult.verificationId, code);
+                        // firebase.auth().signInWithCredential(credential);
 
                         }
                         /* end of function */

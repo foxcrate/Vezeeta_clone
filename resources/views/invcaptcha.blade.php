@@ -13,14 +13,23 @@
   <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
     <script>
         var firebaseConfig = {
-        apiKey: "AIzaSyAxpp29gpMYtii4gUTn7iz0EOIisNOJyoQ",
-        authDomain: "laraveltesting-a97b8.firebaseapp.com",
-        databaseURL: "https://laraveltesting-a97b8.firebaseio.com",
-        projectId: "laraveltesting-a97b8",
-        storageBucket: "laraveltesting-a97b8.appspot.com",
-        messagingSenderId: "567750413175",
-        appId: "1:567750413175:web:cfd77cada72d1aadcc6f72",
-        measurementId: "G-N2BHPZG2XF"
+        // apiKey: "AIzaSyAxpp29gpMYtii4gUTn7iz0EOIisNOJyoQ",
+        // authDomain: "laraveltesting-a97b8.firebaseapp.com",
+        // databaseURL: "https://laraveltesting-a97b8.firebaseio.com",
+        // projectId: "laraveltesting-a97b8",
+        // storageBucket: "laraveltesting-a97b8.appspot.com",
+        // messagingSenderId: "567750413175",
+        // appId: "1:567750413175:web:cfd77cada72d1aadcc6f72",
+        // measurementId: "G-N2BHPZG2XF"
+        
+        apiKey: "AIzaSyAvHLhMRTVgkt56f2ZXJ-yVtp7w1-6OfIs",
+        authDomain: "patienthistory-a8d55.firebaseapp.com",
+        databaseURL: "https://patienthistory-a8d55.firebaseio.com",
+        projectId: "patienthistory-a8d55",
+        storageBucket: "patienthistory-a8d55.appspot.com",
+        messagingSenderId: "563765055218",
+        appId: "1:563765055218:web:e4c6149fa29e646dc8ca6b",
+        measurementId: "G-ENDGKJ41LC"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
