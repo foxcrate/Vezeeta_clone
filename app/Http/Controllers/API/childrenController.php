@@ -457,7 +457,7 @@ class childrenController extends Controller
         return response()->json([
             'message' => 'faild'
         ],400);
-        }
+    }
     public function rocataChildrenGet(Request $request) {
         $patient = Patien::where('idCode', $request ->idCode) -> first();
         if ($patient) {
@@ -1552,4 +1552,192 @@ public function rayChildrenGet(Request $request) {
 
     }
 
+    public function kidVaccinationsGet(Request $request){
+        //return $request;
+
+        // $kid = Child::find($request->child_id);
+        // return $kid->Vaccination;
+
+        $validator = Validator::make( $request->all(), [
+            'child_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($request->child_id);
+
+        if($kid){
+
+            if($kid->Vaccination){
+                return response()->json([
+                    'data' => $kid->Vaccination
+                ],200);
+            }else{
+                return response()->json([
+                    'message' => "Kid Has No Vaccinations"
+                ],415);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+
+    }
+
+    public function kidVaccinationsPost(Request $request){
+
+        //return $request['at_birth'];
+
+        $validator = Validator::make( $request->all(), [
+            'child_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($request->child_id);
+
+        if($kid){
+
+            $array = [
+                'at_birth'  => null,
+                'two_month'  => null,
+                'four_month'  => null,
+                'six_month'  => null,
+                'nine_month'  => null,
+                'twelve_month'  => null,
+                'eighteen_month'  => null,
+                'twenty_four_month'  => null,
+                'child_id' => $request->child_id
+            ];
+
+            if(isset($request['at_birth'])){
+                $array['at_birth'] = $request->at_birth;
+            }
+            if(isset($request['twoMonth'])){
+                $array['two_month'] = $request->twoMonth;
+            }
+            if(isset($request['fourMonth'])){
+                $array['four_month'] = $request->fourMonth;
+            }
+            if(isset($request['sixMonth'])){
+                $array['six_month'] = $request->sixMonth;
+            }
+            if(isset($request['nineMonth'])){
+                $array['nine_month'] = $request->nineMonth;
+            }
+            if(isset($request['twelveMonth'])){
+                $array['twelve_month'] = $request->twelveMonth;
+            }
+            if(isset($request['eighteenMonth'])){
+                $array['eighteen_month'] = $request->eighteenMonth;
+            }
+            if(isset($request['fourtyTwo'])){
+                $array['twenty_four_month'] = $request->fourtyTwo;
+            }
+
+            $child_vaccination = Vaccination::where('child_id', $kid->id)->first();
+            if($child_vaccination){
+                $child_vaccination -> update($array);
+                return response() -> json([
+                    'data' => $child_vaccination,
+                ],200);
+            } else {
+                $child_vaccination = Vaccination::create($array);
+                return response() -> json([
+                    'data' => $child_vaccination,
+                ],200);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+
+    }
+
+    public function kidsRocataGet(Request $request){
+        //return $request;
+        $validator = Validator::make( $request->all(), [
+            'child_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($request->child_id);
+
+        if($kid){
+
+            if($kid->rocatas){
+                $rocatas = Rocata_child::where('child_id', $kid ->id)->with ('online_doctor') -> get();
+
+                return response()->json([
+                    'data' => $rocatas
+                ],200);
+
+            }else{
+                return response()->json([
+                    'message' => "Kid Has No Rocatas"
+                ],415);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+
+    }
+
+    public function kidsRocataPost(Request $request){
+        //return $request;
+
+        $validator = Validator::make( $request->all(), [
+            'child_id' => 'required',
+            'prescription' => 'required',
+            'date' => 'required',
+            'online_doctor_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($request->child_id);
+
+        if($kid){
+
+            $rocata = Rocata_child::create([
+                'prescription'     => $request->prescription,
+                'medication'       => $request->medication,
+                'jaw_type'         => $request->jaw_type,
+                'date'             => $request->date,
+                'jaw_direction'    => $request->jaw_direction,
+                'teeth_type'       => $request->teeth_type,
+                'eye_type'         => $request->eye_type,
+                'child_id'         => $kid->id,
+                'online_doctor_id' => $request->online_doctor_id,
+                ]);
+
+            return response()->json([
+                'data' => $rocata
+            ],200);
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+
+    }
+
 }
+

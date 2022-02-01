@@ -155,7 +155,7 @@
                 </div>
                 <div class="col-lg-3 content-one ml-auto mr-auto">
                     @php
-                       $eighteenMonth = $child->Vaccination->twelve_month;
+                       $eighteenMonth = $child->Vaccination->eighteen_month;
                     @endphp
                     <h5 class="text-dark font-weight-bold mb-4">18 Month</h5>
                     <div class="form-group form-check pl-5 mt-3">

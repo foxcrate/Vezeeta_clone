@@ -419,6 +419,13 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('/kidMotherDiseasesGet','childrenController@kidMotherDiseasesGet');
     Route::post('/kidMotherDiseasesPost','childrenController@kidMotherDiseasesPost');
 
+    Route::get('/kidVaccinationsGet','childrenController@kidVaccinationsGet');
+    Route::post('/kidVaccinationsPost','childrenController@kidVaccinationsPost');
+
+
+    Route::get('/kidsRocataGet','childrenController@kidsRocataGet');
+    Route::post('/kidsRocataPost','childrenController@kidsRocataPost');
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -20,6 +20,7 @@ class userController extends Controller
 {
     // public login function
     public function login(Request $request){
+        //return $request;
         if($request->type == 'patient'){
             if (auth()->guard('patien') -> attempt([
                 'idCode' => request('idCode'),

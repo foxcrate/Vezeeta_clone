@@ -257,6 +257,7 @@ class firebaseController extends Controller
                 'gender'    => session()->get('patient')->gender,
                 'email'    => session()->get('patient')->email,
                 'password'  => session()->get('patient')->password,
+                'phoneNumberReal'  => session()->get('patient')->phoneNumberReal,
                 'password_confirmation' => session()->get('patient')->password_confirmation,
                 'image'     => session()->get('patient')->image,
                 'phoneNumber'   => session()->get('patient')->phoneNumber,
