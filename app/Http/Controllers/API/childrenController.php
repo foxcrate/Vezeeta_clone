@@ -1739,5 +1739,80 @@ public function rayChildrenGet(Request $request) {
 
     }
 
+    public function kidRaysGet(Request $request){
+
+        // return $request;
+        $validator = Validator::make( $request->all(), [
+            'child_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($request->child_id);
+
+        if($kid){
+
+            if($kid->ray_child){
+                $rays = RayChild::where('child_id', $kid ->id)->with ('online_doctor') -> get();
+
+                return response()->json([
+                    'data' => $rays
+                ],200);
+
+            }else{
+                return response()->json([
+                    'message' => "Kid Has No Rays"
+                ],415);
+            }
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+
+    }
+
+    public function kidRaysPost(Request $request){
+
+        // return $request;
+        $validator = Validator::make( $request->all(), [
+            'child_id' => 'required',
+            'ray_name' => 'required',
+            'link' => 'required',
+            'date' => 'required',
+            'online_doctor_id' => 'required'
+        ] );
+
+        if ($validator->fails()) {
+            return response()->json( ['errors'=>$validator->errors()] , 405 );
+        }
+
+        $kid = Child::find($request->child_id);
+
+        if($kid){
+
+            $ray = RayChild::create([
+                'ray_name' => $request ->ray_name,
+                'child_id' => $kid ->id,
+                'online_doctor_id' => $request ->online_doctor_id,
+                'date' => $request ->date,
+                'link' => $request ->link
+            ]);
+
+            return response()->json([
+                'data' => $ray
+            ],200);
+
+        }else{
+            return response()->json([
+                'message' => 'Kid Not Found'
+            ],410);
+        }
+
+    }
+
 }
 
