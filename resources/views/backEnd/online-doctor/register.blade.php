@@ -74,7 +74,7 @@
                         <div class="col-md-6 mb-xl-3">
                             <div class="form-group">
                                 <label class="h6 font-weight-bold">license Number <i class="fa fa-star-of-life star"></i></label>
-                                <input type = "text" class="form-control @error('license_number') is-invalid @enderror"  name="license_number"  placeholder="license number">{{old('information')}}</textarea>
+                                <input type = "text" class="form-control @error('license_number') is-invalid @enderror"  name="license_number"  placeholder="license number">{{old('information')}}
                                 @error('license_number')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
