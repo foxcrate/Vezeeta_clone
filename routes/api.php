@@ -429,6 +429,9 @@ Route::group(['namespace'=>'API'],function(){
     Route::get('/kidRaysGet','childrenController@kidRaysGet');
     Route::post('/kidRaysPost','childrenController@kidRaysPost');
 
+    Route::get('/kidTestsGet','childrenController@kidTestsGet');
+    Route::post('/kidTestsPost','childrenController@kidTestsPost');
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
