@@ -1,5 +1,5 @@
 * text=auto
-resources/views/* linguist-vendored
+*.blade.php linguist-vendored
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
